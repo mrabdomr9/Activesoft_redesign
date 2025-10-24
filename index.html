@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Active Soft | Oracle ERP & Custom Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --font-sans: 'Roboto', sans-serif;
+        --font-display: 'Orbitron', sans-serif;
+      }
+      html[dir="rtl"] {
+        --font-sans: 'Cairo', sans-serif;
+        --font-display: 'Cairo', sans-serif; /* Orbitron does not support Arabic well */
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px); /* For Safari */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      body {
+        background-color: #0a0a1a;
+        background-image:
+          radial-gradient(at 20% 20%, hsla(212,100%,50%,0.2) 0px, transparent 50%),
+          radial-gradient(at 80% 20%, hsla(280,100%,50%,0.2) 0px, transparent 50%),
+          radial-gradient(at 20% 80%, hsla(320,100%,50%,0.2) 0px, transparent 50%),
+          radial-gradient(at 80% 80%, hsla(240,100%,60%,0.2) 0px, transparent 50%);
+      }
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .animate-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .bg-grid-pattern {
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+        background-size: 2rem 2rem;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary': '#3b82f6', // Brighter Blue
+              'secondary': '#60a5fa', // Lighter Blue
+              'accent': '#facc15', // Yellow
+              'dark': '#0a0a1a', // Near Black
+              'light': '#e5e7eb', // Light Grey for text
+            },
+            fontFamily: {
+              sans: 'var(--font-sans)',
+              display: 'var(--font-display)',
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.4"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-DHxT21nW.js"></script>
+</head>
+  <body class="bg-dark text-light">
+    <div id="root"></div>
+  </body>
+</html>
