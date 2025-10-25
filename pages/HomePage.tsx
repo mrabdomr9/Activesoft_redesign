@@ -157,7 +157,7 @@ const HomePage: React.FC = () => {
           <div className="relative max-w-3xl mx-auto animate-on-scroll" style={{ transitionDelay: '200ms' }}>
             <div className="overflow-hidden">
               <div 
-                className="flex transition-transform duration-500 ease-in-out" 
+                className="flex transition-transform duration-500 ease-in-out rtl:space-x-reverse" 
                 style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}
               >
                 {testimonials.quotes.map((item: { quote: string; name: string; company: string; }, index: number) => (
@@ -180,10 +180,10 @@ const HomePage: React.FC = () => {
             </div>
             {totalTestimonials > 1 && (
               <>
-                 <button onClick={prevTestimonial} className="absolute top-1/2 -translate-y-1/2 start-0 transform -translate-x-4 bg-white/10 hover:bg-white/20 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors z-10" aria-label="Previous testimonial">
+                 <button onClick={prevTestimonial} className="absolute top-1/2 -translate-y-1/2 start-0 transform -translate-x-4 bg-white/10 hover:bg-white/20 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors z-10 rtl:rotate-180" aria-label="Previous testimonial">
                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
                  </button>
-                 <button onClick={nextTestimonial} className="absolute top-1/2 -translate-y-1/2 end-0 transform translate-x-4 bg-white/10 hover:bg-white/20 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors z-10" aria-label="Next testimonial">
+                 <button onClick={nextTestimonial} className="absolute top-1/2 -translate-y-1/2 end-0 transform translate-x-4 bg-white/10 hover:bg-white/20 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors z-10 rtl:rotate-180" aria-label="Next testimonial">
                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
                  </button>
               </>
