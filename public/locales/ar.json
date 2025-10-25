@@ -296,7 +296,7 @@
         "challenge": "واجه عميلنا تأخيرات كبيرة في الإنتاج وعدم دقة في المخزون بسبب نظام قديم غير متصل.",
         "solution": "قمنا بتطبيق حل Oracle ERP مخصص يدمج سير عمل الإنتاج بالكامل من المواد الخام إلى السلع التامة الصنع.",
         "result": "تحقيق انخفاض بنسبة 30٪ في وقت الإنتاج ومعدل دقة مخزون بنسبة 99.8٪ خلال السنة الأولى.",
-        "image": "https://picsum.photos/seed/casestudy1/800/600"
+        "image": "https://images.unsplash.com/photo-1610891015188-5369212db097?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1529"
       },
       {
         "industryKey": "healthcare",
@@ -305,7 +305,7 @@
         "challenge": "كانت شبكة مستشفيات كبيرة بحاجة إلى ترقية نظام إدارة المرضى لتلبية لوائح أمن البيانات الجديدة.",
         "solution": "قمنا بتطوير بوابة مرضى مخصصة ومتوافقة مع HIPAA وتطبيق لإدارة البيانات بأمان متعدد الطبقات.",
         "result": "اجتياز جميع عمليات تدقيق الأمان دون أي مشكلات امتثال وتحسين الكفاءة الإدارية بنسبة 40٪.",
-        "image": "https://picsum.photos/seed/casestudy2/800/600"
+        "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
       }
     ]
   },
@@ -316,7 +316,7 @@
       {
         "title": "CRM مخصص لفرق المبيعات",
         "description": "تطبيق CRM قوي لسطح المكتب مصمم لتتبع المبيعات عالي الأداء وإدارة العملاء.",
-        "image": "https://picsum.photos/seed/crm/800/600"
+        "image": " https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
       },
       {
         "title": "نظام إدارة المخزون",
