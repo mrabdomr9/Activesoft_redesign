@@ -9,7 +9,7 @@ interface ServiceCardProps {
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) => (
-  <div className="glass-panel p-8 rounded-xl hover:border-white/20 hover:-translate-y-2 transition-all duration-300 h-full flex flex-col animate-on-scroll">
+  <div className="glass-panel p-8 rounded-xl hover:border-accent hover:-translate-y-2 hover:scale-[1.03] transition-all duration-300 h-full flex flex-col animate-on-scroll">
     <div className="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-primary/80 text-white mb-6">
       {icon}
     </div>
