@@ -7,6 +7,11 @@ export const useTranslation = () => {
   const { translations, language } = useContext(LanguageContext);
 
   const t = (key: string, fallback?: any): any => {
+    // If translations haven't loaded yet, return the key or fallback
+    if (!translations || Object.keys(translations).length === 0) {
+      return fallback !== undefined ? fallback : key;
+    }
+    
     const keys = key.split('.');
     let result = translations;
     for (const k of keys) {

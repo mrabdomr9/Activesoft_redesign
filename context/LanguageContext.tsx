@@ -31,16 +31,28 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   useEffect(() => {
     const fetchTranslations = async () => {
       try {
-        // Paths must be relative to the public directory (where index.html is)
-        const response = await fetch(`./locales/${language}.json`);
+        // Use absolute path from the public directory to ensure it works after deployment
+        const response = await fetch(`/locales/${language}.json`);
         if (!response.ok) {
           throw new Error(`Failed to load translations for ${language}`);
         }
         const data = await response.json();
         setTranslations(data);
       } catch (error) {
-        console.error(error);
-        setTranslations({}); // Fallback to an empty object if loading fails
+        console.error('Error loading translations:', error);
+        // Try to load fallback translations
+        try {
+          const fallbackResponse = await fetch(`/locales/en.json`);
+          if (fallbackResponse.ok) {
+            const fallbackData = await fallbackResponse.json();
+            setTranslations(fallbackData);
+          } else {
+            setTranslations({}); // Fallback to an empty object if all loading fails
+          }
+        } catch (fallbackError) {
+          console.error('Error loading fallback translations:', fallbackError);
+          setTranslations({}); // Fallback to an empty object if all loading fails
+        }
       } finally {
         if (isInitialLoading) {
             setIsInitialLoading(false);
