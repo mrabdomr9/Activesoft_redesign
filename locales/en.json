@@ -104,7 +104,7 @@
       "experience": "Years of Experience",
       "experienceVal": "15+",
       "applications": "Applications Delivered",
-      "applicationsVal": "50+",
+      "applicationsVal": "500+",
       "satisfaction": "Client Satisfaction",
       "satisfactionVal": "98%"
     },
@@ -358,23 +358,23 @@
     "teamSubtitle": "Our strength lies in our people. Meet some of the dedicated professionals who bring a wealth of experience and certified expertise to every project, ensuring we deliver nothing but the best.",
     "team": [
       {
-        "name": "Ibraheem Ali Ellithy",
+        "name": "John Doe",
         "role": "Lead Oracle Consultant",
         "certification": "Oracle Certified Professional",
         "image": "https://picsum.photos/seed/john/200",
         "linkedin": "#"
       },
       {
-        "name": "Abdu-Allah Yousrie",
+        "name": "Jane Smith",
         "role": "Senior Software Architect",
-        "certification": "OrcaleCertified Professional",
+        "certification": "Microsoft Certified Professional",
         "image": "https://picsum.photos/seed/jane/200",
         "linkedin": "#"
       },
       {
-        "name": "Mostafa Amin",
-        "role": "Full Stack Developer",
-        "certification": "Full Stack Developer",
+        "name": "Ahmed Hassan",
+        "role": "Cybersecurity Specialist",
+        "certification": "Certified Ethical Hacker (CEH)",
         "image": "https://picsum.photos/seed/ahmed/200",
         "linkedin": "#"
       }
