@@ -104,7 +104,7 @@
       "experience": "سنوات من الخبرة",
       "experienceVal": "+١٥",
       "applications": "تطبيق تم تسليمه",
-      "applicationsVal": "+٥٠٠",
+      "applicationsVal": "+٥٠",
       "satisfaction": "رضا العملاء",
       "satisfactionVal": "٩٨٪"
     },
@@ -114,7 +114,7 @@
       "quotes": [
         {
           "quote": "حل ERP من أكتيف سوفت أحدث ثورة في عملية التصنيع لدينا. كان فريقهم محترفًا ومطلعًا وقدموا ما يفوق توقعاتنا.",
-          "name": "محمد علي",
+          "name": "أحمد عبدالحليم",
           "company": "الرئيس التنفيذي، العروبة للخرسانة الجاهزة",
           "logo": "https://scontent-lhr6-2.xx.fbcdn.net/v/t39.30808-6/324104863_715504116673253_27001048516993591_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEVwkpRccodS4SjNV-HyySiJ0CMSbzU_BwnQIxJvNT8HA5IKKpquF0_5DS8qe4wzvUXUfnCscD4KZmKRaV7eyR8&nc_ohc=PoJvBnDJDRkQ7kNvwG_mp4p&_nc_oc=Adk7BqT7Zp5bjWJ3dS5XngqqUOue6RUPaCUEj43kRfJHjJ2vY9s7BogclJLVE5MdClA&_nc_zt=23&_nc_ht=scontent-lhr6-2.xx&_nc_gid=BAKISxzB60wVBy8pgCKTsQ&oh=00_AfaLNt0lRWu2N-S77ZJZKQd-r4wNQXFPJjYbpXLvDy824Q&oe=68D7050F"
         },
@@ -144,7 +144,7 @@
     "customAppsTitle": "تطوير التطبيقات المخصصة",
     "customAppsDesc": "نقوم بتصميم وتطوير ونشر تطبيقات سطح مكتب وويب مخصصة تحل تحديات الأعمال الفريدة وتتكامل بسلاسة مع أنظمتك الحالية.",
     "securityTitle": "أمن المؤسسات",
-    "securityDesc": "تنفيذ بروتوكولات أمان على مستوى البنوك لحماية بياناتك وتطبيقاتك وشبكتك من التهديدات السيبرانية المتطورة."
+    "securityDesc": "تنفيذ بروتوكولات أمان   لحماية بياناتك وتطبيقاتك وشبكتك من التهديدات السيبرانية المتطورة."
   },
   "prices": {
     "title": "أسعار شفافة لنجاحك",
@@ -276,7 +276,7 @@
     "financial": {
       "name": "الخدمات المالية",
       "challenges": "أمن البيانات عالي المخاطر والالتزام التنظيمي ومعالجة المعاملات في الوقت الفعلي وإدارة المخاطر.",
-      "solution": "برامج Oracle ERP المالية القوية والبرامج المخصصة ذات الأمان على مستوى البنوك لأتمتة العمليات المالية وضمان الامتثال."
+      "solution": "برامج Oracle ERP المالية القوية والبرامج المخصصة ذات الأمان   لأتمتة العمليات المالية وضمان الامتثال."
     }
   },
   "caseStudies": {
@@ -358,24 +358,24 @@
     "teamSubtitle": "تكمن قوتنا في موظفينا. تعرف على بعض المهنيين المتفانين الذين يجلبون ثروة من الخبرة والخبرة المعتمدة لكل مشروع، مما يضمن أننا لا نقدم سوى الأفضل.",
     "team": [
       {
-        "name": "John Doe",
+        "name": "Ibraheem Ali Ellithy",
         "role": "مستشار أوراكل رائد",
         "certification": "محترف معتمد من أوراكل",
-        "image": "https://picsum.photos/seed/john/200",
+        "image": "https://images.unsplash.com/photo-1676195470090-7c90bf539b3b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
         "linkedin": "#"
       },
       {
-        "name": "Jane Smith",
+        "name": "Abdu-Allah Yousrie",
         "role": "مهندس برمجيات أول",
-        "certification": "محترف معتمد من مايكروسوفت",
-        "image": "https://picsum.photos/seed/jane/200",
+        "certification": "محترف معتمد من أوركال",
+        "image": "https://images.unsplash.com/photo-1676195470090-7c90bf539b3b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
         "linkedin": "#"
       },
       {
-        "name": "Ahmed Hassan",
-        "role": "أخصائي أمن سيبراني",
-        "certification": "مخترق أخلاقي معتمد (CEH)",
-        "image": "https://picsum.photos/seed/ahmed/200",
+        "name": "Mostafa Amin",
+        "role": "Full Stack Developer",
+        "certification": "مطور تطبيقات ويب كاملة",
+        "image": "https://images.unsplash.com/photo-1676195470090-7c90bf539b3b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
         "linkedin": "#"
       }
     ]

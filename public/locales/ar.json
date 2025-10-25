@@ -358,24 +358,24 @@
     "teamSubtitle": "تكمن قوتنا في موظفينا. تعرف على بعض المهنيين المتفانين الذين يجلبون ثروة من الخبرة والخبرة المعتمدة لكل مشروع، مما يضمن أننا لا نقدم سوى الأفضل.",
     "team": [
       {
-        "name": "John Doe",
+        "name": "Ibraheem Ali Ellithy",
         "role": "مستشار أوراكل رائد",
         "certification": "محترف معتمد من أوراكل",
-        "image": "https://picsum.photos/seed/john/200",
+        "image": "https://images.unsplash.com/photo-1676195470090-7c90bf539b3b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
         "linkedin": "#"
       },
       {
-        "name": "Jane Smith",
+        "name": "Abdu-Allah Yousrie",
         "role": "مهندس برمجيات أول",
-        "certification": "محترف معتمد من مايكروسوفت",
-        "image": "https://picsum.photos/seed/jane/200",
+        "certification": "محترف معتمد من أوركال",
+        "image": "https://images.unsplash.com/photo-1676195470090-7c90bf539b3b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
         "linkedin": "#"
       },
       {
-        "name": "Ahmed Hassan",
-        "role": "أخصائي أمن سيبراني",
-        "certification": "مخترق أخلاقي معتمد (CEH)",
-        "image": "https://picsum.photos/seed/ahmed/200",
+        "name": "Mostafa Amin",
+        "role": "Full Stack Developer",
+        "certification": "مطور تطبيقات ويب كاملة",
+        "image": "https://images.unsplash.com/photo-1676195470090-7c90bf539b3b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
         "linkedin": "#"
       }
     ]
