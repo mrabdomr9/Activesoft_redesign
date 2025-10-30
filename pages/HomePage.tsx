@@ -48,24 +48,45 @@ const HomePage: React.FC = () => {
     }
   ];
   
-  const testimonials = t('home.testimonials', { title: '', subtitle: '', quotes: [] });
-  const totalTestimonials = testimonials.quotes.length;
+  const testimonials = t('home.testimonials', { title: 'What Our Clients Say', subtitle: 'Real feedback from businesses we\'ve empowered.', quotes: [] });
+  const totalTestimonials = testimonials && testimonials.quotes ? testimonials.quotes.length : 0;
+  const { language } = useTranslation();
+
+  // Reset current testimonial index when testimonials or language change
+  useEffect(() => {
+    setCurrentTestimonial(0);
+  }, [testimonials, language]);
 
   useEffect(() => {
-    if (totalTestimonials > 1) {
-      const timer = setTimeout(() => {
-        setCurrentTestimonial((prevIndex) => (prevIndex + 1) % totalTestimonials);
+    let timer: NodeJS.Timeout;
+    if (testimonials && testimonials.quotes && testimonials.quotes.length > 1) {
+      timer = setTimeout(() => {
+        if (language === 'ar') {
+          setCurrentTestimonial((prevIndex) => (prevIndex - 1 + testimonials.quotes.length) % testimonials.quotes.length);
+        } else {
+          setCurrentTestimonial((prevIndex) => (prevIndex + 1) % testimonials.quotes.length);
+        }
       }, 7000); // Change testimonial every 7 seconds
-      return () => clearTimeout(timer);
     }
-  }, [currentTestimonial, totalTestimonials]);
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, [currentTestimonial, testimonials, language]);
     
   const nextTestimonial = () => {
-    setCurrentTestimonial((prevIndex) => (prevIndex + 1) % totalTestimonials);
+    if (language === 'ar') {
+      setCurrentTestimonial((prevIndex) => (prevIndex - 1 + testimonials.quotes.length) % testimonials.quotes.length);
+    } else {
+      setCurrentTestimonial((prevIndex) => (prevIndex + 1) % testimonials.quotes.length);
+    }
   };
 
   const prevTestimonial = () => {
-    setCurrentTestimonial((prevIndex) => (prevIndex - 1 + totalTestimonials) % totalTestimonials);
+    if (language === 'ar') {
+      setCurrentTestimonial((prevIndex) => (prevIndex + 1) % testimonials.quotes.length);
+    } else {
+      setCurrentTestimonial((prevIndex) => (prevIndex - 1 + testimonials.quotes.length) % testimonials.quotes.length);
+    }
   };
 
 
@@ -155,13 +176,15 @@ const HomePage: React.FC = () => {
           </div>
           
           <div className="relative max-w-3xl mx-auto animate-on-scroll" style={{ transitionDelay: '200ms' }}>
-            <div className="overflow-hidden">
+            <div className="overflow-hidden w-full">
+              {testimonials && testimonials.quotes && testimonials.quotes.length > 0 && (
               <div 
-                className="flex transition-transform duration-500 ease-in-out rtl:space-x-reverse" 
-                style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}
+                key={`testimonials-${testimonials.quotes.length}`}
+                className="flex transition-transform duration-500 ease-in-out" 
+                style={{ transform: language === 'ar' ? `translateX(${currentTestimonial * (100 / testimonials.quotes.length)}%)` : `translateX(-${currentTestimonial * (100 / testimonials.quotes.length)}%)`, width: `${testimonials.quotes.length * 100}%` }}
               >
                 {testimonials.quotes.map((item: { quote: string; name: string; company: string; }, index: number) => (
-                  <div key={index} className="w-full flex-shrink-0 px-4">
+                  <div key={index} className="w-full flex-shrink-0 px-4" style={{ width: `${100 / testimonials.quotes.length}%` }}>
                     <div className="glass-panel p-8 rounded-xl text-center h-full">
                       <svg className="h-10 w-10 text-primary mx-auto mb-4" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
                         <path d="M9.333 22.667h4L16 16V9.333H9.333v13.334zM22.667 22.667h4L29.333 16V9.333h-6.666v13.334z"></path>
@@ -177,8 +200,9 @@ const HomePage: React.FC = () => {
                   </div>
                 ))}
               </div>
+              )}
             </div>
-            {totalTestimonials > 1 && (
+            {testimonials && testimonials.quotes && testimonials.quotes.length > 1 && (
               <>
                  <button onClick={prevTestimonial} className="absolute top-1/2 -translate-y-1/2 start-0 transform -translate-x-4 bg-white/10 hover:bg-white/20 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors z-10 rtl:rotate-180" aria-label="Previous testimonial">
                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
@@ -189,7 +213,7 @@ const HomePage: React.FC = () => {
               </>
             )}
           </div>
-           {totalTestimonials > 1 && (
+           {testimonials && testimonials.quotes && testimonials.quotes.length > 1 && (
               <div className="flex justify-center mt-8 space-x-2 rtl:space-x-reverse">
                   {testimonials.quotes.map((_, index) => (
                       <button

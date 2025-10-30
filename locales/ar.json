@@ -116,7 +116,7 @@
           "quote": "حل ERP من أكتيف سوفت أحدث ثورة في عملية التصنيع لدينا. كان فريقهم محترفًا ومطلعًا وقدموا ما يفوق توقعاتنا.",
           "name": "أحمد عبدالحليم",
           "company": "الرئيس التنفيذي، العروبة للخرسانة الجاهزة",
-          "logo": ""
+          "logo": "https://scontent-lhr6-2.xx.fbcdn.net/v/t39.30808-6/324104863_715504116673253_27001048516993591_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEVwkpRccodS4SjNV-HyySiJ0CMSbzU_BwnQIxJvNT8HA5IKKpquF0_5DS8qe4wzvUXUfnCscD4KZmKRaV7eyR8&nc_ohc=PoJvBnDJDRkQ7kNvwG_mp4p&_nc_oc=Adk7BqT7Zp5bjWJ3dS5XngqqUOue6RUPaCUEj43kRfJHjJ2vY9s7BogclJLVE5MdClA&_nc_zt=23&_nc_ht=scontent-lhr6-2.xx&_nc_gid=BAKISxzB60wVBy8pgCKTsQ&oh=00_AfaLNt0lRWu2N-S77ZJZKQd-r4wNQXFPJjYbpXLvDy824Q&oe=68D7050F"
         },
         {
           "quote": "تطبيق سطح المكتب المخصص الذي صمموه لنا غيّر قواعد اللعبة. إنه بديهي وآمن وقد حسّن بشكل كبير من إنتاجية فريقنا.",
@@ -129,6 +129,18 @@
           "name": "يوسف إبراهيم",
           "company": "مدير تكنولوجيا المعلومات، مدارس الجيل الجديد",
           "logo": ""
+        },
+        {
+          "quote": "العمل مع أكتيف سوفت في تحولنا الرقمي كان نقطة تحول لعملنا. إن تنفيذ نظام Oracle ERP الخاص بهم قلل من عملياتنا وحسن الكفاءة في جميع الأقسام.",
+          "name": "أحمد عبدالحليم",
+          "company": "الرئيس التنفيذي، شركة دلتا لإنتاج اللحوم (الماسية - جلوبال)",
+          "logo": "https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/471127525_996277009184693_2173276917715332600_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeECruJvm0f42L4GDNPF285fOhnbJoDb_vs6GdsmgNv--7uOqeIWgXJVtsdT5Qfh-ZSHmtDcGPatAVxAENAKRfzd&_nc_ohc=CN6U9mmE84EQ7kNvwFcZACF&_nc_oc=Adk-hITvsdFXT4WE97KmdbqdluEQuSeOd2tkERKWz9RbyxHYFBdSW__8JFP2Qsnd27U&_nc_zt=23&_nc_ht=scontent-lhr8-2.xx&_nc_gid=3--hl0EQtkOQ862mu7hArw&oh=00_AfbGoh4AUz7Vvm8wtZPBRcykoYtK27ciPkzHJKRMTMvjwg&oe=68D8781F"
+        },
+        {
+          "quote": "الحل البرمجي المخصص الذي طورته أكتيف سوفت غيّر طريقة إدارتنا للمخزون وسلسلة التوريد. إنه قوي وقابل للتوسع ومصمم بشكل مثالي لاحتياجات عملنا.",
+          "name": "علي فايد",
+          "company": "المؤسس، بذور سيناء",
+          "logo": "https://sinai-seeds.com/assets/images/logo.png"
         }
       ]
     },
