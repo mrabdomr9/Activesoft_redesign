@@ -558,5 +558,73 @@
         }
       ]
     }
+  },
+  "exportModule": {
+    "title": "Export Management System",
+    "subtitle": "Comprehensive export management system with detailed shipment tracking and financial analysis",
+    "shipmentTrackingTitle": "Shipment Data Tracking",
+    "shipmentTrackingDesc": "The system displays detailed information for each shipment, including:",
+    "shipmentTrackingItems": [
+      "Shipment date and memo numbers",
+      "Container No.",
+      "Lot No. associated with raw materials or products",
+      "Customer name and export destination"
+    ],
+    "financialValuesTitle": "Shipment Financial Values",
+    "financialValuesItems": [
+      "Shipment value in the client's foreign currency",
+      "Equivalent value in Egyptian pounds according to the exchange rate recorded in the system"
+    ],
+    "costBreakdownTitle": "Shipment Cost Breakdown",
+    "costBreakdownDesc": "The system clearly displays the cost breakdown into:",
+    "costBreakdownItems": [
+      "Raw material costs (raw materials - packaging materials - auxiliary materials)",
+      "Station operating costs",
+      "Shipping and customs clearance costs",
+      "Other expenses (if any)"
+    ],
+    "reportsTitle": "Reports",
+    "reportsItems": [
+      "Total shipment cost",
+      "Net shipment profitability before support",
+      "Net shipment profitability after support"
+    ],
+    "actualExpensesTitle": "Actual Expenses Tracking",
+    "actualExpensesDesc": "Monitor all expenses associated with each shipment, including:",
+    "actualExpensesItems": [
+      "Supplier service invoices",
+      "Labor invoices",
+      "Clearance and shipping invoices",
+      "Raw material supply invoices for the shipment"
+    ],
+    "internalCostBreakdown": "Internal cost breakdown into main elements with precision",
+    "collectionsDiscountsTitle": "Collections & Discounts Tracking",
+    "collectionsDiscountsItems": [
+      "Shipment data (memo - date - container)",
+      "Invoice value in client currency",
+      "Discount granted to the client (if any)",
+      "Net invoice after discount",
+      "Collections: Collection percentage, amount collected, cash payment dates",
+      "Net invoice after collections: (Invoice value - Discount - Collected payments)",
+      "Remaining balance on the client for their transactions with the company: Total invoices, Total collections, Total discounts"
+    ],
+    "archiveTitle": "Comprehensive Shipment Documentation Archive",
+    "archiveDesc1": "Save all shipment data in a complete electronic file",
+    "archiveDesc2": "Maintain a special archive for documents:",
+    "archiveItems": [
+      "Shipping documents",
+      "Supplier and service invoices",
+      "Container papers",
+      "Clearance and export documents"
+    ],
+    "archiveBenefit": "This facilitates reference for any review or accounting reconciliation",
+    "shipmentItemsTitle": "Shipment Items / Pallets",
+    "shipmentItemsDesc": "Divide the shipment into items according to:",
+    "shipmentItemsItems": [
+      "Number of pallets",
+      "Number of units inside each pallet"
+    ],
+    "expenseDistribution": "The system uses this data to distribute general expenses (shipping - preparation - clearance):",
+    "distributionMethod": "The system distributes expenses according to the number of pallets as a percentage of total monthly operations"
   }
 }

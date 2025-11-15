@@ -530,8 +530,8 @@ const ServicesPage: React.FC = () => {
 
           {/* Export Management System Section */}
           <div className="mt-12">
-            <h2 className="text-3xl font-bold text-white font-display mb-6">{t('services.exportModule.title', 'Export Management System')}</h2>
-            <p className="text-lg text-gray-300 mb-8">{t('services.exportModule.subtitle', 'Comprehensive export management system with detailed shipment tracking and financial analysis')}</p>
+            <h2 className="text-3xl font-bold text-white font-display mb-6">{t('exportModule.title', 'Export Management System')}</h2>
+            <p className="text-lg text-gray-300 mb-8">{t('exportModule.subtitle', 'Comprehensive export management system with detailed shipment tracking and financial analysis')}</p>
             
             {/* Shipment Data Tracking */}
             <div className="glass-panel p-6 rounded-xl mb-8">
@@ -539,11 +539,11 @@ const ServicesPage: React.FC = () => {
                 <svg className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                 </svg>
-                {t('services.exportModule.shipmentTrackingTitle', 'Shipment Data Tracking')}
+                {t('exportModule.shipmentTrackingTitle', 'Shipment Data Tracking')}
               </h3>
-              <p className="text-gray-300 mb-2">{t('services.exportModule.shipmentTrackingDesc', 'The system displays detailed information for each shipment, including:')}</p>
+              <p className="text-gray-300 mb-2">{t('exportModule.shipmentTrackingDesc', 'The system displays detailed information for each shipment, including:')}</p>
               <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
-                {t('services.exportModule.shipmentTrackingItems', [
+                {t('exportModule.shipmentTrackingItems', [
                   'Shipment date and memo numbers',
                   'Container No.',
                   'Lot No. associated with raw materials or products',
@@ -560,10 +560,10 @@ const ServicesPage: React.FC = () => {
                 <svg className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                {t('services.exportModule.financialValuesTitle', 'Shipment Financial Values')}
+                {t('exportModule.financialValuesTitle', 'Shipment Financial Values')}
               </h3>
               <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
-                {t('services.exportModule.financialValuesItems', [
+                {t('exportModule.financialValuesItems', [
                   'Shipment value in the client\'s foreign currency',
                   'Equivalent value in Egyptian pounds according to the exchange rate recorded in the system'
                 ]).map((item: string, index: number) => (
@@ -578,11 +578,11 @@ const ServicesPage: React.FC = () => {
                 <svg className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
-                {t('services.exportModule.costBreakdownTitle', 'Shipment Cost Breakdown')}
+                {t('exportModule.costBreakdownTitle', 'Shipment Cost Breakdown')}
               </h3>
-              <p className="text-gray-300 mb-2">{t('services.exportModule.costBreakdownDesc', 'The system clearly displays the cost breakdown into:')}</p>
+              <p className="text-gray-300 mb-2">{t('exportModule.costBreakdownDesc', 'The system clearly displays the cost breakdown into:')}</p>
               <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4 mb-4">
-                {t('services.exportModule.costBreakdownItems', [
+                {t('exportModule.costBreakdownItems', [
                   'Raw material costs (raw materials - packaging materials - auxiliary materials)',
                   'Station operating costs',
                   'Shipping and customs clearance costs',
@@ -592,9 +592,9 @@ const ServicesPage: React.FC = () => {
                 ))}
               </ul>
               
-              <h4 className="text-xl font-bold text-primary mb-2">{t('services.exportModule.reportsTitle', 'Reports')}</h4>
+              <h4 className="text-xl font-bold text-primary mb-2">{t('exportModule.reportsTitle', 'Reports')}</h4>
               <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
-                {t('services.exportModule.reportsItems', [
+                {t('exportModule.reportsItems', [
                   'Total shipment cost',
                   'Net shipment profitability before support',
                   'Net shipment profitability after support'
@@ -610,11 +610,11 @@ const ServicesPage: React.FC = () => {
                 <svg className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                {t('services.exportModule.actualExpensesTitle', 'Actual Expenses Tracking')}
+                {t('exportModule.actualExpensesTitle', 'Actual Expenses Tracking')}
               </h3>
-              <p className="text-gray-300 mb-2">{t('services.exportModule.actualExpensesDesc', 'Monitor all expenses associated with each shipment, including:')}</p>
+              <p className="text-gray-300 mb-2">{t('exportModule.actualExpensesDesc', 'Monitor all expenses associated with each shipment, including:')}</p>
               <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4 mb-2">
-                {t('services.exportModule.actualExpensesItems', [
+                {t('exportModule.actualExpensesItems', [
                   'Supplier service invoices',
                   'Labor invoices',
                   'Clearance and shipping invoices',
@@ -623,7 +623,7 @@ const ServicesPage: React.FC = () => {
                   <li key={index}>{item}</li>
                 ))}
               </ul>
-              <p className="text-gray-300">{t('services.exportModule.internalCostBreakdown', 'Internal cost breakdown into main elements with precision')}</p>
+              <p className="text-gray-300">{t('exportModule.internalCostBreakdown', 'Internal cost breakdown into main elements with precision')}</p>
             </div>
             
             {/* Collections & Discounts Tracking */}
@@ -632,10 +632,10 @@ const ServicesPage: React.FC = () => {
                 <svg className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                 </svg>
-                {t('services.exportModule.collectionsDiscountsTitle', 'Collections & Discounts Tracking')}
+                {t('exportModule.collectionsDiscountsTitle', 'Collections & Discounts Tracking')}
               </h3>
               <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
-                {t('services.exportModule.collectionsDiscountsItems', [
+                {t('exportModule.collectionsDiscountsItems', [
                   'Shipment data (memo - date - container)',
                   'Invoice value in client currency',
                   'Discount granted to the client (if any)',
@@ -655,12 +655,12 @@ const ServicesPage: React.FC = () => {
                 <svg className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                {t('services.exportModule.archiveTitle', 'Comprehensive Shipment Documentation Archive')}
+                {t('exportModule.archiveTitle', 'Comprehensive Shipment Documentation Archive')}
               </h3>
-              <p className="text-gray-300 mb-2">{t('services.exportModule.archiveDesc1', 'Save all shipment data in a complete electronic file')}</p>
-              <p className="text-gray-300 mb-2">{t('services.exportModule.archiveDesc2', 'Maintain a special archive for documents:')}</p>
+              <p className="text-gray-300 mb-2">{t('exportModule.archiveDesc1', 'Save all shipment data in a complete electronic file')}</p>
+              <p className="text-gray-300 mb-2">{t('exportModule.archiveDesc2', 'Maintain a special archive for documents:')}</p>
               <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4 mb-2">
-                {t('services.exportModule.archiveItems', [
+                {t('exportModule.archiveItems', [
                   'Shipping documents',
                   'Supplier and service invoices',
                   'Container papers',
@@ -669,7 +669,7 @@ const ServicesPage: React.FC = () => {
                   <li key={index}>{item}</li>
                 ))}
               </ul>
-              <p className="text-gray-300">{t('services.exportModule.archiveBenefit', 'This facilitates reference for any review or accounting reconciliation')}</p>
+              <p className="text-gray-300">{t('exportModule.archiveBenefit', 'This facilitates reference for any review or accounting reconciliation')}</p>
             </div>
             
             {/* Shipment Items / Pallets */}
@@ -678,19 +678,19 @@ const ServicesPage: React.FC = () => {
                 <svg className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                 </svg>
-                {t('services.exportModule.shipmentItemsTitle', 'Shipment Items / Pallets')}
+                {t('exportModule.shipmentItemsTitle', 'Shipment Items / Pallets')}
               </h3>
-              <p className="text-gray-300 mb-2">{t('services.exportModule.shipmentItemsDesc', 'Divide the shipment into items according to:')}</p>
+              <p className="text-gray-300 mb-2">{t('exportModule.shipmentItemsDesc', 'Divide the shipment into items according to:')}</p>
               <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4 mb-4">
-                {t('services.exportModule.shipmentItemsItems', [
+                {t('exportModule.shipmentItemsItems', [
                   'Number of pallets',
                   'Number of units inside each pallet'
                 ]).map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
-              <p className="text-gray-300 mb-2">{t('services.exportModule.expenseDistribution', 'The system uses this data to distribute general expenses (shipping - preparation - clearance):')}</p>
-              <p className="text-gray-300">{t('services.exportModule.distributionMethod', 'The system distributes expenses according to the number of pallets as a percentage of total monthly operations')}</p>
+              <p className="text-gray-300 mb-2">{t('exportModule.expenseDistribution', 'The system uses this data to distribute general expenses (shipping - preparation - clearance):')}</p>
+              <p className="text-gray-300">{t('exportModule.distributionMethod', 'The system distributes expenses according to the number of pallets as a percentage of total monthly operations')}</p>
             </div>
           </div>
         </div>
