@@ -96,7 +96,7 @@ const Header: React.FC = () => {
                          <NavLink
                           key={subLink.to}
                           to={subLink.to}
-                          className={({ isActive }) => `block px-4 py-2 text-sm text-gray-300 hover:bg-white/10 hover:text-white rounded-md transition-colors ${isActive ? 'bg-white/10' : ''}`}
+                          className={({ isActive }) => `block px-4 py-2 text-sm text-white hover:bg-primary/20 hover:text-white rounded-md transition-colors ${isActive ? 'bg-primary/30 font-semibold' : ''}`}
                         >
                           {subLink.text}
                         </NavLink>
@@ -160,7 +160,7 @@ const Header: React.FC = () => {
                           key={subLink.to}
                           to={subLink.to}
                           onClick={closeMenus}
-                          className={({ isActive }) => `block w-full text-center px-4 py-2 text-sm text-gray-300 hover:bg-white/20 hover:text-white transition-colors rounded-md ${isActive ? activeLinkClasses : ''}`}
+                          className={({ isActive }) => `block w-full text-center px-4 py-2 text-sm text-white hover:bg-primary/20 hover:text-white transition-colors rounded-md ${isActive ? 'bg-primary/30 font-semibold' : ''}`}
                         >
                           {subLink.text}
                         </NavLink>
