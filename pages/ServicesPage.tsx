@@ -1,30 +1,13 @@
-
 import React, { useEffect } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
-
-interface ServiceCardProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
-const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) => (
-  <div className="glass-panel p-8 rounded-xl hover:border-white/20 hover:-translate-y-2 transition-all duration-300 h-full flex flex-col animate-on-scroll">
-    <div className="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-primary/80 text-white mb-6">
-      {icon}
-    </div>
-    <h3 className="text-2xl font-bold text-white mb-3 font-display">{title}</h3>
-    <p className="text-gray-300 flex-grow">{description}</p>
-  </div>
-);
 
 const ServicesPage: React.FC = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
     const title = t('seo.services.title', 'Our Services | Active Soft');
-    const description = t('seo.services.description', 'Explore our comprehensive technology services, including Oracle ERP implementation, managed IT support, custom desktop applications, and enterprise security.');
-    const keywords = t('seo.services.keywords', 'Oracle ERP Services, IT Support, Custom Applications, Enterprise Security, Active Soft');
+    const description = t('seo.services.description', 'Explore our comprehensive technology solutions including Oracle ERP, custom applications, and IT support.');
+    const keywords = t('seo.services.keywords', 'ERP Solutions, Oracle ERP, Custom Software, IT Support, Technology Services');
 
     if (title) document.title = title;
 
@@ -42,187 +25,672 @@ const ServicesPage: React.FC = () => {
     if (keywords) setMetaTag('keywords', keywords);
   }, [t]);
 
-  const services = [
-    {
-      icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375" /></svg>,
-      title: t('services.erpTitle'),
-      description: t('services.erpDesc')
-    },
-    {
-      icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 18.75V16.5M16.5 3.75V16.5M12 12.75h4.5m-4.5 3H12M10.5 21l-1.5-1.5L7.5 21l-1.5-1.5L4.5 21l-1.5-1.5L1.5 21M21 3.75v.75m0 0h-4.5m4.5 0l-1.5 1.5M3.75 3.75h.75m0 0V3m0 0L3 3.75M3.75 21v-4.5m0 4.5h.75m0 0l-1.5-1.5M16.5 3.75l-1.5 1.5M21 3.75L19.5 5.25" /></svg>,
-      title: t('services.itSupportTitle'),
-      description: t('services.itSupportDesc')
-    },
-    {
-      icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-1.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" /></svg>,
-      title: t('services.customAppsTitle'),
-      description: t('services.customAppsDesc')
-    },
-    {
-      icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z" /></svg>,
-      title: t('services.securityTitle'),
-      description: t('services.securityDesc')
-    }
-  ];
-
   return (
-    <div className="bg-transparent py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-white font-display animate-on-scroll">{t('services.title')}</h1>
-          <p className="mt-4 text-lg text-gray-300 animate-on-scroll" style={{transitionDelay: '100ms'}}>{t('services.subtitle')}</p>
+    <div className="bg-transparent">
+      <section className="pt-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl font-bold text-white font-display animate-on-scroll">{t('services.title', 'Our Comprehensive Services')}</h1>
+          <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>
+            {t('services.subtitle', 'Tailored technology solutions to drive your business forward.')}
+          </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => (
-            <ServiceCard key={index} {...service} />
-          ))}
-        </div>
-        <div className="mt-12">
-          <h2 className="text-3xl font-bold text-white font-display mb-6">{t('services.erpFeaturesTitle', 'ERP System Features')}</h2>
-          <p className="text-lg text-gray-300">{t('services.erpFeaturesDesc', 'Our ERP system is designed to provide comprehensive solutions for businesses of all sizes. Here are some of the key features it offers:')}</p>
+      </section>
 
-          {/* General Features Section */}
-          <div className="glass-panel p-6 rounded-xl mb-8">
-            <h3 className="text-2xl font-bold text-primary mb-4 flex items-center">
-              <svg className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-              {t('services.generalFeatures', 'General Features')}
-            </h3>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-300">
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                {t('services.features.oracleDB', 'Powerful and stable Oracle database')}
-              </li>
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                {t('services.features.multiUser', 'Multiple user permissions with precise management')}
-              </li>
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                {t('services.features.remoteAccess', 'Ability to work from anywhere via the Internet')}
-              </li>
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                {t('services.features.autoBackup', 'Automatic backups created multiple times daily')}
-              </li>
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                {t('services.features.auditTrail', 'Complete audit trail showing who added, modified, or deleted')}
-              </li>
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                {t('services.features.employeeDocs', 'Entry of employee photos and documents')}
-              </li>
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                {t('services.features.foreignCurrency', 'Foreign currency support with fixed or variable rates per transaction')}
-              </li>
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                {t('services.features.multiCompany', 'Multiple companies or branches with consolidated reports')}
-              </li>
-            </ul>
+      <div className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* ERP Solutions Section */}
+          <div className="glass-panel p-8 rounded-xl mb-12 animate-on-scroll">
+            <div className="flex flex-col md:flex-row items-center">
+              <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+                <div className="bg-primary/10 p-6 rounded-full">
+                  <svg className="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                  </svg>
+                </div>
+              </div>
+              <div className="md:w-2/3 md:pl-8">
+                <h2 className="text-3xl font-bold text-white font-display mb-4">{t('services.erpTitle', 'Oracle ERP Solutions')}</h2>
+                <p className="text-lg text-gray-300 mb-6">{t('services.erpDesc', 'Full-cycle Oracle ERP services including implementation, customization, migration, and support to optimize your business processes.')}</p>
+                <a href="/contact" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors">
+                  {t('home.learnMore', 'Learn More')}
+                  <svg className="ml-2 -mr-1 h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
 
-          {/* Main Modules Section */}
-          <div className="glass-panel p-6 rounded-xl mb-8">
-            <h3 className="text-2xl font-bold text-primary mb-4 flex items-center">
-              <svg className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
-              </svg>
-              {t('services.mainModules', 'Main System Modules')}
-            </h3>
-            <ol className="list-decimal list-inside space-y-2 text-gray-300">
-              <li>{t('services.modules.generalLedger', 'General Ledger')}</li>
-              <li>{t('services.modules.inventory', 'Inventory Management')}</li>
-              <li>{t('services.modules.costing', 'Costing System')}</li>
-              <li>{t('services.modules.hr', 'HR & Payroll')}</li>
-              <li>{t('services.modules.planning', 'Planning')}</li>
-              <li>{t('services.modules.purchasesSales', 'Purchases & Sales')}</li>
-            </ol>
+          {/* ERP Features Section */}
+          <div className="mb-12 animate-on-scroll">
+            <h3 className="text-2xl font-bold text-white font-display mb-6">{t('services.erpFeaturesTitle', 'ERP System Features')}</h3>
+            <p className="text-lg text-gray-300 mb-8">{t('services.erpFeaturesDesc', 'Our ERP system is designed to provide comprehensive solutions for businesses of all sizes. Here are some of the key features it offers:')}</p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-xl font-bold text-primary mb-4">{t('services.generalFeatures', 'General Features')}</h4>
+                <ul className="space-y-3">
+                  {[
+                    'oracleDB', 'multiUser', 'remoteAccess', 'autoBackup', 'auditTrail', 'employeeDocs', 
+                    'foreignCurrency', 'multiCompany', 'accountingChart', 'exchangeRate', 'notes', 
+                    'multiEntry', 'unlimitedCashiers', 'cashierLink', 'collectionPayment'
+                  ].map((feature) => (
+                    <li key={feature} className="flex items-start">
+                      <svg className="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-300">{t(`services.features.${feature}`)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="text-xl font-bold text-primary mb-4">{t('services.mainModules', 'Main System Modules')}</h4>
+                <ul className="space-y-3">
+                  {['generalLedger', 'inventory', 'costing', 'hr', 'planning', 'purchasesSales'].map((module) => (
+                    <li key={module} className="flex items-start">
+                      <svg className="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-300">{t(`services.modules.${module}`)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
 
-          {/* Detailed Features Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="glass-panel p-6 rounded-xl">
+          {/* Costing Module Section */}
+          <div className="mt-16">
+            <h2 className="text-3xl font-bold text-white font-display mb-6">{t('services.costingModule.title', 'Costing Module')}</h2>
+            <p className="text-lg text-gray-300 mb-8">{t('services.costingModule.subtitle', 'Comprehensive production cost management system with actual costing methodology')}</p>
+            
+            {/* Production Cost Calculation Methodology */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.costingModule.methodologyTitle', 'Production Cost Calculation Methodology')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.methodologyDesc', 'The system is based on Actual Costing during the production month.')}</p>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.methodologyIncludes', 'Cost includes:')}</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                {t('services.costingModule.methodologyItems', [
+                  'Raw materials cost',
+                  'Direct industrial expenses',
+                  'Indirect industrial expenses (General service centers + Production services)'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Raw Materials and BOM */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.costingModule.bomTitle', 'Raw Materials and BOM (Bill of Materials)')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.bomDesc1', 'Material ratios for each product are determined through BOM.')}</p>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.bomDesc2', 'The system automatically issues raw material documents according to BOM ratios.')}</p>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.bomDesc3', 'Variable materials are manually issued based on workshop instructions.')}</p>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.bomDesc4', 'When entering actual inventory at the end of the month:')}</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                {t('services.costingModule.bomItems', [
+                  'The system modifies automatic issue documents to accommodate inventory differences (increase/decrease).',
+                  'Inventory differences are distributed to production orders.'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Inspection and Quality Cost */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.costingModule.qualityTitle', 'Inspection and Quality Cost')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.qualityDesc1', 'A portion of production is issued for inspection and loaded to Quality Inspection cost.')}</p>
+              <p className="text-gray-300">{t('services.costingModule.qualityDesc2', 'Quantity can be returned for inspection or to the warehouse, resulting in automatic reduction of quality expense.')}</p>
+            </div>
+
+            {/* Direct Industrial Expenses */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.costingModule.directExpensesTitle', 'Direct Industrial Expenses')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.directExpensesDesc', 'Recorded in one of two ways:')}</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                {t('services.costingModule.directExpensesItems', [
+                  'Daily entries loaded to production lines.',
+                  'Or raw material issuance from warehouses to production lines.'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Indirect Industrial Expenses */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.costingModule.indirectExpensesTitle', 'Indirect Industrial Expenses')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.indirectExpensesDesc1', 'Recorded on General or Production service centers.')}</p>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.indirectExpensesDesc2', 'Monthly distribution ratios are recorded showing the benefit of each production line from each service center.')}</p>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.indirectExpensesDesc3', 'The system issues entries to load expenses from service centers to production lines.')}</p>
+              <p className="text-gray-300">{t('services.costingModule.indirectExpensesDesc4', 'If part of the expenses remains unloaded, it appears in the Income Statement.')}</p>
+            </div>
+
+            {/* Cost Distribution to Production Orders */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.costingModule.costDistributionTitle', 'Cost Distribution to Production Orders')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.costDistributionDesc1', 'Each production order is loaded with its share of expenses based on:')}</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4 mb-2">
+                {t('services.costingModule.costDistributionItems', [
+                  'Operating time (Original method),',
+                  'Or production quantity as an alternative when time is not recorded.'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.costDistributionDesc2', 'To improve accuracy:')}</p>
+              <p className="text-gray-300">{t('services.costingModule.costDistributionDesc3', 'Production quantity is weighted by product selling price to achieve fair distribution of industrial expenses.')}</p>
+            </div>
+
+            {/* Production Valuation */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.costingModule.valuationTitle', 'Production Valuation')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.valuationDesc1', 'Product valuation is done at actual cost monthly.')}</p>
+              <p className="text-gray-300">{t('services.costingModule.valuationDesc2', 'Valuation is fixed as an inventory addition document affecting Cost of Goods Sold (COGS).')}</p>
+            </div>
+
+            {/* Production Orders Spanning Multiple Financial Periods */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.costingModule.multiPeriodTitle', 'Production Orders Spanning Multiple Financial Periods')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.multiPeriodDesc1', 'When a production order spans multiple periods:')}</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                {t('services.costingModule.multiPeriodItems', [
+                  'Cost is accumulated throughout the entire order duration.',
+                  'If previous period costs are different, the system requests reopening periods to modify valuation.'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Production Stages System */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.costingModule.stagesTitle', 'Production Stages System')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.stagesDesc1', 'The system supports products requiring multiple production stages.')}</p>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.stagesDesc2', 'Each stage cost is calculated separately.')}</p>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.stagesDesc3', "A stage's production is revalued as raw material for the next stage.")}</p>
+              <p className="text-gray-300">{t('services.costingModule.stagesDesc4', 'The sequence continues until the final stage.')}</p>
+            </div>
+
+            {/* Lots Tracking System */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.costingModule.lotsTitle', 'Lots Tracking System')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.lotsDesc1', 'Definition of different lots for incoming raw materials.')}</p>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.lotsDesc2', 'Raw material issuance to work orders is done according to lots.')}</p>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.lotsDesc3', 'Helps track poor raw materials and load responsibility on the supplier.')}</p>
+              <p className="text-gray-300">{t('services.costingModule.lotsDesc4', 'Example: Cement from 3 suppliers → 3 lots for the same item.')}</p>
+            </div>
+
+            {/* Shifts System */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.costingModule.shiftsTitle', 'Shifts System')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.shiftsDesc1', 'Production recording according to shifts.')}</p>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.shiftsDesc2', 'Helps identify human errors when quality issues arise.')}</p>
+              <p className="text-gray-300">{t('services.costingModule.shiftsDesc3', 'Multiple shift systems can be used (e.g., Ramadan shifts).')}</p>
+            </div>
+
+            {/* Special Production and Shipment Data */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.costingModule.productionDataTitle', 'Special Production and Shipment Data')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.productionDataDesc', 'In the production document, the following are recorded:')}</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                {t('services.costingModule.productionDataItems', [
+                  'Truck mixer - Pump - Loader - Driver',
+                  'Station and silo',
+                  'Departure and return time',
+                  'Mixer counter before and after operation to calculate distance traveled'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Production Document Evaluation */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.costingModule.productionEvaluationTitle', 'Production Document Evaluation')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.productionEvaluationDesc1', 'Production document is evaluated at actual cost automatically.')}</p>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.productionEvaluationDesc2', 'Raw materials under processing are reduced by automatic entries.')}</p>
+              <p className="text-gray-300">{t('services.costingModule.productionEvaluationDesc3', 'Update is done directly when any cost element changes.')}</p>
+            </div>
+
+            {/* Cost Reports */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.costingModule.reportsTitle', 'Cost Reports')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.reportsDesc', 'Key Reports:')}</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                {t('services.costingModule.reportsItems', [
+                  'Production cost report for any time period showing: Production orders (start - end date), Production quantities, Total cost, Average unit cost, Totals by effort/content/stage/period.',
+                  'Detailed production order cost list showing: Production quantity and cost by quality grades, Unit cost price, Raw material cost analysis, Industrial expenses, Expense analysis at any account level, Quantities used, their value, and average consumption per production unit.'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* BOM Example */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.costingModule.bomExampleTitle', 'BOM Example - Product: 1m³ Concrete Strength 350 Content 450')}</h3>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                {t('services.costingModule.bomExampleItems', [
+                  'Sand 1 (0.425 m³ / 580 kg)',
+                  'Sand 1.5 (0.344 m³ / 470 kg)',
+                  'Sand (0.431 m³ / 690 kg)',
+                  'Cement (0.450 ton / 450 kg)'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Sales Orders Tracking */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.costingModule.salesTrackingTitle', 'Sales Orders Tracking')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.salesTrackingDesc1', 'Sales orders are recorded before production orders.')}</p>
+              <p className="text-gray-300 mb-2">{t('services.costingModule.salesTrackingDesc2', 'Complete order tracking:')}</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4 mb-2">
+                {t('services.costingModule.salesTrackingItems', [
+                  'Produced quantity',
+                  'Delivered quantity by invoices'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+              <p className="text-gray-300">{t('services.costingModule.salesTrackingDesc3', 'Display showing each production movement and each sales transaction made on the sales order.')}</p>
+            </div>
+          </div>
+
+          {/* Inventory Management Section */}
+          <div className="mt-16">
+            <h2 className="text-3xl font-bold text-white font-display mb-6">{t('services.inventoryModule.title', 'Inventory Management')}</h2>
+            <p className="text-lg text-gray-300 mb-8">{t('services.inventoryModule.subtitle', 'Comprehensive inventory management system with advanced tracking and valuation capabilities')}</p>
+            
+            {/* Inventory Structure and Item Coding */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.inventoryModule.structureTitle', 'Inventory Structure and Item Coding')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.inventoryModule.structureDesc', 'Inventory classification into:')}</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4 mb-2">
+                {t('services.inventoryModule.structureItems', [
+                  'Main commodity groups',
+                  'Subgroups',
+                  'Multiple items within each group'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+              <p className="text-gray-300 mb-2">{t('services.inventoryModule.structureAdditional', 'Additional flexible classification based on business activity that does not affect coding')}</p>
+              <p className="text-gray-300">{t('services.inventoryModule.structureLots', 'Dividing a single item into multiple lots')}</p>
+            </div>
+
+            {/* Lot Functions */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.inventoryModule.lotsFunctionsTitle', 'Lot Functions')}</h3>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                {t('services.inventoryModule.lotsFunctionsItems', [
+                  'Track raw material source and identify supplier in case of defects',
+                  'Expiry tracking',
+                  'Manage orders that depend on a specific supplier or batch'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Item Attributes */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.inventoryModule.itemAttributesTitle', 'Item Attributes')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.inventoryModule.itemAttributesDesc', 'Complete technical specifications including:')}</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4 mb-2">
+                {t('services.inventoryModule.itemAttributesItems', [
+                  'Grade - Color - Size - Dimensions',
+                  'Type - Design - Model',
+                  'Quantity per package - Item image'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+              <p className="text-gray-300">{t('services.inventoryModule.itemAttributesReports', 'Ability to display inventory reports based on any of these attributes')}</p>
+            </div>
+
+            {/* Warehouse Management */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.inventoryModule.warehousesTitle', 'Warehouse Management')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.inventoryModule.warehousesDesc', 'Warehouse classification by type (raw materials - finished products - work in progress - spare parts)')}</p>
+              <p className="text-gray-300">{t('services.inventoryModule.warehousesLocations', 'Internal division into storage locations within each warehouse')}</p>
+            </div>
+
+            {/* Reorder Level System */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.inventoryModule.reorderTitle', 'Reorder Level System')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.inventoryModule.reorderDesc1', 'Apply reorder level for materials')}</p>
+              <p className="text-gray-300">{t('services.inventoryModule.reorderDesc2', 'System automatically identifies items that need to be reordered')}</p>
+            </div>
+
+            {/* Inventory System */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.inventoryModule.inventorySystemTitle', 'Inventory System')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.inventoryModule.inventorySystemDesc', 'Flexible inventory system:')}</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                {t('services.inventoryModule.inventorySystemItems', [
+                  'Accurately identify shortages and surpluses',
+                  'Inventory differences are processed accounting-wise in documents and warehouses'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Quality Tests */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.inventoryModule.qualityTestsTitle', 'Quality Tests')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.inventoryModule.qualityTestsDesc1', 'Quality testing available for finished products or purchases')}</p>
+              <p className="text-gray-300">{t('services.inventoryModule.qualityTestsDesc2', 'Support for testing at any stage of production')}</p>
+            </div>
+
+            {/* Inventory Movement Documents */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.inventoryModule.inventoryDocsTitle', 'Inventory Movement Documents (20+ document types)')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.inventoryModule.inventoryDocsDesc', 'Includes:')}</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4 mb-4">
+                {t('services.inventoryModule.inventoryDocsItems', [
+                  'Purchase receipts - Production receipts - Additions',
+                  'Sales issues - Production issues - Cost center issues',
+                  'Purchase returns - Sales returns',
+                  'Contract transactions',
+                  'Export shipments',
+                  'Goods exchange between branches',
+                  'Any documents specific to business activity'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+              <h4 className="text-xl font-bold text-primary mb-2">{t('services.inventoryModule.inventoryDocsAccountingTitle', 'All documents automatically generate accounting entries including:')}</h4>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                {t('services.inventoryModule.inventoryDocsAccountingItems', [
+                  'Inventory control account',
+                  'Suppliers',
+                  'Customers',
+                  'Taxes',
+                  'Cost of goods sold',
+                  'Sales revenue',
+                  'Work in progress (WIP)',
+                  'Inventory adjustment accounts'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Inventory Valuation */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.inventoryModule.valuationTitle', 'Inventory Valuation')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.inventoryModule.valuationDesc1', 'Valuation using monthly moving average')}</p>
+              <p className="text-gray-300">{t('services.inventoryModule.valuationDesc2', 'Valuation of new purchases directly affects inventory cost')}</p>
+            </div>
+
+            {/* Inventory Reports and Inquiries */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.inventoryModule.reportsTitle', 'Inventory Reports and Inquiries')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.inventoryModule.reportsDesc', 'Summary and detailed reports including:')}</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                {t('services.inventoryModule.reportsItems', [
+                  'Inventory balances',
+                  'Item cards (quantities - values - average cost)',
+                  'Issue and receipt movements',
+                  'Purchases and sales',
+                  'Issues to cost centers',
+                  'Production order movements',
+                  'Production cost (raw materials + absorbed expenses)'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Production Materials Issue Documents */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.inventoryModule.productionIssueTitle', 'Production Materials Issue Documents')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.inventoryModule.productionIssueDesc1', 'Automatic issuance of raw materials according to product BOM')}</p>
+              <p className="text-gray-300 mb-2">{t('services.inventoryModule.productionIssueDesc2', 'During actual inventory:')}</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                {t('services.inventoryModule.productionIssueItems', [
+                  'Differences are automatically accommodated in all issue documents',
+                  'Difference distribution on production orders with precise ratio'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Basic Accounts Required to Define a Product Group */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.inventoryModule.basicAccountsTitle', 'Basic Accounts Required to Define a Product Group')}</h3>
+              <p className="text-gray-300 mb-2">{t('services.inventoryModule.basicAccountsDesc', 'The following accounts must be defined before using the group:')}</p>
+              {t('services.inventoryModule.basicAccountsItems', [
+                { account: 'Inventory Account', details: ['Debit side for additions and credit side for issues'] },
+                { account: 'Adjustment Account', details: ['Debit for inventory shortages and credit for surpluses'] },
+                { account: 'Expense Account', details: ['For issuing items to cost centers'] },
+                { account: 'WIP Account - Work in Progress', details: ['For issuing raw materials to production orders'] },
+                { account: 'Sales Revenue Account' },
+                { account: 'Cost of Goods Sold Account' }
+              ]).map((item: any, index: number) => (
+                <div key={index} className="mb-3">
+                  <p className="font-semibold text-gray-300">{item.account}</p>
+                  {item.details && (
+                    <ul className="list-disc list-inside ml-4 text-gray-300">
+                      {item.details.map((detail: string, detailIndex: number) => (
+                        <li key={detailIndex}>{detail}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+              <p className="text-gray-300 font-semibold">{t('services.inventoryModule.basicAccountsNote', 'Without these accounts, inventory documents cannot be recorded')}</p>
+            </div>
+
+            {/* Examples of Reports Supported by the System */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">{t('services.inventoryModule.reportExamplesTitle', 'Examples of Reports Supported by the System')}</h3>
+              
+              <h4 className="text-xl font-bold text-primary mb-2">{t('services.inventoryModule.reportExamplesInventory', 'Inventory Reports:')}</h4>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4 mb-4">
+                {t('services.inventoryModule.reportExamplesInventoryItems', [
+                  'Inventory movement (quantities and values)',
+                  'Item movement (item card)',
+                  'Balances - Receipts - Issues - Purchases - Sales'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+              
+              <h4 className="text-xl font-bold text-primary mb-2">{t('services.inventoryModule.reportExamplesProduction', 'Production Reports:')}</h4>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4 mb-4">
+                {t('services.inventoryModule.reportExamplesProductionItems', [
+                  'Production cost report during a period',
+                  'Cost of raw materials for orders + absorbed expenses',
+                  'Production order movement (quantity - raw material cost - stage cost - unit cost)',
+                  'Average unit cost for each order'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+              
+              <h4 className="text-xl font-bold text-primary mb-2">{t('services.inventoryModule.reportExamplesCostCenters', 'Cost Center Issue Reports:')}</h4>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                {t('services.inventoryModule.reportExamplesCostCentersItems', [
+                  'Analysis of what was issued from raw materials to each cost center'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Export Management System Section */}
+          <div className="mt-12">
+            <h2 className="text-3xl font-bold text-white font-display mb-6">{t('services.exportModule.title', 'Export Management System')}</h2>
+            <p className="text-lg text-gray-300 mb-8">{t('services.exportModule.subtitle', 'Comprehensive export management system with detailed shipment tracking and financial analysis')}</p>
+            
+            {/* Shipment Data Tracking */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4 flex items-center">
+                <svg className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                </svg>
+                {t('services.exportModule.shipmentTrackingTitle', 'Shipment Data Tracking')}
+              </h3>
+              <p className="text-gray-300 mb-2">{t('services.exportModule.shipmentTrackingDesc', 'The system displays detailed information for each shipment, including:')}</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                {t('services.exportModule.shipmentTrackingItems', [
+                  'Shipment date and memo numbers',
+                  'Container No.',
+                  'Lot No. associated with raw materials or products',
+                  'Customer name and export destination'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            
+            {/* Shipment Financial Values */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
               <h3 className="text-2xl font-bold text-primary mb-4 flex items-center">
                 <svg className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                {t('services.generalLedger', 'General Ledger')}
+                {t('services.exportModule.financialValuesTitle', 'Shipment Financial Values')}
               </h3>
-              <ul className="space-y-2 text-gray-300">
-                <li className="flex items-start">
-                  <svg className="h-4 w-4 text-accent mr-2 mt-1" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                  </svg>
-                  {t('services.features.accountingChart', 'Accounting chart with 4 levels')}
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-4 w-4 text-accent mr-2 mt-1" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                  </svg>
-                  {t('services.features.exchangeRate', 'Exchange rate determination for foreign currencies')}
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-4 w-4 text-accent mr-2 mt-1" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                  </svg>
-                  {t('services.features.notes', 'Notes entry for each journal entry item')}
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-4 w-4 text-accent mr-2 mt-1" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                  </svg>
-                  {t('services.features.multiEntry', 'Support for multi-entry vouchers')}
-                </li>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                {t('services.exportModule.financialValuesItems', [
+                  'Shipment value in the client\'s foreign currency',
+                  'Equivalent value in Egyptian pounds according to the exchange rate recorded in the system'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ul>
             </div>
-
-            <div className="glass-panel p-6 rounded-xl">
+            
+            {/* Shipment Cost Breakdown */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
               <h3 className="text-2xl font-bold text-primary mb-4 flex items-center">
                 <svg className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
-                {t('services.cashManagement', 'Cash Management')}
+                {t('services.exportModule.costBreakdownTitle', 'Shipment Cost Breakdown')}
               </h3>
-              <ul className="space-y-2 text-gray-300">
-                <li className="flex items-start">
-                  <svg className="h-4 w-4 text-accent mr-2 mt-1" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                  </svg>
-                  {t('services.features.unlimitedCashiers', 'Unlimited number of cashiers')}
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-4 w-4 text-accent mr-2 mt-1" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                  </svg>
-                  {t('services.features.cashierLink', 'Link each cashier to a specific employee')}
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-4 w-4 text-accent mr-2 mt-1" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                  </svg>
-                  {t('services.features.collectionPayment', 'Recording collection and payment operations with separate documents')}
-                </li>
+              <p className="text-gray-300 mb-2">{t('services.exportModule.costBreakdownDesc', 'The system clearly displays the cost breakdown into:')}</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4 mb-4">
+                {t('services.exportModule.costBreakdownItems', [
+                  'Raw material costs (raw materials - packaging materials - auxiliary materials)',
+                  'Station operating costs',
+                  'Shipping and customs clearance costs',
+                  'Other expenses (if any)'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ul>
+              
+              <h4 className="text-xl font-bold text-primary mb-2">{t('services.exportModule.reportsTitle', 'Reports')}</h4>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                {t('services.exportModule.reportsItems', [
+                  'Total shipment cost',
+                  'Net shipment profitability before support',
+                  'Net shipment profitability after support'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            
+            {/* Actual Expenses Tracking */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4 flex items-center">
+                <svg className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                {t('services.exportModule.actualExpensesTitle', 'Actual Expenses Tracking')}
+              </h3>
+              <p className="text-gray-300 mb-2">{t('services.exportModule.actualExpensesDesc', 'Monitor all expenses associated with each shipment, including:')}</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4 mb-2">
+                {t('services.exportModule.actualExpensesItems', [
+                  'Supplier service invoices',
+                  'Labor invoices',
+                  'Clearance and shipping invoices',
+                  'Raw material supply invoices for the shipment'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+              <p className="text-gray-300">{t('services.exportModule.internalCostBreakdown', 'Internal cost breakdown into main elements with precision')}</p>
+            </div>
+            
+            {/* Collections & Discounts Tracking */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4 flex items-center">
+                <svg className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                </svg>
+                {t('services.exportModule.collectionsDiscountsTitle', 'Collections & Discounts Tracking')}
+              </h3>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                {t('services.exportModule.collectionsDiscountsItems', [
+                  'Shipment data (memo - date - container)',
+                  'Invoice value in client currency',
+                  'Discount granted to the client (if any)',
+                  'Net invoice after discount',
+                  'Collections: Collection percentage, amount collected, cash payment dates',
+                  'Net invoice after collections: (Invoice value - Discount - Collected payments)',
+                  'Remaining balance on the client for their transactions with the company: Total invoices, Total collections, Total discounts'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            
+            {/* Comprehensive Shipment Documentation Archive */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4 flex items-center">
+                <svg className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                {t('services.exportModule.archiveTitle', 'Comprehensive Shipment Documentation Archive')}
+              </h3>
+              <p className="text-gray-300 mb-2">{t('services.exportModule.archiveDesc1', 'Save all shipment data in a complete electronic file')}</p>
+              <p className="text-gray-300 mb-2">{t('services.exportModule.archiveDesc2', 'Maintain a special archive for documents:')}</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4 mb-2">
+                {t('services.exportModule.archiveItems', [
+                  'Shipping documents',
+                  'Supplier and service invoices',
+                  'Container papers',
+                  'Clearance and export documents'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+              <p className="text-gray-300">{t('services.exportModule.archiveBenefit', 'This facilitates reference for any review or accounting reconciliation')}</p>
+            </div>
+            
+            {/* Shipment Items / Pallets */}
+            <div className="glass-panel p-6 rounded-xl mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4 flex items-center">
+                <svg className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                </svg>
+                {t('services.exportModule.shipmentItemsTitle', 'Shipment Items / Pallets')}
+              </h3>
+              <p className="text-gray-300 mb-2">{t('services.exportModule.shipmentItemsDesc', 'Divide the shipment into items according to:')}</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4 mb-4">
+                {t('services.exportModule.shipmentItemsItems', [
+                  'Number of pallets',
+                  'Number of units inside each pallet'
+                ]).map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+              <p className="text-gray-300 mb-2">{t('services.exportModule.expenseDistribution', 'The system uses this data to distribute general expenses (shipping - preparation - clearance):')}</p>
+              <p className="text-gray-300">{t('services.exportModule.distributionMethod', 'The system distributes expenses according to the number of pallets as a percentage of total monthly operations')}</p>
             </div>
           </div>
         </div>
