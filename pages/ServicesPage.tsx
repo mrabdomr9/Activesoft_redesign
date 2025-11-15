@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 
 const ServicesPage: React.FC = () => {
   const { t } = useTranslation();
+  const [activeSection, setActiveSection] = useState('erp');
 
   useEffect(() => {
     const title = t('seo.services.title', 'Our Services | Active Soft');
@@ -25,6 +26,14 @@ const ServicesPage: React.FC = () => {
     if (keywords) setMetaTag('keywords', keywords);
   }, [t]);
 
+  const scrollToSection = (sectionId: string) => {
+    setActiveSection(sectionId);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="bg-transparent">
       <section className="pt-20">
@@ -36,10 +45,42 @@ const ServicesPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Navigation Menu */}
+      <div className="sticky top-0 z-10 bg-gray-900/90 backdrop-blur-sm border-b border-gray-700">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex overflow-x-auto py-3 space-x-6">
+            <button 
+              onClick={() => scrollToSection('erp')} 
+              className={`whitespace-nowrap px-4 py-2 rounded-lg transition-colors ${activeSection === 'erp' ? 'bg-primary text-white' : 'text-gray-300 hover:text-white hover:bg-gray-800'}`}
+            >
+              {t('services.erpTitle', 'Oracle ERP Solutions')}
+            </button>
+            <button 
+              onClick={() => scrollToSection('costing')} 
+              className={`whitespace-nowrap px-4 py-2 rounded-lg transition-colors ${activeSection === 'costing' ? 'bg-primary text-white' : 'text-gray-300 hover:text-white hover:bg-gray-800'}`}
+            >
+              {t('services.costingModule.title', 'Costing Module')}
+            </button>
+            <button 
+              onClick={() => scrollToSection('inventory')} 
+              className={`whitespace-nowrap px-4 py-2 rounded-lg transition-colors ${activeSection === 'inventory' ? 'bg-primary text-white' : 'text-gray-300 hover:text-white hover:bg-gray-800'}`}
+            >
+              {t('services.inventoryModule.title', 'Inventory Management')}
+            </button>
+            <button 
+              onClick={() => scrollToSection('export')} 
+              className={`whitespace-nowrap px-4 py-2 rounded-lg transition-colors ${activeSection === 'export' ? 'bg-primary text-white' : 'text-gray-300 hover:text-white hover:bg-gray-800'}`}
+            >
+              {t('exportModule.title', 'Export Management System')}
+            </button>
+          </div>
+        </div>
+      </div>
+
       <div className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* ERP Solutions Section */}
-          <div className="glass-panel p-8 rounded-xl mb-12 animate-on-scroll">
+          <div id="erp" className="glass-panel p-8 rounded-xl mb-12 animate-on-scroll">
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
                 <div className="bg-primary/10 p-6 rounded-full">
@@ -102,8 +143,10 @@ const ServicesPage: React.FC = () => {
           </div>
 
           {/* Costing Module Section */}
-          <div className="mt-16">
-            <h2 className="text-3xl font-bold text-white font-display mb-6">{t('services.costingModule.title', 'Costing Module')}</h2>
+          <div id="costing" className="mt-16">
+            <div className="border-l-4 border-primary pl-4 mb-6">
+              <h2 className="text-3xl font-bold text-white font-display">{t('services.costingModule.title', 'Costing Module')}</h2>
+            </div>
             <p className="text-lg text-gray-300 mb-8">{t('services.costingModule.subtitle', 'Comprehensive production cost management system with actual costing methodology')}</p>
             
             {/* Production Cost Calculation Methodology */}
@@ -303,8 +346,10 @@ const ServicesPage: React.FC = () => {
           </div>
 
           {/* Inventory Management Section */}
-          <div className="mt-16">
-            <h2 className="text-3xl font-bold text-white font-display mb-6">{t('services.inventoryModule.title', 'Inventory Management')}</h2>
+          <div id="inventory" className="mt-16">
+            <div className="border-l-4 border-primary pl-4 mb-6">
+              <h2 className="text-3xl font-bold text-white font-display">{t('services.inventoryModule.title', 'Inventory Management')}</h2>
+            </div>
             <p className="text-lg text-gray-300 mb-8">{t('services.inventoryModule.subtitle', 'Comprehensive inventory management system with advanced tracking and valuation capabilities')}</p>
             
             {/* Inventory Structure and Item Coding */}
@@ -529,8 +574,10 @@ const ServicesPage: React.FC = () => {
           </div>
 
           {/* Export Management System Section */}
-          <div className="mt-12">
-            <h2 className="text-3xl font-bold text-white font-display mb-6">{t('exportModule.title', 'Export Management System')}</h2>
+          <div id="export" className="mt-12">
+            <div className="border-l-4 border-primary pl-4 mb-6">
+              <h2 className="text-3xl font-bold text-white font-display">{t('exportModule.title', 'Export Management System')}</h2>
+            </div>
             <p className="text-lg text-gray-300 mb-8">{t('exportModule.subtitle', 'Comprehensive export management system with detailed shipment tracking and financial analysis')}</p>
             
             {/* Shipment Data Tracking */}
