@@ -220,7 +220,7 @@
         "رمل (0.431 م³ / 690 كجم)",
         "أسمنت (0.450 طن / 450 كجم)"
       ],
-      "salesTrackingTitle": "متابعة طلبات البيع (Sales Orders Tracking)",
+      "salesTrackingTitle": "تبع طلبات البيع (Sales Orders Tracking)",
       "salesTrackingDesc1": "تسجل أوامر البيع قبل أوامر الإنتاج.",
       "salesTrackingDesc2": "متابعة كاملة للطلبات:",
       "salesTrackingItems": [
@@ -559,12 +559,32 @@
       {
         "title": "CRM مخصص لفرق المبيعات",
         "description": "تطبيق CRM قوي لسطح المكتب مصمم لتتبع المبيعات عالي الأداء وإدارة العملاء.",
-        "image": " https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
+        "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
       },
       {
         "title": "نظام إدارة المخزون",
         "description": "نظام مخزون بديهي لسلسلة متاجر التجزئة، يوفر مستويات المخزون في الوقت الفعلي وإعادة الطلب الآلي.",
         "image": "https://picsum.photos/seed/inventory/800/600"
+      },
+      {
+        "title": "نظام إدارة الرعاية الصحية",
+        "description": "حل شامل لإدارة الرعاية الصحية يدمج سجلات المرضى والفوترة والامتثال التنظيمي في منصة موحدة.",
+        "image": "https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      },
+      {
+        "title": "منصة الخدمات المالية",
+        "description": "منصة خدمات مالية آمنة مع معالجة المعاملات في الوقت الفعلي وإدارة المخاطر وميزات الامتثال التنظيمي.",
+        "image": "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      },
+      {
+        "title": "حل التجارة الإلكترونية",
+        "description": "منصة تجارة إلكترونية كاملة مع إدارة المخزون ومعالجة المدفوعات وتحليلات العملاء.",
+        "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      },
+      {
+        "title": "نظام ERP للتصنيع",
+        "description": "حل ERP للتصنيع من البداية للنهاية مع تخطيط الإنتاج ومراقبة الجودة وإدارة سلسلة التوريد.",
+        "image": "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
       }
     ]
   },
