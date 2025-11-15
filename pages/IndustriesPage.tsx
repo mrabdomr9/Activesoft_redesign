@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 
@@ -30,6 +29,9 @@ const IndustriesPage: React.FC = () => {
     { key: 'manufacturing', image: "https://images.unsplash.com/photo-1610891015188-5369212db097?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1529" },
     { key: 'healthcare', image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" },
     { key: 'financial', image: "https://images.unsplash.com/photo-1758691736545-5c33b6255dca?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1332" },
+    { key: 'retail', image: "https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470" },
+    { key: 'education', image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470" },
+    { key: 'logistics', image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1471" },
   ];
 
   return (
@@ -41,16 +43,18 @@ const IndustriesPage: React.FC = () => {
         </div>
         <div className="space-y-16">
           {industriesData.map((industry, index) => (
-            <div key={industry.key} className="grid md:grid-cols-2 gap-12 items-center glass-panel p-8 md:p-12 rounded-xl animate-on-scroll">
-              <div className={`${index % 2 !== 0 ? 'md:order-last' : ''}`}>
-                <img src={industry.image} alt={t(`industries.${industry.key}.name`)} className="rounded-lg shadow-xl" />
+            <div key={industry.key} className="grid md:grid-cols-2 gap-12 items-stretch glass-panel p-8 md:p-12 rounded-xl animate-on-scroll">
+              <div className={`flex items-center justify-center ${index % 2 !== 0 ? 'md:order-last' : ''}`}>
+                <div className="w-full h-80 overflow-hidden rounded-lg shadow-xl">
+                  <img src={industry.image} alt={t(`industries.${industry.key}.name`)} className="w-full h-full object-cover" />
+                </div>
               </div>
-              <div>
+              <div className="flex flex-col">
                 <h2 className="text-3xl font-bold text-secondary mb-4 font-display">{t(`industries.${industry.key}.name`)}</h2>
                 <h3 className="text-xl font-semibold text-white mb-2">{t('industries.challengesLabel')}</h3>
-                <p className="text-gray-300 mb-4">{t(`industries.${industry.key}.challenges`)}</p>
+                <p className="text-gray-300 mb-4 flex-grow">{t(`industries.${industry.key}.challenges`)}</p>
                 <h3 className="text-xl font-semibold text-white mb-2">{t('industries.solutionLabel')}</h3>
-                <p className="text-gray-300">{t(`industries.${industry.key}.solution`)}</p>
+                <p className="text-gray-300 flex-grow">{t(`industries.${industry.key}.solution`)}</p>
               </div>
             </div>
           ))}

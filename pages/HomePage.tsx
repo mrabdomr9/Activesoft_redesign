@@ -282,17 +282,17 @@ const HomePage: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industriesData.map((industry) => (
-              <div key={industry.key} className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div key={industry.key} className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105 flex flex-col">
                 <div className="h-48 overflow-hidden">
                   <img src={industry.image} alt={t(`industries.${industry.key}.name`)} className="w-full h-full object-cover" />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-bold text-white mb-3">{t(`industries.${industry.key}.name`)}</h3>
                   <h4 className="text-md font-semibold text-primary mb-2">{t('industries.challengesLabel', 'Challenges')}</h4>
-                  <p className="text-gray-300 text-sm mb-3">{t(`industries.${industry.key}.challenges`)}</p>
+                  <p className="text-gray-300 text-sm mb-3 flex-grow">{t(`industries.${industry.key}.challenges`)}</p>
                   <h4 className="text-md font-semibold text-primary mb-2">{t('industries.solutionLabel', 'Our Solution')}</h4>
-                  <p className="text-gray-300 text-sm mb-4">{t(`industries.${industry.key}.solution`)}</p>
-                  <Link to="/industries" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors">
+                  <p className="text-gray-300 text-sm mb-4 flex-grow">{t(`industries.${industry.key}.solution`)}</p>
+                  <Link to="/industries" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors mt-auto">
                     {t('home.learnMore', 'Learn More')}
                     <svg className="ml-2 -mr-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />

@@ -505,6 +505,21 @@
       "name": "Financial Services",
       "challenges": "High-stakes data security, regulatory adherence, real-time transaction processing, and risk management.",
       "solution": "Robust Oracle ERP Financials and custom software with bank-level security to automate financial operations and ensure compliance."
+    },
+    "retail": {
+      "name": "Retail & E-commerce",
+      "challenges": "Inventory tracking across multiple locations, customer experience optimization, and seasonal demand fluctuations.",
+      "solution": "Integrated inventory management and point-of-sale solutions with real-time analytics to drive sales and improve customer satisfaction."
+    },
+    "education": {
+      "name": "Education",
+      "challenges": "Student data management, learning management systems, and compliance with educational standards.",
+      "solution": "Comprehensive student information systems and learning platforms that streamline administrative tasks and enhance educational outcomes."
+    },
+    "logistics": {
+      "name": "Logistics & Transportation",
+      "challenges": "Route optimization, fleet management, real-time tracking, and regulatory compliance.",
+      "solution": "End-to-end logistics management systems with GPS tracking and automated scheduling to optimize delivery routes and reduce costs."
     }
   },
   "caseStudies": {
