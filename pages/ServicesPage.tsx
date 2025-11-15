@@ -45,6 +45,117 @@ const ServicesPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Services Grid */}
+      <div className="py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {/* Oracle ERP Solutions Card */}
+            <div className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div className="bg-primary p-6">
+                <div className="flex items-center">
+                  <div className="bg-white/20 p-3 rounded-full mr-4">
+                    <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-white">{t('services.erpTitle', 'Oracle ERP Solutions')}</h3>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-gray-300 mb-4">{t('services.erpDesc', 'Full-cycle Oracle ERP services including implementation, customization, migration, and support to optimize your business processes.')}</p>
+                <button 
+                  onClick={() => scrollToSection('erp')}
+                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors"
+                >
+                  {t('home.learnMore', 'Learn More')}
+                  <svg className="ml-2 -mr-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            {/* Costing Module Card */}
+            <div className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div className="bg-primary p-6">
+                <div className="flex items-center">
+                  <div className="bg-white/20 p-3 rounded-full mr-4">
+                    <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-white">{t('services.costingModule.title', 'Costing Module')}</h3>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-gray-300 mb-4">{t('services.costingModule.subtitle', 'Comprehensive production cost management system with actual costing methodology')}</p>
+                <button 
+                  onClick={() => scrollToSection('costing')}
+                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors"
+                >
+                  {t('home.learnMore', 'Learn More')}
+                  <svg className="ml-2 -mr-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            {/* Inventory Management Card */}
+            <div className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div className="bg-primary p-6">
+                <div className="flex items-center">
+                  <div className="bg-white/20 p-3 rounded-full mr-4">
+                    <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-white">{t('services.inventoryModule.title', 'Inventory Management')}</h3>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-gray-300 mb-4">{t('services.inventoryModule.subtitle', 'Comprehensive inventory management system with advanced tracking and valuation capabilities')}</p>
+                <button 
+                  onClick={() => scrollToSection('inventory')}
+                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors"
+                >
+                  {t('home.learnMore', 'Learn More')}
+                  <svg className="ml-2 -mr-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            {/* Export Management System Card */}
+            <div className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div className="bg-primary p-6">
+                <div className="flex items-center">
+                  <div className="bg-white/20 p-3 rounded-full mr-4">
+                    <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4 4 0 003 15z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-white">{t('exportModule.title', 'Export Management System')}</h3>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-gray-300 mb-4">{t('exportModule.subtitle', 'Comprehensive export management system with detailed shipment tracking and financial analysis')}</p>
+                <button 
+                  onClick={() => scrollToSection('export')}
+                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors"
+                >
+                  {t('home.learnMore', 'Learn More')}
+                  <svg className="ml-2 -mr-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Navigation Menu */}
       <div className="sticky top-0 z-10 bg-gray-900/90 backdrop-blur-sm border-b border-gray-700">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
