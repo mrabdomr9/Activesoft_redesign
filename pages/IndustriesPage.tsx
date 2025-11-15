@@ -27,9 +27,9 @@ const IndustriesPage: React.FC = () => {
   }, [t]);
 
   const industriesData = [
-    { key: 'manufacturing', image: "https://images.unsplash.com/photo-1610891015188-5369212db097?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1529" },
-    { key: 'healthcare', image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" },
-    { key: 'financial', image: "https://images.unsplash.com/photo-1758691736545-5c33b6255dca?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1332" },
+    { key: 'manufacturing', image: "https://picsum.photos/seed/factory/800/600" },
+    { key: 'healthcare', image: "https://picsum.photos/seed/hospital/800/600" },
+    { key: 'financial', image: "https://picsum.photos/seed/finance/800/600" },
   ];
 
   return (

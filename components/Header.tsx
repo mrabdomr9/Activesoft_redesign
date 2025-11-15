@@ -72,7 +72,7 @@ const Header: React.FC = () => {
   }
 
   return (
-    <header className="bg-gradient-to-r from-slate-950/80 via-slate-900/80 to-slate-950/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-primary/20">
+    <header className="bg-slate-900/50 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-white/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
@@ -96,7 +96,7 @@ const Header: React.FC = () => {
                          <NavLink
                           key={subLink.to}
                           to={subLink.to}
-                          className={({ isActive }) => `block px-4 py-2 text-sm text-white hover:bg-primary/20 hover:text-white rounded-md transition-colors ${isActive ? 'bg-primary/30 font-semibold' : ''}`}
+                          className={({ isActive }) => `block px-4 py-2 text-sm text-gray-300 hover:bg-white/10 hover:text-white rounded-md transition-colors ${isActive ? 'bg-white/10' : ''}`}
                         >
                           {subLink.text}
                         </NavLink>
@@ -160,7 +160,7 @@ const Header: React.FC = () => {
                           key={subLink.to}
                           to={subLink.to}
                           onClick={closeMenus}
-                          className={({ isActive }) => `block w-full text-center px-4 py-2 text-sm text-white hover:bg-primary/20 hover:text-white transition-colors rounded-md ${isActive ? 'bg-primary/30 font-semibold' : ''}`}
+                          className={({ isActive }) => `block w-full text-center px-4 py-2 text-sm text-gray-300 hover:bg-white/20 hover:text-white transition-colors rounded-md ${isActive ? activeLinkClasses : ''}`}
                         >
                           {subLink.text}
                         </NavLink>
