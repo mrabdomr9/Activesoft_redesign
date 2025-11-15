@@ -77,6 +77,155 @@ const ServicesPage: React.FC = () => {
             <ServiceCard key={index} {...service} />
           ))}
         </div>
+        <div className="mt-12">
+          <h2 className="text-3xl font-bold text-white font-display mb-6">{t('services.erpFeaturesTitle', 'ERP System Features')}</h2>
+          <p className="text-lg text-gray-300">{t('services.erpFeaturesDesc', 'Our ERP system is designed to provide comprehensive solutions for businesses of all sizes. Here are some of the key features it offers:')}</p>
+
+          {/* General Features Section */}
+          <div className="glass-panel p-6 rounded-xl mb-8">
+            <h3 className="text-2xl font-bold text-primary mb-4 flex items-center">
+              <svg className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              {t('services.generalFeatures', 'General Features')}
+            </h3>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-300">
+              <li className="flex items-start">
+                <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                {t('services.features.oracleDB', 'Powerful and stable Oracle database')}
+              </li>
+              <li className="flex items-start">
+                <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                {t('services.features.multiUser', 'Multiple user permissions with precise management')}
+              </li>
+              <li className="flex items-start">
+                <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                {t('services.features.remoteAccess', 'Ability to work from anywhere via the Internet')}
+              </li>
+              <li className="flex items-start">
+                <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                {t('services.features.autoBackup', 'Automatic backups created multiple times daily')}
+              </li>
+              <li className="flex items-start">
+                <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                {t('services.features.auditTrail', 'Complete audit trail showing who added, modified, or deleted')}
+              </li>
+              <li className="flex items-start">
+                <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                {t('services.features.employeeDocs', 'Entry of employee photos and documents')}
+              </li>
+              <li className="flex items-start">
+                <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                {t('services.features.foreignCurrency', 'Foreign currency support with fixed or variable rates per transaction')}
+              </li>
+              <li className="flex items-start">
+                <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                {t('services.features.multiCompany', 'Multiple companies or branches with consolidated reports')}
+              </li>
+            </ul>
+          </div>
+
+          {/* Main Modules Section */}
+          <div className="glass-panel p-6 rounded-xl mb-8">
+            <h3 className="text-2xl font-bold text-primary mb-4 flex items-center">
+              <svg className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+              </svg>
+              {t('services.mainModules', 'Main System Modules')}
+            </h3>
+            <ol className="list-decimal list-inside space-y-2 text-gray-300">
+              <li>{t('services.modules.generalLedger', 'General Ledger')}</li>
+              <li>{t('services.modules.inventory', 'Inventory Management')}</li>
+              <li>{t('services.modules.costing', 'Costing System')}</li>
+              <li>{t('services.modules.hr', 'HR & Payroll')}</li>
+              <li>{t('services.modules.planning', 'Planning')}</li>
+              <li>{t('services.modules.purchasesSales', 'Purchases & Sales')}</li>
+            </ol>
+          </div>
+
+          {/* Detailed Features Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="glass-panel p-6 rounded-xl">
+              <h3 className="text-2xl font-bold text-primary mb-4 flex items-center">
+                <svg className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                {t('services.generalLedger', 'General Ledger')}
+              </h3>
+              <ul className="space-y-2 text-gray-300">
+                <li className="flex items-start">
+                  <svg className="h-4 w-4 text-accent mr-2 mt-1" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                  </svg>
+                  {t('services.features.accountingChart', 'Accounting chart with 4 levels')}
+                </li>
+                <li className="flex items-start">
+                  <svg className="h-4 w-4 text-accent mr-2 mt-1" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                  </svg>
+                  {t('services.features.exchangeRate', 'Exchange rate determination for foreign currencies')}
+                </li>
+                <li className="flex items-start">
+                  <svg className="h-4 w-4 text-accent mr-2 mt-1" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                  </svg>
+                  {t('services.features.notes', 'Notes entry for each journal entry item')}
+                </li>
+                <li className="flex items-start">
+                  <svg className="h-4 w-4 text-accent mr-2 mt-1" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                  </svg>
+                  {t('services.features.multiEntry', 'Support for multi-entry vouchers')}
+                </li>
+              </ul>
+            </div>
+
+            <div className="glass-panel p-6 rounded-xl">
+              <h3 className="text-2xl font-bold text-primary mb-4 flex items-center">
+                <svg className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                </svg>
+                {t('services.cashManagement', 'Cash Management')}
+              </h3>
+              <ul className="space-y-2 text-gray-300">
+                <li className="flex items-start">
+                  <svg className="h-4 w-4 text-accent mr-2 mt-1" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                  </svg>
+                  {t('services.features.unlimitedCashiers', 'Unlimited number of cashiers')}
+                </li>
+                <li className="flex items-start">
+                  <svg className="h-4 w-4 text-accent mr-2 mt-1" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                  </svg>
+                  {t('services.features.cashierLink', 'Link each cashier to a specific employee')}
+                </li>
+                <li className="flex items-start">
+                  <svg className="h-4 w-4 text-accent mr-2 mt-1" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                  </svg>
+                  {t('services.features.collectionPayment', 'Recording collection and payment operations with separate documents')}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

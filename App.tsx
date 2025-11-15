@@ -70,6 +70,7 @@ const AppContent = () => {
             <Route path="/about" element={<AboutUsPage />} />
             <Route path="/brochures" element={<BrochuresPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/erp-features" element={<PortfolioPage />} />
           </Routes>
         </main>
         <ScrollToTopButton />

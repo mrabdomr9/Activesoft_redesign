@@ -1,56 +1,4 @@
 {
-  "seo": {
-    "home": {
-      "title": "Active Soft - Oracle ERP Solutions & Custom Software Development Egypt",
-      "description": "Leading Oracle ERP implementation, custom software development & managed IT services in Egypt. 15+ years of experience delivering enterprise solutions for manufacturing, healthcare & financial sectors.",
-      "keywords": "Oracle ERP Egypt, Custom Software Development Egypt, Managed IT Services Cairo, Enterprise Solutions Egypt, Business Software Egypt, ERP Implementation Egypt"
-    },
-    "services": {
-      "title": "Enterprise Software Services - Oracle ERP & Custom Development | Active Soft",
-      "description": "Comprehensive technology services including Oracle ERP implementation, custom desktop applications, managed IT support & enterprise security solutions for businesses in Egypt and the Middle East.",
-      "keywords": "Oracle ERP Services Egypt, Custom Software Development, IT Support Services Cairo, Enterprise Security Solutions, Business Application Development Egypt"
-    },
-    "prices": {
-      "title": "Transparent Pricing - Oracle ERP & Software Development Services | Active Soft",
-      "description": "Clear, competitive pricing for Oracle ERP implementation, custom software development and business intelligence solutions. Custom quotes for enterprise projects in Egypt and the Middle East.",
-      "keywords": "Software Development Pricing Egypt, Oracle ERP Cost Egypt, Custom Application Pricing, IT Services Pricing Cairo, Enterprise Software Quotes"
-    },
-    "industries": {
-      "title": "Industry-Specific ERP Solutions - Manufacturing, Healthcare & Finance | Active Soft",
-      "description": "Tailored Oracle ERP solutions for manufacturing, healthcare and financial services industries in Egypt. Industry-specific modules for enhanced operational efficiency and compliance.",
-      "keywords": "Manufacturing ERP Egypt, Healthcare IT Solutions, Financial Services Software Egypt, Industry ERP Systems, Sector-Specific ERP Egypt"
-    },
-    "caseStudies": {
-      "title": "Success Stories - Oracle ERP & Custom Software Projects | Active Soft",
-      "description": "Real client success stories showcasing our Oracle ERP implementations, custom software projects and IT solutions that transformed businesses across manufacturing, healthcare and finance sectors in Egypt.",
-      "keywords": "ERP Case Studies Egypt, Custom Software Success Stories, Business Transformation Egypt, Oracle Implementation Results, IT Solutions Case Studies"
-    },
-    "portfolio": {
-      "title": "Custom Software Portfolio - Desktop Applications Gallery | Active Soft",
-      "description": "Showcase of our custom desktop applications and software solutions built for businesses in Egypt. User-centric design, secure architecture and seamless integration with existing systems.",
-      "keywords": "Custom Software Portfolio Egypt, Desktop Applications Gallery, Business Software Examples, Custom ERP Solutions, Software Development Portfolio"
-    },
-    "clients": {
-      "title": "Our Clients - Trusted Technology Partners in Egypt | Active Soft",
-      "description": "Proud partners with leading companies across manufacturing, healthcare and financial services in Egypt. Trusted technology provider for enterprise solutions and custom software development.",
-      "keywords": "Active Soft Clients Egypt, Technology Partners Egypt, Enterprise Software Clients, Custom Development Customers, Business IT Partners Egypt"
-    },
-    "about": {
-      "title": "About Active Soft - Leading Oracle ERP & Software Development Company Egypt",
-      "description": "Learn about Active Soft, Egypt's trusted Oracle ERP consultants and custom software development company. 15+ years of experience delivering enterprise technology solutions across the Middle East.",
-      "keywords": "About Active Soft Egypt, Oracle ERP Consultants Egypt, Software Development Company Cairo, Enterprise Technology Provider, IT Solutions Company Egypt"
-    },
-    "brochures": {
-      "title": "Download Company Brochures - Oracle ERP & Software Services | Active Soft",
-      "description": "Download our official company brochures to learn about our Oracle ERP solutions, custom software development services and managed IT support for businesses in Egypt and the Middle East.",
-      "keywords": "Active Soft Brochure Download, ERP Solutions Brochure, Software Development Catalog, IT Services Brochure Egypt, Company Profile Download"
-    },
-    "contact": {
-      "title": "Contact Active Soft - Free Consultation for ERP & Software Solutions",
-      "description": "Get in touch with our team for a free consultation on Oracle ERP implementation, custom software development or managed IT services. Serving businesses across Egypt and the Middle East.",
-      "keywords": "Contact Active Soft Egypt, Free ERP Consultation, Software Development Inquiry, IT Services Request, Business Solutions Consultation Cairo"
-    }
-  },
   "nav": {
     "home": "Home",
     "solutions": "Solutions",
@@ -70,7 +18,7 @@
     "aboutText": "Active Soft is a leading provider of technology solutions, specializing in Oracle ERP systems and custom software development to empower businesses.",
     "quickLinks": "Quick Links",
     "contactUs": "Contact Us",
-    "address": "Mall El Gamaa,Sadat City Egypt",
+    "address": "123 Tech Street, Cairo, Egypt",
     "email": "info@activesoft.net",
     "supportPhone": "Support: +20 122 507 7433",
     "salesPhone": "Sales: +20 100 646 7081",
@@ -89,9 +37,9 @@
       "subtitle": "Providing comprehensive services to meet the demands of modern business."
     },
     "features": {
-        "erpDesc": "Streamline your operations with our expert Oracle ERP implementation and support.",
-        "itSupportDesc": "Reliable, proactive managed IT services to keep your systems running smoothly 24/7.",
-        "customAppsDesc": "Bespoke desktop and web applications tailored to your unique business needs and workflows."
+      "erpDesc": "Streamline your operations with our expert Oracle ERP implementation and support.",
+      "itSupportDesc": "Reliable, proactive managed IT services to keep your systems running smoothly 24/7.",
+      "customAppsDesc": "Bespoke desktop and web applications tailored to your unique business needs and workflows."
     },
     "cta": {
       "title": "Ready to Transform Your Business?",
@@ -104,7 +52,7 @@
       "experience": "Years of Experience",
       "experienceVal": "15+",
       "applications": "Applications Delivered",
-      "applicationsVal": "50+",
+      "applicationsVal": "500+",
       "satisfaction": "Client Satisfaction",
       "satisfactionVal": "98%"
     },
@@ -114,21 +62,33 @@
       "quotes": [
         {
           "quote": "Active Soft's ERP solution revolutionized our manufacturing process. Their team was professional, knowledgeable, and delivered beyond our expectations.",
-          "name": "Mohamed Ali",
+          "name": "Ahmed Abdelhaleem",
           "company": "CEO, Al-Oroba For Concrete",
-          "logo": ""
+          "logo": "https://scontent-lhr6-2.xx.fbcdn.net/v/t39.30808-6/324104863_715504116673253_27001048516993591_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEVwkpRccodS4SjNV-HyySiJ0CMSbzU_BwnQIxJvNT8HA5IKKpquF0_5DS8qe4wzvUXUfnCscD4KZmKRaV7eyR8&nc_ohc=PoJvBnDJDRkQ7kNvwG_mp4p&_nc_oc=Adk7BqT7Zp5bjWJ3dS5XngqqUOue6RUPaCUEj43kRfJHjJ2vY9s7BogclJLVE5MdClA&_nc_zt=23&_nc_ht=scontent-lhr6-2.xx&_nc_gid=BAKISxzB60wVBy8pgCKTsQ&oh=00_AfaLNt0lRWu2N-S77ZJZKQd-r4wNQXFPJjYbpXLvDy824Q&oe=68D7050F"
         },
         {
           "quote": "The custom desktop application they built for us is a game-changer. It's intuitive, secure, and has significantly improved our team's productivity.",
           "name": "Fatima Hassan",
           "company": "Operations Manager, Future for Import & Export",
-          "logo": ""
+          "logo": "https://i.ibb.co/1fDJjctD/future-for-import-and-export.jpg"
         },
         {
           "quote": "We've relied on Active Soft for IT support for years. Their proactive approach and quick response times are invaluable to our operations.",
           "name": "Youssef Ibrahim",
           "company": "IT Director, New Generation Schools",
-          "logo": ""
+          "logo": "https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/327359313_696095742170641_3835513231457229103_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHuXg_bOwpZO7KeTpM_WWXoRPiiQKJItb1E-KJAoki1vbfwel11gjD8Y2ZYnldluSHhBBuAir6ZOcgjtmQuc6XE&nc_ohc=kJX1ZRtHsdQQ7kNvwFQPzYK&_nc_oc=Adk2HQ9W3jZWh1WCbCz7LeLn8_SkKOBWyDJL6rNBZzwXAQQE2Mu7BzzjagKVItG-iGM&_nc_zt=23&_nc_ht=scontent-lhr8-2.xx&_nc_gid=eE1uzH7XzDWyVF65CUQP2w&oh=00_AfZSRAjYfaRUDm4SQRY9bbIuiwgf6w5l4r2tSajsjU2AnQ&oe=68D6FCCF"
+        },
+        {
+          "quote": "Working with Active Soft on our digital transformation has been a game-changer for our business. Their Oracle ERP implementation streamlined our operations and improved efficiency across all departments.",
+          "name": "Ahmed Abdelhaleem",
+          "company": "CEO, Delta Company for Meat Production (Almasia - Global)",
+          "logo": "https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/471127525_996277009184693_2173276917715332600_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeECruJvm0f42L4GDNPF285fOhnbJoDb_vs6GdsmgNv--7uOqeIWgXJVtsdT5Qfh-ZSHmtDcGPatAVxAENAKRfzd&_nc_ohc=CN6U9mmE84EQ7kNvwFcZACF&_nc_oc=Adk-hITvsdFXT4WE97KmdbqdluEQuSeOd2tkERKWz9RbyxHYFBdSW__8JFP2Qsnd27U&_nc_zt=23&_nc_ht=scontent-lhr8-2.xx&_nc_gid=3--hl0EQtkOQ862mu7hArw&oh=00_AfbGoh4AUz7Vvm8wtZPBRcykoYtK27ciPkzHJKRMTMvjwg&oe=68D8781F"
+        },
+        {
+          "quote": "The custom software solution developed by Active Soft has transformed how we manage our inventory and supply chain. It's robust, scalable, and perfectly tailored to our business needs.",
+          "name": "Ali Fayed",
+          "company": "Founder, Sinai Seeds",
+          "logo": "https://sinai-seeds.com/assets/images/logo.png"
         }
       ]
     },
@@ -139,6 +99,37 @@
     "subtitle": "Tailored technology solutions to drive your business forward.",
     "erpTitle": "Oracle ERP Solutions",
     "erpDesc": "Full-cycle Oracle ERP services including implementation, customization, migration, and support to optimize your business processes.",
+    "erpFeaturesTitle": "ERP System Features",
+    "erpFeaturesDesc": "Our ERP system is designed to provide comprehensive solutions for businesses of all sizes. Here are some of the key features it offers:",
+    "generalFeatures": "General Features",
+    "mainModules": "Main System Modules",
+    "generalLedger": "General Ledger",
+    "cashManagement": "Cash Management",
+    "features": {
+      "oracleDB": "Powerful and stable Oracle database",
+      "multiUser": "Multiple user permissions with precise management",
+      "remoteAccess": "Ability to work from anywhere via the Internet",
+      "autoBackup": "Automatic backups created multiple times daily",
+      "auditTrail": "Complete audit trail showing who added, modified, or deleted",
+      "employeeDocs": "Entry of employee photos and documents",
+      "foreignCurrency": "Foreign currency support with fixed or variable rates per transaction",
+      "multiCompany": "Multiple companies or branches with consolidated reports",
+      "accountingChart": "Accounting chart with 4 levels",
+      "exchangeRate": "Exchange rate determination for foreign currencies",
+      "notes": "Notes entry for each journal entry item",
+      "multiEntry": "Support for multi-entry vouchers",
+      "unlimitedCashiers": "Unlimited number of cashiers",
+      "cashierLink": "Link each cashier to a specific employee",
+      "collectionPayment": "Recording collection and payment operations with separate documents"
+    },
+    "modules": {
+      "generalLedger": "General Ledger",
+      "inventory": "Inventory Management",
+      "costing": "Costing System",
+      "hr": "HR & Payroll",
+      "planning": "Planning",
+      "purchasesSales": "Purchases & Sales"
+    },
     "itSupportTitle": "Managed IT Support",
     "itSupportDesc": "Proactive 24/7 monitoring, helpdesk support, and IT infrastructure management to ensure your systems are always secure and efficient.",
     "customAppsTitle": "Custom App Development",
@@ -345,10 +336,7 @@
       { "name": "EAGLE EGYPT STEEL", "logo": "https://i.ibb.co/1fJHV235/Eagle-Steel.jpg" },
       { "name": "Ceramica Granito", "logo": "https://ceramicagranito.com/site_assets/images/logo.png" },
       { "name": "Alkabaely Group", "logo": "https://www.alkabaelygroup.com/alkabaely/arabic/images/demo/template-logo.png" },
-      { "name": "Gene Grow for chemicals and seeds", "logo": "https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/277759534_364134022397363_5348419699244200152_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGUh4tmVx4pW7LfYedS-oQwH7XDPOBSBAUftcM84FIEBdXyQWeKTCGKDmHnewLcp9TE3lW7Dqplgkyylh7s_uPa&nc_ohc=kBbTdft9PgsQ7kNvwHlS9Ji&_nc_oc=AdlK1VvJ7r9UDohpImDzdikWTZv_TUR-5F2sj-llQwdoxzUQrrvWFS94q_wdVNL2b4E&_nc_zt=23&_nc_ht=scontent-lhr8-2.xx&_nc_gid=HUXE5fzoFPOeyD3XGyQKMQ&oh=00_Afb2WmEPX_Kz9jCwOYluOlHmOkovvarQ26lR02ATmtFGEg&oe=68D8520B" },
-      { "name": "VEGEX", "logo": "https://vegexfarms.com/images/logo.png" },
-      { "name": "Nile Harvest", "logo": "https://i.ibb.co/My4C7PZ4/Screenshot-22-9-2025-13433.jpg" },
-      { "name": "Agro City For import & Export", "logo": "https://agro-city.com/wp-content/uploads/2024/08/cropped-logo-03-1-300x100.png" }
+      { "name": "Gene Grow for chemicals and seeds", "logo": "https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/277759534_364134022397363_5348419699244200152_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGUh4tmVx4pW7LfYedS-oQwH7XDPOBSBAUftcM84FIEBdXyQWeKTCGKDmHnewLcp9TE3lW7Dqplgkyylh7s_uPa&nc_ohc=kBbTdft9PgsQ7kNvwHlS9Ji&_nc_oc=AdlK1VvJ7r9UDohpImDzdikWTZv_TUR-5F2sj-llQwdoxzUQrrvWFS94q_wdVNL2b4E&_nc_zt=23&_nc_ht=scontent-lhr8-2.xx&_nc_gid=HUXE5fzoFPOeyD3XGyQKMQ&oh=00_Afb2WmEPX_Kz9jCwOYluOlHmOkovvarQ26lR02ATmtFGEg&oe=68D8520B" }
     ]
   },
   "about": {
@@ -373,7 +361,7 @@
       },
       {
         "name": "Mostafa Amin",
-        "role": "Full Stack Developer",
+        "role": "Full Stack Developer&Cloud Consultant",
         "certification": "digital transformation Expert",
         "image": "https://images.unsplash.com/photo-1676195470090-7c90bf539b3b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
         "linkedin": "#"
@@ -385,6 +373,19 @@
     "subtitle": "Get a detailed overview of our services and solutions. Fill out the form below to receive your copy.",
     "namePlaceholder": "Your Name",
     "emailPlaceholder": "Your Email",
+    "requestFormTitle": "Request More Information",
+    "requestInfo": "Request Information",
+    "download": "Download",
+    "generalFeatures": "General Features",
+    "generalFeaturesDesc": "Overview of our general software features and capabilities",
+    "generalAccounts": "General Accounts",
+    "generalAccountsDesc": "Detailed information about our general accounting systems",
+    "costSystem": "Cost System",
+    "costSystemDesc": "Comprehensive guide to our cost management system",
+    "inventorySystem": "Inventory System",
+    "inventorySystemDesc": "Complete documentation of our inventory management solution",
+    "exportSystem": "Export System",
+    "exportSystemDesc": "Information about our export management system",
     "cta": "Download Now"
   },
   "contact": {

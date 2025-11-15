@@ -26,9 +26,9 @@
       "keywords": "ERP Case Studies Egypt, Custom Software Success Stories, Business Transformation Egypt, Oracle Implementation Results, IT Solutions Case Studies"
     },
     "portfolio": {
-      "title": "Custom Software Portfolio - Desktop Applications Gallery | Active Soft",
-      "description": "Showcase of our custom desktop applications and software solutions built for businesses in Egypt. User-centric design, secure architecture and seamless integration with existing systems.",
-      "keywords": "Custom Software Portfolio Egypt, Desktop Applications Gallery, Business Software Examples, Custom ERP Solutions, Software Development Portfolio"
+      "title": "ERP System Features - Oracle ERP Modules & Capabilities | Active Soft",
+      "description": "Explore the comprehensive features of our Oracle ERP system, including general ledger, inventory management, costing, HR & payroll, planning, and more. Designed for businesses in Egypt and the Middle East.",
+      "keywords": "ERP Features Egypt, Oracle ERP Modules, General Ledger System, Inventory Management Software, Costing System ERP, HR Payroll Software, Business Planning Software"
     },
     "clients": {
       "title": "Our Clients - Trusted Technology Partners in Egypt | Active Soft",
@@ -151,6 +151,37 @@
     "subtitle": "Tailored technology solutions to drive your business forward.",
     "erpTitle": "Oracle ERP Solutions",
     "erpDesc": "Full-cycle Oracle ERP services including implementation, customization, migration, and support to optimize your business processes.",
+    "erpFeaturesTitle": "ERP System Features",
+    "erpFeaturesDesc": "Our ERP system is designed to provide comprehensive solutions for businesses of all sizes. Here are some of the key features it offers:",
+    "generalFeatures": "General Features",
+    "mainModules": "Main System Modules",
+    "generalLedger": "General Ledger",
+    "cashManagement": "Cash Management",
+    "features": {
+      "oracleDB": "Powerful and stable Oracle database",
+      "multiUser": "Multiple user permissions with precise management",
+      "remoteAccess": "Ability to work from anywhere via the Internet",
+      "autoBackup": "Automatic backups created multiple times daily",
+      "auditTrail": "Complete audit trail showing who added, modified, or deleted",
+      "employeeDocs": "Entry of employee photos and documents",
+      "foreignCurrency": "Foreign currency support with fixed or variable rates per transaction",
+      "multiCompany": "Multiple companies or branches with consolidated reports",
+      "accountingChart": "Accounting chart with 4 levels",
+      "exchangeRate": "Exchange rate determination for foreign currencies",
+      "notes": "Notes entry for each journal entry item",
+      "multiEntry": "Support for multi-entry vouchers",
+      "unlimitedCashiers": "Unlimited number of cashiers",
+      "cashierLink": "Link each cashier to a specific employee",
+      "collectionPayment": "Recording collection and payment operations with separate documents"
+    },
+    "modules": {
+      "generalLedger": "General Ledger",
+      "inventory": "Inventory Management",
+      "costing": "Costing System",
+      "hr": "HR & Payroll",
+      "planning": "Planning",
+      "purchasesSales": "Purchases & Sales"
+    },
     "itSupportTitle": "Managed IT Support",
     "itSupportDesc": "Proactive 24/7 monitoring, helpdesk support, and IT infrastructure management to ensure your systems are always secure and efficient.",
     "customAppsTitle": "Custom App Development",
@@ -322,20 +353,97 @@
     ]
   },
   "portfolio": {
-    "title": "Our Application Portfolio",
-    "subtitle": "A glimpse into the custom solutions we've crafted for our clients.",
-    "items": [
-      {
-        "title": "Custom CRM for Sales Teams",
-        "description": "A powerful desktop CRM application designed for high-performance sales tracking and client management.",
-        "image": "https://picsum.photos/seed/crm/800/600"
+    "title": "ERP System Features",
+    "subtitle": "Explore the comprehensive features of our Oracle ERP system designed to streamline your business operations",
+    "features": {
+      "general": {
+        "title": "General Features",
+        "oracleDB": "Powerful and stable Oracle database",
+        "multiUser": "Multiple user permissions with precise management",
+        "remoteAccess": "Ability to work from anywhere via the Internet",
+        "autoBackup": "Automatic backups created multiple times daily",
+        "auditTrail": "Complete audit trail showing who added, modified, or deleted",
+        "employeeDocs": "Entry of employee photos and documents",
+        "foreignCurrency": "Foreign currency support with fixed or variable rates per transaction",
+        "multiCompany": "Multiple companies or branches with consolidated reports",
+        "consolidatedAccounts": "Support for Consolidated Accounts",
+        "costSystem": "Integrated industrial cost system: raw materials – processing – cost centers – service centers",
+        "fullReports": "Full financial reports without transfer (trial balance – income statement – debt ages...)",
+        "productCosts": "Accurate product cost statements",
+        "security": "Complete security against modification and cancellation with monthly and accounting closure"
       },
-      {
-        "title": "Inventory Management System",
-        "description": "An intuitive inventory system for a retail chain, providing real-time stock levels and automated reordering.",
-        "image": "https://picsum.photos/seed/inventory/800/600"
+      "modules": {
+        "title": "Main System Modules",
+        "generalLedger": "General Ledger",
+        "inventory": "Inventory Management",
+        "costing": "Costing System",
+        "hr": "HR & Payroll",
+        "planning": "Planning System",
+        "purchasesSales": "Purchases & Sales"
+      },
+      "ledger": {
+        "title": "General Ledger Features",
+        "accountingChart": "Accounting chart with 4 levels",
+        "exchangeRate": "Exchange rate determination for foreign currencies with ability to modify in the transaction itself",
+        "notes": "Notes entry for each journal entry item",
+        "multiEntry": "Support for multi-entry vouchers",
+        "consolidatedAccounts": "Consolidated accounts for any number of accounts regardless of their nature",
+        "accountStatements": "Ability to extract consolidated or separate account statements",
+        "costCenterLink": "Automatic linking of discounts and additions to cost centers or sales",
+        "yearEnd": "Automatic closure of revenues and expenses at year-end",
+        "unlimitedYears": "Opening unlimited fiscal years without programming intervention",
+        "collectionPlans": "Collection plans and follow-up for sales representatives",
+        "accountDisable": "Ability to disable any account from use",
+        "userPermissions": "Customization of account visibility based on user and permissions"
+      },
+      "reports": {
+        "title": "General Ledger Reports",
+        "trialBalance": "Trial balance for any date",
+        "incomeStatement": "Income statement for any period",
+        "accountStatements": "Detailed and consolidated account statements",
+        "expenseComparison": "Expense comparison by periods",
+        "serviceAnalysis": "Service center analysis and distribution on production",
+        "salesPlan": "Sales plan + monthly collection follow-up"
+      },
+      "cash": {
+        "title": "Cash Management",
+        "unlimitedCashiers": "Unlimited number of cashiers",
+        "employeeLink": "Link each cashier to a specific employee",
+        "collectionPayment": "Recording collection and payment operations with separate documents"
+      },
+      "banks": {
+        "title": "Banks & Checks",
+        "unlimitedAccounts": "Opening several unlimited bank accounts",
+        "accountTypes": "Each bank account has 3 accounting accounts (balance – receivable bills – payable bills)",
+        "checkRegister": "Complete register of check movements (issuance – payment – return – cancellation...)",
+        "reports": "Reports: Receivable bills under collection, Returned receivable bills, Due payable bills, Returned payable bills, Comprehensive check statement"
+      },
+      "assets": {
+        "title": "Fixed Assets",
+        "groups": "Registering assets within groups with a specified depreciation rate",
+        "accounts": "Registering accounts specific to the asset (asset – accumulated – provision)",
+        "depreciation": "Issuing monthly depreciation voucher with one click",
+        "details": "Complete data for each asset (cost – center – commissioning date – serial – model...)",
+        "reports": "Comprehensive reports: Depreciation vouchers by group, Book value report, Assets report by date"
+      },
+      "aging": {
+        "title": "Aging Report",
+        "analysis": "Debt aging analysis for each customer and supplier",
+        "lastTransaction": "Display of last sale transaction and last collection",
+        "customerAnalysis": "Complete analysis of customer invoices and delay period"
+      },
+      "permissions": {
+        "title": "User Permissions",
+        "customization": "Customizing permissions for each employee",
+        "accountVisibility": "Determining account visibility",
+        "control": "Complete control over vouchers and sensitive items"
       }
-    ]
+    },
+    "cta": {
+      "title": "Ready to Transform Your Business?",
+      "description": "Discover how our ERP system can streamline your operations and boost productivity.",
+      "button": "Request a Demo"
+    }
   },
   "clients": {
     "title": "Our Valued Clients",
@@ -397,6 +505,19 @@
     "subtitle": "Get a detailed overview of our services and solutions. Fill out the form below to receive your copy.",
     "namePlaceholder": "Your Name",
     "emailPlaceholder": "Your Email",
+    "requestFormTitle": "Request More Information",
+    "requestInfo": "Request Information",
+    "download": "Download",
+    "generalFeatures": "General Features",
+    "generalFeaturesDesc": "Overview of our general software features and capabilities",
+    "generalAccounts": "General Accounts",
+    "generalAccountsDesc": "Detailed information about our general accounting systems",
+    "costSystem": "Cost System",
+    "costSystemDesc": "Comprehensive guide to our cost management system",
+    "inventorySystem": "Inventory System",
+    "inventorySystemDesc": "Complete documentation of our inventory management solution",
+    "exportSystem": "Export System",
+    "exportSystemDesc": "Information about our export management system",
     "cta": "Download Now"
   },
   "contact": {

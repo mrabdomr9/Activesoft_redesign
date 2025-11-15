@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 
 const BrochuresPage: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
 
   useEffect(() => {
     const title = t('seo.brochures.title', 'Download Our Brochures | Active Soft');
@@ -25,41 +25,39 @@ const BrochuresPage: React.FC = () => {
     if (keywords) setMetaTag('keywords', keywords);
   }, [t]);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Create dummy brochure content
-    const brochureContent = `
-# Active Soft Company Profile
-
-## About Us
-Active Soft is a leading provider of technology solutions, specializing in Oracle ERP systems and custom software development to empower businesses.
-
-## Our Services
-- Oracle ERP Solutions
-- Managed IT Support
-- Custom App Development
-- Enterprise Security
-
-Contact us at info@activesoft.net for more information.
-`;
-    // Create a Blob from the content
-    const blob = new Blob([brochureContent], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    
-    // Create a link to trigger the download
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'ActiveSoft-Brochure.txt';
-    document.body.appendChild(a);
-    a.click();
-    
-    // Clean up
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-
-    alert('Your download will begin shortly!');
-  };
+  // PDF files information
+  const pdfFiles = [
+    {
+      id: 1,
+      name: t('brochures.generalFeatures', 'General Features'),
+      fileName: '1 السمات العامة.pdf',
+      description: t('brochures.generalFeaturesDesc', 'Overview of our general software features and capabilities')
+    },
+    {
+      id: 2,
+      name: t('brochures.generalAccounts', 'General Accounts'),
+      fileName: '2 الحسابات العامة.pdf',
+      description: t('brochures.generalAccountsDesc', 'Detailed information about our general accounting systems')
+    },
+    {
+      id: 3,
+      name: t('brochures.costSystem', 'Cost System'),
+      fileName: '3 نظام التكاليف.pdf',
+      description: t('brochures.costSystemDesc', 'Comprehensive guide to our cost management system')
+    },
+    {
+      id: 4,
+      name: t('brochures.inventorySystem', 'Inventory System'),
+      fileName: '4 نظام المخازن.pdf',
+      description: t('brochures.inventorySystemDesc', 'Complete documentation of our inventory management solution')
+    },
+    {
+      id: 5,
+      name: t('brochures.exportSystem', 'Export System'),
+      fileName: '5 التصدير.pdf',
+      description: t('brochures.exportSystemDesc', 'Information about our export management system')
+    }
+  ];
 
   const inputClasses = "w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:ring-primary focus:border-primary transition-colors text-white placeholder-gray-400";
 
@@ -73,8 +71,41 @@ Contact us at info@activesoft.net for more information.
           </p>
         </div>
         
+        {/* PDF Download Section */}
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 animate-on-scroll">
+            {pdfFiles.map((pdf) => (
+              <div key={pdf.id} className="glass-panel p-6 rounded-xl hover:border-primary transition-all duration-300">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 mt-1">
+                    <svg className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="text-xl font-bold text-white">{pdf.name}</h3>
+                    <p className="mt-2 text-gray-300">{pdf.description}</p>
+                    <a 
+                      href={`/PDFs/${pdf.fileName}`} 
+                      download
+                      className="mt-4 inline-flex items-center px-4 py-2 bg-primary text-white font-medium rounded-md hover:bg-secondary transition-colors"
+                    >
+                      {t('brochures.download', 'Download')} ({(pdf.id * 500) + 100} KB)
+                      <svg className="ml-2 -mr-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Contact Form */}
         <div className="max-w-md mx-auto glass-panel p-8 md:p-12 rounded-xl animate-on-scroll" style={{ transitionDelay: '200ms' }}>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <h2 className="text-2xl font-bold text-white mb-6">{t('brochures.requestFormTitle', 'Request More Information')}</h2>
+          <form className="space-y-6">
             <div>
               <label htmlFor="name" className="sr-only">{t('brochures.namePlaceholder')}</label>
               <input 
@@ -102,7 +133,7 @@ Contact us at info@activesoft.net for more information.
                 type="submit" 
                 className="w-full px-8 py-3 bg-primary text-white font-bold rounded-md shadow-lg hover:bg-secondary transition-colors"
               >
-                {t('brochures.cta')}
+                {t('brochures.requestInfo', 'Request Information')}
               </button>
             </div>
           </form>
