@@ -72,7 +72,7 @@ const Header: React.FC = () => {
   }
 
   return (
-    <header className="bg-slate-900/50 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-white/10">
+    <header className="bg-gradient-to-r from-slate-950/80 via-slate-900/80 to-slate-950/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-primary/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
