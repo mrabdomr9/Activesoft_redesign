@@ -14,7 +14,7 @@ const LanguageSwitcher: React.FC = () => {
   return (
     <button
       onClick={toggleLanguage}
-      className="px-4 py-2 text-sm font-semibold bg-primary/80 text-white rounded-md hover:bg-primary transition-colors"
+      className="px-4 py-2 text-sm font-semibold bg-cyan-600/80 text-white rounded-md hover:bg-cyan-500 transition-colors"
     >
       {language === 'en' ? 'العربية' : 'English'}
     </button>
@@ -56,8 +56,8 @@ const Header: React.FC = () => {
     { to: '/contact', text: t('nav.contact') },
   ];
 
-  const linkClasses = "px-3 py-2 text-base text-gray-300 hover:text-white transition-colors rounded-md flex items-center gap-1";
-  const activeLinkClasses = "text-white font-bold bg-white/10";
+  const linkClasses = "px-3 py-2 text-base text-cyan-100 hover:text-white transition-colors rounded-md flex items-center gap-1";
+  const activeLinkClasses = "text-white font-bold bg-cyan-500/20";
   
   const isSubLinkActive = (subLinks?: { to: string }[]) => {
     return subLinks?.some(sub => location.pathname === sub.to);
@@ -73,7 +73,7 @@ const Header: React.FC = () => {
   }
 
   return (
-    <header className="bg-gradient-to-r from-slate-950/80 via-slate-900/80 to-slate-950/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-primary/20">
+    <header className="bg-gradient-to-r from-slate-900/90 via-slate-800/90 to-slate-900/90 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-cyan-500/30">
       {/* Digital Transformation Background Elements */}
       <div className="absolute inset-0">
         {/* Circuit Board Pattern */}
@@ -105,7 +105,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
             <NavLink to="/" className="text-2xl font-bold text-white font-display">
-              Active<span className="text-secondary">Soft</span>
+              Active<span className="text-cyan-400">Soft</span>
             </NavLink>
           </div>
 
@@ -118,13 +118,13 @@ const Header: React.FC = () => {
                     <span>{link.text}</span>
                     <svg className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
                   </button>
-                  <div className="absolute top-full start-0 mt-2 w-48 p-2 glass-panel rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-10">
+                  <div className="absolute top-full start-0 mt-2 w-48 p-2 glass-panel rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-10 border border-cyan-500/30">
                     <div className="flex flex-col space-y-1">
                       {link.subLinks.map(subLink => (
                          <NavLink
                           key={subLink.to}
                           to={subLink.to}
-                          className={({ isActive }) => `block px-4 py-2 text-sm text-white hover:bg-primary/20 hover:text-white rounded-md transition-colors ${isActive ? 'bg-primary/30 font-semibold' : ''}`}
+                          className={({ isActive }) => `block px-4 py-2 text-sm text-cyan-100 hover:bg-cyan-500/20 hover:text-white rounded-md transition-colors ${isActive ? 'bg-cyan-500/30 font-semibold text-white' : ''}`}
                         >
                           {subLink.text}
                         </NavLink>
@@ -153,7 +153,7 @@ const Header: React.FC = () => {
              <LanguageSwitcher />
              <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white focus:outline-none ms-2 rtl:ms-0 rtl:me-2"
+              className="inline-flex items-center justify-center p-2 rounded-md text-cyan-100 hover:text-white focus:outline-none ms-2 rtl:ms-0 rtl:me-2"
               aria-controls="mobile-menu"
               aria-expanded={isMobileMenuOpen}
             >
@@ -168,7 +168,7 @@ const Header: React.FC = () => {
       
       {/* Mobile Menu Panel */}
       {isMobileMenuOpen && (
-        <div className="md:hidden glass-panel rounded-none border-x-0 border-t-0" id="mobile-menu">
+        <div className="md:hidden glass-panel rounded-none border-x-0 border-t-0 border-cyan-500/30" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
             {navLinks.map((link) =>
               link.subLinks ? (
@@ -188,7 +188,7 @@ const Header: React.FC = () => {
                           key={subLink.to}
                           to={subLink.to}
                           onClick={closeMenus}
-                          className={({ isActive }) => `block w-full text-center px-4 py-2 text-sm text-white hover:bg-primary/20 hover:text-white transition-colors rounded-md ${isActive ? 'bg-primary/30 font-semibold' : ''}`}
+                          className={({ isActive }) => `block w-full text-center px-4 py-2 text-sm text-cyan-100 hover:bg-cyan-500/20 hover:text-white transition-colors rounded-md ${isActive ? 'bg-cyan-500/30 font-semibold text-white' : ''}`}
                         >
                           {subLink.text}
                         </NavLink>
