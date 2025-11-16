@@ -7,61 +7,160 @@ const DigitalTransformationPage: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const { t } = useTranslation();
 
-  // Define the services data
+  // Define the services data with more detailed information
   const services = [
     {
       title: language === 'ar' ? 'الاستشارات الاستراتيجية' : 'Strategic Consulting',
       description: language === 'ar' 
         ? 'مساعدة الشركات على وضع استراتيجيات التحول الرقمي وتحديد الأهداف والمجالات التي يمكن رقمنتها.' 
-        : 'Helping businesses develop digital transformation strategies and identify goals and areas that can be digitized.'
+        : 'Helping businesses develop digital transformation strategies and identify goals and areas that can be digitized.',
+      details: {
+        benefits: language === 'ar' 
+          ? ['تحديد أولويات التحول الرقمي', 'تخطيط التنفيذ على المدى الطويل', 'تحديد العوائق والفرص'] 
+          : ['Identifying digital transformation priorities', 'Long-term implementation planning', 'Identifying barriers and opportunities'],
+        technologies: language === 'ar' 
+          ? ['تحليل SWOT', 'نماذج التقييم', 'أدوات التخطيط الاستراتيجي'] 
+          : ['SWOT Analysis', 'Assessment Models', 'Strategic Planning Tools'],
+        approach: language === 'ar' 
+          ? 'نهج شامل يبدأ بتقييم الحالة الحالية وينتهي بخطة تنفيذية مفصلة' 
+          : 'Comprehensive approach starting with current state assessment and ending with a detailed implementation plan'
+      }
     },
     {
       title: language === 'ar' ? 'تطوير البرمجيات والتطبيقات' : 'Software & Application Development',
       description: language === 'ar' 
         ? 'بناء وتطوير تطبيقات الويب والجوال والمنصات الرقمية المخصصة.' 
-        : 'Building and developing custom web, mobile applications, and digital platforms.'
+        : 'Building and developing custom web, mobile applications, and digital platforms.',
+      details: {
+        benefits: language === 'ar' 
+          ? ['حلول مخصصة تناسب احتياجاتك', 'تحسين تجربة المستخدم', 'تكامل سلس مع الأنظمة الحالية'] 
+          : ['Custom solutions tailored to your needs', 'Enhanced user experience', 'Seamless integration with existing systems'],
+        technologies: language === 'ar' 
+          ? ['React, Node.js, Python', 'Flutter, Swift, Kotlin', 'AWS, Azure, Google Cloud'] 
+          : ['React, Node.js, Python', 'Flutter, Swift, Kotlin', 'AWS, Azure, Google Cloud'],
+        approach: language === 'ar' 
+          ? 'تطوير مرن باستخدام منهجيات Agile مع مراحل اختبار صارمة' 
+          : 'Agile development with iterative approach and rigorous testing phases'
+      }
     },
     {
       title: language === 'ar' ? 'إدارة البنية التحتية السحابية' : 'Cloud Infrastructure Management',
       description: language === 'ar' 
         ? 'بناء وتشغيل البنية التحتية السحابية لتمكين العمليات الرقمية.' 
-        : 'Building and operating cloud infrastructure to enable digital operations.'
+        : 'Building and operating cloud infrastructure to enable digital operations.',
+      details: {
+        benefits: language === 'ar' 
+          ? ['قابلية التوسع وال Soup', 'تقليل التكاليف التشغيلية', 'أمان محسن وموثوقية'] 
+          : ['Scalability and flexibility', 'Reduced operational costs', 'Enhanced security and reliability'],
+        technologies: language === 'ar' 
+          ? ['Amazon Web Services', 'Microsoft Azure', 'Google Cloud Platform'] 
+          : ['Amazon Web Services', 'Microsoft Azure', 'Google Cloud Platform'],
+        approach: language === 'ar' 
+          ? 'تصميم معماري مرن مع خطة نسخ احتياطي واستعادة شاملة' 
+          : 'Flexible architecture design with comprehensive backup and recovery plan'
+      }
     },
     {
       title: language === 'ar' ? 'تحليل البيانات الضخمة' : 'Big Data Analytics',
       description: language === 'ar' 
         ? 'استخدام البيانات لاتخاذ قرارات مستنيرة، والتنبؤ بالاتجاهات، وتقديم توصيات مخصصة.' 
-        : 'Using data to make informed decisions, predict trends, and provide personalized recommendations.'
+        : 'Using data to make informed decisions, predict trends, and provide personalized recommendations.',
+      details: {
+        benefits: language === 'ar' 
+          ? ['رؤى قائمة على البيانات', 'تحسين اتخاذ القرار', 'تحديد الفرص الجديدة'] 
+          : ['Data-driven insights', 'Improved decision making', 'Identification of new opportunities'],
+        technologies: language === 'ar' 
+          ? ['Apache Spark, Hadoop', 'Tableau, Power BI', 'Python, R, SQL'] 
+          : ['Apache Spark, Hadoop', 'Tableau, Power BI', 'Python, R, SQL'],
+        approach: language === 'ar' 
+          ? 'تحليل شامل للبيانات مع نماذج تنبؤية متقدمة' 
+          : 'Comprehensive data analysis with advanced predictive modeling'
+      }
     },
     {
       title: language === 'ar' ? 'الأمن السيبراني' : 'Cybersecurity',
       description: language === 'ar' 
         ? 'حماية الأنظمة والبيانات من التهديدات الإلكترونية.' 
-        : 'Protecting systems and data from electronic threats.'
+        : 'Protecting systems and data from electronic threats.',
+      details: {
+        benefits: language === 'ar' 
+          ? ['حماية البيانات الحساسة', 'الامتثال للوائح', 'الثقة المحسنة للعملاء'] 
+          : ['Protection of sensitive data', 'Regulatory compliance', 'Enhanced customer trust'],
+        technologies: language === 'ar' 
+          ? ['Firewalls, SIEM', 'Zero Trust Architecture', 'Encryption Technologies'] 
+          : ['Firewalls, SIEM', 'Zero Trust Architecture', 'Encryption Technologies'],
+        approach: language === 'ar' 
+          ? 'نهج شامل للأمان مع تقييم المخاطر المستمر والمراقبة' 
+          : 'Comprehensive security approach with continuous risk assessment and monitoring'
+      }
     },
     {
       title: language === 'ar' ? 'حلول التجارة الإلكترونية' : 'E-commerce Solutions',
       description: language === 'ar' 
         ? 'تصميم وتطوير منصات التجارة الإلكترونية، بما في ذلك تكامل أنظمة الدفع والشحن.' 
-        : 'Designing and developing e-commerce platforms, including payment and shipping system integration.'
+        : 'Designing and developing e-commerce platforms, including payment and shipping system integration.',
+      details: {
+        benefits: language === 'ar' 
+          ? ['توسيع نطاق السوق', 'تجربة تسوق محسنة', 'تحليلات المبيعات المتقدمة'] 
+          : ['Market reach expansion', 'Enhanced shopping experience', 'Advanced sales analytics'],
+        technologies: language === 'ar' 
+          ? ['Shopify, Magento', 'Stripe, PayPal', '物流 APIs'] 
+          : ['Shopify, Magento', 'Stripe, PayPal', 'Shipping APIs'],
+        approach: language === 'ar' 
+          ? 'تطوير منصات مرنة وآمنة مع تحسين محركات البحث' 
+          : 'Flexible and secure platform development with SEO optimization'
+      }
     },
     {
       title: language === 'ar' ? 'أتمتة العمليات' : 'Process Automation',
       description: language === 'ar' 
         ? 'تبسيط المهام الروتينية والمتكررة من خلال الأتمتة لتحسين الكفاءة وخفض التكاليف.' 
-        : 'Simplifying routine and repetitive tasks through automation to improve efficiency and reduce costs.'
+        : 'Simplifying routine and repetitive tasks through automation to improve efficiency and reduce costs.',
+      details: {
+        benefits: language === 'ar' 
+          ? ['زيادة الإنتاجية', 'تقليل الأخطاء البشرية', 'تحسين رضا الموظفين'] 
+          : ['Increased productivity', 'Reduced human errors', 'Improved employee satisfaction'],
+        technologies: language === 'ar' 
+          ? ['RPA Tools, AI/ML', 'Workflow Engines', 'API Integration'] 
+          : ['RPA Tools, AI/ML', 'Workflow Engines', 'API Integration'],
+        approach: language === 'ar' 
+          ? 'تحديد العمليات المناسبة للأتمتة وتنفيذ حلول مخصصة' 
+          : 'Identifying suitable processes for automation and implementing customized solutions'
+      }
     },
     {
       title: language === 'ar' ? 'بناء النماذج الأولية' : 'Prototyping',
       description: language === 'ar' 
         ? 'إنشاء نماذج قابلة للاختبار للتقنيات الجديدة لتجربة الأفكار وتحسينها قبل التطوير الكامل.' 
-        : 'Creating testable prototypes of new technologies to experiment with ideas and improve them before full development.'
+        : 'Creating testable prototypes of new technologies to experiment with ideas and improve them before full development.',
+      details: {
+        benefits: language === 'ar' 
+          ? ['تقليل مخاطر الاستثمار', 'الحصول على ملاحظات المستخدم مبكرًا', 'تسريع عملية التطوير'] 
+          : ['Reduced investment risk', 'Early user feedback', 'Accelerated development process'],
+        technologies: language === 'ar' 
+          ? ['Figma, Adobe XD', 'Rapid Development Frameworks', 'MVP Tools'] 
+          : ['Figma, Adobe XD', 'Rapid Development Frameworks', 'MVP Tools'],
+        approach: language === 'ar' 
+          ? 'تطوير نماذج أولية سريعة مع اختبارات تكرارية' 
+          : 'Rapid prototyping with iterative testing'
+      }
     },
     {
       title: language === 'ar' ? 'إنترنت الأشياء (IoT)' : 'Internet of Things (IoT)',
       description: language === 'ar' 
         ? 'ربط الأجهزة والأنظمة لجمع البيانات وتسهيل العمليات.' 
-        : 'Connecting devices and systems to collect data and facilitate processes.'
+        : 'Connecting devices and systems to collect data and facilitate processes.',
+      details: {
+        benefits: language === 'ar' 
+          ? ['أتمتة العمليات في الوقت الفعلي', 'تحليلات متقدمة', 'تحسين كفاءة الموارد'] 
+          : ['Real-time process automation', 'Advanced analytics', 'Resource efficiency improvement'],
+        technologies: language === 'ar' 
+          ? ['Sensors, Gateways', 'Edge Computing', 'IoT Platforms'] 
+          : ['Sensors, Gateways', 'Edge Computing', 'IoT Platforms'],
+        approach: language === 'ar' 
+          ? 'تنفيذ حلول IoT متكاملة مع تركيز على الأمان والقابلية للتوسع' 
+          : 'End-to-end IoT solutions implementation with focus on security and scalability'
+      }
     }
   ];
 
@@ -176,10 +275,49 @@ const DigitalTransformationPage: React.FC = () => {
               {services.map((service, index) => (
                 <div 
                   key={index} 
-                  className="glass-panel rounded-lg p-6 hover:bg-slate-800/50 transition-all duration-300 border border-transparent hover:border-primary/30"
+                  className="glass-panel rounded-lg p-6 hover:bg-slate-800/50 transition-all duration-300 border border-transparent hover:border-cyan-500/30"
                 >
                   <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                  <p className="text-gray-300">{service.description}</p>
+                  <p className="text-gray-300 mb-4">{service.description}</p>
+                  
+                  {/* Detailed Information */}
+                  <div className="mt-4 space-y-3">
+                    <div>
+                      <h4 className="text-sm font-semibold text-cyan-400 mb-1">
+                        {language === 'ar' ? 'الفوائد:' : 'Benefits:'}
+                      </h4>
+                      <ul className="text-xs text-gray-300 space-y-1">
+                        {service.details.benefits.map((benefit, i) => (
+                          <li key={i} className="flex items-start">
+                            <span className="text-cyan-500 mr-1">•</span>
+                            {benefit}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-sm font-semibold text-cyan-400 mb-1">
+                        {language === 'ar' ? 'التقنيات:' : 'Technologies:'}
+                      </h4>
+                      <div className="flex flex-wrap gap-1">
+                        {service.details.technologies.map((tech, i) => (
+                          <span key={i} className="text-xs bg-cyan-900/30 text-cyan-300 px-2 py-1 rounded">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-sm font-semibold text-cyan-400 mb-1">
+                        {language === 'ar' ? 'النهج:' : 'Approach:'}
+                      </h4>
+                      <p className="text-xs text-gray-300">
+                        {service.details.approach}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
