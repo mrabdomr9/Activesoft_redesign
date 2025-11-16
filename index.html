@@ -23,13 +23,40 @@
         border: 1px solid rgba(255, 255, 255, 0.1);
       }
       body {
-        background-color: #0a0a1a;
-        background-image:
-          radial-gradient(at 20% 20%, hsla(212,100%,50%,0.2) 0px, transparent 50%),
-          radial-gradient(at 80% 20%, hsla(280,100%,50%,0.2) 0px, transparent 50%),
-          radial-gradient(at 20% 80%, hsla(320,100%,50%,0.2) 0px, transparent 50%),
-          radial-gradient(at 80% 80%, hsla(240,100%,60%,0.2) 0px, transparent 50%);
+        background: linear-gradient(to right, #0A192F 0%, #1E3A8A 50%, #10B981 100%);
+        position: relative;
+        overflow: auto; /* Changed from hidden to auto to enable scrolling */
       }
+      
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(6, 182, 212, 0.1);
+        z-index: 1;
+      }
+      
+      body::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+          radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.05) 0%, transparent 20%),
+          radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 20%);
+        z-index: 2;
+      }
+      
+      #root {
+        position: relative;
+        z-index: 3;
+      }
+      
       .animate-on-scroll {
         opacity: 0;
         transform: translateY(20px);
@@ -79,7 +106,7 @@
 }
 </script>
 </head>
-  <body class="bg-dark text-light">
+  <body>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

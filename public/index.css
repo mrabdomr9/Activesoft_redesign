@@ -34,7 +34,7 @@
 /* Digital Transformation Background Effects */
 .digital-transformation-bg {
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* Changed from hidden to visible to enable scrolling */
   background: linear-gradient(to right, #0A192F 0%, #1E3A8A 50%, #10B981 100%);
 }
 
