@@ -146,6 +146,16 @@
     },
     "learnMore": "Learn More"
   },
+  "workStages": {
+    "title": "Work Stages",
+    "slogan": "Smart planning is one of the most important factors of distinction and success",
+    "stages": [
+      "Initial planning of the complete project vision",
+      "Reviewing this vision with the client and making necessary adjustments",
+      "Implementation phase (duration varies based on project size)",
+      "Delivering the final project structure, reviewing it with the client, and applying finishing touches"
+    ]
+  },
   "services": {
     "title": "Our Comprehensive Services",
     "subtitle": "Tailored technology solutions to drive your business forward.",

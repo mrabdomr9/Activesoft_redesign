@@ -1,0 +1,32 @@
+@keyframes loop-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes loop-scroll-rtl {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+.animate-loop-scroll {
+  display: flex;
+  width: max-content;
+  animation: loop-scroll 40s linear infinite; /* Slowed down from 20s to 40s */
+}
+
+.rtl .animate-loop-scroll {
+  animation: loop-scroll-rtl 40s linear infinite;
+}
+
+/* Pause animation on hover */
+.animate-loop-scroll:hover {
+  animation-play-state: paused;
+}
