@@ -14,6 +14,7 @@ import AboutUsPage from './pages/AboutUsPage';
 import BrochuresPage from './pages/BlogPage';
 import ContactPage from './pages/ContactPage';
 import PricesPage from './pages/PricesPage';
+import SiteMapPage from './pages/SiteMapPage';
 import { LanguageContext } from './context/LanguageContext';
 
 const ScrollToTop = () => {
@@ -71,6 +72,7 @@ const AppContent = () => {
             <Route path="/brochures" element={<BrochuresPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/erp-features" element={<PortfolioPage />} />
+            <Route path="/sitemap" element={<SiteMapPage />} />
           </Routes>
         </main>
         <ScrollToTopButton />

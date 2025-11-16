@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from '../hooks/useTranslation';
 
 const Footer: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
 
   const navLinks = [
     { to: '/about', text: t('nav.about') },
@@ -13,6 +13,7 @@ const Footer: React.FC = () => {
     { to: '/clients', text: t('nav.clients') },
     { to: '/brochures', text: t('nav.brochures') },
     { to: '/contact', text: t('nav.contact') },
+    { to: '/sitemap', text: language === 'ar' ? 'خريطة الموقع' : 'Site Map' },
   ];
 
   return (
