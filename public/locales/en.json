@@ -240,6 +240,20 @@
       ],
       "salesTrackingDesc3": "Display showing each production movement and each sales transaction made on the sales order."
     },
+    "manufacturingModule": {
+      "title": "Manufacturing & Production Management System",
+      "subtitle": "Comprehensive system for managing manufacturing processes with advanced cost tracking and performance analysis",
+      "costTrackingTitle": "Cost Tracking",
+      "costTrackingDesc": "The manufacturing and production management system can track costs associated with each product or manufacturing process. Costs for materials, labor, equipment, and technology used in each process are assigned, helping to determine the actual production cost.",
+      "performanceAnalysisTitle": "Performance Analysis",
+      "performanceAnalysisDesc": "The manufacturing and production management system can be used to analyze the performance of manufacturing processes and identify the most efficient processes and those that need improvement. Costs and productivity can be analyzed to identify the most effective processes and the most profitable products.",
+      "costManagementTitle": "Cost Management Improvement",
+      "costManagementDesc": "The manufacturing and production management system can be used to improve cost management and identify activities or products that consume additional resources and need cost improvement. Costs can be compared and analyzed to identify optimal strategies for achieving cost savings.",
+      "productionPlanningTitle": "Production Planning & Resource Management",
+      "productionPlanningDesc": "The manufacturing and production management system can be used for production planning and determining resource needs. Future production costs can be analyzed and estimated, and optimal strategies for cost management and efficiency achievement can be identified.",
+      "profitabilityEvaluationTitle": "Profitability Evaluation",
+      "profitabilityEvaluationDesc": "The manufacturing and production management system can be used to evaluate the profitability of each product or manufacturing process. Costs and revenues can be analyzed to identify the most profitable products and expected costs to achieve optimal profitability."
+    },
     "inventoryModule": {
       "title": "Inventory Management",
       "subtitle": "Comprehensive inventory management system with advanced tracking and valuation capabilities",
