@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { LanguageContext } from '../context/LanguageContext';
 import { useTranslation } from '../hooks/useTranslation';
@@ -6,6 +6,28 @@ import { useTranslation } from '../hooks/useTranslation';
 const DigitalTransformationPage: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const { t } = useTranslation();
+
+  // SEO metadata
+  useEffect(() => {
+    const title = t('seo.digitalTransformation.title', 'Digital Transformation Services - ERP & Custom Software Solutions | Active Soft');
+    const description = t('seo.digitalTransformation.description', 'Comprehensive digital transformation services including Oracle ERP implementation, custom software development, cloud infrastructure, and cybersecurity solutions for businesses in Egypt and the Middle East.');
+    const keywords = t('seo.digitalTransformation.keywords', 'Digital Transformation Egypt, ERP Implementation, Custom Software Development, Cloud Infrastructure, Cybersecurity Solutions, Business Technology Transformation');
+
+    if (title) document.title = title;
+
+    const setMetaTag = (name: string, content: string) => {
+      let element = document.querySelector(`meta[name="${name}"]`);
+      if (!element) {
+        element = document.createElement('meta');
+        element.setAttribute('name', name);
+        document.head.appendChild(element);
+      }
+      element.setAttribute('content', content);
+    };
+
+    if (description) setMetaTag('description', description);
+    if (keywords) setMetaTag('keywords', keywords);
+  }, [t]);
 
   // Define the services data with more detailed information
   const services = [

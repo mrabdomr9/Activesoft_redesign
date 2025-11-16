@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://activesoft.net/</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://activesoft.net/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://activesoft.net/" />
+  </url>
+  <url>
+    <loc>https://activesoft.net/#/services</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://activesoft.net/#/services" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://activesoft.net/#/services" />
+  </url>
+  <url>
+    <loc>https://activesoft.net/#/prices</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://activesoft.net/#/prices" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://activesoft.net/#/prices" />
+  </url>
+  <url>
+    <loc>https://activesoft.net/#/industries</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://activesoft.net/#/industries" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://activesoft.net/#/industries" />
+  </url>
+  <url>
+    <loc>https://activesoft.net/#/digital-transformation</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://activesoft.net/#/digital-transformation" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://activesoft.net/#/digital-transformation" />
+  </url>
+  <url>
+    <loc>https://activesoft.net/#/case-studies</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://activesoft.net/#/case-studies" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://activesoft.net/#/case-studies" />
+  </url>
+  <url>
+    <loc>https://activesoft.net/#/portfolio</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://activesoft.net/#/portfolio" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://activesoft.net/#/portfolio" />
+  </url>
+  <url>
+    <loc>https://activesoft.net/#/clients</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://activesoft.net/#/clients" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://activesoft.net/#/clients" />
+  </url>
+  <url>
+    <loc>https://activesoft.net/#/about</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://activesoft.net/#/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://activesoft.net/#/about" />
+  </url>
+  <url>
+    <loc>https://activesoft.net/#/brochures</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://activesoft.net/#/brochures" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://activesoft.net/#/brochures" />
+  </url>
+  <url>
+    <loc>https://activesoft.net/#/contact</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://activesoft.net/#/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://activesoft.net/#/contact" />
+  </url>
+  <url>
+    <loc>https://activesoft.net/#/sitemap</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://activesoft.net/#/sitemap" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://activesoft.net/#/sitemap" />
+  </url>
+</urlset>

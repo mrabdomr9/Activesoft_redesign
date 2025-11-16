@@ -7,9 +7,9 @@ const HomePage: React.FC = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   useEffect(() => {
-    const title = t('seo.home.title', 'Active Soft | Enterprise Solutions & Custom Software');
-    const description = t('seo.home.description', 'Active Soft delivers expert Oracle ERP solutions, managed IT services, and custom application development to drive business growth and efficiency.');
-    const keywords = t('seo.home.keywords', 'Active Soft, Oracle ERP, Managed IT, Custom Software, Business Solutions');
+    const title = t('seo.home.title', 'Active Soft - Oracle ERP Solutions & Custom Software Development Egypt');
+    const description = t('seo.home.description', 'Leading Oracle ERP implementation, custom software development & managed IT services in Egypt. 15+ years of experience delivering enterprise solutions for manufacturing, healthcare & financial sectors.');
+    const keywords = t('seo.home.keywords', 'Oracle ERP Egypt, Custom Software Development Egypt, Managed IT Services Cairo, Enterprise Solutions Egypt, Business Software Egypt, ERP Implementation Egypt');
 
     if (title) document.title = title;
 
@@ -25,6 +25,105 @@ const HomePage: React.FC = () => {
 
     if (description) setMetaTag('description', description);
     if (keywords) setMetaTag('keywords', keywords);
+    
+    // Add Open Graph meta tags
+    setMetaTag('og:title', title);
+    setMetaTag('og:description', description);
+    setMetaTag('og:type', 'website');
+    setMetaTag('og:url', 'https://activesoft.net');
+    setMetaTag('og:image', 'https://activesoft.net/og-image.jpg');
+    setMetaTag('og:site_name', 'Active Soft');
+    
+    // Add Twitter meta tags
+    setMetaTag('twitter:card', 'summary_large_image');
+    setMetaTag('twitter:title', title);
+    setMetaTag('twitter:description', description);
+    setMetaTag('twitter:image', 'https://activesoft.net/twitter-image.jpg');
+    setMetaTag('twitter:site', '@ActiveSoft');
+    
+    // Add canonical tag
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute('href', 'https://activesoft.net');
+    
+    // Add structured data
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Active Soft",
+      "url": "https://activesoft.net",
+      "logo": "https://activesoft.net/logo.png",
+      "description": description,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Tech Street",
+        "addressLocality": "Cairo",
+        "addressCountry": "Egypt"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+20 122 507 7433",
+        "contactType": "customer service",
+        "availableLanguage": ["en", "ar"]
+      },
+      "sameAs": [
+        "https://www.facebook.com/activesoft",
+        "https://www.linkedin.com/company/activesoft"
+      ]
+    };
+
+    // Add WebSite schema for search results enhancement
+    const websiteData = {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Active Soft",
+      "url": "https://activesoft.net",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://activesoft.net/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    };
+
+    // Remove existing meta tags
+    const removeMetaTag = (property: string) => {
+      const element = document.querySelector(`meta[property="${property}"]`);
+      if (element) element.remove();
+    };
+    
+    removeMetaTag('og:title');
+    removeMetaTag('og:description');
+    removeMetaTag('og:type');
+    removeMetaTag('og:url');
+    removeMetaTag('og:image');
+    removeMetaTag('og:site_name');
+    removeMetaTag('twitter:card');
+    removeMetaTag('twitter:title');
+    removeMetaTag('twitter:description');
+    removeMetaTag('twitter:image');
+    removeMetaTag('twitter:site');
+    
+    // Remove existing structured data
+    const existingScript = document.querySelector('script[type="application/ld+json"]');
+    if (existingScript) {
+      existingScript.remove();
+    }
+
+    // Add Organization structured data
+    const script1 = document.createElement('script');
+    script1.type = 'application/ld+json';
+    script1.text = JSON.stringify(structuredData);
+    document.head.appendChild(script1);
+    
+    // Add WebSite structured data
+    const script2 = document.createElement('script');
+    script2.type = 'application/ld+json';
+    script2.text = JSON.stringify(websiteData);
+    document.head.appendChild(script2);
   }, [t]);
 
   const features = [
@@ -171,6 +270,11 @@ const HomePage: React.FC = () => {
                         {t('home.learnMore', 'Learn More')} &rarr;
                     </Link>
                 </div>
+                <div className="mt-4">
+                  <Link to="/portfolio" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                    {t('home.viewPortfolio', 'View Our Work')}
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
@@ -211,6 +315,11 @@ const HomePage: React.FC = () => {
               </div>
               <p className="text-5xl font-bold text-cyan-400 font-display mb-2">{t('home.impact.satisfactionVal', '98%')}</p>
               <p className="text-lg text-gray-200">{t('home.impact.satisfaction', 'Client Satisfaction')}</p>
+              <div className="mt-4">
+                <Link to="/clients" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                  {t('home.viewClients', 'View Our Clients')}
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -224,6 +333,11 @@ const HomePage: React.FC = () => {
             <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>
               {t('workStages.slogan', 'Smart planning is one of the most important factors of distinction and success')}
             </p>
+            <div className="mt-4">
+              <Link to="/about" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                {t('home.meetOurTeam', 'Meet Our Team')}
+              </Link>
+            </div>
           </div>
           <div className="max-w-4xl mx-auto">
             <div className="glass-panel p-8 rounded-xl">
@@ -289,6 +403,11 @@ const HomePage: React.FC = () => {
                     <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
                 </Link>
+                <div className="mt-4">
+                  <Link to="/prices" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                    {t('home.viewPricing', 'View Pricing')}
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -312,6 +431,11 @@ const HomePage: React.FC = () => {
                     <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
                 </Link>
+                <div className="mt-4">
+                  <Link to="/prices" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                    {t('home.viewPricing', 'View Pricing')}
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -335,6 +459,11 @@ const HomePage: React.FC = () => {
                     <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
                 </Link>
+                <div className="mt-4">
+                  <Link to="/prices" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                    {t('home.viewPricing', 'View Pricing')}
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -358,6 +487,11 @@ const HomePage: React.FC = () => {
                     <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
                 </Link>
+                <div className="mt-4">
+                  <Link to="/prices" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                    {t('home.viewPricing', 'View Pricing')}
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -377,7 +511,7 @@ const HomePage: React.FC = () => {
             {industriesData.map((industry) => (
               <div key={industry.key} className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105 flex flex-col">
                 <div className="h-48 overflow-hidden">
-                  <img src={industry.image} alt={t(`industries.${industry.key}.name`)} className="w-full h-full object-cover" />
+                  <img src={industry.image} alt={`${t(`industries.${industry.key}.name`)} - ${t('industries.solutionLabel')}`} className="w-full h-full object-cover" />
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-bold text-white mb-3">{t(`industries.${industry.key}.name`)}</h3>
@@ -391,6 +525,11 @@ const HomePage: React.FC = () => {
                       <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
                   </Link>
+                  <div className="mt-4">
+                    <Link to="/case-studies" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                      {t('home.viewCaseStudies', 'View Success Stories')}
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
@@ -398,161 +537,110 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Clients Logo Slider */}
-      <section className="py-12 bg-transparent">
+      {/* Testimonials Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-900/50 to-slate-800/50 rounded-2xl">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-white font-display animate-on-scroll">
-              {t('clients.title', language === 'ar' ? 'محبتكم تسامت كالنجوم فى سماء قلوبنا' : 'Your Love Soared Like Stars in the Sky of Our Hearts')}
+              {testimonials?.title || t('home.testimonials.title', 'What Our Clients Say')}
             </h2>
-            <p className="mt-2 text-lg text-gray-300 max-w-2xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>
-              {t('clients.subtitle', language === 'ar' ? 'عملاء الشركة' : 'Company Clients')}
+            <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>
+              {testimonials?.subtitle || t('home.testimonials.subtitle', 'Real feedback from businesses we\'ve empowered.')}
             </p>
           </div>
-          
-          {/* Logo Slider */}
-          <div className="glass-panel p-8 rounded-xl overflow-hidden">
-            <div className="overflow-hidden">
-              <div className={`flex animate-loop-scroll ${language === 'ar' ? 'rtl' : ''}`}>
-                {language === 'ar' ? 
-                  [...t('clients.clientList', [])].reverse().map((client: { name: string; logo: string }, index: number) => (
-                    <div key={index} className="flex-shrink-0 mx-8 flex items-center justify-center" style={{ minWidth: '150px' }}>
+
+          {testimonials && testimonials.quotes && testimonials.quotes.length > 0 && (
+            <div className="max-w-4xl mx-auto">
+              <div className="glass-panel rounded-xl p-8 relative">
+                {/* Navigation Arrows */}
+                {testimonials.quotes.length > 1 && (
+                  <>
+                    <button 
+                      onClick={prevTestimonial}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-primary/20 hover:bg-primary/40 text-white rounded-full p-2 transition-colors"
+                      aria-label="Previous testimonial"
+                    >
+                      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+                    <button 
+                      onClick={nextTestimonial}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-primary/20 hover:bg-primary/40 text-white rounded-full p-2 transition-colors"
+                      aria-label="Next testimonial"
+                    >
+                      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </>
+                )}
+
+                {/* Testimonial Content */}
+                {testimonials.quotes[currentTestimonial] && (
+                  <div className="text-center">
+                    <div className="flex justify-center mb-6">
                       <img 
-                        src={client.logo} 
-                        alt={client.name} 
-                        className="h-16 object-contain opacity-70 hover:opacity-100 transition-opacity"
+                        src={testimonials.quotes[currentTestimonial].logo} 
+                        alt={`${testimonials.quotes[currentTestimonial].name} - ${testimonials.quotes[currentTestimonial].company} - ${t('home.testimonials.title')}`} 
+                        className="h-16 w-16 rounded-full object-cover"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.style.display = 'none';
                         }}
                       />
                     </div>
-                  )) : 
-                  t('clients.clientList', []).map((client: { name: string; logo: string }, index: number) => (
-                    <div key={index} className="flex-shrink-0 mx-8 flex items-center justify-center" style={{ minWidth: '150px' }}>
-                      <img 
-                        src={client.logo} 
-                        alt={client.name} 
-                        className="h-16 object-contain opacity-70 hover:opacity-100 transition-opacity"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = 'none';
-                        }}
-                      />
+                    <blockquote className="text-xl text-gray-300 italic mb-6">
+                      "{testimonials.quotes[currentTestimonial].quote}"
+                    </blockquote>
+                    <div className="font-semibold text-white">
+                      {testimonials.quotes[currentTestimonial].name}
                     </div>
-                  ))
-                }
-                {/* Duplicate the logos for seamless looping */}
-                {language === 'ar' ? 
-                  [...t('clients.clientList', [])].reverse().map((client: { name: string; logo: string }, index: number) => (
-                    <div key={`duplicate-${index}`} className="flex-shrink-0 mx-8 flex items-center justify-center" style={{ minWidth: '150px' }}>
-                      <img 
-                        src={client.logo} 
-                        alt={client.name} 
-                        className="h-16 object-contain opacity-70 hover:opacity-100 transition-opacity"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = 'none';
-                        }}
-                      />
+                    <div className="text-primary">
+                      {testimonials.quotes[currentTestimonial].company}
                     </div>
-                  )) : 
-                  t('clients.clientList', []).map((client: { name: string; logo: string }, index: number) => (
-                    <div key={`duplicate-${index}`} className="flex-shrink-0 mx-8 flex items-center justify-center" style={{ minWidth: '150px' }}>
-                      <img 
-                        src={client.logo} 
-                        alt={client.name} 
-                        className="h-16 object-contain opacity-70 hover:opacity-100 transition-opacity"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = 'none';
-                        }}
+                  </div>
+                )}
+
+                {/* Dots Indicator */}
+                {testimonials.quotes.length > 1 && (
+                  <div className="flex justify-center mt-8 space-x-2">
+                    {testimonials.quotes.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentTestimonial(index)}
+                        className={`h-3 w-3 rounded-full ${index === currentTestimonial ? 'bg-primary' : 'bg-gray-600'}`}
+                        aria-label={`Go to testimonial ${index + 1}`}
                       />
-                    </div>
-                  ))
-                }
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* CTA Section */}
       <section className="py-20 bg-transparent">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white font-display animate-on-scroll">{testimonials.title}</h2>
-            <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>{testimonials.subtitle}</p>
+          <div className="glass-panel rounded-xl p-12 text-center">
+            <h2 className="text-3xl font-bold text-white font-display mb-4">
+              {t('home.cta.title', 'Ready to Transform Your Business?')}
+            </h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+              {t('home.cta.subtitle', 'Let\'s discuss how our solutions can help you achieve your strategic objectives. Get a free consultation today.')}
+            </p>
+            <Link 
+              to="/contact" 
+              className="inline-block px-8 py-4 bg-primary hover:bg-secondary text-white font-bold rounded-md shadow-lg transition-colors duration-300 transform hover:scale-105"
+            >
+              {t('home.cta.button', 'Request a Consultation')}
+            </Link>
           </div>
-          
-          <div className="relative max-w-3xl mx-auto animate-on-scroll" style={{ transitionDelay: '200ms' }}>
-            <div className="overflow-hidden w-full">
-              {testimonials && testimonials.quotes && testimonials.quotes.length > 0 && (
-              <div 
-                key={`testimonials-${testimonials.quotes.length}`}
-                className="flex transition-transform duration-500 ease-in-out" 
-                style={{ transform: language === 'ar' ? `translateX(${currentTestimonial * (100 / testimonials.quotes.length)}%)` : `translateX(-${currentTestimonial * (100 / testimonials.quotes.length)}%)`, width: `${testimonials.quotes.length * 100}%` }}
-              >
-                {testimonials.quotes.map((item: { quote: string; name: string; company: string; }, index: number) => (
-                  <div key={index} className="w-full flex-shrink-0 px-4" style={{ width: `${100 / testimonials.quotes.length}%` }}>
-                    <div className="glass-panel p-8 rounded-xl text-center h-full">
-                      <svg className="h-10 w-10 text-primary mx-auto mb-4" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-                        <path d="M9.333 22.667h4L16 16V9.333H9.333v13.334zM22.667 22.667h4L29.333 16V9.333h-6.666v13.334z"></path>
-                      </svg>
-                      <blockquote className="text-lg text-gray-200 leading-relaxed italic">
-                        "{item.quote}"
-                      </blockquote>
-                      <div className="mt-6">
-                        <p className="font-bold text-white text-lg">{item.name}</p>
-                        <p className="text-secondary text-sm">{item.company}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              )}
-            </div>
-            {testimonials && testimonials.quotes && testimonials.quotes.length > 1 && (
-              <>
-                 <button onClick={prevTestimonial} className="absolute top-1/2 -translate-y-1/2 start-0 transform -translate-x-4 bg-white/10 hover:bg-white/20 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors z-10 rtl:rotate-180" aria-label="Previous testimonial">
-                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
-                 </button>
-                 <button onClick={nextTestimonial} className="absolute top-1/2 -translate-y-1/2 end-0 transform translate-x-4 bg-white/10 hover:bg-white/20 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors z-10 rtl:rotate-180" aria-label="Next testimonial">
-                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
-                 </button>
-              </>
-            )}
-          </div>
-           {testimonials && testimonials.quotes && testimonials.quotes.length > 1 && (
-              <div className="flex justify-center mt-8 space-x-2 rtl:space-x-reverse">
-                  {testimonials.quotes.map((_, index) => (
-                      <button
-                          key={index}
-                          onClick={() => setCurrentTestimonial(index)}
-                          className={`w-3 h-3 rounded-full transition-colors ${currentTestimonial === index ? 'bg-primary' : 'bg-white/20 hover:bg-white/40'}`}
-                          aria-label={`Go to testimonial ${index + 1}`}
-                      />
-                  ))}
-              </div>
-            )}
         </div>
       </section>
-      
-      {/* CTA Section */}
-      <section className="py-20">
-         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="glass-panel p-12 rounded-xl text-center animate-on-scroll bg-gradient-to-br from-primary/20 to-transparent">
-               <h2 className="text-3xl font-bold text-white font-display">{t('home.cta.title', "Ready to Transform Your Business?")}</h2>
-               <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">{t('home.cta.subtitle', "Let's discuss how our solutions can help you achieve your strategic objectives. Get a free consultation today.")}</p>
-               <div className="mt-8">
-                  <Link to="/contact" className="px-8 py-3 bg-primary text-white font-bold rounded-md shadow-lg hover:bg-secondary transition-colors duration-300 transform hover:scale-105">
-                     {t('home.cta.button', 'Request a Consultation')}
-                  </Link>
-               </div>
-            </div>
-         </div>
-      </section>
-    </div>
+      </div>
     </div>
   );
 };
