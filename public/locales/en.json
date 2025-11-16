@@ -405,7 +405,7 @@
           "Comprehensive user training and change management"
         ],
         "pricing": {
-          "currency": "USD",
+          "currency": "EGP",
           "startingAt": 75000,
           "billingPeriod": "project"
         }
@@ -422,7 +422,7 @@
           "Integration with third-party applications"
         ],
         "pricing": {
-          "currency": "USD",
+          "currency": "EGP",
           "startingAt": 25000,
           "billingPeriod": "project"
         }
@@ -439,7 +439,7 @@
           "Regulatory compliance (HIPAA, HL7)"
         ],
         "pricing": {
-          "currency": "USD",
+          "currency": "EGP",
           "startingAt": 45000,
           "billingPeriod": "project"
         }
@@ -456,7 +456,7 @@
           "Scalable architecture for future expansion"
         ],
         "pricing": {
-          "currency": "USD",
+          "currency": "EGP",
           "startingAt": 15000,
           "billingPeriod": "project"
         }
@@ -473,7 +473,7 @@
           "Data warehouse design and implementation"
         ],
         "pricing": {
-          "currency": "USD",
+          "currency": "EGP",
           "startingAt": 35000,
           "billingPeriod": "project"
         }
@@ -490,7 +490,7 @@
           "Transportation and logistics coordination"
         ],
         "pricing": {
-          "currency": "USD",
+          "currency": "EGP",
           "startingAt": 55000,
           "billingPeriod": "project"
         }
@@ -508,9 +508,9 @@
       "solution": "Customized Oracle ERP modules to streamline production, optimize inventory, and enhance supply chain visibility for increased efficiency."
     },
     "healthcare": {
-      "name": "Healthcare",
-      "challenges": "Patient data security, regulatory compliance (HIPAA), and integration of disparate clinical systems.",
-      "solution": "Secure, compliant custom applications for patient management and electronic health records, ensuring data integrity and interoperability."
+      "name": "Agricultural Stations & Export Operations",
+      "challenges": "Managing supplier data, inventory tracking, export documentation, and cost allocation across multiple operations.",
+      "solution": "Comprehensive accounting system handling supplier/customer accounts, inventory, warehouse management, and export operations with detailed tracking of processing costs and expense allocation."
     },
     "financial": {
       "name": "Financial Services",
@@ -539,7 +539,7 @@
     "filters": {
       "all": "All Industries",
       "manufacturing": "Manufacturing",
-      "healthcare": "Healthcare",
+      "healthcare": "Agricultural Stations & Export Operations",
       "financial": "Financial Services"
     },
     "studies": [
@@ -554,11 +554,11 @@
       },
       {
         "industryKey": "healthcare",
-        "industry": "Healthcare",
-        "title": "Securing Patient Data for a Hospital Network",
-        "challenge": "A large hospital network needed to upgrade its patient management system to meet new data security regulations.",
-        "solution": "We developed a custom, HIPAA-compliant patient portal and data management application with multi-layered security.",
-        "result": "Passed all security audits with zero compliance issues and improved administrative efficiency by 40%.",
+        "industry": "Agricultural Stations & Export Operations",
+        "title": "Optimizing Agricultural Export Operations for a Major Farming Cooperative",
+        "challenge": "A large agricultural cooperative needed to streamline their export documentation, inventory tracking, and cost allocation across multiple farming stations and international markets.",
+        "solution": "We developed a comprehensive accounting and export management system that integrated supplier data, inventory management, warehouse operations, and detailed cost tracking for each export shipment.",
+        "result": "Achieved 35% improvement in export processing time and 99.5% accuracy in cost allocation across all operations.",
         "image": "https://picsum.photos/seed/casestudy2/800/600"
       }
     ]
@@ -578,9 +578,9 @@
         "image": "https://picsum.photos/seed/inventory/800/600"
       },
       {
-        "title": "Healthcare Management System",
-        "description": "A comprehensive healthcare management solution integrating patient records, billing, and regulatory compliance in a unified platform.",
-        "image": "https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        "title": "Agricultural Stations & Export Operations System",
+        "description": "A comprehensive system for managing agricultural stations and export operations, integrating supplier data, inventory tracking, cost allocation, and detailed shipment documentation.",
+        "image": "https://images.unsplash.com/photo-1651525669944-00de65d3b8a5?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       {
         "title": "Financial Services Platform",
