@@ -36,7 +36,36 @@ const AboutUsPage: React.FC = () => {
   const teamMembers: TeamMember[] = t('about.team', []);
 
   return (
-    <>
+    <div className="min-h-screen digital-transformation-bg relative">
+      {/* Technical Background Elements */}
+      <div className="absolute inset-0">
+        {/* Circuit Board Pattern */}
+        <div className="absolute inset-0 opacity-5" style={{ 
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M0 50h20m20 0h10m20 0h30M50 0v20m0 20v10m0 20v30' stroke='%2306B6D4' stroke-width='1'/%3E%3Ccircle cx='20' cy='50' r='2' fill='%2306B6D4'/%3E%3Ccircle cx='50' cy='20' r='2' fill='%2306B6D4'/%3E%3Ccircle cx='50' cy='80' r='2' fill='%2306B6D4'/%3E%3C/svg%3E")`,
+          backgroundSize: '150px 150px'
+        }}></div>
+        
+        {/* HUD Elements */}
+        <div className="absolute inset-0 opacity-3" style={{ 
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20h40M20 40h30M20 60h20M140 20h40M150 40h30M160 60h20' stroke='%2306B6D4' stroke-width='0.5'/%3E%3C/svg%3E")`,
+          backgroundSize: '200px 200px'
+        }}></div>
+        
+        {/* Data Flow Lines */}
+        <div className="absolute inset-0 opacity-2" style={{ 
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 150 Q75 100 150 150 T300 150' stroke='%2306B6D4' stroke-width='0.5' fill='none' stroke-dasharray='5,5'/%3E%3C/svg%3E")`,
+          backgroundSize: '300px 300px'
+        }}></div>
+        
+        {/* Technical Schematics */}
+        <div className="absolute inset-0 opacity-1" style={{ 
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50 L100 100 M150 50 L200 100 M250 50 L300 100 M50 150 L100 200 M150 150 L200 200 M250 150 L300 200' stroke='%2306B6D4' stroke-width='0.3'/%3E%3C/svg%3E")`,
+          backgroundSize: '400px 400px'
+        }}></div>
+      </div>
+      
+      {/* Content */}
+      <div className="digital-transformation-content">
       <section className="bg-transparent pt-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold text-white font-display animate-on-scroll">{t('about.title')}</h1>
@@ -82,7 +111,8 @@ const AboutUsPage: React.FC = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
+    </div>
   );
 };
 

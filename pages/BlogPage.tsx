@@ -62,83 +62,115 @@ const BrochuresPage: React.FC = () => {
   const inputClasses = "w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:ring-primary focus:border-primary transition-colors text-white placeholder-gray-400";
 
   return (
-    <div className="bg-transparent py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-white font-display animate-on-scroll">{t('brochures.title')}</h1>
-          <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>
-            {t('brochures.subtitle')}
-          </p>
-        </div>
+    <div className="min-h-screen digital-transformation-bg relative">
+      {/* Technical Background Elements */}
+      <div className="absolute inset-0">
+        {/* Circuit Board Pattern */}
+        <div className="absolute inset-0 opacity-5" style={{ 
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M0 50h20m20 0h10m20 0h30M50 0v20m0 20v10m0 20v30' stroke='%2306B6D4' stroke-width='1'/%3E%3Ccircle cx='20' cy='50' r='2' fill='%2306B6D4'/%3E%3Ccircle cx='50' cy='20' r='2' fill='%2306B6D4'/%3E%3Ccircle cx='50' cy='80' r='2' fill='%2306B6D4'/%3E%3C/svg%3E")`,
+          backgroundSize: '150px 150px'
+        }}></div>
         
-        {/* PDF Download Section */}
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 animate-on-scroll">
-            {pdfFiles.map((pdf) => (
-              <div key={pdf.id} className="glass-panel p-6 rounded-xl hover:border-primary transition-all duration-300">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 mt-1">
-                    <svg className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-xl font-bold text-white">{pdf.name}</h3>
-                    <p className="mt-2 text-gray-300">{pdf.description}</p>
-                    <a 
-                      href={`/PDFs/${pdf.fileName}`} 
-                      download
-                      className="mt-4 inline-flex items-center px-4 py-2 bg-primary text-white font-medium rounded-md hover:bg-secondary transition-colors"
-                    >
-                      {t('brochures.download', 'Download')} ({(pdf.id * 500) + 100} KB)
-                      <svg className="ml-2 -mr-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        {/* HUD Elements */}
+        <div className="absolute inset-0 opacity-3" style={{ 
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20h40M20 40h30M20 60h20M140 20h40M150 40h30M160 60h20' stroke='%2306B6D4' stroke-width='0.5'/%3E%3C/svg%3E")`,
+          backgroundSize: '200px 200px'
+        }}></div>
+        
+        {/* Data Flow Lines */}
+        <div className="absolute inset-0 opacity-2" style={{ 
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 150 Q75 100 150 150 T300 150' stroke='%2306B6D4' stroke-width='0.5' fill='none' stroke-dasharray='5,5'/%3E%3C/svg%3E")`,
+          backgroundSize: '300px 300px'
+        }}></div>
+        
+        {/* Technical Schematics */}
+        <div className="absolute inset-0 opacity-1" style={{ 
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50 L100 100 M150 50 L200 100 M250 50 L300 100 M50 150 L100 200 M150 150 L200 200 M250 150 L300 200' stroke='%2306B6D4' stroke-width='0.3'/%3E%3C/svg%3E")`,
+          backgroundSize: '400px 400px'
+        }}></div>
+      </div>
+      
+      {/* Content */}
+      <div className="digital-transformation-content">
+      <div className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold text-white font-display animate-on-scroll">{t('brochures.title')}</h1>
+            <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>
+              {t('brochures.subtitle')}
+            </p>
+          </div>
+          
+          {/* PDF Download Section */}
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 animate-on-scroll">
+              {pdfFiles.map((pdf) => (
+                <div key={pdf.id} className="glass-panel p-6 rounded-xl hover:border-primary transition-all duration-300">
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 mt-1">
+                      <svg className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                       </svg>
-                    </a>
+                    </div>
+                    <div className="ml-4">
+                      <h3 className="text-xl font-bold text-white">{pdf.name}</h3>
+                      <p className="mt-2 text-gray-300">{pdf.description}</p>
+                      <a 
+                        href={`/PDFs/${pdf.fileName}`} 
+                        download
+                        className="mt-4 inline-flex items-center px-4 py-2 bg-primary text-white font-medium rounded-md hover:bg-secondary transition-colors"
+                      >
+                        {t('brochures.download', 'Download')} ({(pdf.id * 500) + 100} KB)
+                        <svg className="ml-2 -mr-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                      </a>
+                    </div>
                   </div>
                 </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="max-w-md mx-auto glass-panel p-8 md:p-12 rounded-xl animate-on-scroll" style={{ transitionDelay: '200ms' }}>
+            <h2 className="text-2xl font-bold text-white mb-6">{t('brochures.requestFormTitle', 'Request More Information')}</h2>
+            <form className="space-y-6">
+              <div>
+                <label htmlFor="name" className="sr-only">{t('brochures.namePlaceholder')}</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  placeholder={t('brochures.namePlaceholder')} 
+                  required 
+                  className={inputClasses}
+                />
               </div>
-            ))}
+               <div>
+                <label htmlFor="email" className="sr-only">{t('brochures.emailPlaceholder')}</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  placeholder={t('brochures.emailPlaceholder')} 
+                  required 
+                  className={inputClasses}
+                />
+              </div>
+              <div className="text-center pt-2">
+                <button 
+                  type="submit" 
+                  className="w-full px-8 py-3 bg-primary text-white font-bold rounded-md shadow-lg hover:bg-secondary transition-colors"
+                >
+                  {t('brochures.requestInfo', 'Request Information')}
+                </button>
+              </div>
+            </form>
           </div>
         </div>
-
-        {/* Contact Form */}
-        <div className="max-w-md mx-auto glass-panel p-8 md:p-12 rounded-xl animate-on-scroll" style={{ transitionDelay: '200ms' }}>
-          <h2 className="text-2xl font-bold text-white mb-6">{t('brochures.requestFormTitle', 'Request More Information')}</h2>
-          <form className="space-y-6">
-            <div>
-              <label htmlFor="name" className="sr-only">{t('brochures.namePlaceholder')}</label>
-              <input 
-                type="text" 
-                id="name" 
-                name="name" 
-                placeholder={t('brochures.namePlaceholder')} 
-                required 
-                className={inputClasses}
-              />
-            </div>
-             <div>
-              <label htmlFor="email" className="sr-only">{t('brochures.emailPlaceholder')}</label>
-              <input 
-                type="email" 
-                id="email" 
-                name="email" 
-                placeholder={t('brochures.emailPlaceholder')} 
-                required 
-                className={inputClasses}
-              />
-            </div>
-            <div className="text-center pt-2">
-              <button 
-                type="submit" 
-                className="w-full px-8 py-3 bg-primary text-white font-bold rounded-md shadow-lg hover:bg-secondary transition-colors"
-              >
-                {t('brochures.requestInfo', 'Request Information')}
-              </button>
-            </div>
-          </form>
-        </div>
       </div>
+    </div>
     </div>
   );
 };

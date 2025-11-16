@@ -30,3 +30,39 @@
 .animate-loop-scroll:hover {
   animation-play-state: paused;
 }
+
+/* Digital Transformation Background Effects */
+.digital-transformation-bg {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to right, #0A192F 0%, #1E3A8A 50%, #10B981 100%);
+}
+
+.digital-transformation-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(6, 182, 212, 0.1);
+  z-index: 1;
+}
+
+.digital-transformation-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 20%);
+  z-index: 2;
+}
+
+.digital-transformation-content {
+  position: relative;
+  z-index: 3;
+}
