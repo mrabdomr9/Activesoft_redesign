@@ -13,6 +13,11 @@ const ServicesPage: React.FC = () => {
     service && service.id === "c1d2e3f4-5678-90ab-cdef-1234567890ab"
   ) || {};
 
+  // Find smart scale system service by ID
+  const smartScaleService = allServices.find((service: any) =>
+    service && service.id === "e8f9a2b1-c3d4-5678-9abc-def012345678"
+  ) || {};
+
   // Ensure we have fallback data
   const safeSalesService = {
     title: salesService.title || 'Sales Representatives and Sales Managers Management',
@@ -29,6 +34,25 @@ const ServicesPage: React.FC = () => {
       currency: (salesService.pricing && salesService.pricing.currency) || 'EGP',
       startingAt: (salesService.pricing && salesService.pricing.startingAt) || 30000,
       billingPeriod: (salesService.pricing && salesService.pricing.billingPeriod) || 'project'
+    }
+  };
+
+  // Ensure we have fallback data for smart scale system
+  const safeSmartScaleService = {
+    title: t('services.smartScaleTitle', 'Smart Scale System'),
+    description: t('services.smartScaleDesc', 'Intelligent weighing system that automates weight recording and integrates directly with your inventory and financial systems.'),
+    features: [
+      t('services.smartScaleFeatures.feature1', 'Automatic recording of actual weight for products, pallets, or containers without human intervention'),
+      t('services.smartScaleFeatures.feature2', 'Prevention of manipulation or manual input errors'),
+      t('services.smartScaleFeatures.feature3', 'Comparison of actual weight with standard weight to detect deviations or losses'),
+      t('services.smartScaleFeatures.feature4', 'Direct generation of invoices and costs based on real weight'),
+      t('services.smartScaleFeatures.feature5', 'Instant updating of inventory and financial accounts with each weighing operation'),
+      t('services.smartScaleFeatures.feature6', 'Direct integration between electronic scales and packaging stations within system')
+    ],
+    pricing: {
+      currency: 'EGP',
+      startingAt: 25000,
+      billingPeriod: 'project'
     }
   };
 
@@ -104,7 +128,7 @@ const ServicesPage: React.FC = () => {
         {/* Services Grid */}
         <div className="py-12">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 mb-16">
               {/* Oracle ERP Solutions Card */}
               <div className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105">
                 <div className="bg-primary p-6">
@@ -199,6 +223,32 @@ const ServicesPage: React.FC = () => {
                   <p className="text-gray-300 mb-4">{t('exportModule.subtitle', 'Comprehensive export management system with detailed shipment tracking and financial analysis')}</p>
                   <button 
                     onClick={() => scrollToSection('export')}
+                    className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors"
+                  >
+                    {t('home.learnMore', 'Learn More')}
+                    <svg className="ml-2 -mr-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              {/* Smart Scale System Card */}
+              <div className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105">
+                <div className="bg-primary p-6">
+                  <div className="flex items-center">
+                    <div className="bg-white/20 p-3 rounded-full mr-4">
+                      <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-white">{safeSmartScaleService.title}</h3>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-300 mb-4">{safeSmartScaleService.description}</p>
+                  <button
+                    onClick={() => scrollToSection('smartScale')}
                     className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors"
                   >
                     {t('home.learnMore', 'Learn More')}
@@ -551,6 +601,46 @@ const ServicesPage: React.FC = () => {
                       <h3 className="text-lg font-bold text-white mb-2">{t('prices.features', 'Pricing')}</h3>
                       <p className="text-primary text-xl font-bold">
                         {safeSalesService.pricing.currency} {safeSalesService.pricing.startingAt.toLocaleString()}<span className="text-gray-300 text-base font-normal"> /{safeSalesService.pricing.billingPeriod}</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Smart Scale System Section */}
+            <div id="smartScale" className="glass-panel p-8 rounded-xl animate-on-scroll">
+              <div className="flex flex-col md:flex-row items-center">
+                <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+                  <div className="bg-primary/10 p-6 rounded-full">
+                    <svg className="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="md:w-2/3 md:pl-8">
+                  <h2 className="text-3xl font-bold text-white font-display mb-4">{safeSmartScaleService.title}</h2>
+                  <p className="text-gray-300 mb-6">{safeSmartScaleService.description}</p>
+
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-3">Key Features</h3>
+                      <ul className="space-y-2">
+                        {safeSmartScaleService.features.map((feature: string, index: number) => (
+                          <li key={index} className="flex items-start">
+                            <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span className="text-gray-300">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="bg-gray-800/50 p-4 rounded-lg">
+                      <h3 className="text-lg font-bold text-white mb-2">{t('prices.features', 'Pricing')}</h3>
+                      <p className="text-primary text-xl font-bold">
+                        {safeSmartScaleService.pricing.currency} {safeSmartScaleService.pricing.startingAt.toLocaleString()}<span className="text-gray-300 text-base font-normal"> /{safeSmartScaleService.pricing.billingPeriod}</span>
                       </p>
                     </div>
                   </div>

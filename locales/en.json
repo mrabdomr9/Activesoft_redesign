@@ -164,6 +164,16 @@
   "services": {
     "title": "Our Comprehensive Services",
     "subtitle": "Tailored technology solutions to drive your business forward.",
+    "smartScaleTitle": "Smart Scale System",
+    "smartScaleDesc": "Intelligent weighing system that automates weight recording and integrates directly with your inventory and financial systems.",
+    "smartScaleFeatures": {
+      "feature1": "Automatic recording of actual weight for products, pallets, or containers without human intervention",
+      "feature2": "Prevention of manipulation or manual input errors",
+      "feature3": "Comparison of actual weight with standard weight to detect deviations or losses",
+      "feature4": "Direct generation of invoices and costs based on real weight",
+      "feature5": "Instant updating of inventory and financial accounts with each weighing operation",
+      "feature6": "Direct integration between electronic scales and packaging stations within system"
+    },
     "erpTitle": "Oracle ERP Solutions",
     "erpDesc": "Full-cycle Oracle ERP services including implementation, customization, migration, and support to optimize your business processes.",
     "erpFeaturesTitle": "ERP System Features",
@@ -329,6 +339,24 @@
         "pricing": {
           "currency": "EGP",
           "startingAt": 30000,
+          "billingPeriod": "project"
+        }
+      },
+      {
+        "id": "e8f9a2b1-c3d4-5678-9abc-def012345678",
+        "title": "Smart Scale System",
+        "description": "Intelligent weighing system that automates weight recording and integrates directly with your inventory and financial systems.",
+        "features": [
+          "Automatic recording of actual weight for products, pallets, or containers without human intervention",
+          "Prevention of manipulation or manual input errors",
+          "Comparison of actual weight with standard weight to detect deviations or losses",
+          "Direct generation of invoices and costs based on real weight",
+          "Instant updating of inventory and financial accounts with each weighing operation",
+          "Direct integration between electronic scales and packaging stations within system"
+        ],
+        "pricing": {
+          "currency": "EGP",
+          "startingAt": 25000,
           "billingPeriod": "project"
         }
       }
