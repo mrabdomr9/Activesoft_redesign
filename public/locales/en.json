@@ -443,14 +443,14 @@
       },
       {
         "id": "59ab53cd-0dc2-434a-a17c-1305a8ecf5f1",
-        "title": "Healthcare Management Information System (HMIS)",
-        "description": "Comprehensive healthcare management solution integrating patient records, billing, inventory, and regulatory compliance in a unified desktop application.",
+        "title": "Export Management System",
+        "description": "Accounting software that handles all calculations for suppliers, customers, warehouses, treasury, and banks. It aggregates supplier data, accounts, invoices, tracks inventory and items, manages export operations to different countries, and handles operational items with expense allocation to each operation.",
         "features": [
-          "Electronic Health Records (EHR) management",
-          "Patient appointment scheduling",
-          "Billing and insurance claim processing",
-          "Pharmacy and inventory management",
-          "Regulatory compliance (HIPAA, HL7)"
+          "Integrated management of supplier and customer accounts",
+          "Inventory tracking and continuous item counting",
+          "Export operations management to different countries",
+          "Processing of operational items and expense allocation",
+          "Integration of all accounting operations with treasury and banks"
         ],
         "pricing": {
           "currency": "EGP",
@@ -524,6 +524,42 @@
         "pricing": {
           "currency": "EGP",
           "startingAt": 30000,
+          "billingPeriod": "project"
+        }
+      },
+      {
+        "id": "hr-payroll-system",
+        "title": "HR and Payroll Management System",
+        "description": "Complete and integrated system with financial accounts for managing employee affairs and payroll calculations.",
+        "features": [
+          "Based on variable settings for insurance, vacations, and taxes that can be modified when laws change",
+          "Respects all payroll calculation rules and penalty provisions, carrying over excess of five days to subsequent months",
+          "Maintains employee photos and all employment documents with reports on missing documents",
+          "Tracks document expiration dates to notify employees of renewals",
+          "Records who entered and modified data with a period transfer system to prevent tampering",
+          "Ability to reverse period transfers to modify data according to permissions"
+        ],
+        "pricing": {
+          "currency": "EGP",
+          "startingAt": 35000,
+          "billingPeriod": "project"
+        }
+      },
+      {
+        "id": "smart-scale-system",
+        "title": "Smart Scale System",
+        "description": "Intelligent weighing system that automates weight recording and integrates directly with your inventory and financial systems.",
+        "features": [
+          "Automatic recording of actual weight for products, pallets, or containers without human intervention",
+          "Prevention of manipulation or manual input errors",
+          "Comparison of actual weight with standard weight to detect deviations or losses",
+          "Direct generation of invoices and costs based on real weight",
+          "Instant updating of inventory and financial accounts with each weighing operation",
+          "Direct integration between electronic scales and packaging stations within system"
+        ],
+        "pricing": {
+          "currency": "EGP",
+          "startingAt": 25000,
           "billingPeriod": "project"
         }
       }
@@ -745,6 +781,42 @@
         {
           "q": "Do you work with international clients?",
           "a": "Yes, absolutely. While we are based in Cairo, we have successfully delivered projects for clients across the globe. We leverage modern communication tools to ensure seamless collaboration regardless of your location."
+        },
+        {
+          "id": "hr-payroll-system",
+          "title": "HR and Payroll Management System",
+          "description": "Complete and integrated system with financial accounts for managing employee affairs and payroll calculations.",
+          "features": [
+            "Based on variable settings for insurance, vacations, and taxes that can be modified when laws change",
+            "Respects all payroll calculation rules and penalty provisions, carrying over excess of five days to subsequent months",
+            "Maintains employee photos and all employment documents with reports on missing documents",
+            "Tracks document expiration dates to notify employees of renewals",
+            "Records who entered and modified data with a period transfer system to prevent tampering",
+            "Ability to reverse period transfers to modify data according to permissions"
+          ],
+          "pricing": {
+            "currency": "EGP",
+            "startingAt": 35000,
+            "billingPeriod": "project"
+          }
+        },
+        {
+          "id": "smart-scale-system",
+          "title": "Smart Scale System",
+          "description": "Intelligent weighing system that automates weight recording and integrates directly with your inventory and financial systems.",
+          "features": [
+            "Automatic recording of actual weight for products, pallets, or containers without human intervention",
+            "Prevention of manipulation or manual input errors",
+            "Comparison of actual weight with standard weight to detect deviations or losses",
+            "Direct generation of invoices and costs based on real weight",
+            "Instant updating of inventory and financial accounts with each weighing operation",
+            "Direct integration between electronic scales and packaging stations within system"
+          ],
+          "pricing": {
+            "currency": "EGP",
+            "startingAt": 25000,
+            "billingPeriod": "project"
+          }
         }
       ]
     }
