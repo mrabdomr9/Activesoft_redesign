@@ -637,13 +637,6 @@ const ServicesPage: React.FC = () => {
                         ))}
                       </ul>
                     </div>
-
-                    <div className="bg-gray-800/50 p-4 rounded-lg">
-                      <h3 className="text-lg font-bold text-white mb-2">{t('prices.features', 'Pricing')}</h3>
-                      <p className="text-primary text-xl font-bold">
-                        {safeSalesService.pricing.currency} {safeSalesService.pricing.startingAt.toLocaleString()}<span className="text-gray-300 text-base font-normal"> /{safeSalesService.pricing.billingPeriod}</span>
-                      </p>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -676,13 +669,6 @@ const ServicesPage: React.FC = () => {
                           </li>
                         ))}
                       </ul>
-                    </div>
-
-                    <div className="bg-gray-800/50 p-4 rounded-lg">
-                      <h3 className="text-lg font-bold text-white mb-2">{t('prices.features', 'Pricing')}</h3>
-                      <p className="text-primary text-xl font-bold">
-                        {safeSmartScaleService.pricing.currency} {safeSmartScaleService.pricing.startingAt.toLocaleString()}<span className="text-gray-300 text-base font-normal"> /{safeSmartScaleService.pricing.billingPeriod}</span>
-                      </p>
                     </div>
                   </div>
                 </div>
@@ -746,13 +732,6 @@ const ServicesPage: React.FC = () => {
                       <span className="text-gray-300">{t('services.hrPayroll.features.feature6', 'Ability to reverse period transfers to modify data according to permissions')}</span>
                     </li>
                   </ul>
-                </div>
-
-                <div className="bg-gray-800/50 p-4 rounded-lg">
-                  <h3 className="text-lg font-bold text-white mb-2">{t('prices.features', 'Pricing')}</h3>
-                  <p className="text-primary text-xl font-bold">
-                    EGP 35,000<span className="text-gray-300 text-base font-normal"> /project</span>
-                  </p>
                 </div>
               </div>
             </div>
