@@ -81,7 +81,7 @@ const AboutUsPage: React.FC = () => {
               {t('about.teamSubtitle', 'Our strength lies in our people. Meet some of the dedicated professionals who bring a wealth of experience and certified expertise to every project, ensuring we deliver nothing but the best.')}
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
               <div key={member.name} className="text-center glass-panel p-6 rounded-xl animate-on-scroll flex flex-col transition-all duration-300 hover:-translate-y-2 hover:border-primary" style={{ transitionDelay: `${100 * (index + 2)}ms` }}>
                 <div className="flex-grow">
