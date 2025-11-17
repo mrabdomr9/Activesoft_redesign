@@ -233,6 +233,32 @@ const ServicesPage: React.FC = () => {
                 </div>
               </div>
 
+              {/* HR and Payroll Management System Card */}
+              <div className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105">
+                <div className="bg-primary p-6">
+                  <div className="flex items-center">
+                    <div className="bg-white/20 p-3 rounded-full mr-4">
+                      <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-white">{t('services.hrPayroll.title', 'HR and Payroll Management System')}</h3>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-300 mb-4">{t('services.hrPayroll.desc', 'Complete and integrated system with financial accounts for managing employee affairs and payroll calculations.')}</p>
+                  <button
+                    onClick={() => scrollToSection('hrPayroll')}
+                    className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors"
+                  >
+                    {t('home.learnMore', 'Learn More')}
+                    <svg className="ml-2 -mr-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
               {/* Smart Scale System Card */}
               <div className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105">
                 <div className="bg-primary p-6">
@@ -644,6 +670,74 @@ const ServicesPage: React.FC = () => {
                       </p>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* HR and Payroll Management Section */}
+        <div id="hrPayroll" className="glass-panel p-8 rounded-xl mb-12 animate-on-scroll">
+          <div className="flex flex-col md:flex-row items-center">
+            <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+              <div className="bg-primary/10 p-6 rounded-full">
+                <svg className="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+            </div>
+            <div className="md:w-2/3 md:pl-8">
+              <h2 className="text-3xl font-bold text-white font-display mb-4">{t('services.hrPayroll.title', 'HR and Payroll Management System')}</h2>
+              <p className="text-gray-300 mb-6">{t('services.hrPayroll.desc', 'Complete and integrated system with financial accounts for managing employee affairs and payroll calculations.')}</p>
+
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-3">Key Features</h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-300">{t('services.hrPayroll.features.feature1', 'Based on variable settings for insurance, vacations, and taxes that can be modified when laws change')}</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-300">{t('services.hrPayroll.features.feature2', 'Respects all payroll calculation rules and penalty provisions, carrying over excess of five days to subsequent months')}</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-300">{t('services.hrPayroll.features.feature3', 'Maintains employee photos and all employment documents with reports on missing documents')}</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-300">{t('services.hrPayroll.features.feature4', 'Tracks document expiration dates to notify employees of renewals')}</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-300">{t('services.hrPayroll.features.feature5', 'Records who entered and modified data with a period transfer system to prevent tampering')}</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-300">{t('services.hrPayroll.features.feature6', 'Ability to reverse period transfers to modify data according to permissions')}</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-gray-800/50 p-4 rounded-lg">
+                  <h3 className="text-lg font-bold text-white mb-2">{t('prices.features', 'Pricing')}</h3>
+                  <p className="text-primary text-xl font-bold">
+                    EGP 35,000<span className="text-gray-300 text-base font-normal"> /project</span>
+                  </p>
                 </div>
               </div>
             </div>
