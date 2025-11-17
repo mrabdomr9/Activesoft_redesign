@@ -35,9 +35,9 @@ const Header: React.FC = () => {
         { to: '/services', text: t('nav.services') },
         { to: '/industries', text: t('nav.industries') },
         { to: '/prices', text: t('nav.pricing') },
-        { to: '/digital-transformation', text: t('nav.digitalTransformation') },
       ],
     },
+    { to: '/digital-transformation', text: t('nav.digitalTransformation') },
     {
       text: t('nav.ourWork'),
       subLinks: [
