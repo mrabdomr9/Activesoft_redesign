@@ -73,7 +73,7 @@ const Header: React.FC = () => {
   }
 
   return (
-    <header className="bg-gradient-to-r from-slate-900/90 via-slate-800/90 to-slate-900/90 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-cyan-500/30">
+    <header className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 fixed top-0 left-0 right-0 z-50 border-b border-cyan-500/30">
       {/* Digital Transformation Background Elements */}
       <div className="absolute inset-0">
         {/* Circuit Board Pattern */}
@@ -118,7 +118,7 @@ const Header: React.FC = () => {
                     <span>{link.text}</span>
                     <svg className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
                   </button>
-                  <div className="absolute top-full start-0 mt-2 w-48 p-2 glass-panel rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-10 border border-cyan-500/30">
+                  <div className="absolute top-full start-0 mt-2 w-48 p-2 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-10 border border-cyan-500/30 bg-slate-800">
                     <div className="flex flex-col space-y-1">
                       {link.subLinks.map(subLink => (
                          <NavLink
@@ -168,7 +168,7 @@ const Header: React.FC = () => {
       
       {/* Mobile Menu Panel */}
       {isMobileMenuOpen && (
-        <div className="md:hidden glass-panel rounded-none border-x-0 border-t-0 border-cyan-500/30" id="mobile-menu">
+        <div className="md:hidden rounded-none border-x-0 border-t-0 border-cyan-500/30 bg-slate-800" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
             {navLinks.map((link) =>
               link.subLinks ? (
