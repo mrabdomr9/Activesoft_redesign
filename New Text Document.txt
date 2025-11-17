@@ -1,0 +1,1090 @@
+import React, { useEffect, useState, useMemo, useRef } from 'react';
+import { useTranslation } from '../hooks/useTranslation';
+
+interface Service {
+  id: string;
+  title: string;
+  description: string;
+  features?: string[];
+  icon?: React.ReactNode;
+  pricing?: {
+    currency: string;
+    startingAt: number;
+    billingPeriod: string;
+  };
+  category?: string;
+  color?: string;
+  gradient?: string;
+  image?: string;
+}
+
+const ServicesPage: React.FC = () => {
+  const { t } = useTranslation();
+  const [activeSection, setActiveSection] = useState('erp');
+  const [filterCategory, setFilterCategory] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isNavSticky, setIsNavSticky] = useState(false);
+  const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
+  const [hoveredService, setHoveredService] = useState<string | null>(null);
+  const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+
+  // Get all services from translations
+  const allServices = t('prices.services', []);
+
+  // Find the sales management service by ID
+  const salesService = allServices.find((service: any) =>
+    service && service.id === "c1d2e3f4-5678-90ab-cdef-1234567890ab"
+  ) || {};
+
+  // Find smart scale system service by ID
+  const smartScaleService = allServices.find((service: any) =>
+    service && service.id === "e8f9a2b1-c3d4-5678-9abc-def012345678"
+  ) || {};
+
+  // Ensure we have fallback data
+  const safeSalesService: Service = {
+    id: "sales",
+    title: salesService.title || 'Sales Representatives and Sales Managers Management',
+    description: salesService.description || 'Comprehensive solution for managing sales representatives and sales managers with detailed performance tracking and commission management.',
+    features: salesService.features || [
+      "Periodic reports on representative and branch performance",
+      "Monitoring sales representatives' performance and linking their sales to customers",
+      "Special permissions for sales managers to monitor the market and make faster decisions",
+      "Tracking cash collections and checks for each representative",
+      "Ability to link representative commissions to actual collections or sales volume",
+      "Setting sales targets (Goals) and comparing actual results"
+    ],
+    pricing: {
+      currency: (salesService.pricing && salesService.pricing.currency) || 'EGP',
+      startingAt: (salesService.pricing && salesService.pricing.startingAt) || 30000,
+      billingPeriod: (salesService.pricing && salesService.pricing.billingPeriod) || 'project'
+    },
+    category: 'sales',
+    color: '#6366F1',
+    gradient: 'from-indigo-500 to-purple-600'
+  };
+
+  // Ensure we have fallback data for smart scale system
+  const safeSmartScaleService: Service = {
+    id: "smartScale",
+    title: t('services.smartScaleTitle', 'Smart Scale System'),
+    description: t('services.smartScaleDesc', 'Intelligent weighing system that automates weight recording and integrates directly with your inventory and financial systems.'),
+    features: [
+      t('services.smartScaleFeatures.feature1', 'Automatic recording of actual weight for products, pallets, or containers without human intervention'),
+      t('services.smartScaleFeatures.feature2', 'Prevention of manipulation or manual input errors'),
+      t('services.smartScaleFeatures.feature3', 'Comparison of actual weight with standard weight to detect deviations or losses'),
+      t('services.smartScaleFeatures.feature4', 'Direct generation of invoices and costs based on real weight'),
+      t('services.smartScaleFeatures.feature5', 'Instant updating of inventory and financial accounts with each weighing operation'),
+      t('services.smartScaleFeatures.feature6', 'Direct integration between electronic scales and packaging stations within system')
+    ],
+    pricing: {
+      currency: 'EGP',
+      startingAt: 25000,
+      billingPeriod: 'project'
+    },
+    category: 'inventory',
+    color: '#10B981',
+    gradient: 'from-emerald-500 to-teal-600'
+  };
+
+  // Define all services with icons, categories, and visual properties
+  const services: Service[] = [
+    {
+      id: "erp",
+      title: t('services.erpTitle', 'Oracle ERP Solutions'),
+      description: t('services.erpDesc', 'Full-cycle Oracle ERP services including implementation, customization, migration, and support to optimize your business processes.'),
+      icon: (
+        <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+        </svg>
+      ),
+      category: 'erp',
+      color: '#3B82F6',
+      gradient: 'from-blue-500 to-cyan-600'
+    },
+    {
+      id: "costing",
+      title: t('services.costingModule.title', 'Costing Module'),
+      description: t('services.costingModule.subtitle', 'Comprehensive production cost management system with actual costing methodology'),
+      icon: (
+        <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
+      ),
+      category: 'production',
+      color: '#F59E0B',
+      gradient: 'from-amber-500 to-orange-600'
+    },
+    {
+      id: "inventory",
+      title: t('services.inventoryModule.title', 'Inventory Management'),
+      description: t('services.inventoryModule.subtitle', 'Comprehensive inventory management system with advanced tracking and valuation capabilities'),
+      icon: (
+        <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+        </svg>
+      ),
+      category: 'inventory',
+      color: '#8B5CF6',
+      gradient: 'from-violet-500 to-purple-600'
+    },
+    {
+      id: "export",
+      title: t('exportModule.title', 'Export Management System'),
+      description: t('exportModule.subtitle', 'Comprehensive export management system with detailed shipment tracking and financial analysis'),
+      icon: (
+        <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4 4 0 003 15z" />
+        </svg>
+      ),
+      category: 'logistics',
+      color: '#14B8A6',
+      gradient: 'from-teal-500 to-cyan-600'
+    },
+    {
+      ...safeSalesService,
+      icon: (
+        <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      )
+    },
+    {
+      ...safeSmartScaleService,
+      icon: (
+        <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
+      )
+    },
+    {
+      id: "hrPayroll",
+      title: t('services.hrPayroll.title', 'HR and Payroll Management System'),
+      description: t('services.hrPayroll.desc', 'Complete and integrated system with financial accounts for managing employee affairs and payroll calculations.'),
+      icon: (
+        <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+      category: 'hr',
+      pricing: {
+        currency: 'EGP',
+        startingAt: 35000,
+        billingPeriod: 'project'
+      },
+      color: '#EC4899',
+      gradient: 'from-pink-500 to-rose-600'
+    }
+  ];
+
+  // Define categories for filtering with colors
+  const categories = [
+    { id: 'all', label: t('services.categories.all', 'All Services'), color: '#64748B' },
+    { id: 'erp', label: t('services.categories.erp', 'ERP Solutions'), color: '#3B82F6' },
+    { id: 'production', label: t('services.categories.production', 'Production'), color: '#F59E0B' },
+    { id: 'inventory', label: t('services.categories.inventory', 'Inventory'), color: '#8B5CF6' },
+    { id: 'logistics', label: t('services.categories.logistics', 'Logistics'), color: '#14B8A6' },
+    { id: 'sales', label: t('services.categories.sales', 'Sales Management'), color: '#6366F1' },
+    { id: 'hr', label: t('services.categories.hr', 'HR & Payroll'), color: '#EC4899' }
+  ];
+
+  // Filter services based on category and search query
+  const filteredServices = useMemo(() => {
+    return services.filter(service => {
+      const matchesCategory = filterCategory === 'all' || service.category === filterCategory;
+      const matchesSearch = searchQuery === '' || 
+        service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        service.description.toLowerCase().includes(searchQuery.toLowerCase());
+
+      return matchesCategory && matchesSearch;
+    });
+  }, [filterCategory, searchQuery, services]);
+
+  useEffect(() => {
+    const title = t('seo.services.title', 'Our Services | Active Soft');
+    const description = t('seo.services.description', 'Explore our comprehensive technology solutions including Oracle ERP, custom applications, and IT support.');
+    const keywords = t('seo.services.keywords', 'ERP Solutions, Oracle ERP, Custom Software, IT Support, Technology Services');
+
+    if (title) document.title = title;
+
+    const setMetaTag = (name: string, content: string) => {
+      let element = document.querySelector(`meta[name="${name}"]`);
+      if (!element) {
+        element = document.createElement('meta');
+        element.setAttribute('name', name);
+        document.head.appendChild(element);
+      }
+      element.setAttribute('content', content);
+    };
+
+    if (description) setMetaTag('description', description);
+    if (keywords) setMetaTag('keywords', keywords);
+  }, [t]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Update sticky navigation
+      setIsNavSticky(window.scrollY > 100);
+
+      // Update active section based on scroll position
+      const scrollPosition = window.scrollY + 100;
+
+      for (const service of services) {
+        const element = sectionRefs.current[service.id];
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (
+            scrollPosition >= offsetTop && 
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            setActiveSection(service.id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [services]);
+
+  const scrollToSection = (sectionId: string) => {
+    setActiveSection(sectionId);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Animated Gradient Orbs */}
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse" style={{ animationDelay: '4s' }}></div>
+
+        {/* Circuit Board Pattern */}
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M0 50h20m20 0h10m20 0h30M50 0v20m0 20v10m0 20v30' stroke='%2306B6D4' stroke-width='1'/%3E%3Ccircle cx='20' cy='50' r='2' fill='%2306B6D4'/%3E%3Ccircle cx='50' cy='20' r='2' fill='%2306B6D4'/%3E%3Ccircle cx='50' cy='80' r='2' fill='%2306B6D4'/%3E%3C/svg%3E")`,
+          backgroundSize: '150px 150px'
+        }}></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10">
+        {/* Hero Section */}
+        <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
+            <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-300 font-display mb-6 animate-fade-in">
+              {t('services.title', 'Our Comprehensive Services')}
+            </h1>
+            <p className="text-xl md:text-2xl text-purple-100 max-w-4xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: '200ms' }}>
+              {t('services.subtitle', 'Tailored technology solutions to drive your business forward.')}
+            </p>
+
+            {/* Search Bar */}
+            <div className="max-w-2xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: '400ms' }}>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <svg className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  className="block w-full pl-10 pr-3 py-3 border border-transparent bg-white/10 backdrop-blur-md rounded-lg text-white placeholder-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                  placeholder={t('services.searchPlaceholder', 'Search for services...')}
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+              </div>
+            </div>
+
+            {/* Category Filter */}
+            <div className="flex flex-wrap justify-center gap-2 animate-fade-in" style={{ animationDelay: '600ms' }}>
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setFilterCategory(category.id)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                    filterCategory === category.id
+                      ? 'bg-white text-gray-900 shadow-lg transform scale-105'
+                      : 'bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm'
+                  }`}
+                  style={{
+                    ...(filterCategory === category.id && { boxShadow: `0 4px 14px 0 ${category.color}40` })
+                  }}
+                >
+                  {category.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Services Grid */}
+        <section className="pb-12 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredServices.map((service, index) => (
+                <div
+                  key={service.id}
+                  className={`group relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-xl transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl animate-fade-in`}
+                  style={{ 
+                    animationDelay: `${index * 100}ms`,
+                    ...(hoveredService === service.id && { boxShadow: `0 20px 40px -15px ${service.color}40` })
+                  }}
+                  onMouseEnter={() => setHoveredService(service.id)}
+                  onMouseLeave={() => setHoveredService(null)}
+                >
+                  {/* Gradient Overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+
+                  {/* Service Card Content */}
+                  <div className="relative p-6 h-full flex flex-col">
+                    {/* Icon */}
+                    <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} shadow-lg mb-4 transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6`}>
+                      {service.icon}
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-purple-200 transition-all duration-300">
+                      {service.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-purple-100 mb-4 flex-grow">{service.description}</p>
+
+                    {/* Learn More Button */}
+                    <button
+                      onClick={() => scrollToSection(service.id)}
+                      className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm text-white font-medium hover:bg-white/20 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-white/20 group-hover:to-purple-500/20"
+                    >
+                      {t('home.learnMore', 'Learn More')}
+                      <svg className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Enhanced Navigation Menu */}
+        <nav className={`sticky top-0 z-20 transition-all duration-300 ${isNavSticky ? 'bg-slate-900/90 backdrop-blur-md shadow-xl' : 'bg-transparent'}`}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex overflow-x-auto py-4 space-x-2 no-scrollbar">
+              {services.map((service) => (
+                <button
+                  key={service.id}
+                  onClick={() => scrollToSection(service.id)}
+                  className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    activeSection === service.id
+                      ? 'bg-gradient-to-r text-white shadow-lg transform scale-105'
+                      : 'text-purple-200 hover:text-white hover:bg-white/10'
+                  }`}
+                  style={{
+                    ...(activeSection === service.id && { 
+                      backgroundImage: `linear-gradient(to right, ${service.color}, ${service.color}dd)` 
+                    })
+                  }}
+                >
+                  {service.title}
+                </button>
+              ))}
+            </div>
+          </div>
+        </nav>
+
+        {/* Service Details Sections */}
+        <div className="pb-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto space-y-12">
+            {/* ERP Solutions Section */}
+            <div 
+              id="erp" 
+              ref={el => sectionRefs.current['erp'] = el}
+              className="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-12 shadow-xl border border-white/20 animate-on-scroll"
+            >
+              <div className="flex flex-col lg:flex-row items-center gap-8">
+                <div className="lg:w-1/3 flex justify-center">
+                  <div className="relative">
+                    {/* Animated Glow Effect */}
+                    <div className="absolute inset-0 bg-blue-500 rounded-full blur-xl opacity-20 animate-pulse"></div>
+
+                    {/* Icon Container */}
+                    <div className="relative bg-gradient-to-br from-blue-500 to-cyan-600 p-8 rounded-3xl shadow-2xl transform transition-transform duration-500 hover:scale-110">
+                      <svg className="h-20 w-20 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="lg:w-2/3">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-display">{t('services.erpTitle', 'Oracle ERP Solutions')}</h2>
+                  <p className="text-purple-100 text-lg mb-8">{t('services.erpDesc', 'Full-cycle Oracle ERP services including implementation, customization, migration, and support to optimize your business processes.')}</p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                      <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                        <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
+                          <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </div>
+                        {t('services.generalFeatures', 'General Features')}
+                      </h3>
+                      <ul className="space-y-3">
+                        <li className="flex items-start">
+                          <svg className="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-purple-100">{t('services.features.oracleDB', 'Powerful and stable Oracle database')}</span>
+                        </li>
+                        <li className="flex items-start">
+                          <svg className="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-purple-100">{t('services.features.multiUser', 'Multiple user permissions with precise management')}</span>
+                        </li>
+                        <li className="flex items-start">
+                          <svg className="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-purple-100">{t('services.features.remoteAccess', 'Ability to work from anywhere via the Internet')}</span>
+                        </li>
+                        <li className="flex items-start">
+                          <svg className="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-purple-100">{t('services.features.autoBackup', 'Automatic backups created multiple times daily')}</span>
+                        </li>
+                        <li className="flex items-start">
+                          <svg className="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-purple-100">{t('services.features.auditTrail', 'Complete audit trail showing who added, modified, or deleted')}</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                      <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                        <div className="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center mr-3">
+                          <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                          </svg>
+                        </div>
+                        {t('services.mainModules', 'Main System Modules')}
+                      </h3>
+                      <ul className="space-y-3">
+                        <li className="flex items-start">
+                          <svg className="h-5 w-5 text-cyan-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-purple-100">{t('services.modules.generalLedger', 'General Ledger')}</span>
+                        </li>
+                        <li className="flex items-start">
+                          <svg className="h-5 w-5 text-cyan-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-purple-100">{t('services.modules.inventory', 'Inventory Management')}</span>
+                        </li>
+                        <li className="flex items-start">
+                          <svg className="h-5 w-5 text-cyan-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-purple-100">{t('services.modules.costing', 'Costing System')}</span>
+                        </li>
+                        <li className="flex items-start">
+                          <svg className="h-5 w-5 text-cyan-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-purple-100">{t('services.modules.hr', 'HR & Payroll')}</span>
+                        </li>
+                        <li className="flex items-start">
+                          <svg className="h-5 w-5 text-cyan-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-purple-100">{t('services.modules.purchasesSales', 'Purchases & Sales')}</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="mt-8">
+                    <button className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-medium rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105">
+                      {t('services.getStarted', 'Get Started with ERP')}
+                      <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Costing Module Section */}
+            <div 
+              id="costing" 
+              ref={el => sectionRefs.current['costing'] = el}
+              className="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-12 shadow-xl border border-white/20 animate-on-scroll"
+            >
+              <div className="flex flex-col lg:flex-row items-center gap-8">
+                <div className="lg:w-1/3 flex justify-center">
+                  <div className="relative">
+                    {/* Animated Glow Effect */}
+                    <div className="absolute inset-0 bg-amber-500 rounded-full blur-xl opacity-20 animate-pulse"></div>
+
+                    {/* Icon Container */}
+                    <div className="relative bg-gradient-to-br from-amber-500 to-orange-600 p-8 rounded-3xl shadow-2xl transform transition-transform duration-500 hover:scale-110">
+                      <svg className="h-20 w-20 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="lg:w-2/3">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-display">{t('services.costingModule.title', 'Costing Module')}</h2>
+                  <p className="text-purple-100 text-lg mb-8">{t('services.costingModule.subtitle', 'Comprehensive production cost management system with actual costing methodology')}</p>
+
+                  <div className="space-y-6">
+                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                      <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                        <div className="w-8 h-8 bg-amber-500 rounded-lg flex items-center justify-center mr-3">
+                          <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                          </svg>
+                        </div>
+                        {t('services.costingModule.methodologyTitle', 'Production Cost Calculation Methodology')}
+                      </h3>
+                      <p className="text-purple-100 mb-4">{t('services.costingModule.methodologyDesc', 'The system is based on Actual Costing during the production month.')}</p>
+                      <h4 className="text-lg font-semibold text-white mb-3">{t('services.costingModule.methodologyIncludes', 'Cost includes:')}</h4>
+                      <ul className="list-disc list-inside text-purple-100 space-y-2">
+                        {t('services.costingModule.methodologyItems', []).map((item: string, index: number) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                      <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                        <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center mr-3">
+                          <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                          </svg>
+                        </div>
+                        {t('services.costingModule.bomTitle', 'Raw Materials and BOM (Bill of Materials)')}
+                      </h3>
+                      <div className="space-y-3 text-purple-100">
+                        <p>{t('services.costingModule.bomDesc1', 'Material ratios for each product are determined through BOM.')}</p>
+                        <p>{t('services.costingModule.bomDesc2', 'The system automatically issues raw material documents according to BOM ratios.')}</p>
+                        <p>{t('services.costingModule.bomDesc3', 'Variable materials are manually issued based on workshop instructions.')}</p>
+                        <p>{t('services.costingModule.bomDesc4', 'When entering actual inventory at the end of the month:')}</p>
+                        <ul className="list-disc list-inside space-y-1 ml-4">
+                          {t('services.costingModule.bomItems', []).map((item: string, index: number) => (
+                            <li key={index}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                      <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                        <div className="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center mr-3">
+                          <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </div>
+                        {t('services.costingModule.qualityTitle', 'Inspection and Quality Cost')}
+                      </h3>
+                      <div className="space-y-3 text-purple-100">
+                        <p>{t('services.costingModule.qualityDesc1', 'A portion of production is issued for inspection and loaded to Quality Inspection cost.')}</p>
+                        <p>{t('services.costingModule.qualityDesc2', 'Quantity can be returned for inspection or to the warehouse, resulting in automatic reduction of quality expense.')}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="mt-8">
+                    <button className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-medium rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105">
+                      {t('services.getStarted', 'Get Started with Costing Module')}
+                      <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Inventory Management Section */}
+            <div 
+              id="inventory" 
+              ref={el => sectionRefs.current['inventory'] = el}
+              className="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-12 shadow-xl border border-white/20 animate-on-scroll"
+            >
+              <div className="flex flex-col lg:flex-row items-center gap-8">
+                <div className="lg:w-1/3 flex justify-center">
+                  <div className="relative">
+                    {/* Animated Glow Effect */}
+                    <div className="absolute inset-0 bg-violet-500 rounded-full blur-xl opacity-20 animate-pulse"></div>
+
+                    {/* Icon Container */}
+                    <div className="relative bg-gradient-to-br from-violet-500 to-purple-600 p-8 rounded-3xl shadow-2xl transform transition-transform duration-500 hover:scale-110">
+                      <svg className="h-20 w-20 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="lg:w-2/3">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-display">{t('services.inventoryModule.title', 'Inventory Management')}</h2>
+                  <p className="text-purple-100 text-lg mb-8">{t('services.inventoryModule.subtitle', 'Comprehensive inventory management system with advanced tracking and valuation capabilities')}</p>
+
+                  <div className="space-y-6">
+                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                      <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                        <div className="w-8 h-8 bg-violet-500 rounded-lg flex items-center justify-center mr-3">
+                          <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                          </svg>
+                        </div>
+                        {t('services.inventoryModule.structureTitle', 'Inventory Structure and Item Coding')}
+                      </h3>
+                      <div className="space-y-3 text-purple-100">
+                        <p>{t('services.inventoryModule.structureDesc', 'Inventory classification into:')}</p>
+                        <ul className="list-disc list-inside space-y-1">
+                          {t('services.inventoryModule.structureItems', []).map((item: string, index: number) => (
+                            <li key={index}>{item}</li>
+                          ))}
+                        </ul>
+                        <p>{t('services.inventoryModule.structureAdditional', 'Additional flexible classification based on business activity that does not affect coding')}</p>
+                        <p>{t('services.inventoryModule.structureLots', 'Dividing a single item into multiple lots')}</p>
+                      </div>
+                    </div>
+
+                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                      <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                        <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center mr-3">
+                          <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                          </svg>
+                        </div>
+                        {t('services.inventoryModule.lotsFunctionsTitle', 'Lot Functions')}
+                      </h3>
+                      <ul className="list-disc list-inside text-purple-100 space-y-1">
+                        {t('services.inventoryModule.lotsFunctionsItems', []).map((item: string, index: number) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                      <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                        <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center mr-3">
+                          <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                          </svg>
+                        </div>
+                        {t('services.inventoryModule.itemAttributesTitle', 'Item Attributes')}
+                      </h3>
+                      <div className="space-y-3 text-purple-100">
+                        <p>{t('services.inventoryModule.itemAttributesDesc', 'Complete technical specifications including:')}</p>
+                        <ul className="list-disc list-inside space-y-1">
+                          {t('services.inventoryModule.itemAttributesItems', []).map((item: string, index: number) => (
+                            <li key={index}>{item}</li>
+                          ))}
+                        </ul>
+                        <p>{t('services.inventoryModule.itemAttributesReports', 'Ability to display inventory reports based on any of these attributes')}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="mt-8">
+                    <button className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-violet-500 to-purple-600 text-white font-medium rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105">
+                      {t('services.getStarted', 'Get Started with Inventory Management')}
+                      <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Export Management System Section */}
+            <div 
+              id="export" 
+              ref={el => sectionRefs.current['export'] = el}
+              className="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-12 shadow-xl border border-white/20 animate-on-scroll"
+            >
+              <div className="flex flex-col lg:flex-row items-center gap-8">
+                <div className="lg:w-1/3 flex justify-center">
+                  <div className="relative">
+                    {/* Animated Glow Effect */}
+                    <div className="absolute inset-0 bg-teal-500 rounded-full blur-xl opacity-20 animate-pulse"></div>
+
+                    {/* Icon Container */}
+                    <div className="relative bg-gradient-to-br from-teal-500 to-cyan-600 p-8 rounded-3xl shadow-2xl transform transition-transform duration-500 hover:scale-110">
+                      <svg className="h-20 w-20 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4 4 0 003 15z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="lg:w-2/3">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-display">{t('exportModule.title', 'Export Management System')}</h2>
+                  <p className="text-purple-100 text-lg mb-8">{t('exportModule.subtitle', 'Comprehensive export management system with detailed shipment tracking and financial analysis')}</p>
+
+                  <div className="space-y-6">
+                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                      <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                        <div className="w-8 h-8 bg-teal-500 rounded-lg flex items-center justify-center mr-3">
+                          <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                          </svg>
+                        </div>
+                        {t('exportModule.shipmentTrackingTitle', 'Shipment Data Tracking')}
+                      </h3>
+                      <div className="space-y-3 text-purple-100">
+                        <p>{t('exportModule.shipmentTrackingDesc', 'The system displays detailed information for each shipment, including:')}</p>
+                        <ul className="list-disc list-inside space-y-1">
+                          {t('exportModule.shipmentTrackingItems', []).map((item: string, index: number) => (
+                            <li key={index}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                      <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                        <div className="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center mr-3">
+                          <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </div>
+                        {t('exportModule.financialValuesTitle', 'Shipment Financial Values')}
+                      </h3>
+                      <ul className="list-disc list-inside text-purple-100 space-y-1">
+                        {t('exportModule.financialValuesItems', []).map((item: string, index: number) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                      <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                        <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
+                          <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                          </svg>
+                        </div>
+                        {t('exportModule.costBreakdownTitle', 'Shipment Cost Breakdown')}
+                      </h3>
+                      <div className="space-y-3 text-purple-100">
+                        <p>{t('exportModule.costBreakdownDesc', 'The system clearly displays the cost breakdown into:')}</p>
+                        <ul className="list-disc list-inside space-y-1">
+                          {t('exportModule.costBreakdownItems', []).map((item: string, index: number) => (
+                            <li key={index}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="mt-8">
+                    <button className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105">
+                      {t('services.getStarted', 'Get Started with Export Management')}
+                      <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Sales Representatives and Sales Managers Management Section */}
+            <div 
+              id="sales" 
+              ref={el => sectionRefs.current['sales'] = el}
+              className="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-12 shadow-xl border border-white/20 animate-on-scroll"
+            >
+              <div className="flex flex-col lg:flex-row items-center gap-8">
+                <div className="lg:w-1/3 flex justify-center">
+                  <div className="relative">
+                    {/* Animated Glow Effect */}
+                    <div className="absolute inset-0 bg-indigo-500 rounded-full blur-xl opacity-20 animate-pulse"></div>
+
+                    {/* Icon Container */}
+                    <div className="relative bg-gradient-to-br from-indigo-500 to-purple-600 p-8 rounded-3xl shadow-2xl transform transition-transform duration-500 hover:scale-110">
+                      <svg className="h-20 w-20 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="lg:w-2/3">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-display">{safeSalesService.title}</h2>
+                  <p className="text-purple-100 text-lg mb-8">{safeSalesService.description}</p>
+
+                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 mb-6">
+                    <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                      <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center mr-3">
+                        <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                      </div>
+                      Key Features
+                    </h3>
+                    <ul className="space-y-3">
+                      {safeSalesService.features?.map((feature: string, index: number) => (
+                        <li key={index} className="flex items-start">
+                          <svg className="h-5 w-5 text-indigo-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-purple-100">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Pricing Card */}
+                  <div className="bg-gradient-to-r from-indigo-500/20 to-purple-600/20 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                    <h3 className="text-xl font-bold text-white mb-2">{t('prices.features', 'Pricing')}</h3>
+                    <div className="flex items-baseline">
+                      <span className="text-4xl font-bold text-white">{safeSalesService.pricing?.currency} {safeSalesService.pricing?.startingAt.toLocaleString()}</span>
+                      <span className="text-purple-200 ml-2">/{safeSalesService.pricing?.billingPeriod}</span>
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="mt-8">
+                    <button className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105">
+                      {t('services.getStarted', 'Get Started with Sales Management')}
+                      <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Smart Scale System Section */}
+            <div 
+              id="smartScale" 
+              ref={el => sectionRefs.current['smartScale'] = el}
+              className="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-12 shadow-xl border border-white/20 animate-on-scroll"
+            >
+              <div className="flex flex-col lg:flex-row items-center gap-8">
+                <div className="lg:w-1/3 flex justify-center">
+                  <div className="relative">
+                    {/* Animated Glow Effect */}
+                    <div className="absolute inset-0 bg-emerald-500 rounded-full blur-xl opacity-20 animate-pulse"></div>
+
+                    {/* Icon Container */}
+                    <div className="relative bg-gradient-to-br from-emerald-500 to-teal-600 p-8 rounded-3xl shadow-2xl transform transition-transform duration-500 hover:scale-110">
+                      <svg className="h-20 w-20 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="lg:w-2/3">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-display">{safeSmartScaleService.title}</h2>
+                  <p className="text-purple-100 text-lg mb-8">{safeSmartScaleService.description}</p>
+
+                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 mb-6">
+                    <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                      <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center mr-3">
+                        <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                      </div>
+                      Key Features
+                    </h3>
+                    <ul className="space-y-3">
+                      {safeSmartScaleService.features?.map((feature: string, index: number) => (
+                        <li key={index} className="flex items-start">
+                          <svg className="h-5 w-5 text-emerald-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-purple-100">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Pricing Card */}
+                  <div className="bg-gradient-to-r from-emerald-500/20 to-teal-600/20 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                    <h3 className="text-xl font-bold text-white mb-2">{t('prices.features', 'Pricing')}</h3>
+                    <div className="flex items-baseline">
+                      <span className="text-4xl font-bold text-white">{safeSmartScaleService.pricing?.currency} {safeSmartScaleService.pricing?.startingAt.toLocaleString()}</span>
+                      <span className="text-purple-200 ml-2">/{safeSmartScaleService.pricing?.billingPeriod}</span>
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="mt-8">
+                    <button className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-medium rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105">
+                      {t('services.getStarted', 'Get Started with Smart Scale System')}
+                      <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* HR and Payroll Management System Section */}
+            <div 
+              id="hrPayroll" 
+              ref={el => sectionRefs.current['hrPayroll'] = el}
+              className="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-12 shadow-xl border border-white/20 animate-on-scroll"
+            >
+              <div className="flex flex-col lg:flex-row items-center gap-8">
+                <div className="lg:w-1/3 flex justify-center">
+                  <div className="relative">
+                    {/* Animated Glow Effect */}
+                    <div className="absolute inset-0 bg-pink-500 rounded-full blur-xl opacity-20 animate-pulse"></div>
+
+                    {/* Icon Container */}
+                    <div className="relative bg-gradient-to-br from-pink-500 to-rose-600 p-8 rounded-3xl shadow-2xl transform transition-transform duration-500 hover:scale-110">
+                      <svg className="h-20 w-20 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="lg:w-2/3">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-display">{t('services.hrPayroll.title', 'HR and Payroll Management System')}</h2>
+                  <p className="text-purple-100 text-lg mb-8">{t('services.hrPayroll.desc', 'Complete and integrated system with financial accounts for managing employee affairs and payroll calculations.')}</p>
+
+                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 mb-6">
+                    <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                      <div className="w-8 h-8 bg-pink-500 rounded-lg flex items-center justify-center mr-3">
+                        <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                      </div>
+                      Key Features
+                    </h3>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <svg className="h-5 w-5 text-pink-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-purple-100">{t('services.hrPayroll.features.feature1', 'Based on variable settings for insurance, vacations, and taxes that can be modified when laws change')}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="h-5 w-5 text-pink-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-purple-100">{t('services.hrPayroll.features.feature2', 'Respects all payroll calculation rules and penalty provisions, carrying over excess of five days to subsequent months')}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="h-5 w-5 text-pink-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-purple-100">{t('services.hrPayroll.features.feature3', 'Maintains employee photos and all employment documents with reports on missing documents')}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="h-5 w-5 text-pink-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-purple-100">{t('services.hrPayroll.features.feature4', 'Tracks document expiration dates to notify employees of renewals')}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="h-5 w-5 text-pink-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-purple-100">{t('services.hrPayroll.features.feature5', 'Records who entered and modified data with a period transfer system to prevent tampering')}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="h-5 w-5 text-pink-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-purple-100">{t('services.hrPayroll.features.feature6', 'Ability to reverse period transfers to modify data according to permissions')}</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Pricing Card */}
+                  <div className="bg-gradient-to-r from-pink-500/20 to-rose-600/20 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                    <h3 className="text-xl font-bold text-white mb-2">{t('prices.features', 'Pricing')}</h3>
+                    <div className="flex items-baseline">
+                      <span className="text-4xl font-bold text-white">EGP 35,000</span>
+                      <span className="text-purple-200 ml-2">/project</span>
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="mt-8">
+                    <button className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-600 text-white font-medium rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105">
+                      {t('services.getStarted', 'Get Started with HR & Payroll')}
+                      <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Custom Styles */}
+      <style jsx>{`
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in {
+          animation: fade-in 0.8s ease-out forwards;
+          opacity: 0;
+        }
+        .animate-on-scroll {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animate-on-scroll.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default ServicesPage;
