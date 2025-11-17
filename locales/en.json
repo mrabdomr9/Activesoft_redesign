@@ -313,6 +313,24 @@
           "startingAt": 55000,
           "billingPeriod": "project"
         }
+      },
+      {
+        "id": "c1d2e3f4-5678-90ab-cdef-1234567890ab",
+        "title": "Sales Representatives and Sales Managers Management",
+        "description": "Comprehensive solution for managing sales representatives and sales managers with detailed performance tracking and commission management.",
+        "features": [
+          "Periodic reports on representative and branch performance",
+          "Monitoring sales representatives' performance and linking their sales to customers",
+          "Special permissions for sales managers to monitor the market and make faster decisions",
+          "Tracking cash collections and checks for each representative",
+          "Ability to link representative commissions to actual collections or sales volume",
+          "Setting sales targets (Goals) and comparing actual results"
+        ],
+        "pricing": {
+          "currency": "EGP",
+          "startingAt": 30000,
+          "billingPeriod": "project"
+        }
       }
     ]
   },
@@ -648,5 +666,61 @@
     ],
     "expenseDistribution": "The system uses this data to distribute general expenses (shipping - preparation - clearance):",
     "distributionMethod": "The system distributes expenses according to the number of pallets as a percentage of total monthly operations"
+  },
+  "costingModule": {
+    "title": "Costing Module",
+    "subtitle": "Comprehensive production cost management system with actual costing methodology",
+    "methodologyTitle": "Production Cost Calculation Methodology",
+    "methodologyDesc": "The system is based on Actual Costing during the production month.",
+    "methodologyIncludes": "Cost includes:",
+    "methodologyItems": [
+      "Direct materials cost",
+      "Direct labor cost",
+      "Manufacturing overhead costs"
+    ],
+    "bomTitle": "Raw Materials and BOM (Bill of Materials)",
+    "bomDesc1": "Material ratios for each product are determined through BOM.",
+    "bomDesc2": "The system automatically issues raw material documents according to BOM ratios.",
+    "bomDesc3": "Variable materials are manually issued based on workshop instructions.",
+    "bomDesc4": "When entering actual inventory at the end of the month:",
+    "bomItems": [
+      "Raw materials inventory",
+      "Work-in-progress inventory",
+      "Finished goods inventory"
+    ],
+    "qualityTitle": "Inspection and Quality Cost",
+    "qualityDesc1": "A portion of production is issued for inspection and loaded to Quality Inspection cost.",
+    "qualityDesc2": "Quantity can be returned for inspection or to the warehouse, resulting in automatic reduction of quality expense."
+  },
+  "inventoryModule": {
+    "title": "Inventory Management",
+    "subtitle": "Comprehensive inventory management system with advanced tracking and valuation capabilities",
+    "structureTitle": "Inventory Structure and Item Coding",
+    "structureDesc": "Inventory classification into:",
+    "structureItems": [
+      "Raw materials",
+      "Semi-finished goods",
+      "Finished products",
+      "Supplies and consumables"
+    ],
+    "structureAdditional": "Additional flexible classification based on business activity that does not affect coding",
+    "structureLots": "Dividing a single item into multiple lots",
+    "lotsFunctionsTitle": "Lot Functions",
+    "lotsFunctionsItems": [
+      "Expiration date tracking",
+      "Batch-specific pricing",
+      "Quality control per batch",
+      "Recall management by lot"
+    ],
+    "itemAttributesTitle": "Item Attributes",
+    "itemAttributesDesc": "Complete technical specifications including:",
+    "itemAttributesItems": [
+      "Unit of measure",
+      "Weight and dimensions",
+      "Supplier information",
+      "Quality certifications",
+      "Storage requirements"
+    ],
+    "itemAttributesReports": "Ability to display inventory reports based on any of these attributes"
   }
 }

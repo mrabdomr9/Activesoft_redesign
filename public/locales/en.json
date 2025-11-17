@@ -508,6 +508,24 @@
           "startingAt": 55000,
           "billingPeriod": "project"
         }
+      },
+      {
+        "id": "c1d2e3f4-5678-90ab-cdef-1234567890ab",
+        "title": "Sales Representatives and Sales Managers Management",
+        "description": "Comprehensive solution for managing sales representatives and sales managers with detailed performance tracking and commission management.",
+        "features": [
+          "Periodic reports on representative and branch performance",
+          "Monitoring sales representatives' performance and linking their sales to customers",
+          "Special permissions for sales managers to monitor the market and make faster decisions",
+          "Tracking cash collections and checks for each representative",
+          "Ability to link representative commissions to actual collections or sales volume",
+          "Setting sales targets (Goals) and comparing actual results"
+        ],
+        "pricing": {
+          "currency": "EGP",
+          "startingAt": 30000,
+          "billingPeriod": "project"
+        }
       }
     ]
   },
