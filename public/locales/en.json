@@ -996,5 +996,84 @@
     "ctaTitle": "Interested in a ready-mix concrete plant management program?",
     "ctaDescription": "Contact us today to learn more about how our program can help you manage your plant efficiently and accurately.",
     "contactUs": "Contact Us"
+  },
+  "exportManagement": {
+    "title": "Export Station Management System",
+    "subtitle": "An integrated solution for managing export operations with efficiency and accuracy",
+    "description": "An advanced system specifically designed to manage all aspects of export operations, from document preparation to customs clearance and shipping management.",
+    "featuresTitle": "System Features",
+    "features": [
+      "Comprehensive management of export operations from start to finish",
+      "Integrated system for managing required export documents",
+      "Tracking customs clearance procedures with automatic alerts",
+      "Efficient system for shipping and international transport management",
+      "Monitoring quality of products prepared for export",
+      "Detailed reports for export operations and financial analysis"
+    ],
+    "keyFeaturesTitle": "Key Features",
+    "keyFeaturesDescription": "Our system provides a comprehensive set of tools for managing export operations with high efficiency and utmost accuracy.",
+    "exportDocumentationTitle": "Document Management",
+    "exportDocumentationDescription": "Managing and tracking all documents required for export including commercial invoices, certificates of origin, and inspection certificates.",
+    "customsClearanceTitle": "Customs Clearance",
+    "customsClearanceDescription": "Integrated system for managing customs clearance procedures with shipment status tracking and alerts for required documents.",
+    "shippingManagementTitle": "Shipping Management",
+    "shippingManagementDescription": "Tracking international shipments and managing shipping lines and schedules with integration with global shipping companies.",
+    "qualityControlTitle": "Quality Control",
+    "qualityControlDescription": "Advanced system for monitoring the quality of products prepared for export with the ability to issue quality and inspection certificates.",
+    "financialManagementTitle": "Financial Management",
+    "financialManagementDescription": "Managing all financial aspects of export operations including product pricing, foreign currencies, and collections.",
+    "reportingTitle": "Reports and Analytics",
+    "reportingDescription": "Detailed reports on export operations with performance analysis and key performance indicators for informed decision-making.",
+    "cardsTitle": "System Components",
+    "cards": [
+      {
+        "title": "Customer Management",
+        "description": "Managing international customer database with tracking of interaction history and preferences",
+        "icon": "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+      },
+      {
+        "title": "Order Management",
+        "description": "Processing export orders from receipt to final delivery to the customer",
+        "icon": "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+      },
+      {
+        "title": "Warehouse Management",
+        "description": "Tracking inventory designated for export with location and packaging management",
+        "icon": "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+      },
+      {
+        "title": "Document Management",
+        "description": "Creating and managing all documents required for the export process",
+        "icon": "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+      },
+      {
+        "title": "Customs Clearance",
+        "description": "Managing customs clearance procedures with tracking and alerts",
+        "icon": "M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+      },
+      {
+        "title": "Shipping Management",
+        "description": "Tracking shipments and managing shipping lines and schedules",
+        "icon": "M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+      },
+      {
+        "title": "Invoicing and Collections",
+        "description": "Managing international invoices and tracking collection processes",
+        "icon": "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+      },
+      {
+        "title": "Reporting and Analytics",
+        "description": "Detailed reports on export operations and financial analysis",
+        "icon": "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+      },
+      {
+        "title": "Currency Management",
+        "description": "Multi-currency support with automatic exchange rate updates",
+        "icon": "M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
+      }
+    ],
+    "ctaTitle": "Interested in an export station management system?",
+    "ctaDescription": "Contact us today to learn more about how our system can help you manage your export operations efficiently and accurately.",
+    "contactUs": "Contact Us"
   }
 }

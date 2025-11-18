@@ -574,6 +574,14 @@ const ServicesPage: React.FC = () => {
                 <div className="md:w-2/3 md:pl-8">
                   <h2 className="text-3xl font-bold text-white font-display mb-4">{t('exportModule.title', 'Export Management System')}</h2>
                   <p className="text-gray-300 mb-6">{t('exportModule.subtitle', 'Comprehensive export management system with detailed shipment tracking and financial analysis')}</p>
+                  <div className="mt-4">
+                    <a href="/export-management" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 transition-colors">
+                      {t('services.learnMore', 'Learn More')}
+                      <svg className="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </a>
+                  </div>
 
                   <div className="space-y-6">
                     <div>

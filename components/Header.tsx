@@ -140,7 +140,8 @@ const Header: React.FC = () => {
         { to: '/services', text: t('nav.services') },
         { to: '/industries', text: t('nav.industries') },
         { to: '/prices', text: t('nav.pricing') },
-        { to: '/concrete-management', text: t('nav.concreteManagement') }
+        { to: '/concrete-management', text: t('nav.concreteManagement') },
+        { to: '/export-management', text: t('nav.exportManagement') }
       ]
     },
     { to: '/digital-transformation', text: t('nav.digitalTransformation') },
