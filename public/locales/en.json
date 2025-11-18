@@ -907,39 +907,48 @@
     "cards": [
       {
         "title": "Customers and Sales",
-        "description": "Complete management of customer accounts, sales orders, and invoices with detailed reporting"
+        "description": "Complete management of customer accounts, sales orders, and invoices with detailed reporting",
+        "icon": "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
       },
       {
         "title": "Fixed Assets",
-        "description": "Tracking and management of all fixed assets with depreciation calculations"
+        "description": "Tracking and management of all fixed assets with depreciation calculations",
+        "icon": "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
       },
       {
         "title": "Inventory and Warehouses",
-        "description": "Comprehensive inventory management with real-time tracking across multiple warehouses"
+        "description": "Comprehensive inventory management with real-time tracking across multiple warehouses",
+        "icon": "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
       },
       {
         "title": "Receipt Papers",
-        "description": "Automatic entry creation from receipt papers between customer and establishment with all accounting movements"
+        "description": "Automatic entry creation from receipt papers between customer and establishment with all accounting movements",
+        "icon": "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
       },
       {
         "title": "Payment Papers",
-        "description": "Complete management of payment operations including payment and return with automatic accounting entries"
+        "description": "Complete management of payment operations including payment and return with automatic accounting entries",
+        "icon": "M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
       },
       {
         "title": "Customer Accounts",
-        "description": "Entry of receipts (cash or check) with detailed reports to track customer accounts"
+        "description": "Entry of receipts (cash or check) with detailed reports to track customer accounts",
+        "icon": "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
       },
       {
         "title": "Supplier Accounts",
-        "description": "Monitoring of supplier accounts and extraction of account statements"
+        "description": "Monitoring of supplier accounts and extraction of account statements",
+        "icon": "M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M17 21h4M13 15a4 4 0 100-8 4 4 0 000 8zM21 15h-4"
       },
       {
         "title": "General Accounts",
-        "description": "Chart of accounts with unlimited levels and daily entries automatically created from different system modules"
+        "description": "Chart of accounts with unlimited levels and daily entries automatically created from different system modules",
+        "icon": "M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
       },
       {
         "title": "Treasuries and Banks",
-        "description": "Definition of multiple treasuries and documentation of receipt and payment operations"
+        "description": "Definition of multiple treasuries and documentation of receipt and payment operations",
+        "icon": "M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
       }
     ],
     "financialMovementsTitle": "Financial Movements",
