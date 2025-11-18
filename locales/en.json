@@ -762,5 +762,176 @@
       "Storage requirements"
     ],
     "itemAttributesReports": "Ability to display inventory reports based on any of these attributes"
+  },
+  "concreteManagement": {
+    "title": "Ready-Mix Concrete Plant Management System",
+    "subtitle": "A complete system for controlling, monitoring, and managing ready-mix concrete plants",
+    "description": "A comprehensive, interconnected accounting software with extreme precision and flexibility, specifically designed to meet the requirements of ready-mix concrete plants of all types, whether in terms of content or concrete effort. It also allows quality control and manufacturing monitoring, as well as knowledge of silos, mixers, and pumps, defining the production equation for each type of concrete, defining customer sites, creating orders, with the ability to issue daily invoices.",
+    "featuresTitle": "Features of Ready-Mix Concrete Plant Management Software",
+    "features": [
+      "Work on multiple plants simultaneously with the ability to move vehicles (cost centers) between plants (branches).",
+      "Track the concrete production process from the entry of raw materials to the preparation and manufacturing of concrete.",
+      "Automatic alerts for inventory quantities of raw materials.",
+      "Link finished products to raw materials with the ability to change one component during production in case of quantity depletion or replacement of one item with another.",
+      "Ability to manufacture for direct sales - produce quantities and sell them directly to the customer in one step.",
+      "Detailed reports for production operations and matching them with laboratory reports.",
+      "Ability to create invoices with compound tax at the invoice level and at the item level.",
+      "Calculate cost and revenue of vehicles, mixers, and pumps (cost centers) to know detailed loss and profit.",
+      "Ability to extract income statement and balance sheet for each branch separately.",
+      "Ability to extract income statement and balance sheet for the company as a whole.",
+      "Create an unlimited number of direct and indirect costs and link them to the product (ready-mix concrete).",
+      "Fair and accurate distribution of indirect costs and calculating the product cost as accurately as possible (automatically)."
+    ],
+    "cardsTitle": "Main System Modules",
+    "cards": [
+      {
+        "title": "Customers and Sales",
+        "description": "Can link customers to representatives, define mixers and pumps, then create orders for customers"
+      },
+      {
+        "title": "Fixed Assets",
+        "description": "Define fixed assets, determine depreciation installments, and enter depreciation entries between expenses and depreciation provisions"
+      },
+      {
+        "title": "Inventory and Warehouses",
+        "description": "Define inventory accounts whether cement silos or sand warehouses and perform all inventory movements"
+      },
+      {
+        "title": "Receipt Papers",
+        "description": "Create automatic entry as a result of receiving a receipt paper between the customer and the establishment and perform all accounting movements"
+      },
+      {
+        "title": "Payment Papers",
+        "description": "Perform all movements related to payment papers such as (payment - return) and automatically creates accounting entries"
+      },
+      {
+        "title": "Customer Accounts and Receipts",
+        "description": "Enter receipts whether cash or check, with many detailed reports to track customer accounts"
+      },
+      {
+        "title": "Supplier Accounts and Payments",
+        "description": "Monitor supplier accounts and extract their account statements"
+      },
+      {
+        "title": "General Accounts",
+        "description": "Chart of accounts with unlimited levels and daily entries that are automatically created from different parts of the system"
+      },
+      {
+        "title": "Treasuries and Banks",
+        "description": "Define more than one treasury and document receipt and payment operations from the treasury"
+      }
+    ],
+    "financialMovementsTitle": "Financial Movements",
+    "financialMovementsDescription": "Provides you with many vouchers such as receipt vouchers and their details, voucher number, receipt number, entry number and its analytical, as well as payment vouchers and linking them to accounts and due date. The program also allows you to code the movements of collections from customers and payments to suppliers and code the representative responsible for that, whether this movement is cash, check, transfer, network, or direct collector and all required data in the type of movement and automatic collection of due checks.",
+    "transferTitle": "Transfer, Settlements, and Permissions",
+    "transferDescription": "Ease of transfer and settlements, the program enables you to transfer from warehouse to warehouse as well as transfer request, settlement of disbursement and addition and losses, visa settlement, settlement of sales checks, disbursement and addition permissions and their returns.",
+    "productionTitle": "Production Registration",
+    "productionDescription": "Define concrete equations according to different efforts, and upon creating an order, the program automatically performs the production process.",
+    "hrTitle": "Employee Affairs and Salaries",
+    "hrDescription": "Through it, a database for employees is created, different jobs are defined, and employee documents are attached.",
+    "suppliersTitle": "Suppliers and Purchases",
+    "suppliersDescription": "Purchase orders and supply orders are created, purchase invoices are made, and a database for suppliers is created with all their data.",
+    "accountingTitle": "Accounting Procedures",
+    "accountingDescription": "Enables you to post to accounts and sub-centers a group of entries under certain conditions and the ability to renumber daily entries.",
+    "itemsTitle": "Items",
+    "itemsDescription": "The program allows you to manage warehouses, stores, and items through comprehensive data for items: name, code, alternative codes for the item, alternative items, carton barcode, measurement units for items, coding items in groups, and whether the item is normal or a mixture. If it's a mixture, what are the raw materials involved in its composition, and when assembling the mixture, the program automatically deducts from the raw materials according to their percentage in the mixture composition. Ability to add a service to the item and a price for each service (delivery service for example), add images to items and coding in more than one store with different prices, types of item services and the commission on them, item grouping."
+  },
+  "concreteManagement": {
+    "title": "Concrete Management System",
+    "subtitle": "Complete Solution for Ready-Mix Concrete Plants",
+    "description": "An integrated system to manage all operations of ready-mix concrete plants with high accuracy and complete flexibility.",
+    "featuresTitle": "Key Features",
+    "features": [
+      "Multi-plant operations with ability to transfer vehicles (cost centers) between branches",
+      "Complete tracking of production process from raw materials entry to concrete preparation",
+      "Automatic inventory alerts to prevent production interruption",
+      "Quality control linking final product to raw materials with ability to modify components during production",
+      "Direct sales capability with one-step manufacturing and daily invoice issuance",
+      "Comprehensive reports for production operations matching with laboratory reports"
+    ],
+    "cardsTitle": "System Modules",
+    "cards": [
+      {
+        "title": "Customers and Sales",
+        "description": "Complete management of customer accounts, sales orders, and invoices with detailed reporting"
+      },
+      {
+        "title": "Fixed Assets",
+        "description": "Tracking and management of all fixed assets with depreciation calculations"
+      },
+      {
+        "title": "Inventory and Warehouses",
+        "description": "Comprehensive inventory management with real-time tracking across multiple warehouses"
+      },
+      {
+        "title": "Receipt Papers",
+        "description": "Automatic entry creation from receipt papers between customer and establishment with all accounting movements"
+      },
+      {
+        "title": "Payment Papers",
+        "description": "Complete management of payment operations including payment and return with automatic accounting entries"
+      },
+      {
+        "title": "Customer Accounts",
+        "description": "Entry of receipts (cash or check) with detailed reports to track customer accounts"
+      },
+      {
+        "title": "Supplier Accounts",
+        "description": "Monitoring of supplier accounts and extraction of account statements"
+      },
+      {
+        "title": "General Accounts",
+        "description": "Chart of accounts with unlimited levels and daily entries automatically created from different system modules"
+      },
+      {
+        "title": "Treasuries and Banks",
+        "description": "Definition of multiple treasuries and documentation of receipt and payment operations"
+      }
+    ],
+    "financialMovementsTitle": "Financial Movements",
+    "financialMovementsDescription": "Provides you with many vouchers such as receipt vouchers and their details, voucher number, receipt number, entry number and its analytical, as well as payment vouchers and linking them to accounts and due date. The program also allows you to code the movements of collections from customers and payments to suppliers and code the representative responsible for that, whether this movement is cash, check, transfer, network, or direct collector and all required data in the type of movement and automatic collection of due checks.",
+    "transferTitle": "Transfer, Settlements, and Permissions",
+    "transferDescription": "Ease of transfer and settlements, the program enables you to transfer from warehouse to warehouse as well as transfer request, settlement of disbursement and addition and losses, visa settlement, settlement of sales checks, disbursement and addition permissions and their returns.",
+    "productionTitle": "Production Registration",
+    "productionDescription": "Define concrete equations according to different efforts, and upon creating an order, the program automatically performs the production process.",
+    "hrTitle": "Employee Affairs and Salaries",
+    "hrDescription": "Through it, a database for employees is created, different jobs are defined, and employee documents are attached.",
+    "suppliersTitle": "Suppliers and Purchases",
+    "suppliersDescription": "Purchase orders and supply orders are created, purchase invoices are made, and a database for suppliers is created with all their data.",
+    "accountingTitle": "Accounting Procedures",
+    "accountingDescription": "Enables you to post to accounts and sub-centers a group of entries under certain conditions and the ability to renumber daily entries.",
+    "itemsTitle": "Items",
+    "itemsDescription": "The program allows you to manage warehouses, stores, and items through comprehensive data for items: name, code, alternative codes for the item, alternative items, carton barcode, measurement units for items, coding items in groups, and whether the item is normal or a mixture. If it's a mixture, what are the raw materials involved in its composition, and when assembling the mixture, the program automatically deducts from the raw materials according to their percentage in the mixture composition. Ability to add a service to the item and a price for each service (delivery service for example), add images to items and coding in more than one store with different prices, types of item services and the commission on them, item grouping.",
+    "keyFeaturesTitle": "Key Program Features",
+    "keyFeaturesDescription": "Integrated system to manage all operations of ready-mix concrete plants with high accuracy and complete flexibility",
+    "multiPlantTitle": "Multi-Plant Operations",
+    "multiPlantDescription": "Multi-plant management with ability to transfer vehicles (cost centers) between branches",
+    "productionTrackingTitle": "Production Process Tracking",
+    "productionTrackingDescription": "Complete tracking of production process from raw materials entry to concrete preparation",
+    "inventoryAlertsTitle": "Automatic Inventory Alerts",
+    "inventoryAlertsDescription": "Automatic alerts for raw material inventory quantities to prevent production interruption",
+    "qualityControlTitle": "Quality Control",
+    "qualityControlDescription": "Linking final product to raw materials with ability to modify components during production",
+    "directSalesTitle": "Direct Sales",
+    "directSalesDescription": "Direct sales capability with one-step manufacturing and daily invoice issuance",
+    "detailedReportingTitle": "Detailed Reports",
+    "detailedReportingDescription": "Comprehensive reports for production operations matching with laboratory reports",
+    "financialManagementTitle": "Financial and Accounting Management",
+    "financialManagementDescription": "Integrated accounting system covering all financial aspects of managing ready-mix concrete plants",
+    "costCentersTitle": "Cost Centers Cost Calculation",
+    "costCentersDescription": "Calculation of cost and revenue for vehicles, mixers, and pumps (cost centers) to determine detailed profit and loss",
+    "detailedFinancialReportsTitle": "Detailed Financial Reports",
+    "detailedFinancialReportsDescription": "Ability to extract income statement and balance sheet for each separate branch and consolidated company extracts",
+    "compoundTaxInvoicesTitle": "Compound Tax Invoices",
+    "compoundTaxInvoicesDescription": "Ability to create invoices with compound tax at invoice level and item level",
+    "costManagementTitle": "Cost Management",
+    "costManagementDescription": "Creation of unlimited direct and indirect costs, linking them to products, with fair distribution of indirect costs",
+    "financialMovementsTitle2": "Financial Movements",
+    "financialMovementsDescription2": "Receipt and payment vouchers linked to accounts and due dates, coding collections from customers and payments to suppliers movements",
+    "transfersAndSettlementsTitle": "Transfers and Settlements",
+    "transfersAndSettlementsDescription": "Easy transfer and settlements from warehouse to warehouse, disbursement and addition settlements, visa settlements, and sales check settlements",
+    "ctaTitle": "Interested in a ready-mix concrete plant management program?",
+    "ctaDescription": "Contact us today to learn more about how our program can help you manage your plant efficiently and accurately.",
+    "contactUs": "Contact Us"
   }
 }

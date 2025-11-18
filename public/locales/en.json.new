@@ -1,0 +1,499 @@
+{
+  "seo": {
+    "home": {
+      "title": "Active Soft - Oracle ERP Solutions & Custom Software Development Egypt",
+      "description": "Leading Oracle ERP implementation, custom software development & managed IT services in Egypt. 15+ years of experience delivering enterprise solutions for manufacturing, healthcare & financial sectors.",
+      "keywords": "Oracle ERP Egypt, Custom Software Development Egypt, Managed IT Services Cairo, Enterprise Solutions Egypt, Business Software Egypt, ERP Implementation Egypt"
+    },
+    "services": {
+      "title": "Enterprise Software Services - Oracle ERP & Custom Development | Active Soft",
+      "description": "Comprehensive technology services including Oracle ERP implementation, custom desktop applications, managed IT support & enterprise security solutions for businesses in Egypt and the Middle East.",
+      "keywords": "Oracle ERP Services Egypt, Custom Software Development, IT Support Services Cairo, Enterprise Security Solutions, Business Application Development Egypt"
+    },
+    "prices": {
+      "title": "Transparent Pricing - Oracle ERP & Software Development Services | Active Soft",
+      "description": "Clear, competitive pricing for Oracle ERP implementation, custom software development and business intelligence solutions. Custom quotes for enterprise projects in Egypt and the Middle East.",
+      "keywords": "Software Development Pricing Egypt, Oracle ERP Cost Egypt, Custom Application Pricing, IT Services Pricing Cairo, Enterprise Software Quotes"
+    },
+    "industries": {
+      "title": "Industry-Specific ERP Solutions - Manufacturing, Healthcare & Finance | Active Soft",
+      "description": "Tailored Oracle ERP solutions for manufacturing, healthcare and financial services industries in Egypt. Industry-specific modules for enhanced operational efficiency and compliance.",
+      "keywords": "Manufacturing ERP Egypt, Healthcare IT Solutions, Financial Services Software Egypt, Industry ERP Systems, Sector-Specific ERP Egypt"
+    },
+    "caseStudies": {
+      "title": "Success Stories - Oracle ERP & Custom Software Projects | Active Soft",
+      "description": "Real client success stories showcasing our Oracle ERP implementations, custom software projects and IT solutions that transformed businesses across manufacturing, healthcare and finance sectors in Egypt.",
+      "keywords": "ERP Case Studies Egypt, Custom Software Success Stories, Business Transformation Egypt, Oracle Implementation Results, IT Solutions Case Studies"
+    },
+    "portfolio": {
+      "title": "ERP System Features - Oracle ERP Modules & Capabilities | Active Soft",
+      "description": "Explore the comprehensive features of our Oracle ERP system, including general ledger, inventory management, costing, HR & payroll, planning, and more. Designed for businesses in Egypt and the Middle East.",
+      "keywords": "ERP Features Egypt, Oracle ERP Modules, General Ledger System, Inventory Management Software, Costing System ERP, HR Payroll Software, Business Planning Software"
+    },
+    "clients": {
+      "title": "Our Clients - Trusted Technology Partners in Egypt | Active Soft",
+      "description": "Proud partners with leading companies across manufacturing, healthcare and financial services in Egypt. Trusted technology provider for enterprise solutions and custom software development.",
+      "keywords": "Active Soft Clients Egypt, Technology Partners Egypt, Enterprise Software Clients, Custom Development Customers, Business IT Partners Egypt"
+    },
+    "about": {
+      "title": "About Active Soft - Leading Oracle ERP & Software Development Company Egypt",
+      "description": "Learn about Active Soft, Egypt's trusted Oracle ERP consultants and custom software development company. 15+ years of experience delivering enterprise technology solutions across the Middle East.",
+      "keywords": "About Active Soft Egypt, Oracle ERP Consultants Egypt, Software Development Company Cairo, Enterprise Technology Provider, IT Solutions Company Egypt"
+    },
+    "brochures": {
+      "title": "Download Company Brochures - Oracle ERP & Software Services | Active Soft",
+      "description": "Download our official company brochures to learn about our Oracle ERP solutions, custom software development services and managed IT support for businesses in Egypt and the Middle East.",
+      "keywords": "Active Soft Brochure Download, ERP Solutions Brochure, Software Development Catalog, IT Services Brochure Egypt, Company Profile Download"
+    },
+    "contact": {
+      "title": "Contact Active Soft - Free Consultation for ERP & Software Solutions",
+      "description": "Get in touch with our team for a free consultation on Oracle ERP implementation, custom software development or managed IT services. Serving businesses across Egypt and the Middle East.",
+      "keywords": "Contact Active Soft Egypt, Free ERP Consultation, Software Development Inquiry, IT Services Request, Business Solutions Consultation Cairo"
+    },
+    "digitalTransformation": {
+      "title": "Digital Transformation Services - ERP & Custom Software Solutions | Active Soft",
+      "description": "Comprehensive digital transformation services including Oracle ERP implementation, custom software development, cloud infrastructure, and cybersecurity solutions for businesses in Egypt and the Middle East.",
+      "keywords": "Digital Transformation Egypt, ERP Implementation, Custom Software Development, Cloud Infrastructure, Cybersecurity Solutions, Business Technology Transformation"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "services": "Our Services",
+    "industries": "Industries",
+    "pricing": "Pricing",
+    "ourWork": "Our Work",
+    "caseStudies": "Case Studies",
+    "portfolio": "Portfolio",
+    "clients": "Our Clients",
+    "company": "Company",
+    "about": "About Us",
+    "brochures": "Brochures",
+    "contact": "Contact Us"
+  },
+  "footer": {
+    "aboutText": "Active Soft is a leading provider of technology solutions, specializing in Oracle ERP systems and custom software development to empower businesses.",
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact Us",
+    "address": "123 Tech Street, Cairo, Egypt",
+    "email": "info@activesoft.net",
+    "supportPhone": "Support: +20 122 507 7433",
+    "salesPhone": "Sales: +20 100 646 7081",
+    "followUs": "Follow Us",
+    "rightsReserved": "All Rights Reserved."
+  },
+  "home": {
+    "hero": {
+      "title": "Empowering Your Business with Innovative Technology",
+      "subtitle": "We deliver cutting-edge ERP solutions, managed IT services, and custom software to help you achieve your goals.",
+      "ctaPrimary": "Explore Our Services",
+      "ctaSecondary": "Get in Touch"
+    },
+    "services": {
+      "title": "Our Core Solutions",
+      "subtitle": "Providing comprehensive services to meet the demands of modern business."
+    },
+    "features": {
+        "erpDesc": "Streamline your operations with our expert Oracle ERP implementation and support.",
+        "itSupportDesc": "Reliable, proactive managed IT services to keep your systems running smoothly 24/7.",
+        "customAppsDesc": "Bespoke desktop and web applications tailored to your unique business needs and workflows."
+    },
+    "cta": {
+      "title": "Ready to Transform Your Business?",
+      "subtitle": "Let's discuss how our solutions can help you achieve your strategic objectives. Get a free consultation today.",
+      "button": "Request a Consultation"
+    },
+    "impact": {
+      "title": "Our Impact in Numbers",
+      "subtitle": "We are proud of our achievements and the value we deliver to our clients.",
+      "experience": "Years of Experience",
+      "experienceVal": "15+",
+      "applications": "Applications Delivered",
+      "applicationsVal": "500+",
+      "satisfaction": "Client Satisfaction",
+      "satisfactionVal": "98%"
+    },
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "subtitle": "Real feedback from businesses we've empowered.",
+      "quotes": [
+        {
+          "quote": "Active Soft's ERP solution revolutionized our manufacturing process. Their team was professional, knowledgeable, and delivered beyond our expectations.",
+          "name": "Ahmed Abdelhaleem",
+          "company": "CEO, Al-Oroba For Concrete",
+          "logo": "https://scontent-lhr6-2.xx.fbcdn.net/v/t39.30808-6/324104863_715504116673253_27001048516993591_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEVwkpRccodS4SjNV-HyySiJ0CMSbzU_BwnQIxJvNT8HA5IKKpquF0_5DS8qe4wzvUXUfnCscD4KZmKRaV7eyR8&nc_ohc=PoJvBnDJDRkQ7kNvwG_mp4p&_nc_oc=Adk7BqT7Zp5bjWJ3dS5XngqqUOue6RUPaCUEj43kRfJHjJ2vY9s7BogclJLVE5MdClA&_nc_zt=23&_nc_ht=scontent-lhr6-2.xx&_nc_gid=BAKISxzB60wVBy8pgCKTsQ&oh=00_AfaLNt0lRWu2N-S77ZJZKQd-r4wNQXFPJjYbpXLvDy824Q&oe=68D7050F"
+        },
+        {
+          "quote": "The custom desktop application they built for us is a game-changer. It's intuitive, secure, and has significantly improved our team's productivity.",
+          "name": "Fatima Hassan",
+          "company": "Operations Manager, Future for Import & Export",
+          "logo": "https://i.ibb.co/1fDJjctD/future-for-import-and-export.jpg"
+        },
+        {
+          "quote": "We've relied on Active Soft for IT support for years. Their proactive approach and quick response times are invaluable to our operations.",
+          "name": "Youssef Ibrahim",
+          "company": "IT Director, New Generation Schools",
+          "logo": "https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/327359313_696095742170641_3835513231457229103_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHuXg_bOwpZO7KeTpM_WWXoRPiiQKJItb1E-KJAoki1vbfwel11gjD8Y2ZYnldluSHhBBuAir6ZOcgjtmQuc6XE&nc_ohc=kJX1ZRtHsdQQ7kNvwFQPzYK&_nc_oc=Adk2HQ9W3jZWh1WCbCz7LeLn8_SkKOBWyDJL6rNBZzwXAQQE2Mu7BzzjagKVItG-iGM&_nc_zt=23&_nc_ht=scontent-lhr8-2.xx&_nc_gid=eE1uzH7XzDWyVF65CUQP2w&oh=00_AfZSRAjYfaRUDm4SQRY9bbIuiwgf6w5l4r2tSajsjU2AnQ&oe=68D6FCCF"
+        },
+        {
+          "quote": "Working with Active Soft on our digital transformation has been a game-changer for our business. Their Oracle ERP implementation streamlined our operations and improved efficiency across all departments.",
+          "name": "Ahmed Abdelhaleem",
+          "company": "CEO, Delta Company for Meat Production (Almasia - Global)",
+          "logo": "https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/471127525_996277009184693_2173276917715332600_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeECruJvm0f42L4GDNPF285fOhnbJoDb_vs6GdsmgNv--7uOqeIWgXJVtsdT5Qfh-ZSHmtDcGPatAVxAENAKRfzd&_nc_ohc=CN6U9mmE84EQ7kNvwFcZACF&_nc_oc=Adk-hITvsdFXT4WE97KmdbqdluEQuSeOd2tkERKWz9RbyxHYFBdSW__8JFP2Qsnd27U&_nc_zt=23&_nc_ht=scontent-lhr8-2.xx&_nc_gid=3--hl0EQtkOQ862mu7hArw&oh=00_AfbGoh4AUz7Vvm8wtZPBRcykoYtK27ciPkzHJKRMTMvjwg&oe=68D8781F"
+        },
+        {
+          "quote": "The custom software solution developed by Active Soft has transformed how we manage our inventory and supply chain. It's robust, scalable, and perfectly tailored to our business needs.",
+          "name": "Ali Fayed",
+          "company": "Founder, Sinai Seeds",
+          "logo": "https://sinai-seeds.com/assets/images/logo.png"
+        }
+      ]
+    },
+    "learnMore": "Learn More"
+  },
+  "workStages": {
+    "title": "Work Stages",
+    "slogan": "Smart planning is one of the most important factors of distinction and success",
+    "stages": [
+      "Initial planning of the complete project vision",
+      "Reviewing this vision with the client and making necessary adjustments",
+      "Implementation phase (duration varies based on project size)",
+      "Delivering the final project structure, reviewing it with the client, and applying finishing touches"
+    ]
+  },
+  "services": {
+    "title": "Our Comprehensive Services",
+    "subtitle": "Tailored technology solutions to drive your business forward.",
+    "smartScaleTitle": "Smart Scale System",
+    "smartScaleDesc": "Intelligent weighing system that automates weight recording and integrates directly with your inventory and financial systems.",
+    "smartScaleFeatures": {
+      "feature1": "Automatic recording of actual weight for products, pallets, or containers without human intervention",
+      "feature2": "Prevention of manipulation or manual input errors",
+      "feature3": "Comparison of actual weight with standard weight to detect deviations or losses",
+      "feature4": "Direct generation of invoices and costs based on real weight",
+      "feature5": "Instant updating of inventory and financial accounts with each weighing operation",
+      "feature6": "Direct integration between electronic scales and packaging stations within system"
+    },
+    "hrPayroll": {
+      "title": "HR and Payroll Management System",
+      "desc": "Complete and integrated system with financial accounts for managing employee affairs and payroll calculations.",
+      "features": {
+        "feature1": "Based on variable settings for insurance, vacations, and taxes that can be modified when laws change",
+        "feature2": "Respects all payroll calculation rules and penalty provisions, carrying over excess of five days to subsequent months",
+        "feature3": "Maintains employee photos and all employment documents with reports on missing documents",
+        "feature4": "Tracks document expiration dates to notify employees of renewals",
+        "feature5": "Records who entered and modified data with a period transfer system to prevent tampering",
+        "feature6": "Ability to reverse period transfers to modify data according to permissions"
+      }
+    },
+    "erpTitle": "Oracle ERP Solutions",
+    "erpDesc": "Full-cycle Oracle ERP services including implementation, customization, migration, and support to optimize your business processes.",
+    "erpFeaturesTitle": "ERP System Features",
+    "erpFeaturesDesc": "Our ERP system is designed to provide comprehensive solutions for businesses of all sizes. Here are some of the key features it offers:",
+    "generalFeatures": "General Features",
+    "mainModules": "Main System Modules",
+    "generalLedger": "General Ledger",
+    "cashManagement": "Cash Management",
+    "features": {
+      "oracleDB": "Powerful and stable Oracle database",
+      "multiUser": "Multiple user permissions with precise management",
+      "remoteAccess": "Ability to work from anywhere via the Internet",
+      "autoBackup": "Automatic backups created multiple times daily",
+      "auditTrail": "Complete audit trail showing who added, modified, or deleted",
+      "employeeDocs": "Entry of employee photos and documents",
+      "foreignCurrency": "Foreign currency support with fixed or variable rates per transaction",
+      "multiCompany": "Multiple companies or branches with consolidated reports",
+      "accountingChart": "Accounting chart with 4 levels",
+      "exchangeRate": "Exchange rate determination for foreign currencies",
+      "notes": "Notes entry for each journal entry item",
+      "multiEntry": "Support for multi-entry vouchers",
+      "unlimitedCashiers": "Unlimited number of cashiers",
+      "cashierLink": "Link each cashier to a specific employee",
+      "collectionPayment": "Recording collection and payment operations with separate documents"
+    },
+    "modules": {
+      "generalLedger": "General Ledger",
+      "inventory": "Inventory Management",
+      "costing": "Costing System",
+      "hr": "HR & Payroll",
+      "planning": "Planning",
+      "purchasesSales": "Purchases & Sales"
+    },
+    "itSupportTitle": "Managed IT Support",
+    "itSupportDesc": "Proactive 24/7 monitoring, helpdesk support, and IT infrastructure management to ensure your systems are always secure and efficient.",
+    "customAppsTitle": "Custom App Development",
+    "customAppsDesc": "We design, develop, and deploy bespoke desktop and web applications that solve unique business challenges and integrate seamlessly with your existing systems.",
+    "securityTitle": "Enterprise Security",
+    "securityDesc": "Implementing bank-level security protocols to protect your data, applications, and network from evolving cyber threats."
+  },
+  "prices": {
+    "title": "Transparent Pricing for Your Success",
+    "subtitle": "Choose the solution that aligns with your business goals. All plans are fully customizable to your specific requirements.",
+    "startsAt": "Starts at",
+    "perProject": "/project",
+    "features": "Key Features",
+    "getQuote": "Get a Custom Quote",
+    "services": [
+      {
+        "id": "14b04083-7fc7-4ed8-af24-0da5fa0ded85",
+        "title": "Oracle ERP Implementation",
+        "description": "Complete Oracle ERP Cloud implementation services including system analysis, data migration, custom module development, and user training for seamless digital transformation.",
+        "features": [
+          "Cloud infrastructure setup and optimization",
+          "Legacy system data migration with zero data loss",
+          "Custom module development for industry-specific needs",
+          "Real-time integration with existing business systems",
+          "Comprehensive user training and change management"
+        ],
+        "pricing": {
+          "currency": "EGP",
+          "startingAt": 75000,
+          "billingPeriod": "project"
+        }
+      },
+      {
+        "id": "183a9264-d7d2-4d9e-a768-5d414736383d",
+        "title": "Enterprise Resource Planning (ERP) Optimization",
+        "description": "Comprehensive ERP system optimization services to enhance performance, streamline processes, and maximize ROI from existing Oracle ERP investments.",
+        "features": [
+          "Performance analysis and bottleneck identification",
+          "Database optimization and tuning",
+          "Custom report development",
+          "Workflow automation and process improvement",
+          "Integration with third-party applications"
+        ],
+        "pricing": {
+          "currency": "EGP",
+          "startingAt": 25000,
+          "billingPeriod": "project"
+        }
+      },
+      {
+        "id": "59ab53cd-0dc2-434a-a17c-1305a8ecf5f1",
+        "title": "Agricultural Stations and Export Operations Management",
+        "description": "Accounting software that handles all calculations for suppliers, customers, warehouses, treasury, and banks. It aggregates supplier data, accounts, invoices, tracks inventory and items, manages export operations to different countries, and handles operational items with expense allocation to each operation.",
+        "features": [
+          "Integrated management of supplier and customer accounts",
+          "Inventory tracking and continuous item counting",
+          "Export operations management to different countries",
+          "Processing of operational items and expense allocation",
+          "Integration of all accounting operations with treasury and banks"
+        ],
+        "pricing": {
+          "currency": "EGP",
+          "startingAt": 45000,
+          "billingPeriod": "project"
+        }
+      },
+      {
+        "id": "9e323e92-07be-4b7b-9fa3-03fb1472e200",
+        "title": "Custom Windows Desktop Application Development",
+        "description": "Tailored Windows desktop applications designed to automate business processes, improve workflow efficiency, and integrate seamlessly with existing enterprise systems.",
+        "features": [
+          "Native Windows application development",
+          "Database integration (SQL Server, Oracle, MySQL)",
+          "Offline functionality with data synchronization",
+          "Advanced reporting and analytics",
+          "Scalable architecture for future expansion"
+        ],
+        "pricing": {
+          "currency": "EGP",
+          "startingAt": 15000,
+          "billingPeriod": "project"
+        }
+      },
+      {
+        "id": "a1480023-34d1-4c80-b854-a33f6c2317d0",
+        "title": "Business Intelligence & Analytics Solutions",
+        "description": "Advanced business intelligence platform development using Oracle Analytics Cloud and custom dashboard solutions for data-driven decision making.",
+        "features": [
+          "Interactive dashboard development",
+          "Real-time data visualization",
+          "Predictive analytics and forecasting",
+          "KPI tracking and performance monitoring",
+          "Data warehouse design and implementation"
+        ],
+        "pricing": {
+          "currency": "EGP",
+          "startingAt": 35000,
+          "billingPeriod": "project"
+        }
+      },
+      {
+        "id": "b082baae-fdb4-400a-95ae-2dab6b444bb7",
+        "title": "Supply Chain Management & Logistics Optimization",
+        "description": "End-to-end supply chain management solution with real-time tracking, inventory optimization, and logistics coordination for improved operational efficiency.",
+        "features": [
+          "Real-time inventory tracking and management",
+          "Supplier relationship management",
+          "Demand forecasting and planning",
+          "Warehouse management system",
+          "Transportation and logistics coordination"
+        ],
+        "pricing": {
+          "currency": "EGP",
+          "startingAt": 55000,
+          "billingPeriod": "project"
+        }
+      },
+      {
+        "id": "c1d2e3f4-5678-90ab-cdef-1234567890ab",
+        "title": "Sales Representatives and Sales Managers Management",
+        "description": "Comprehensive solution for managing sales representatives and sales managers with detailed performance tracking and commission management.",
+        "features": [
+          "Periodic reports on representative and branch performance",
+          "Monitoring sales representatives' performance and linking their sales to customers",
+          "Special permissions for sales managers to monitor the market and make faster decisions",
+          "Tracking cash collections and checks for each representative",
+          "Ability to link representative commissions to actual collections or sales volume",
+          "Setting sales targets (Goals) and comparing actual results"
+        ],
+        "pricing": {
+          "currency": "EGP",
+          "startingAt": 30000,
+          "billingPeriod": "project"
+        }
+      },
+      {
+        "id": "e8f9a2b1-c3d4-5678-9abc-def012345678",
+        "title": "Smart Scale System",
+        "description": "Intelligent weighing system that automates weight recording and integrates directly with your inventory and financial systems.",
+        "features": [
+          "Automatic recording of actual weight for products, pallets, or containers without human intervention",
+          "Prevention of manipulation or manual input errors",
+          "Comparison of actual weight with standard weight to detect deviations or losses",
+          "Direct generation of invoices and costs based on real weight",
+          "Instant updating of inventory and financial accounts with each weighing operation",
+          "Direct integration between electronic scales and packaging stations within system"
+        ],
+        "pricing": {
+          "currency": "EGP",
+          "startingAt": 25000,
+          "billingPeriod": "project"
+        }
+      }
+    ]
+  },
+  "industries": {
+    "title": "Tailored Solutions for Your Industry",
+    "subtitle": "We understand the unique challenges of your sector and deliver targeted solutions.",
+    "challengesLabel": "Challenges",
+    "solutionLabel": "Our Solution",
+    "manufacturing": {
+      "name": "Manufacturing",
+      "challenges": "Complex supply chains, production scheduling, quality control, and inventory management.",
+      "solution": "Customized Oracle ERP modules to streamline production, optimize inventory, and enhance supply chain visibility for increased efficiency."
+    },
+    "healthcare": {
+      "name": "Agricultural Stations & Export Operations",
+      "challenges": "Managing supplier data, inventory tracking, export documentation, and cost allocation across multiple operations.",
+      "solution": "Comprehensive accounting system handling supplier/customer accounts, inventory, warehouse management, and export operations with detailed tracking of processing costs and expense allocation."
+    },
+    "financial": {
+      "name": "Financial Services",
+      "challenges": "High-stakes data security, regulatory adherence, real-time transaction processing, and risk management.",
+      "solution": "Robust Oracle ERP Financials and custom software with bank-level security to automate financial operations and ensure compliance."
+    }
+  },
+  "caseStudies": {
+    "title": "Success Stories",
+    "subtitle": "See how we've helped businesses like yours achieve their goals.",
+    "filters": {
+      "all": "All Industries",
+      "manufacturing": "Manufacturing",
+      "healthcare": "Agricultural Stations & Export Operations",
+      "financial": "Financial Services"
+    },
+    "studies": [
+      {
+        "industryKey": "manufacturing",
+        "industry": "Manufacturing",
+        "title": "Streamlining Production for a Major Manufacturer",
+        "challenge": "Our client faced significant production delays and inventory inaccuracies due to a disconnected legacy system.",
+        "solution": "We implemented a tailored Oracle ERP solution that integrated their entire production workflow from raw materials to finished goods.",
+        "result": "Achieved a 30% reduction in production time and a 99.8% inventory accuracy rate within the first year.",
+        "image": "https://picsum.photos/seed/casestudy1/800/600"
+      },
+      {
+        "industryKey": "healthcare",
+        "industry": "Agricultural Stations & Export Operations",
+        "title": "Optimizing Agricultural Export Operations for a Major Farming Cooperative",
+        "challenge": "A large agricultural cooperative needed to streamline their export documentation, inventory tracking, and cost allocation across multiple farming stations and international markets.",
+        "solution": "We developed a comprehensive accounting and export management system that integrated supplier data, inventory management, warehouse operations, and detailed cost tracking for each export shipment.",
+        "result": "Achieved 35% improvement in export processing time and 99.5% accuracy in cost allocation across all operations.",
+        "image": "https://picsum.photos/seed/casestudy2/800/600"
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "ERP System Features",
+    "subtitle": "Explore the comprehensive features of our Oracle ERP system designed to streamline your business operations",
+    "features": {
+      "general": {
+        "title": "General Features",
+        "oracleDB": "Powerful and stable Oracle database",
+        "multiUser": "Multiple user permissions with precise management",
+        "remoteAccess": "Ability to work from anywhere via the Internet",
+        "autoBackup": "Automatic backups created multiple times daily",
+        "auditTrail": "Complete audit trail showing who added, modified, or deleted",
+        "employeeDocs": "Entry of employee photos and documents",
+        "foreignCurrency": "Foreign currency support with fixed or variable rates per transaction",
+        "multiCompany": "Multiple companies or branches with consolidated reports",
+        "consolidatedAccounts": "Support for Consolidated Accounts",
+        "costSystem": "Integrated industrial cost system: raw materials – processing – cost centers – service centers",
+        "fullReports": "Full financial reports without transfer (trial balance – income statement – debt ages...)",
+        "productCosts": "Accurate product cost statements",
+        "security": "Complete security against modification and cancellation with monthly and accounting closure"
+      },
+      "modules": {
+        "title": "Main System Modules",
+        "generalLedger": "General Ledger",
+        "inventory": "Inventory Management",
+        "costing": "Costing System",
+        "hr": "HR & Payroll",
+        "planning": "Planning System",
+        "purchasesSales": "Purchases & Sales"
+      },
+      "ledger": {
+        "title": "General Ledger Features",
+        "accountingChart": "Accounting chart with 4 levels",
+        "exchangeRate": "Exchange rate determination for foreign currencies with ability to modify in the transaction itself",
+        "notes": "Notes entry for each journal entry item",
+        "multiEntry": "Support for multi-entry vouchers",
+        "consolidatedAccounts": "Consolidated accounts for any number of accounts regardless of their nature",
+        "accountStatements": "Ability to extract consolidated or separate account statements",
+        "costCenterLink": "Automatic linking of discounts and additions to cost centers or sales",
+        "yearEnd": "Automatic closure of revenues and expenses at year-end",
+        "unlimitedYears": "Opening unlimited fiscal years without programming intervention",
+        "collectionPlans": "Collection plans and follow-up for sales representatives",
+        "accountDisable": "Ability to disable any account from use",
+        "userPermissions": "Customization of account visibility based on user and permissions"
+      },
+      "reports": {
+        "title": "General Ledger Reports",
+        "trialBalance": "Trial balance for any date",
+        "incomeStatement": "Income statement for any period",
+        "accountStatements": "Detailed and consolidated account statements",
+        "expenseComparison": "Expense comparison by periods",
+        "serviceAnalysis": "Service center analysis and distribution on production",
+        "salesPlan": "Sales plan + monthly collection follow-up"
+      },
+      "cash": {
+        "title": "Cash Management",
+        "unlimitedCashiers": "Unlimited number of cashiers",
+        "employeeLink": "Link each cashier to a specific employee",
+        "collectionPayment": "Recording collection and payment operations with separate documents"
+      },
+      "banks": {
+        "title": "Banks & Checks",
+        "unlimitedAccounts": "Opening several unlimited bank accounts",
+        "accountTypes": "Each bank account has 3 accounting accounts (balance – receivable bills – payable bills)",
+        "checkRegister": "Complete register of check movements (issuance – payment – return – cancellation...)",
+        "reports": "Reports: Receivable bills under collection, Returned receivable bills, Due payable bills, Returned payable bills, Comprehensive check statement"
+      },
+      "assets": {
+        "title": "Fixed Assets",
+        "groups": "Registering assets within groups with a specified depreciation rate",
+        "accounts": "Registering accounts specific to the asset (asset – accumulated – provision)",
+        "depreciation": "Issuing monthly depreciation voucher with one click",
+        "details": "Complete data for each asset (cost – center – commissioning date – serial – model...)",
