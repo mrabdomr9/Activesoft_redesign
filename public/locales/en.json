@@ -421,7 +421,7 @@
         ],
         "pricing": {
           "currency": "EGP",
-          "startingAt": 75000,
+          "startingAt": 160000,
           "billingPeriod": "project"
         }
       },
@@ -438,7 +438,7 @@
         ],
         "pricing": {
           "currency": "EGP",
-          "startingAt": 25000,
+          "startingAt": 150000,
           "billingPeriod": "project"
         }
       },
@@ -455,7 +455,7 @@
         ],
         "pricing": {
           "currency": "EGP",
-          "startingAt": 45000,
+          "startingAt": 100000,
           "billingPeriod": "project"
         }
       },
@@ -560,7 +560,7 @@
         ],
         "pricing": {
           "currency": "EGP",
-          "startingAt": 25000,
+          "startingAt": 150000,
           "billingPeriod": "project"
         }
       }
@@ -815,7 +815,7 @@
           ],
           "pricing": {
             "currency": "EGP",
-            "startingAt": 25000,
+            "startingAt": 150000,
             "billingPeriod": "project"
           }
         }
