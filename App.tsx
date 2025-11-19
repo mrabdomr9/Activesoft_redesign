@@ -13,6 +13,7 @@ import ClientsPage from './pages/ClientsPage';
 import AboutUsPage from './pages/AboutUsPage';
 import BrochuresPage from './pages/BlogPage';
 import ContactPage from './pages/ContactPage';
+import ContactRequests from './pages/ContactRequests';
 import PricesPage from './pages/PricesPage';
 import SiteMapPage from './pages/SiteMapPage';
 import DigitalTransformationPage from './pages/DigitalTransformationPage';
@@ -74,6 +75,7 @@ const AppContent = () => {
             <Route path="/about" element={<AboutUsPage />} />
             <Route path="/brochures" element={<BrochuresPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/contact-requests" element={<ContactRequests />} />
             <Route path="/erp-features" element={<PortfolioPage />} />
             <Route path="/sitemap" element={<SiteMapPage />} />
             <Route path="/digital-transformation" element={<DigitalTransformationPage />} />
