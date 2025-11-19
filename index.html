@@ -72,6 +72,97 @@
           linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
         background-size: 2rem 2rem;
       }
+
+      /* Animation keyframes */
+      @keyframes slideBackground {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 150px 150px;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes growWidth {
+        from {
+          width: 0;
+        }
+        to {
+          width: 6rem;
+        }
+      }
+
+      /* Animation classes */
+      .animate-fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+      }
+
+      .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+
+      .animate-fade-in-down {
+        animation: fadeInDown 0.8s ease-out forwards;
+      }
+
+      .animate-fade-in-right {
+        animation: fadeInRight 0.8s ease-out forwards;
+      }
+
+      .animate-grow-width {
+        animation: growWidth 1s ease-out forwards;
+      }
+
+      /* Animation delays */
+      .animation-delay-200 {
+        animation-delay: 200ms;
+      }
+
+      .animation-delay-400 {
+        animation-delay: 400ms;
+      }
     </style>
     <script>
       tailwind.config = {
