@@ -172,7 +172,7 @@ const ServicesPage: React.FC = () => {
   const filteredServices = useMemo(() => {
     return services.filter(service => {
       const matchesCategory = filterCategory === 'all' || service.category === filterCategory;
-      const matchesSearch = searchQuery === '' || 
+      const matchesSearch = searchQuery === '' ||
         service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         service.description.toLowerCase().includes(searchQuery.toLowerCase());
 
@@ -211,7 +211,7 @@ const ServicesPage: React.FC = () => {
         if (element) {
           const { offsetTop, offsetHeight } = element;
           if (
-            scrollPosition >= offsetTop && 
+            scrollPosition >= offsetTop &&
             scrollPosition < offsetTop + offsetHeight
           ) {
             setActiveSection(service.id);
@@ -264,81 +264,60 @@ const ServicesPage: React.FC = () => {
 
       {/* Content */}
       <div className="digital-transformation-content">
-        <section className="pt-20">
+        <section className="pt-20 pb-8">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl font-bold text-white font-display animate-on-scroll">{t('services.title', 'Our Comprehensive Services')}</h1>
-            <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>
+            <h1 className="text-4xl md:text-5xl font-bold font-display animate-on-scroll bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent animate-gradient-x">
+              {t('services.title', 'Our Comprehensive Services')}
+            </h1>
+            <p className="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto animate-on-scroll leading-relaxed" style={{ transitionDelay: '100ms' }}>
               {t('services.subtitle', 'Tailored technology solutions to drive your business forward.')}
             </p>
           </div>
         </section>
 
-        {/* Search and Filter Section */}
-        <div className="py-8">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="glass-panel rounded-xl p-6 mb-8">
-              <div className="flex flex-col md:flex-row gap-4">
-                <div className="flex-1">
-                  <div className="relative">
-                    <input
-                      type="text"
-                      placeholder={t('services.searchPlaceholder', 'Search services...')}
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full px-4 py-2 pl-10 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                    />
-                    <div className="absolute inset-y-0 left-0 flex items-center pl-3">
-                      <svg className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {categories.map(category => (
-                    <button
-                      key={category.id}
-                      onClick={() => setFilterCategory(category.id)}
-                      className={`px-4 py-2 rounded-lg transition-colors ${
-                        filterCategory === category.id
-                          ? 'bg-primary text-white'
-                          : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                      }`}
-                    >
-                      {category.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Services Grid */}
         <div className="py-12">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 mb-16">
-              {filteredServices.map(service => (
-                <div key={service.id} className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105">
-                  <div className="bg-primary p-6">
-                    <div className="flex items-center">
-                      <div className="bg-white/20 p-3 rounded-full mr-4">
-                        {service.icon}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+              {services.map((service, index) => (
+                <div
+                  key={service.id}
+                  className="group relative glass-panel rounded-xl overflow-hidden transition-all duration-500 hover:scale-[1.02] animate-on-scroll"
+                  style={{
+                    transitionDelay: `${index * 50}ms`,
+                    animationDelay: `${index * 100}ms`
+                  }}
+                >
+                  {/* Gradient border effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
+                  <div className="absolute inset-[1px] bg-slate-900 rounded-xl" />
+
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <div className="bg-gradient-to-br from-cyan-600 to-blue-600 p-6 relative overflow-hidden">
+                      {/* Animated background effect */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                      <div className="flex items-center relative z-10">
+                        <div className="bg-white/20 p-3 rounded-full mr-4 rtl:mr-0 rtl:ml-4 group-hover:bg-white/30 transition-colors duration-300 group-hover:scale-110 transform">
+                          {service.icon}
+                        </div>
+                        <h3 className="text-xl font-bold text-white">{service.title}</h3>
                       </div>
-                      <h3 className="text-xl font-bold text-white">{service.title}</h3>
                     </div>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-gray-300 mb-4">{service.description}</p>
-                    <button
-                      onClick={() => scrollToSection(service.id)}
-                      className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors"
-                    >
-                      {t('home.learnMore', 'Learn More')}
-                      <svg className="ml-2 -mr-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
-                    </button>
+
+                    <div className="p-6">
+                      <p className="text-gray-300 mb-6 line-clamp-3">{service.description}</p>
+                      <button
+                        onClick={() => scrollToSection(service.id)}
+                        className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-cyan-500/50"
+                      >
+                        {t('home.learnMore', 'Learn More')}
+                        <svg className="ml-2 rtl:ml-0 rtl:mr-2 rtl:rotate-180 -mr-1 h-4 w-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -347,25 +326,27 @@ const ServicesPage: React.FC = () => {
         </div>
 
         {/* Navigation Menu */}
-        <div className="sticky top-0 z-10 bg-gray-900/90 backdrop-blur-sm border-b border-gray-700">
+        <div className="sticky top-20 z-40 bg-gradient-to-r from-gray-900/95 via-slate-900/95 to-gray-900/95 backdrop-blur-md border-b border-cyan-500/30 shadow-lg shadow-cyan-500/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex overflow-x-auto py-3 space-x-6">
+            <div className="flex overflow-x-auto py-4 space-x-4 rtl:space-x-reverse scrollbar-hide">
               {services.map(service => (
                 <button
                   key={service.id}
                   onClick={() => scrollToSection(service.id)}
-                  className={`whitespace-nowrap px-4 py-2 rounded-lg transition-colors ${
-                    activeSection === service.id
-                      ? 'bg-primary text-white'
-                      : 'text-gray-300 hover:text-white hover:bg-gray-800'
-                  }`}
+                  className={`relative whitespace-nowrap px-5 py-2.5 rounded-lg transition-all duration-300 transform hover:scale-105 ${activeSection === service.id
+                    ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-lg shadow-cyan-500/40'
+                    : 'text-gray-300 hover:text-white hover:bg-gray-800/70'
+                    }`}
                 >
-                  {service.title}
+                  {activeSection === service.id && (
+                    <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-cyan-400/20 to-blue-400/20 blur-sm" />
+                  )}
+                  <span className="relative z-10">{service.title}</span>
                 </button>
               ))}
             </div>
           </div>
-        </div>
+        </div >
 
         <div className="py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -745,8 +726,8 @@ const ServicesPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
 
