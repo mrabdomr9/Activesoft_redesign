@@ -250,7 +250,7 @@ const Header: React.FC = () => {
 
       {/* Mobile Menu */}
       {mobileMenu && (
-        <div className="md:hidden bg-slate-800 border-t border-cyan-500/30">
+        <div className="md:hidden bg-slate-800 border-t border-cyan-500/30 relative z-50">
           <div className="px-2 pt-2 pb-3 space-y-1 flex flex-col items-center">
             {navLinks.map((link) =>
               link.subLinks ? (
@@ -273,8 +273,7 @@ const Header: React.FC = () => {
                   to={link.to!}
                   onClick={closeMenus}
                   className={({ isActive }) =>
-                    `block w-full text-center ${linkClasses} ${
-                      isActive ? activeLinkClasses : ''
+                    `block w-full text-center ${linkClasses} ${isActive ? activeLinkClasses : ''
                     }`
                   }
                 >
