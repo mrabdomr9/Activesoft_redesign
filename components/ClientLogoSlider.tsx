@@ -36,7 +36,7 @@ const ClientLogoSlider: React.FC = () => {
                                     key={`${client.name}-${index}`}
                                     className="flex-shrink-0 mx-8 w-40 flex flex-col items-center justify-center"
                                 >
-                                    <div className="glass-panel p-4 rounded-lg hover:border-primary transition-all duration-300 hover:scale-110 w-full h-24 flex items-center justify-center mb-3">
+                                    <div className="glass-panel p-4 rounded-lg hover:border-primary transition-all duration-300 hover:scale-110 shadow-[0_0_30px_rgba(6,182,212,0.5)] w-full h-24 flex items-center justify-center mb-3">
                                         <img
                                             src={client.logo}
                                             alt={client.name}
