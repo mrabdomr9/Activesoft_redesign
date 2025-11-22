@@ -34,9 +34,9 @@ const ClientLogoSlider: React.FC = () => {
                             {duplicatedClients.map((client, index) => (
                                 <div
                                     key={`${client.name}-${index}`}
-                                    className="flex-shrink-0 mx-8 w-40 h-24 flex items-center justify-center"
+                                    className="flex-shrink-0 mx-8 w-40 flex flex-col items-center justify-center"
                                 >
-                                    <div className="glass-panel p-4 rounded-lg hover:border-primary transition-all duration-300 hover:scale-110 w-full h-full flex items-center justify-center">
+                                    <div className="glass-panel p-4 rounded-lg hover:border-primary transition-all duration-300 hover:scale-110 w-full h-24 flex items-center justify-center mb-3">
                                         <img
                                             src={client.logo}
                                             alt={client.name}
@@ -48,6 +48,9 @@ const ClientLogoSlider: React.FC = () => {
                                             }}
                                         />
                                     </div>
+                                    <p className="text-gray-300 text-xs text-center font-medium line-clamp-2 w-full">
+                                        {client.name}
+                                    </p>
                                 </div>
                             ))}
                         </div>
