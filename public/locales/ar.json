@@ -673,7 +673,7 @@
     "title": "محبتكم تسامت كالنجوم فى سماء قلوبنا",
     "subtitle": "عملاء الشركة",
     "clientList": [
-      { "name": "شركة دلتا لإنتاج اللحوم (الماسية - جلوبال)", "logo": "https://www.deltagroup-jo.com/wp-content/uploads/2016/08/Lo.png" },
+       { "name": "شركة دلتا لإنتاج اللحوم (الماسية - جلوبال)", "logo": "https://www.deltagroup-jo.com/wp-content/uploads/2016/08/Lo.png" },
       { "name": "العروبة للخرسانة الجاهزة", "logo": "https://i.ibb.co/QFyYKgCX/orobah.jpg" },
       { "name": "بودي مصر للدهانات BMC", "logo": "https://i.ibb.co/pvV8MFZ2/Bodi-Masr.jpg" },
       { "name": "مجموعة الأمراء للسجاد", "logo": "https://i.ibb.co/vChNDccX/Alomaraa-group.jpg" },
@@ -689,7 +689,13 @@
       { "name": "إيجل إيجيبت ستيل", "logo": "https://i.ibb.co/1fJHV235/Eagle-Steel.jpg" },
       { "name": "سيراميكا جرانيتو", "logo": "https://ceramicagranito.com/site_assets/images/logo.png" },
       { "name": "مجموعة القبائلي", "logo": "https://www.alkabaelygroup.com/alkabaely/arabic/images/demo/template-logo.png" },
-      { "name": "جين جرو للكيماويات والبذور", "logo": "https://i.ibb.co/nqQDQ5Vk/gene-grow.jpg" }
+      { "name": "جين جرو للكيماويات والبذور", "logo": "https://i.ibb.co/LdqQY0px/gene-grow.jpg" },
+      { "name": "VEGEX", "logo": "https://vegexfarms.com/images/logo.png" },
+      { "name": "حصاد النيل", "logo": "https://i.ibb.co/My4C7PZ4/Screenshot-22-9-2025-13433.jpg" },
+      { "name": "أجرو سيتي للاستيراد والتصدير", "logo": "https://agro-city.com/wp-content/uploads/2024/08/cropped-logo-03-1-300x100.png" },
+      { "name": "السهم الذهبي للإستثمارات الهندسية", "logo": "https://i.ibb.co/8DRzr5MR/Golden-Arrow.jpg" },
+      { "name": "شمندي للصناعات المعدنية", "logo": "https://i.ibb.co/fYLFJpBz/Shamandy.jpg" },
+      { "name": "طيبة بلاست", "logo": "https://i.ibb.co/jvmPqcVp/Tiba-Plast.jpg" }
     ]
   },
   "about": {
