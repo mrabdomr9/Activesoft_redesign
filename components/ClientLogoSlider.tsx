@@ -29,8 +29,8 @@ const ClientLogoSlider: React.FC = () => {
                 {/* Logo Slider Container */}
                 <div className="relative">
                     {/* Gradient Overlays */}
-                    <div className={`absolute ${isRTL ? 'right-0' : 'left-0'} top-0 bottom-0 w-32 bg-gradient-to-${isRTL ? 'l' : 'r'} from-slate-900 to-transparent z-10`}></div>
-                    <div className={`absolute ${isRTL ? 'left-0' : 'right-0'} top-0 bottom-0 w-32 bg-gradient-to-${isRTL ? 'r' : 'l'} from-slate-900 to-transparent z-10`}></div>
+                    <div className={`absolute ${isRTL ? 'right-0' : 'left-0'} top-0 bottom-0 w-32 bg-gradient-to-${isRTL ? 'l' : 'r'}  to-transparent z-10`}></div>
+                    <div className={`absolute ${isRTL ? 'left-0' : 'right-0'} top-0 bottom-0 w-32 bg-gradient-to-${isRTL ? 'r' : 'l'}  to-transparent z-10`}></div>
 
                     {/* Sliding Track */}
                     <div className="flex overflow-hidden">
