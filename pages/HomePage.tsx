@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '../hooks/useTranslation';
+import ClientLogoSlider from '../components/ClientLogoSlider';
 
 const HomePage: React.FC = () => {
   const { t } = useTranslation();
@@ -25,7 +26,7 @@ const HomePage: React.FC = () => {
 
     if (description) setMetaTag('description', description);
     if (keywords) setMetaTag('keywords', keywords);
-    
+
     // Add Open Graph meta tags
     setMetaTag('og:title', title);
     setMetaTag('og:description', description);
@@ -33,14 +34,14 @@ const HomePage: React.FC = () => {
     setMetaTag('og:url', 'https://activesoft.net');
     setMetaTag('og:image', 'https://activesoft.net/og-image.jpg');
     setMetaTag('og:site_name', 'Active Soft');
-    
+
     // Add Twitter meta tags
     setMetaTag('twitter:card', 'summary_large_image');
     setMetaTag('twitter:title', title);
     setMetaTag('twitter:description', description);
     setMetaTag('twitter:image', 'https://activesoft.net/twitter-image.jpg');
     setMetaTag('twitter:site', '@ActiveSoft');
-    
+
     // Add canonical tag
     let canonicalLink = document.querySelector('link[rel="canonical"]');
     if (!canonicalLink) {
@@ -49,7 +50,7 @@ const HomePage: React.FC = () => {
       document.head.appendChild(canonicalLink);
     }
     canonicalLink.setAttribute('href', 'https://activesoft.net');
-    
+
     // Add structured data
     const structuredData = {
       "@context": "https://schema.org",
@@ -94,7 +95,7 @@ const HomePage: React.FC = () => {
       const element = document.querySelector(`meta[property="${property}"]`);
       if (element) element.remove();
     };
-    
+
     removeMetaTag('og:title');
     removeMetaTag('og:description');
     removeMetaTag('og:type');
@@ -106,7 +107,7 @@ const HomePage: React.FC = () => {
     removeMetaTag('twitter:description');
     removeMetaTag('twitter:image');
     removeMetaTag('twitter:site');
-    
+
     // Remove existing structured data
     const existingScript = document.querySelector('script[type="application/ld+json"]');
     if (existingScript) {
@@ -118,7 +119,7 @@ const HomePage: React.FC = () => {
     script1.type = 'application/ld+json';
     script1.text = JSON.stringify(structuredData);
     document.head.appendChild(script1);
-    
+
     // Add WebSite structured data
     const script2 = document.createElement('script');
     script2.type = 'application/ld+json';
@@ -146,7 +147,7 @@ const HomePage: React.FC = () => {
       link: '/services'
     }
   ];
-  
+
   const testimonials = t('home.testimonials', { title: 'What Our Clients Say', subtitle: 'Real feedback from businesses we\'ve empowered.', quotes: [] });
   const totalTestimonials = testimonials && testimonials.quotes ? testimonials.quotes.length : 0;
   const { language } = useTranslation();
@@ -171,7 +172,7 @@ const HomePage: React.FC = () => {
       if (timer) clearTimeout(timer);
     };
   }, [currentTestimonial, testimonials, language]);
-    
+
   const nextTestimonial = () => {
     if (language === 'ar') {
       setCurrentTestimonial((prevIndex) => (prevIndex - 1 + testimonials.quotes.length) % testimonials.quotes.length);
@@ -199,447 +200,450 @@ const HomePage: React.FC = () => {
       {/* Technical Background Elements */}
       <div className="absolute inset-0">
         {/* Circuit Board Pattern */}
-        <div className="absolute inset-0 opacity-5" style={{ 
+        <div className="absolute inset-0 opacity-5" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M0 50h20m20 0h10m20 0h30M50 0v20m0 20v10m0 20v30' stroke='%2306B6D4' stroke-width='1'/%3E%3Ccircle cx='20' cy='50' r='2' fill='%2306B6D4'/%3E%3Ccircle cx='50' cy='20' r='2' fill='%2306B6D4'/%3E%3Ccircle cx='50' cy='80' r='2' fill='%2306B6D4'/%3E%3C/svg%3E")`,
           backgroundSize: '150px 150px'
         }}></div>
-        
+
         {/* HUD Elements */}
-        <div className="absolute inset-0 opacity-3" style={{ 
+        <div className="absolute inset-0 opacity-3" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20h40M20 40h30M20 60h20M140 20h40M150 40h30M160 60h20' stroke='%2306B6D4' stroke-width='0.5'/%3E%3C/svg%3E")`,
           backgroundSize: '200px 200px'
         }}></div>
-        
+
         {/* Data Flow Lines */}
-        <div className="absolute inset-0 opacity-2" style={{ 
+        <div className="absolute inset-0 opacity-2" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 150 Q75 100 150 150 T300 150' stroke='%2306B6D4' stroke-width='0.5' fill='none' stroke-dasharray='5,5'/%3E%3C/svg%3E")`,
           backgroundSize: '300px 300px'
         }}></div>
-        
+
         {/* Technical Schematics */}
-        <div className="absolute inset-0 opacity-1" style={{ 
+        <div className="absolute inset-0 opacity-1" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50 L100 100 M150 50 L200 100 M250 50 L300 100 M50 150 L100 200 M150 150 L200 200 M250 150 L300 200' stroke='%2306B6D4' stroke-width='0.3'/%3E%3C/svg%3E")`,
           backgroundSize: '400px 400px'
         }}></div>
       </div>
-      
+
       {/* Content */}
       <div className="digital-transformation-content">
-      {/* Hero Section */}
-      <section 
-        className="relative min-h-screen flex items-center justify-center text-center px-4 overflow-hidden -mt-20 pt-20 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('https://picsum.photos/seed/tech-hero/1920/1080')" }}
-      >
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-        <div className="absolute inset-0 bg-grid-pattern opacity-10" style={{ maskImage: 'radial-gradient(ellipse at center, white 20%, transparent 70%)' }}></div>
-        <div className="relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold text-white font-display leading-tight animate-on-scroll">
-            {t('home.hero.title', 'Empowering Your Business with Innovative Technology')}
-          </h1>
-          <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto animate-on-scroll" style={{ transitionDelay: '150ms' }}>
-            {t('home.hero.subtitle', 'We deliver cutting-edge ERP solutions, managed IT services, and custom software to help you achieve your goals.')}
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4 animate-on-scroll" style={{ transitionDelay: '300ms' }}>
-            <Link to="/services" className="px-8 py-3 bg-primary text-white font-bold rounded-md shadow-lg hover:bg-secondary transition-colors duration-300 transform hover:scale-105">
-              {t('home.hero.ctaPrimary', 'Explore Our Services')}
-            </Link>
-            <Link to="/contact" className="px-8 py-3 bg-white/10 text-white font-bold rounded-md hover:bg-white/20 transition-colors duration-300 transform hover:scale-105">
-              {t('home.hero.ctaSecondary', 'Get in Touch')}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Overview Section */}
-      <section className="py-20 bg-transparent">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white font-display animate-on-scroll">{t('home.services.title', 'Our Core Solutions')}</h2>
-            <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto animate-on-scroll" style={{transitionDelay: '100ms'}}>{t('home.services.subtitle', 'Providing comprehensive services to meet the demands of modern business.')}</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div key={index} className="glass-panel p-8 rounded-xl hover:border-primary hover:-translate-y-2 transition-all duration-300 h-full flex flex-col animate-on-scroll" style={{ transitionDelay: `${(index + 2) * 100}ms` }}>
-                <div className="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-primary/80 text-white mb-6">
-                  {feature.icon}
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-3 font-display">{feature.title}</h3>
-                <p className="text-gray-300 flex-grow">{feature.description}</p>
-                 <div className="mt-6">
-                    <Link to={feature.link} className="font-semibold text-primary hover:text-secondary transition-colors">
-                        {t('home.learnMore', 'Learn More')} &rarr;
-                    </Link>
-                </div>
-                <div className="mt-4">
-                  <Link to="/portfolio" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
-                    {t('home.viewPortfolio', 'View Our Work')}
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Impact Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900/50 to-slate-800/50 rounded-2xl">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white font-display animate-on-scroll">{t('home.impact.title', 'Our Impact in Numbers')}</h2>
-            <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>{t('home.impact.subtitle', 'We are proud of our achievements and the value we deliver to our clients.')}</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="glass-panel p-8 rounded-xl text-center animate-on-scroll hover:border-cyan-400/50 transition-all duration-300 hover:-translate-y-2" style={{ transitionDelay: '200ms' }}>
-              <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-cyan-500/10 text-cyan-400 mb-6">
-                <svg className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <p className="text-5xl font-bold text-cyan-400 font-display mb-2">{t('home.impact.experienceVal', '15+')}</p>
-              <p className="text-lg text-gray-200">{t('home.impact.experience', 'Years of Experience')}</p>
-            </div>
-            <div className="glass-panel p-8 rounded-xl text-center animate-on-scroll hover:border-cyan-400/50 transition-all duration-300 hover:-translate-y-2" style={{ transitionDelay: '300ms' }}>
-              <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-cyan-500/10 text-cyan-400 mb-6">
-                <svg className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
-              </div>
-              <p className="text-5xl font-bold text-cyan-400 font-display mb-2">{t('home.impact.applicationsVal', '500+')}</p>
-              <p className="text-lg text-gray-200">{t('home.impact.applications', 'Applications Delivered')}</p>
-            </div>
-            <div className="glass-panel p-8 rounded-xl text-center animate-on-scroll hover:border-cyan-400/50 transition-all duration-300 hover:-translate-y-2" style={{ transitionDelay: '400ms' }}>
-              <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-cyan-500/10 text-cyan-400 mb-6">
-                <svg className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
-                </svg>
-              </div>
-              <p className="text-5xl font-bold text-cyan-400 font-display mb-2">{t('home.impact.satisfactionVal', '98%')}</p>
-              <p className="text-lg text-gray-200">{t('home.impact.satisfaction', 'Client Satisfaction')}</p>
-              <div className="mt-4">
-                <Link to="/clients" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
-                  {t('home.viewClients', 'View Our Clients')}
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Work Stages Section */}
-      <section className="py-20 bg-transparent">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white font-display animate-on-scroll">{t('workStages.title', 'Work Stages')}</h2>
-            <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>
-              {t('workStages.slogan', 'Smart planning is one of the most important factors of distinction and success')}
+        {/* Hero Section */}
+        <section
+          className="relative min-h-screen flex items-center justify-center text-center px-4 overflow-hidden -mt-20 pt-20 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('https://picsum.photos/seed/tech-hero/1920/1080')" }}
+        >
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+          <div className="absolute inset-0 bg-grid-pattern opacity-10" style={{ maskImage: 'radial-gradient(ellipse at center, white 20%, transparent 70%)' }}></div>
+          <div className="relative z-10">
+            <h1 className="text-4xl md:text-6xl font-bold text-white font-display leading-tight animate-on-scroll">
+              {t('home.hero.title', 'Empowering Your Business with Innovative Technology')}
+            </h1>
+            <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto animate-on-scroll" style={{ transitionDelay: '150ms' }}>
+              {t('home.hero.subtitle', 'We deliver cutting-edge ERP solutions, managed IT services, and custom software to help you achieve your goals.')}
             </p>
-            <div className="mt-4">
-              <Link to="/about" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
-                {t('home.meetOurTeam', 'Meet Our Team')}
+            <div className="mt-8 flex flex-wrap justify-center gap-4 animate-on-scroll" style={{ transitionDelay: '300ms' }}>
+              <Link to="/services" className="px-8 py-3 bg-primary text-white font-bold rounded-md shadow-lg hover:bg-secondary transition-colors duration-300 transform hover:scale-105">
+                {t('home.hero.ctaPrimary', 'Explore Our Services')}
+              </Link>
+              <Link to="/contact" className="px-8 py-3 bg-white/10 text-white font-bold rounded-md hover:bg-white/20 transition-colors duration-300 transform hover:scale-105">
+                {t('home.hero.ctaSecondary', 'Get in Touch')}
               </Link>
             </div>
           </div>
-          <div className="max-w-4xl mx-auto">
-            <div className="glass-panel p-8 rounded-xl">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {[0, 1, 2, 3].map((index) => (
-                  <div key={index} className="flex animate-on-scroll" style={{ transitionDelay: `${(index + 1) * 100}ms` }}>
-                    <div className="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-primary/80 text-white mr-4">
-                      {index === 0 && (
-                        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2" />
-                        </svg>
-                      )}
-                      {index === 1 && (
-                        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                        </svg>
-                      )}
-                      {index === 2 && (
-                        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c-.94 1.543-.826 3.31-2.37 2.37.996.608 2.296.07 2.572-1.065z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                      )}
-                      {index === 3 && (
-                        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      )}
+        </section>
+
+        {/* Services Overview Section */}
+        <section className="py-20 bg-transparent">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold text-white font-display animate-on-scroll">{t('home.services.title', 'Our Core Solutions')}</h2>
+              <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>{t('home.services.subtitle', 'Providing comprehensive services to meet the demands of modern business.')}</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {features.map((feature, index) => (
+                <div key={index} className="glass-panel p-8 rounded-xl hover:border-primary hover:-translate-y-2 transition-all duration-300 h-full flex flex-col animate-on-scroll" style={{ transitionDelay: `${(index + 2) * 100}ms` }}>
+                  <div className="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-primary/80 text-white mb-6">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-3 font-display">{feature.title}</h3>
+                  <p className="text-gray-300 flex-grow">{feature.description}</p>
+                  <div className="mt-6">
+                    <Link to={feature.link} className="font-semibold text-primary hover:text-secondary transition-colors">
+                      {t('home.learnMore', 'Learn More')} &rarr;
+                    </Link>
+                  </div>
+                  <div className="mt-4">
+                    <Link to="/portfolio" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                      {t('home.viewPortfolio', 'View Our Work')}
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Our Impact Section */}
+        <section className="py-20 bg-gradient-to-br from-slate-900/50 to-slate-800/50 rounded-2xl">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold text-white font-display animate-on-scroll">{t('home.impact.title', 'Our Impact in Numbers')}</h2>
+              <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>{t('home.impact.subtitle', 'We are proud of our achievements and the value we deliver to our clients.')}</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="glass-panel p-8 rounded-xl text-center animate-on-scroll hover:border-cyan-400/50 transition-all duration-300 hover:-translate-y-2" style={{ transitionDelay: '200ms' }}>
+                <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-cyan-500/10 text-cyan-400 mb-6">
+                  <svg className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <p className="text-5xl font-bold text-cyan-400 font-display mb-2">{t('home.impact.experienceVal', '15+')}</p>
+                <p className="text-lg text-gray-200">{t('home.impact.experience', 'Years of Experience')}</p>
+              </div>
+              <div className="glass-panel p-8 rounded-xl text-center animate-on-scroll hover:border-cyan-400/50 transition-all duration-300 hover:-translate-y-2" style={{ transitionDelay: '300ms' }}>
+                <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-cyan-500/10 text-cyan-400 mb-6">
+                  <svg className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                </div>
+                <p className="text-5xl font-bold text-cyan-400 font-display mb-2">{t('home.impact.applicationsVal', '500+')}</p>
+                <p className="text-lg text-gray-200">{t('home.impact.applications', 'Applications Delivered')}</p>
+              </div>
+              <div className="glass-panel p-8 rounded-xl text-center animate-on-scroll hover:border-cyan-400/50 transition-all duration-300 hover:-translate-y-2" style={{ transitionDelay: '400ms' }}>
+                <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-cyan-500/10 text-cyan-400 mb-6">
+                  <svg className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+                  </svg>
+                </div>
+                <p className="text-5xl font-bold text-cyan-400 font-display mb-2">{t('home.impact.satisfactionVal', '98%')}</p>
+                <p className="text-lg text-gray-200">{t('home.impact.satisfaction', 'Client Satisfaction')}</p>
+                <div className="mt-4">
+                  <Link to="/clients" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                    {t('home.viewClients', 'View Our Clients')}
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Work Stages Section */}
+        <section className="py-20 bg-transparent">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold text-white font-display animate-on-scroll">{t('workStages.title', 'Work Stages')}</h2>
+              <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>
+                {t('workStages.slogan', 'Smart planning is one of the most important factors of distinction and success')}
+              </p>
+              <div className="mt-4">
+                <Link to="/about" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                  {t('home.meetOurTeam', 'Meet Our Team')}
+                </Link>
+              </div>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              <div className="glass-panel p-8 rounded-xl">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {[0, 1, 2, 3].map((index) => (
+                    <div key={index} className="flex animate-on-scroll" style={{ transitionDelay: `${(index + 1) * 100}ms` }}>
+                      <div className="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-primary/80 text-white mr-4">
+                        {index === 0 && (
+                          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2" />
+                          </svg>
+                        )}
+                        {index === 1 && (
+                          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                          </svg>
+                        )}
+                        {index === 2 && (
+                          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c-.94 1.543-.826 3.31-2.37 2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+                        )}
+                        {index === 3 && (
+                          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        )}
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-white mb-2">{t(`workStages.stages.${index}`, `Work stage ${index + 1}`)}</h3>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-white mb-2">{t(`workStages.stages.${index}`, `Work stage ${index + 1}`)}</h3>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Services Grid */}
+        <section className="py-12 bg-transparent">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+              {/* Oracle ERP Solutions Card */}
+              <div className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105">
+                <div className="bg-primary p-6">
+                  <div className="flex items-center">
+                    <div className="bg-white/20 p-3 rounded-full mr-4">
+                      <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                      </svg>
                     </div>
+                    <h3 className="text-xl font-bold text-white">{t('services.erpTitle', 'Oracle ERP Solutions')}</h3>
                   </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <section className="py-12 bg-transparent">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {/* Oracle ERP Solutions Card */}
-            <div className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105">
-              <div className="bg-primary p-6">
-                <div className="flex items-center">
-                  <div className="bg-white/20 p-3 rounded-full mr-4">
-                    <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold text-white">{t('services.erpTitle', 'Oracle ERP Solutions')}</h3>
                 </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-300 mb-4">{t('services.erpDesc', 'Full-cycle Oracle ERP services including implementation, customization, migration, and support to optimize your business processes.')}</p>
-                <Link to="/services#erp" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors">
-                  {t('home.learnMore', 'Learn More')}
-                  <svg className="ml-2 -mr-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </Link>
-                <div className="mt-4">
-                  <Link to="/prices" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
-                    {t('home.viewPricing', 'View Pricing')}
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Costing Module Card */}
-            <div className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105">
-              <div className="bg-primary p-6">
-                <div className="flex items-center">
-                  <div className="bg-white/20 p-3 rounded-full mr-4">
-                    <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold text-white">{t('services.costingModule.title', 'Costing Module')}</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-300 mb-4">{t('services.costingModule.subtitle', 'Comprehensive production cost management system with actual costing methodology')}</p>
-                <Link to="/services#costing" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors">
-                  {t('home.learnMore', 'Learn More')}
-                  <svg className="ml-2 -mr-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </Link>
-                <div className="mt-4">
-                  <Link to="/prices" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
-                    {t('home.viewPricing', 'View Pricing')}
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Inventory Management Card */}
-            <div className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105">
-              <div className="bg-primary p-6">
-                <div className="flex items-center">
-                  <div className="bg-white/20 p-3 rounded-full mr-4">
-                    <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold text-white">{t('services.inventoryModule.title', 'Inventory Management')}</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-300 mb-4">{t('services.inventoryModule.subtitle', 'Comprehensive inventory management system with advanced tracking and valuation capabilities')}</p>
-                <Link to="/services#inventory" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors">
-                  {t('home.learnMore', 'Learn More')}
-                  <svg className="ml-2 -mr-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </Link>
-                <div className="mt-4">
-                  <Link to="/prices" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
-                    {t('home.viewPricing', 'View Pricing')}
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Export Management System Card */}
-            <div className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105">
-              <div className="bg-primary p-6">
-                <div className="flex items-center">
-                  <div className="bg-white/20 p-3 rounded-full mr-4">
-                    <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4 4 0 003 15z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold text-white">{t('exportModule.title', 'Export Management System')}</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-300 mb-4">{t('exportModule.subtitle', 'Comprehensive export management system with detailed shipment tracking and financial analysis')}</p>
-                <Link to="/services#export" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors">
-                  {t('home.learnMore', 'Learn More')}
-                  <svg className="ml-2 -mr-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </Link>
-                <div className="mt-4">
-                  <Link to="/prices" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
-                    {t('home.viewPricing', 'View Pricing')}
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Industries Section */}
-      <section className="py-20 bg-transparent">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white font-display animate-on-scroll">{t('industries.title', 'Tailored Solutions for Your Industry')}</h2>
-            <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>
-              {t('industries.subtitle', 'We understand the unique challenges of your sector and deliver targeted solutions.')}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industriesData.map((industry) => (
-              <div key={industry.key} className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105 flex flex-col">
-                <div className="h-48 overflow-hidden">
-                  <img src={industry.image} alt={`${t(`industries.${industry.key}.name`)} - ${t('industries.solutionLabel')}`} className="w-full h-full object-cover" />
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold text-white mb-3">{t(`industries.${industry.key}.name`)}</h3>
-                  <h4 className="text-md font-semibold text-primary mb-2">{t('industries.challengesLabel', 'Challenges')}</h4>
-                  <p className="text-gray-300 text-sm mb-3 flex-grow">{t(`industries.${industry.key}.challenges`)}</p>
-                  <h4 className="text-md font-semibold text-primary mb-2">{t('industries.solutionLabel', 'Our Solution')}</h4>
-                  <p className="text-gray-300 text-sm mb-4 flex-grow">{t(`industries.${industry.key}.solution`)}</p>
-                  <Link to="/industries" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors mt-auto">
+                <div className="p-6">
+                  <p className="text-gray-300 mb-4">{t('services.erpDesc', 'Full-cycle Oracle ERP services including implementation, customization, migration, and support to optimize your business processes.')}</p>
+                  <Link to="/services#erp" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors">
                     {t('home.learnMore', 'Learn More')}
                     <svg className="ml-2 -mr-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
                   </Link>
                   <div className="mt-4">
-                    <Link to="/case-studies" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
-                      {t('home.viewCaseStudies', 'View Success Stories')}
+                    <Link to="/prices" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                      {t('home.viewPricing', 'View Pricing')}
                     </Link>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900/50 to-slate-800/50 rounded-2xl">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white font-display animate-on-scroll">
-              {testimonials?.title || t('home.testimonials.title', 'What Our Clients Say')}
-            </h2>
-            <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>
-              {testimonials?.subtitle || t('home.testimonials.subtitle', 'Real feedback from businesses we\'ve empowered.')}
-            </p>
-          </div>
-
-          {testimonials && testimonials.quotes && testimonials.quotes.length > 0 && (
-            <div className="max-w-4xl mx-auto">
-              <div className="glass-panel rounded-xl p-8 relative">
-                {/* Navigation Arrows */}
-                {testimonials.quotes.length > 1 && (
-                  <>
-                    <button 
-                      onClick={prevTestimonial}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-primary/20 hover:bg-primary/40 text-white rounded-full p-2 transition-colors"
-                      aria-label="Previous testimonial"
-                    >
-                      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              {/* Costing Module Card */}
+              <div className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105">
+                <div className="bg-primary p-6">
+                  <div className="flex items-center">
+                    <div className="bg-white/20 p-3 rounded-full mr-4">
+                      <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                       </svg>
-                    </button>
-                    <button 
-                      onClick={nextTestimonial}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-primary/20 hover:bg-primary/40 text-white rounded-full p-2 transition-colors"
-                      aria-label="Next testimonial"
-                    >
-                      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </div>
+                    <h3 className="text-xl font-bold text-white">{t('services.costingModule.title', 'Costing Module')}</h3>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-300 mb-4">{t('services.costingModule.subtitle', 'Comprehensive production cost management system with actual costing methodology')}</p>
+                  <Link to="/services#costing" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors">
+                    {t('home.learnMore', 'Learn More')}
+                    <svg className="ml-2 -mr-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </Link>
+                  <div className="mt-4">
+                    <Link to="/prices" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                      {t('home.viewPricing', 'View Pricing')}
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Inventory Management Card */}
+              <div className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105">
+                <div className="bg-primary p-6">
+                  <div className="flex items-center">
+                    <div className="bg-white/20 p-3 rounded-full mr-4">
+                      <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                       </svg>
-                    </button>
-                  </>
-                )}
-
-                {/* Testimonial Content */}
-                {testimonials.quotes[currentTestimonial] && (
-                  <div className="text-center">
-                    <div className="flex justify-center mb-6">
-                      <img 
-                        src={testimonials.quotes[currentTestimonial].logo} 
-                        alt={`${testimonials.quotes[currentTestimonial].name} - ${testimonials.quotes[currentTestimonial].company} - ${t('home.testimonials.title')}`} 
-                        className="h-16 w-16 rounded-full object-cover"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = 'none';
-                        }}
-                      />
                     </div>
-                    <blockquote className="text-xl text-gray-300 italic mb-6">
-                      "{testimonials.quotes[currentTestimonial].quote}"
-                    </blockquote>
-                    <div className="font-semibold text-white">
-                      {testimonials.quotes[currentTestimonial].name}
-                    </div>
-                    <div className="text-primary">
-                      {testimonials.quotes[currentTestimonial].company}
-                    </div>
+                    <h3 className="text-xl font-bold text-white">{t('services.inventoryModule.title', 'Inventory Management')}</h3>
                   </div>
-                )}
-
-                {/* Dots Indicator */}
-                {testimonials.quotes.length > 1 && (
-                  <div className="flex justify-center mt-8 space-x-2">
-                    {testimonials.quotes.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentTestimonial(index)}
-                        className={`h-3 w-3 rounded-full ${index === currentTestimonial ? 'bg-primary' : 'bg-gray-600'}`}
-                        aria-label={`Go to testimonial ${index + 1}`}
-                      />
-                    ))}
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-300 mb-4">{t('services.inventoryModule.subtitle', 'Comprehensive inventory management system with advanced tracking and valuation capabilities')}</p>
+                  <Link to="/services#inventory" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors">
+                    {t('home.learnMore', 'Learn More')}
+                    <svg className="ml-2 -mr-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </Link>
+                  <div className="mt-4">
+                    <Link to="/prices" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                      {t('home.viewPricing', 'View Pricing')}
+                    </Link>
                   </div>
-                )}
+                </div>
+              </div>
+
+              {/* Export Management System Card */}
+              <div className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105">
+                <div className="bg-primary p-6">
+                  <div className="flex items-center">
+                    <div className="bg-white/20 p-3 rounded-full mr-4">
+                      <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4 4 0 003 15z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-white">{t('exportModule.title', 'Export Management System')}</h3>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-300 mb-4">{t('exportModule.subtitle', 'Comprehensive export management system with detailed shipment tracking and financial analysis')}</p>
+                  <Link to="/services#export" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors">
+                    {t('home.learnMore', 'Learn More')}
+                    <svg className="ml-2 -mr-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </Link>
+                  <div className="mt-4">
+                    <Link to="/prices" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                      {t('home.viewPricing', 'View Pricing')}
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
-          )}
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-transparent">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="glass-panel rounded-xl p-12 text-center">
-            <h2 className="text-3xl font-bold text-white font-display mb-4">
-              {t('home.cta.title', 'Ready to Transform Your Business?')}
-            </h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
-              {t('home.cta.subtitle', 'Let\'s discuss how our solutions can help you achieve your strategic objectives. Get a free consultation today.')}
-            </p>
-            <Link 
-              to="/contact" 
-              className="inline-block px-8 py-4 bg-primary hover:bg-secondary text-white font-bold rounded-md shadow-lg transition-colors duration-300 transform hover:scale-105"
-            >
-              {t('home.cta.button', 'Request a Consultation')}
-            </Link>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Industries Section */}
+        <section className="py-20 bg-transparent">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold text-white font-display animate-on-scroll">{t('industries.title', 'Tailored Solutions for Your Industry')}</h2>
+              <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>
+                {t('industries.subtitle', 'We understand the unique challenges of your sector and deliver targeted solutions.')}
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {industriesData.map((industry) => (
+                <div key={industry.key} className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105 flex flex-col">
+                  <div className="h-48 overflow-hidden">
+                    <img src={industry.image} alt={`${t(`industries.${industry.key}.name`)} - ${t('industries.solutionLabel')}`} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-bold text-white mb-3">{t(`industries.${industry.key}.name`)}</h3>
+                    <h4 className="text-md font-semibold text-primary mb-2">{t('industries.challengesLabel', 'Challenges')}</h4>
+                    <p className="text-gray-300 text-sm mb-3 flex-grow">{t(`industries.${industry.key}.challenges`)}</p>
+                    <h4 className="text-md font-semibold text-primary mb-2">{t('industries.solutionLabel', 'Our Solution')}</h4>
+                    <p className="text-gray-300 text-sm mb-4 flex-grow">{t(`industries.${industry.key}.solution`)}</p>
+                    <Link to="/industries" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/80 transition-colors mt-auto">
+                      {t('home.learnMore', 'Learn More')}
+                      <svg className="ml-2 -mr-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </Link>
+                    <div className="mt-4">
+                      <Link to="/case-studies" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                        {t('home.viewCaseStudies', 'View Success Stories')}
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Client Logo Slider Section */}
+        <ClientLogoSlider />
+
+        {/* Testimonials Section */}
+        <section className="py-20 bg-gradient-to-br from-slate-900/50 to-slate-800/50 rounded-2xl">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold text-white font-display animate-on-scroll">
+                {testimonials?.title || t('home.testimonials.title', 'What Our Clients Say')}
+              </h2>
+              <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>
+                {testimonials?.subtitle || t('home.testimonials.subtitle', 'Real feedback from businesses we\'ve empowered.')}
+              </p>
+            </div>
+
+            {testimonials && testimonials.quotes && testimonials.quotes.length > 0 && (
+              <div className="max-w-4xl mx-auto">
+                <div className="glass-panel rounded-xl p-8 relative">
+                  {/* Navigation Arrows */}
+                  {testimonials.quotes.length > 1 && (
+                    <>
+                      <button
+                        onClick={prevTestimonial}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-primary/20 hover:bg-primary/40 text-white rounded-full p-2 transition-colors"
+                        aria-label="Previous testimonial"
+                      >
+                        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                        </svg>
+                      </button>
+                      <button
+                        onClick={nextTestimonial}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-primary/20 hover:bg-primary/40 text-white rounded-full p-2 transition-colors"
+                        aria-label="Next testimonial"
+                      >
+                        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
+                    </>
+                  )}
+
+                  {/* Testimonial Content */}
+                  {testimonials.quotes[currentTestimonial] && (
+                    <div className="text-center">
+                      <div className="flex justify-center mb-6">
+                        <img
+                          src={testimonials.quotes[currentTestimonial].logo}
+                          alt={`${testimonials.quotes[currentTestimonial].name} - ${testimonials.quotes[currentTestimonial].company} - ${t('home.testimonials.title')}`}
+                          className="h-16 w-16 rounded-full object-cover"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                          }}
+                        />
+                      </div>
+                      <blockquote className="text-xl text-gray-300 italic mb-6">
+                        "{testimonials.quotes[currentTestimonial].quote}"
+                      </blockquote>
+                      <div className="font-semibold text-white">
+                        {testimonials.quotes[currentTestimonial].name}
+                      </div>
+                      <div className="text-primary">
+                        {testimonials.quotes[currentTestimonial].company}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Dots Indicator */}
+                  {testimonials.quotes.length > 1 && (
+                    <div className="flex justify-center mt-8 space-x-2">
+                      {testimonials.quotes.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentTestimonial(index)}
+                          className={`h-3 w-3 rounded-full ${index === currentTestimonial ? 'bg-primary' : 'bg-gray-600'}`}
+                          aria-label={`Go to testimonial ${index + 1}`}
+                        />
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 bg-transparent">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="glass-panel rounded-xl p-12 text-center">
+              <h2 className="text-3xl font-bold text-white font-display mb-4">
+                {t('home.cta.title', 'Ready to Transform Your Business?')}
+              </h2>
+              <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+                {t('home.cta.subtitle', 'Let\'s discuss how our solutions can help you achieve your strategic objectives. Get a free consultation today.')}
+              </p>
+              <Link
+                to="/contact"
+                className="inline-block px-8 py-4 bg-primary hover:bg-secondary text-white font-bold rounded-md shadow-lg transition-colors duration-300 transform hover:scale-105"
+              >
+                {t('home.cta.button', 'Request a Consultation')}
+              </Link>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
