@@ -1,191 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Active Soft | Oracle ERP & Custom Solutions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/index.css">
-    <style>
-      :root {
-        --font-sans: 'Cairo', sans-serif;
-        --font-display: 'Cairo', sans-serif;
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Active Soft | Oracle ERP & Custom Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/index.css">
+  <style>
+    :root {
+      --font-sans: 'Cairo', sans-serif;
+      --font-display: 'Cairo', sans-serif;
+    }
+
+    html[dir="rtl"] {
+      --font-sans: 'Cairo', sans-serif;
+      --font-display: 'Cairo', sans-serif;
+    }
+
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      position: relative;
+      overflow: auto;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(6, 182, 212, 0.1);
+      z-index: 1;
+    }
+
+    body::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 20%);
+      z-index: 2;
+    }
+
+    #root {
+      position: relative;
+      z-index: 3;
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .animate-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .bg-grid-pattern {
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+      background-size: 2rem 2rem;
+    }
+
+    /* Animation keyframes */
+    @keyframes slideBackground {
+      0% {
+        background-position: 0 0;
       }
-      html[dir="rtl"] {
-        --font-sans: 'Cairo', sans-serif;
-        --font-display: 'Cairo', sans-serif; /* Orbitron does not support Arabic well */
+
+      100% {
+        background-position: 150px 150px;
       }
-      .glass-panel {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px); /* For Safari */
-        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
       }
-      body {
-        background: linear-gradient(to right, #0A192F 0%, #1E3A8A 50%, #10B981 100%);
-        position: relative;
-        overflow: auto; /* Changed from hidden to auto to enable scrolling */
+
+      to {
+        opacity: 1;
       }
-      
-      body::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(6, 182, 212, 0.1);
-        z-index: 1;
-      }
-      
-      body::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: 
-          radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.05) 0%, transparent 20%),
-          radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 20%);
-        z-index: 2;
-      }
-      
-      #root {
-        position: relative;
-        z-index: 3;
-      }
-      
-      .animate-on-scroll {
+    }
+
+    @keyframes fadeInUp {
+      from {
         opacity: 0;
         transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
       }
-      .animate-on-scroll.is-visible {
+
+      to {
         opacity: 1;
         transform: translateY(0);
       }
-      .bg-grid-pattern {
-        background-image:
-          linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-        background-size: 2rem 2rem;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
       }
 
-      /* Animation keyframes */
-      @keyframes slideBackground {
-        0% {
-          background-position: 0 0;
-        }
-        100% {
-          background-position: 150px 150px;
-        }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
       }
 
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes growWidth {
+      from {
+        width: 0;
       }
 
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      to {
+        width: 6rem;
       }
+    }
 
-      @keyframes fadeInDown {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+    /* Animation classes */
+    .animate-fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
 
-      @keyframes fadeInRight {
-        from {
-          opacity: 0;
-          transform: translateX(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
 
-      @keyframes growWidth {
-        from {
-          width: 0;
-        }
-        to {
-          width: 6rem;
-        }
-      }
+    .animate-fade-in-down {
+      animation: fadeInDown 0.8s ease-out forwards;
+    }
 
-      /* Animation classes */
-      .animate-fade-in {
-        animation: fadeIn 0.8s ease-out forwards;
-      }
+    .animate-fade-in-right {
+      animation: fadeInRight 0.8s ease-out forwards;
+    }
 
-      .animate-fade-in-up {
-        animation: fadeInUp 0.8s ease-out forwards;
-      }
+    .animate-grow-width {
+      animation: growWidth 1s ease-out forwards;
+    }
 
-      .animate-fade-in-down {
-        animation: fadeInDown 0.8s ease-out forwards;
-      }
+    /* Animation delays */
+    .animation-delay-200 {
+      animation-delay: 200ms;
+    }
 
-      .animate-fade-in-right {
-        animation: fadeInRight 0.8s ease-out forwards;
-      }
-
-      .animate-grow-width {
-        animation: growWidth 1s ease-out forwards;
-      }
-
-      /* Animation delays */
-      .animation-delay-200 {
-        animation-delay: 200ms;
-      }
-
-      .animation-delay-400 {
-        animation-delay: 400ms;
-      }
-    </style>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'primary': '#3b82f6', // Brighter Blue
-              'secondary': '#60a5fa', // Lighter Blue
-              'accent': '#facc15', // Yellow
-              'dark': '#0a0a1a', // Near Black
-              'light': '#e5e7eb', // Light Grey for text
-            },
-            fontFamily: {
-              sans: 'var(--font-sans)',
-              display: 'var(--font-display)',
-            }
+    .animation-delay-400 {
+      animation-delay: 400ms;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary': '#06b6d4', // Cyan
+            'secondary': '#8b5cf6', // Purple
+            'accent': '#facc15', // Yellow
+            'dark': '#0f172a', // Slate 900
+            'light': '#e5e7eb', // Light Grey for text
+          },
+          fontFamily: {
+            sans: 'var(--font-sans)',
+            display: 'var(--font-display)',
           }
         }
       }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
   <script type="importmap">
 {
   "imports": {
@@ -197,8 +211,10 @@
 }
 </script>
 </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
 </html>
