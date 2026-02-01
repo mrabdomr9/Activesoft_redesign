@@ -234,7 +234,7 @@ const ServicesPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen digital-transformation-bg relative">
+    <div className="min-h-screen relative">
       {/* Technical Background Elements */}
       <div className="absolute inset-0">
         {/* Circuit Board Pattern */}
@@ -263,10 +263,10 @@ const ServicesPage: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="digital-transformation-content">
+      <div>
         <section className="pt-20 pb-8">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold font-display animate-on-scroll bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent animate-gradient-x">
+            <h1 className="text-4xl md:text-5xl font-bold font-display animate-on-scroll bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient-x">
               {t('services.title', 'Our Comprehensive Services')}
             </h1>
             <p className="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto animate-on-scroll leading-relaxed" style={{ transitionDelay: '100ms' }}>
@@ -289,14 +289,14 @@ const ServicesPage: React.FC = () => {
                   }}
                 >
                   {/* Gradient border effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
                   <div className="absolute inset-[1px] bg-slate-900 rounded-xl" />
 
                   {/* Content */}
                   <div className="relative z-10">
-                    <div className="bg-gradient-to-br from-cyan-600 to-blue-600 p-6 relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-primary to-secondary p-6 relative overflow-hidden">
                       {/* Animated background effect */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                       <div className="flex items-center relative z-10">
                         <div className="bg-white/20 p-3 rounded-full mr-4 rtl:mr-0 rtl:ml-4 group-hover:bg-white/30 transition-colors duration-300 group-hover:scale-110 transform">
@@ -310,7 +310,7 @@ const ServicesPage: React.FC = () => {
                       <p className="text-gray-300 mb-6 line-clamp-3">{service.description}</p>
                       <button
                         onClick={() => scrollToSection(service.id)}
-                        className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-cyan-500/50"
+                        className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-primary/50"
                       >
                         {t('home.learnMore', 'Learn More')}
                         <svg className="ml-2 rtl:ml-0 rtl:mr-2 rtl:rotate-180 -mr-1 h-4 w-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" fill="currentColor" viewBox="0 0 20 20">
@@ -326,7 +326,7 @@ const ServicesPage: React.FC = () => {
         </div>
 
         {/* Navigation Menu */}
-        <div className="sticky top-20 z-40 bg-gradient-to-r from-gray-900/95 via-slate-900/95 to-gray-900/95 backdrop-blur-md border-b border-cyan-500/30 shadow-lg shadow-cyan-500/10">
+        <div className="sticky top-20 z-40 bg-gradient-to-r from-gray-900/95 via-slate-900/95 to-gray-900/95 backdrop-blur-md border-b border-primary/30 shadow-lg shadow-primary/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex overflow-x-auto py-4 space-x-4 rtl:space-x-reverse scrollbar-hide">
               {services.map(service => (
@@ -334,12 +334,12 @@ const ServicesPage: React.FC = () => {
                   key={service.id}
                   onClick={() => scrollToSection(service.id)}
                   className={`relative whitespace-nowrap px-5 py-2.5 rounded-lg transition-all duration-300 transform hover:scale-105 ${activeSection === service.id
-                    ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-lg shadow-cyan-500/40'
+                    ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/40'
                     : 'text-gray-300 hover:text-white hover:bg-gray-800/70'
                     }`}
                 >
                   {activeSection === service.id && (
-                    <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-cyan-400/20 to-blue-400/20 blur-sm" />
+                    <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary/20 to-secondary/20 blur-sm" />
                   )}
                   <span className="relative z-10">{service.title}</span>
                 </button>
@@ -556,7 +556,7 @@ const ServicesPage: React.FC = () => {
                   <h2 className="text-3xl font-bold text-white font-display mb-4">{t('exportModule.title', 'Export Management System')}</h2>
                   <p className="text-gray-300 mb-6">{t('exportModule.subtitle', 'Comprehensive export management system with detailed shipment tracking and financial analysis')}</p>
                   <div className="mt-4">
-                    <a href="/export-management" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 transition-colors">
+                    <a href="/export-management" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 transition-all duration-300 shadow-lg shadow-primary/20">
                       {t('services.learnMore', 'Learn More')}
                       <svg className="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
