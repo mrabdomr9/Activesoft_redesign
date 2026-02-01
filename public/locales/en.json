@@ -859,40 +859,16 @@
           "a": "Yes, absolutely. While we are based in Cairo, we have successfully delivered projects for clients across the globe. We leverage modern communication tools to ensure seamless collaboration regardless of your location."
         },
         {
-          "id": "hr-payroll-system",
-          "title": "HR and Payroll Management System",
-          "description": "Complete and integrated system with financial accounts for managing employee affairs and payroll calculations.",
-          "features": [
-            "Based on variable settings for insurance, vacations, and taxes that can be modified when laws change",
-            "Respects all payroll calculation rules and penalty provisions, carrying over excess of five days to subsequent months",
-            "Maintains employee photos and all employment documents with reports on missing documents",
-            "Tracks document expiration dates to notify employees of renewals",
-            "Records who entered and modified data with a period transfer system to prevent tampering",
-            "Ability to reverse period transfers to modify data according to permissions"
-          ],
-          "pricing": {
-            "currency": "EGP",
-            "startingAt": 40000,
-            "billingPeriod": "project"
-          }
+          "q": "Do you provide training for the systems you implement?",
+          "a": "Yes, comprehensive user training is a core part of our implementation process. We ensure your team is fully equipped to use the system effectively and provide detailed documentation for ongoing reference."
         },
         {
-          "id": "smart-scale-system",
-          "title": "Smart Scale System",
-          "description": "Intelligent weighing system that automates weight recording and integrates directly with your inventory and financial systems.",
-          "features": [
-            "Automatic recording of actual weight for products, pallets, or containers without human intervention",
-            "Prevention of manipulation or manual input errors",
-            "Comparison of actual weight with standard weight to detect deviations or losses",
-            "Direct generation of invoices and costs based on real weight",
-            "Instant updating of inventory and financial accounts with each weighing operation",
-            "Direct integration between electronic scales and packaging stations within system"
-          ],
-          "pricing": {
-            "currency": "EGP",
-            "startingAt": 150000,
-            "billingPeriod": "project"
-          }
+          "q": "Can your systems integrate with hardware like electronic scales?",
+          "a": "Yes, we specialize in hardware integration. Our systems can connect directly with industrial scales, scanners, and other IoT devices to automate data collection and eliminate manual entry errors."
+        },
+        {
+          "q": "Do you specialize in any specific industries?",
+          "a": "While our Oracle ERP solutions are versatile, we have deep expertise in Manufacturing, Agricultural Export, Ready-Mix Concrete, and Financial Services, with tailored modules for each sector."
         }
       ]
     }

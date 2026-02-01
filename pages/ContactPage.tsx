@@ -74,7 +74,7 @@ const ContactPage: React.FC = () => {
   const inputClasses = "w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:ring-primary focus:border-primary transition-colors text-white placeholder-gray-400";
 
   return (
-    <div className="min-h-screen digital-transformation-bg relative">
+    <div className="min-h-screen relative">
       {/* Technical Background Elements */}
       <div className="absolute inset-0">
         {/* Circuit Board Pattern */}
@@ -103,11 +103,11 @@ const ContactPage: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="digital-transformation-content">
+      <div>
         <div className="py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h1 className="text-4xl font-bold text-white font-display animate-on-scroll">{t('contact.title')}</h1>
+              <h1 className="text-4xl font-bold font-display animate-on-scroll bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient-x">{t('contact.title')}</h1>
               <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>{t('contact.subtitle')}</p>
             </div>
 
@@ -115,12 +115,12 @@ const ContactPage: React.FC = () => {
             {faqData && faqData.questions.length > 0 && (
               <section className="max-w-4xl mx-auto mb-16">
                 <div className="text-center mb-12">
-                  <h2 className="text-3xl font-bold text-white font-display animate-on-scroll" style={{ transitionDelay: '200ms' }}>{faqData.title}</h2>
+                  <h2 className="text-3xl font-bold font-display animate-on-scroll bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent" style={{ transitionDelay: '200ms' }}>{faqData.title}</h2>
                   <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto animate-on-scroll" style={{ transitionDelay: '300ms' }}>{faqData.subtitle}</p>
                 </div>
                 <div className="space-y-4 animate-on-scroll" style={{ transitionDelay: '400ms' }}>
                   {faqData.questions.map((item: { q: string, a: string }, index: number) => (
-                    <div key={index} className="glass-panel rounded-lg overflow-hidden border border-transparent transition-colors duration-300 hover:border-primary/50">
+                    <div key={index} className="glass-panel rounded-lg overflow-hidden border border-transparent transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10">
                       <button
                         onClick={() => handleFaqToggle(index)}
                         className="w-full flex justify-between items-center text-start p-6"
@@ -218,7 +218,7 @@ const ContactPage: React.FC = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="px-8 py-3 bg-primary text-white font-bold rounded-md shadow-lg hover:bg-secondary transition-colors w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-md shadow-lg shadow-primary/20 hover:from-primary/90 hover:to-secondary/90 transition-all duration-300 transform hover:scale-[1.02] w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? t('contact.submittingButton', 'Sending...') : t('contact.submitButton')}
                   </button>

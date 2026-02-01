@@ -708,6 +708,18 @@
         {
           "q": "Do you work with international clients?",
           "a": "Yes, absolutely. While we are based in Cairo, we have successfully delivered projects for clients across the globe. We leverage modern communication tools to ensure seamless collaboration regardless of your location."
+        },
+        {
+          "q": "Do you provide training for the systems you implement?",
+          "a": "Yes, comprehensive user training is a core part of our implementation process. We ensure your team is fully equipped to use the system effectively and provide detailed documentation for ongoing reference."
+        },
+        {
+          "q": "Can your systems integrate with hardware like electronic scales?",
+          "a": "Yes, we specialize in hardware integration. Our systems can connect directly with industrial scales, scanners, and other IoT devices to automate data collection and eliminate manual entry errors."
+        },
+        {
+          "q": "Do you specialize in any specific industries?",
+          "a": "While our Oracle ERP solutions are versatile, we have deep expertise in Manufacturing, Agricultural Export, Ready-Mix Concrete, and Financial Services, with tailored modules for each sector."
         }
       ]
     }
