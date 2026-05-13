@@ -139,12 +139,15 @@ const SiteMapPage: React.FC = () => {
       title: t('industries.title'),
       path: '/industries',
       children: [
-        { title: t('industries.manufacturing.name'), path: '/industries#manufacturing' },
-        { title: t('industries.healthcare.name'), path: '/industries#healthcare' },
-        { title: t('industries.financial.name'), path: '/industries#financial' },
-        { title: t('industries.retail.name'), path: '/industries#retail' },
-        { title: t('industries.education.name'), path: '/industries#education' },
-        { title: t('industries.logistics.name'), path: '/industries#logistics' }
+        { title: t('industries.agriExport.name'), path: '/industries#agriExport' },
+        { title: t('industries.concreteCement.name'), path: '/industries#concreteCement' },
+        { title: t('industries.metalForming.name'), path: '/industries#metalForming' },
+        { title: t('industries.plasticPipes.name'), path: '/industries#plasticPipes' },
+        { title: t('industries.fertilizersPesticides.name'), path: '/industries#fertilizersPesticides' },
+        { title: t('industries.appliancesAssembly.name'), path: '/industries#appliancesAssembly' },
+        { title: t('industries.foodProduction.name'), path: '/industries#foodProduction' },
+        { title: t('industries.internationalSchools.name'), path: '/industries#internationalSchools' },
+        { title: t('industries.commercialAgencies.name'), path: '/industries#commercialAgencies' }
       ]
     }
   ];

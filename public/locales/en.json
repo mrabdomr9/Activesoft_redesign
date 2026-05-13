@@ -708,35 +708,50 @@
     "subtitle": "We understand the unique challenges of your sector and deliver targeted solutions.",
     "challengesLabel": "Challenges",
     "solutionLabel": "Our Solution",
-    "manufacturing": {
-      "name": "Manufacturing",
-      "challenges": "Complex supply chains, production scheduling, quality control, and inventory management.",
-      "solution": "Customized Oracle ERP modules to streamline production, optimize inventory, and enhance supply chain visibility for increased efficiency."
+    "agriExport": {
+      "name": "Agricultural Crops Packing & Export Stations",
+      "challenges": "Tracking seasonal yields, managing multiple supplier accounts, and export regulation compliance.",
+      "solution": "Specialized modules for agricultural management, automated supplier payments, and integrated export documentation tracking."
     },
-    "healthcare": {
-      "name": "Agricultural Stations & Export Operations",
-      "challenges": "Managing supplier data, inventory tracking, export documentation, and cost allocation across multiple operations.",
-      "solution": "Comprehensive accounting system handling supplier/customer accounts, inventory, warehouse management, and export operations with detailed tracking of processing costs and expense allocation."
+    "concreteCement": {
+      "name": "Concrete & Cement Brick Factories",
+      "challenges": "Precise material mixing (BOM), high-volume production tracking, and heavy machinery maintenance.",
+      "solution": "Accurate BOM management for concrete grades, real-time production monitoring, and automated maintenance scheduling."
     },
-    "financial": {
-      "name": "Financial Services",
-      "challenges": "High-stakes data security, regulatory adherence, real-time transaction processing, and risk management.",
-      "solution": "Robust Oracle ERP Financials and custom software with bank-level security to automate financial operations and ensure compliance."
+    "metalForming": {
+      "name": "Metal Forming Factories",
+      "challenges": "Material waste management, complex fabrication stages, and job order tracking.",
+      "solution": "Advanced production stage tracking, waste reduction analytics, and comprehensive job-order costing."
     },
-    "retail": {
-      "name": "Retail & E-commerce",
-      "challenges": "Inventory tracking across multiple locations, customer experience optimization, and seasonal demand fluctuations.",
-      "solution": "Integrated inventory management and point-of-sale solutions with real-time analytics to drive sales and improve customer satisfaction."
+    "plasticPipes": {
+      "name": "Plastic Products & PVC Pipes Factories",
+      "challenges": "Batch consistency, raw material price volatility, and recycling process integration.",
+      "solution": "Automated batch quality control, real-time raw material costing, and integrated scrap management."
     },
-    "education": {
-      "name": "Education",
-      "challenges": "Student data management, learning management systems, and compliance with educational standards.",
-      "solution": "Comprehensive student information systems and learning platforms that streamline administrative tasks and enhance educational outcomes."
+    "fertilizersPesticides": {
+      "name": "Fertilizers & Pesticides Factories",
+      "challenges": "Strict chemical composition standards, safety regulation compliance, and specialized storage needs.",
+      "solution": "Chemical formula management, automated safety documentation, and specialized inventory conditions tracking."
     },
-    "logistics": {
-      "name": "Logistics & Transportation",
-      "challenges": "Route optimization, fleet management, real-time tracking, and regulatory compliance.",
-      "solution": "End-to-end logistics management systems with GPS tracking and automated scheduling to optimize delivery routes and reduce costs."
+    "appliancesAssembly": {
+      "name": "Electrical Appliances & Stoves Assembly Factories",
+      "challenges": "Complex assembly lines, large component inventory, and warranty management.",
+      "solution": "Assembly line optimization, just-in-time inventory control, and integrated warranty/service tracking."
+    },
+    "foodProduction": {
+      "name": "Food Production (e.g., Biscuits)",
+      "challenges": "Recipe consistency, expiration date tracking (Lots), and strict hygiene standards.",
+      "solution": "Automated recipe scaling, Lot/Expiry tracking, and hygiene compliance auditing tools."
+    },
+    "internationalSchools": {
+      "name": "International Schools",
+      "challenges": "Student registration, fee management, and teacher/staff scheduling.",
+      "solution": "Comprehensive student information systems, automated billing, and advanced academic scheduling."
+    },
+    "commercialAgencies": {
+      "name": "Commercial Companies & Agencies",
+      "challenges": "Sales agent performance, commission tracking, and client relationship management.",
+      "solution": "Advanced sales module with agent tracking, automated commission calculations, and robust CRM features."
     }
   },
   "caseStudies": {
@@ -744,15 +759,17 @@
     "subtitle": "See how we've helped businesses like yours achieve their goals.",
     "filters": {
       "all": "All Industries",
-      "manufacturing": "Manufacturing",
-      "healthcare": "Agricultural Stations & Export Operations",
-      "financial": "Financial Services"
+      "agriExport": "Agri Stations & Export",
+      "concreteCement": "Concrete & Cement",
+      "metalForming": "Metal Forming",
+      "plasticPipes": "Plastic & PVC Pipes",
+      "foodProduction": "Food Industries"
     },
     "studies": [
       {
-        "industryKey": "manufacturing",
-        "industry": "Manufacturing",
-        "title": "Streamlining Production for a Major Manufacturer",
+        "industryKey": "concreteCement",
+        "industry": "Concrete & Cement",
+        "title": "Streamlining Production for a Major Concrete Plant",
         "challenge": "Our client faced significant production delays and inventory inaccuracies due to a disconnected legacy system.",
         "solution": "We implemented a tailored Oracle ERP solution that integrated their entire production workflow from raw materials to finished goods.",
         "result": "Achieved a 30% reduction in production time and a 99.8% inventory accuracy rate within the first year.",

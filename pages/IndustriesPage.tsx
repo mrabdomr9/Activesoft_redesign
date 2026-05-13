@@ -26,12 +26,15 @@ const IndustriesPage: React.FC = () => {
   }, [t]);
 
   const industriesData = [
-    { key: 'manufacturing', image: "https://images.unsplash.com/photo-1610891015188-5369212db097?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1529" },
-    { key: 'healthcare', image: "https://images.unsplash.com/photo-1651525669944-00de65d3b8a5?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
-    { key: 'financial', image: "https://images.unsplash.com/photo-1758691736545-5c33b6255dca?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1332" },
-    { key: 'retail', image: "https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470" },
-    { key: 'education', image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470" },
-    { key: 'logistics', image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1471" },
+    { key: 'agriExport', image: "https://images.unsplash.com/photo-1595665593673-bf1ad72905c0?q=80&w=1500&auto=format&fit=crop" },
+    { key: 'concreteCement', image: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=1470&auto=format&fit=crop" },
+    { key: 'metalForming', image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1470&auto=format&fit=crop" },
+    { key: 'plasticPipes', image: "https://images.unsplash.com/photo-1590650153855-d9e808231d41?q=80&w=1470&auto=format&fit=crop" },
+    { key: 'fertilizersPesticides', image: "https://images.unsplash.com/photo-1628352081506-83c43123ed6d?q=80&w=1470&auto=format&fit=crop" },
+    { key: 'appliancesAssembly', image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1470&auto=format&fit=crop" },
+    { key: 'foodProduction', image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?q=80&w=1331&auto=format&fit=crop" },
+    { key: 'internationalSchools', image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1470&auto=format&fit=crop" },
+    { key: 'commercialAgencies', image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1469&auto=format&fit=crop" },
   ];
 
   return (
