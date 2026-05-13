@@ -81,8 +81,8 @@ const ServicesPage: React.FC = () => {
   const services: Service[] = [
     {
       id: "erp",
-      title: t('services.erpTitle', 'Oracle ERP Solutions'),
-      description: t('services.erpDesc', 'Full-cycle Oracle ERP services including implementation, customization, migration, and support to optimize your business processes.'),
+      title: t('services.erp.title', 'Active Soft ERP Solutions'),
+      description: t('services.erp.concept.points.0', 'Integrated accounting and administrative system for managing all commercial and industrial activities'),
       icon: (
         <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
@@ -352,93 +352,51 @@ const ServicesPage: React.FC = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             {/* ERP Solutions Section */}
             <div id="erp" ref={el => sectionRefs.current['erp'] = el} className="glass-panel p-8 rounded-xl mb-12 animate-on-scroll">
-              <div className="flex flex-col md:flex-row items-center">
-                <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
-                  <div className="bg-primary/10 p-6 rounded-full">
-                    <svg className="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="mb-12">
+                <div className="flex flex-col md:flex-row items-center md:items-start mb-6">
+                  <div className="bg-primary/10 p-4 rounded-full mb-4 md:mb-0 md:mr-6">
+                    <svg className="h-12 w-12 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                     </svg>
                   </div>
-                </div>
-                <div className="md:w-2/3 md:pl-8">
-                  <h2 className="text-3xl font-bold text-white font-display mb-4">{t('services.erpTitle', 'Oracle ERP Solutions')}</h2>
-                  <p className="text-gray-300 mb-6">{t('services.erpDesc', 'Full-cycle Oracle ERP services including implementation, customization, migration, and support to optimize your business processes.')}</p>
-                  <h3 className="text-xl font-bold text-white mb-4">{t('services.erpFeaturesTitle', 'ERP System Features')}</h3>
-                  <p className="text-gray-300 mb-6">{t('services.erpFeaturesDesc', 'Our ERP system is designed to provide comprehensive solutions for businesses of all sizes. Here are some of the key features it offers:')}</p>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="text-lg font-bold text-white mb-3">{t('services.generalFeatures', 'General Features')}</h4>
-                      <ul className="space-y-2">
-                        <li className="flex items-start">
-                          <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-gray-300">{t('services.features.oracleDB', 'Powerful and stable Oracle database')}</span>
-                        </li>
-                        <li className="flex items-start">
-                          <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-gray-300">{t('services.features.multiUser', 'Multiple user permissions with precise management')}</span>
-                        </li>
-                        <li className="flex items-start">
-                          <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-gray-300">{t('services.features.remoteAccess', 'Ability to work from anywhere via the Internet')}</span>
-                        </li>
-                        <li className="flex items-start">
-                          <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-gray-300">{t('services.features.autoBackup', 'Automatic backups created multiple times daily')}</span>
-                        </li>
-                        <li className="flex items-start">
-                          <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-gray-300">{t('services.features.auditTrail', 'Complete audit trail showing who added, modified, or deleted')}</span>
-                        </li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-bold text-white mb-3">{t('services.mainModules', 'Main System Modules')}</h4>
-                      <ul className="space-y-2">
-                        <li className="flex items-start">
-                          <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-gray-300">{t('services.modules.generalLedger', 'General Ledger')}</span>
-                        </li>
-                        <li className="flex items-start">
-                          <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-gray-300">{t('services.modules.inventory', 'Inventory Management')}</span>
-                        </li>
-                        <li className="flex items-start">
-                          <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-gray-300">{t('services.modules.costing', 'Costing System')}</span>
-                        </li>
-                        <li className="flex items-start">
-                          <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-gray-300">{t('services.modules.hr', 'HR & Payroll')}</span>
-                        </li>
-                        <li className="flex items-start">
-                          <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-gray-300">{t('services.modules.purchasesSales', 'Purchases & Sales')}</span>
-                        </li>
-                      </ul>
-                    </div>
+                  <div className="text-center md:text-left">
+                    <h2 className="text-3xl font-bold text-white font-display mb-2">{t('services.erp.title', 'Active Soft ERP Solutions')}</h2>
+                    <p className="text-gray-300 max-w-3xl">{t('services.erp.concept.points.0')}</p>
                   </div>
                 </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  'mainFeatures',
+                  'generalAccounts',
+                  'salesCustomers',
+                  'purchasesSuppliers',
+                  'inventoryWarehouses',
+                  'treasuriesBanks',
+                  'costManagement',
+                  'fixedAssets',
+                  'hrOptional',
+                  'reports',
+                  'additionalFeatures'
+                ].map((category) => (
+                  <div key={category} className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-primary/50 transition-all duration-300 group">
+                    <h3 className="text-lg font-bold text-white mb-4 flex items-center group-hover:text-primary transition-colors">
+                      <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                      {t(`services.erp.${category}.title`)}
+                    </h3>
+                    <ul className="space-y-2">
+                      {(t(`services.erp.${category}.points`, { returnObjects: true }) as string[] || []).map((point: string, idx: number) => (
+                        <li key={idx} className="flex items-start text-sm text-gray-400">
+                          <svg className="h-4 w-4 text-primary/60 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             </div>
 

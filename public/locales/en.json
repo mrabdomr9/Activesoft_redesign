@@ -109,38 +109,115 @@
   "services": {
     "title": "Our Comprehensive Services",
     "subtitle": "Tailored technology solutions to drive your business forward.",
-    "erpTitle": "Oracle ERP Solutions",
-    "erpDesc": "Full-cycle Oracle ERP services including implementation, customization, migration, and support to optimize your business processes.",
-    "erpFeaturesTitle": "ERP System Features",
-    "erpFeaturesDesc": "Our ERP system is designed to provide comprehensive solutions for businesses of all sizes. Here are some of the key features it offers:",
-    "generalFeatures": "General Features",
-    "mainModules": "Main System Modules",
-    "generalLedger": "General Ledger",
-    "cashManagement": "Cash Management",
-    "features": {
-      "oracleDB": "Powerful and stable Oracle database",
-      "multiUser": "Multiple user permissions with precise management",
-      "remoteAccess": "Ability to work from anywhere via the Internet",
-      "autoBackup": "Automatic backups created multiple times daily",
-      "auditTrail": "Complete audit trail showing who added, modified, or deleted",
-      "employeeDocs": "Entry of employee photos and documents",
-      "foreignCurrency": "Foreign currency support with fixed or variable rates per transaction",
-      "multiCompany": "Multiple companies or branches with consolidated reports",
-      "accountingChart": "Accounting chart with 4 levels",
-      "exchangeRate": "Exchange rate determination for foreign currencies",
-      "notes": "Notes entry for each journal entry item",
-      "multiEntry": "Support for multi-entry vouchers",
-      "unlimitedCashiers": "Unlimited number of cashiers",
-      "cashierLink": "Link each cashier to a specific employee",
-      "collectionPayment": "Recording collection and payment operations with separate documents"
-    },
-    "modules": {
-      "generalLedger": "General Ledger",
-      "inventory": "Inventory Management",
-      "costing": "Costing System",
-      "hr": "HR & Payroll",
-      "planning": "Planning",
-      "purchasesSales": "Purchases & Sales"
+    "erp": {
+      "title": "Active Soft ERP Solutions",
+      "concept": {
+        "title": "General Concept",
+        "points": [
+          "Integrated accounting and administrative system for managing all commercial and industrial activities",
+          "Flexible and applicable to any type of company (commercial – service – industrial)"
+        ]
+      },
+      "mainFeatures": {
+        "title": "Core Features",
+        "points": [
+          "Management of more than one branch or company within the same system",
+          "Advanced user permissions system",
+          "Full integration between all departments (Sales – Inventory – Accounting)",
+          "Smart alerts for inventory, payments, and receivables",
+          "Real-time reports helping in decision making"
+        ]
+      },
+      "generalAccounts": {
+        "title": "General Accounting",
+        "points": [
+          "Flexible chart of accounts",
+          "Automatic journal entries from all operations",
+          "Posting and renumbering entries",
+          "Full support for cost centers",
+          "Preparation of financial statements (Balance Sheet – Income Statement – Cash Flow)"
+        ]
+      },
+      "salesCustomers": {
+        "title": "Sales and Customers",
+        "points": [
+          "Customer data management",
+          "Sales orders and invoices (Cash / Credit)",
+          "Offers and discounts management",
+          "Tracking collections and customer balances",
+          "Detailed sales reports"
+        ]
+      },
+      "purchasesSuppliers": {
+        "title": "Purchases and Suppliers",
+        "points": [
+          "Supplier management",
+          "Purchase orders and purchase invoices",
+          "Tracking payments",
+          "Analytical reports for purchases"
+        ]
+      },
+      "inventoryWarehouses": {
+        "title": "Inventory and Warehouses",
+        "points": [
+          "Multiple warehouse management",
+          "Tracking item movement (Inward / Outward / Transfer)",
+          "Inventory count and damage management",
+          "Support for barcode and different units of measurement",
+          "Flexible pricing (Average – FIFO – etc.)"
+        ]
+      },
+      "treasuriesBanks": {
+        "title": "Treasuries and Banks",
+        "points": [
+          "Treasury and bank account management",
+          "Recording receipt and payment vouchers",
+          "Check management (Incoming / Outgoing)",
+          "Bank reconciliations"
+        ]
+      },
+      "costManagement": {
+        "title": "Cost Management",
+        "points": [
+          "Defining cost centers",
+          "Allocation of direct and indirect costs",
+          "Profitability analysis for each department or project"
+        ]
+      },
+      "fixedAssets": {
+        "title": "Fixed Assets",
+        "points": [
+          "Asset registration",
+          "Depreciation calculation",
+          "Tracking asset movement"
+        ]
+      },
+      "hrOptional": {
+        "title": "Human Resources (Optional)",
+        "points": [
+          "Employee data management",
+          "Calculation of salaries and advances",
+          "Vacations and attendance"
+        ]
+      },
+      "reports": {
+        "title": "Reports",
+        "points": [
+          "Comprehensive financial reports",
+          "Sales and purchase reports",
+          "Inventory reports",
+          "Analytical reports for decision making"
+        ]
+      },
+      "additionalFeatures": {
+        "title": "Additional Features",
+        "points": [
+          "Supports taxes (VAT / Compound)",
+          "Customizable according to the nature of the activity",
+          "Works on more than one branch and activity",
+          "Easy and fast to use interface"
+        ]
+      }
     },
     "costingModule": {
       "title": "Costing Module",
