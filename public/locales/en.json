@@ -398,7 +398,67 @@
     "customAppsTitle": "Custom App Development",
     "customAppsDesc": "We design, develop, and deploy bespoke desktop and web applications that solve unique business challenges and integrate seamlessly with your existing systems.",
     "securityTitle": "Enterprise Security",
-    "securityDesc": "Implementing bank-level security protocols to protect your data, applications, and network from evolving cyber threats."
+    "securityDesc": "Implementing bank-level security protocols to protect your data, applications, and network from evolving cyber threats.",
+    "hrPayroll": {
+      "title": "HR and Payroll Management System",
+      "desc": "An integrated and comprehensive system with financial accounts for managing employee affairs and payroll calculations.",
+      "featuresTitle": "Key Features:",
+      "features": {
+        "feature1": "Payroll management, deduction processing, and calculation of bonuses and incentives.",
+        "feature2": "Based on variable settings for insurance, vacations, and taxes, adjustable when laws change.",
+        "feature3": "Complies with all payroll calculation rules and penalty regulations.",
+        "feature4": "Recording detailed employee data, updating files, grades, and job titles. The system stores employee photos and all employment documents, with reports on missing documents and tracking document expiration dates to notify employees for renewal.",
+        "feature5": "Records data of those who entered and modified it, with a periodic transfer system to prevent tampering.",
+        "feature6": "Possibility to reverse periodic transfers to modify data according to permissions."
+      },
+      "howItChangesWork": {
+        "title": "How will the system change the work mechanism within my facility?",
+        "point1": "First, the system relies on integrated computing solutions that create harmonious performance between all departments and individuals within your facility.",
+        "point2": "Second, it enables you to manage and execute all administrative processes and procedures you desire in a few steps, without the need to edit or review numerous documents as happens in traditional management methods.",
+        "point3": "Third, it allows you to record all data related to employees and their movements through a single database; thus you won't worry about data loss or overlap for any technical or human reason.",
+        "point4": "Fourth, it saves the time you spend conducting your operations; as it performs many tasks simultaneously; it doesn't only care about administrative operations related to your facility's employees, but also organizes and manages financial operations related to employee salaries and all their financial entitlements or deductions. Thus, your facility's employees working in the human resources department can focus on achieving the facility's goals."
+      }
+    },
+    "smartScale": {
+      "title": "Smart Weighing System",
+      "desc": "An advanced electronic/mechanical system that links sensory equipment (such as Load Cells) with integrated software, allowing the weighing process to be performed automatically, and data is recorded directly on the accounting system or ERP without significant human intervention.",
+      "componentsTitle": "Main System Components",
+      "components": {
+        "item1": "High-precision Load Cells that weigh quantities in various types of vessels, vehicles, or boxes.",
+        "item2": "Controller / Indicator that receives weight signals from the cells and converts them into data.",
+        "item3": "Internet or internal network connection to send data to a central platform or accounting software.",
+        "item4": "ERP software or accounting system that receives data directly to update inventory, invoices, and performance analysis.",
+        "item5": "Dashboard screen or mobile app to display weights and real-time reports.",
+        "item6": "Calibration mechanisms to ensure weight accuracy, especially with changes in temperature, humidity, or operating conditions."
+      },
+      "benefitsTitle": "Benefits of Using Smart Scales in Packing / Export Stations",
+      "benefits": {
+        "benefit1": {
+          "title": "Increased Accuracy and Reduced Errors",
+          "desc": "Weight is recorded automatically, meaning no manual entry errors or incorrect recording, thus the calculation of cost and return is more accurate."
+        },
+        "benefit2": {
+          "title": "Reducing Waste and Loss",
+          "desc": "When you can determine the product weight before and after packing, you discover waste and take measures to improve it and save resources."
+        },
+        "benefit3": {
+          "title": "Speeding Up Operations",
+          "desc": "Weight is taken directly, inventory is updated, invoices are issued, and you won't have to stop work for manual recording."
+        },
+        "benefit4": {
+          "title": "Transparency and Credibility Before Customers and Customs",
+          "desc": "Documented weight data helps maintain a consistent record, whether for the buyer, export, or auditing."
+        },
+        "benefit5": {
+          "title": "Improved Decision Making",
+          "desc": "Real-time weight reports and aggregated data help managers see packing performance, monitor performance, and plan for business expansion or improvement."
+        },
+        "benefit6": {
+          "title": "Lower Cost in the Long Run",
+          "desc": "Although the initial investment may be high, the savings in labor, losses, time, and waste make the return on it large over time."
+        }
+      }
+    }
   },
   "prices": {
     "title": "Transparent Pricing for Your Success",

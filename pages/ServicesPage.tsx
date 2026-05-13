@@ -633,7 +633,7 @@ const ServicesPage: React.FC = () => {
 
             {/* Smart Scale System Section */}
             <div id="smartScale" ref={el => sectionRefs.current['smartScale'] = el} className="glass-panel p-8 rounded-xl mb-12 animate-on-scroll">
-              <div className="flex flex-col md:flex-row items-center">
+              <div className="flex flex-col md:flex-row items-center mb-8">
                 <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
                   <div className="bg-primary/10 p-6 rounded-full">
                     <svg className="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -642,24 +642,43 @@ const ServicesPage: React.FC = () => {
                   </div>
                 </div>
                 <div className="md:w-2/3 md:pl-8">
-                  <h2 className="text-3xl font-bold text-white font-display mb-4">{safeSmartScaleService.title}</h2>
-                  <p className="text-gray-300 mb-6">{safeSmartScaleService.description}</p>
+                  <h2 className="text-3xl font-bold text-white font-display mb-4">{t('services.smartScale.title', 'Smart Weighing System')}</h2>
+                  <p className="text-gray-300 mb-6 leading-relaxed">{t('services.smartScale.desc', 'Intelligent weighing system that automates weight recording and integrates directly with your inventory and financial systems.')}</p>
 
                   <div className="space-y-6">
                     <div>
-                      <h3 className="text-xl font-bold text-white mb-3">Key Features</h3>
-                      <ul className="space-y-2">
-                        {safeSmartScaleService.features.map((feature: string, index: number) => (
-                          <li key={index} className="flex items-start">
-                            <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      <h3 className="text-xl font-bold text-white mb-4">{t('services.smartScale.componentsTitle', 'Main System Components')}</h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {[1, 2, 3, 4, 5, 6].map((num) => (
+                          <div key={num} className="flex items-start bg-white/5 p-3 rounded-lg border border-white/5">
+                            <svg className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span className="text-gray-300">{feature}</span>
-                          </li>
+                            <span className="text-sm text-gray-300">{t(`services.smartScale.components.item${num}`)}</span>
+                          </div>
                         ))}
-                      </ul>
+                      </div>
                     </div>
                   </div>
+                </div>
+              </div>
+
+              <div className="mt-12 pt-8 border-t border-white/10">
+                <h3 className="text-2xl font-bold text-white mb-8 text-center">{t('services.smartScale.benefitsTitle', 'Benefits of Using Smart Scales')}</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {[1, 2, 3, 4, 5, 6].map((num) => (
+                    <div key={num} className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-primary/50 transition-all duration-300 group">
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                        <span className="text-primary font-bold text-lg">{num}</span>
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                        {t(`services.smartScale.benefits.benefit${num}.title`)}
+                      </h4>
+                      <p className="text-sm text-gray-400 leading-relaxed">
+                        {t(`services.smartScale.benefits.benefit${num}.desc`)}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -668,7 +687,7 @@ const ServicesPage: React.FC = () => {
 
         {/* HR and Payroll Management Section */}
         <div id="hrPayroll" ref={el => sectionRefs.current['hrPayroll'] = el} className="glass-panel p-8 rounded-xl mb-12 animate-on-scroll">
-          <div className="flex flex-col md:flex-row items-center">
+          <div className="flex flex-col md:flex-row items-center mb-8">
             <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
               <div className="bg-primary/10 p-6 rounded-full">
                 <svg className="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -682,47 +701,35 @@ const ServicesPage: React.FC = () => {
 
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-3">Key Features</h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-start">
-                      <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-gray-300">{t('services.hrPayroll.features.feature1', 'Based on variable settings for insurance, vacations, and taxes that can be modified when laws change')}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-gray-300">{t('services.hrPayroll.features.feature2', 'Respects all payroll calculation rules and penalty provisions, carrying over excess of five days to subsequent months')}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-gray-300">{t('services.hrPayroll.features.feature3', 'Maintains employee photos and all employment documents with reports on missing documents')}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-gray-300">{t('services.hrPayroll.features.feature4', 'Tracks document expiration dates to notify employees of renewals')}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-gray-300">{t('services.hrPayroll.features.feature5', 'Records who entered and modified data with a period transfer system to prevent tampering')}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-gray-300">{t('services.hrPayroll.features.feature6', 'Ability to reverse period transfers to modify data according to permissions')}</span>
-                    </li>
+                  <h3 className="text-xl font-bold text-white mb-3">{t('services.hrPayroll.featuresTitle', 'Key Features')}</h3>
+                  <ul className="space-y-3">
+                    {[1, 2, 3, 4, 5, 6].map((num) => (
+                      <li key={num} className="flex items-start">
+                        <svg className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-gray-300">{t(`services.hrPayroll.features.feature${num}`)}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div className="mt-12 pt-8 border-t border-white/10">
+            <h3 className="text-2xl font-bold text-white mb-6 text-center">{t('services.hrPayroll.howItChangesWork.title')}</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[1, 2, 3, 4].map((num) => (
+                <div key={num} className="bg-white/5 p-6 rounded-lg border border-white/5 hover:border-primary/30 transition-colors">
+                  <div className="flex items-center mb-4">
+                    <span className="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold mr-3">{num}</span>
+                  </div>
+                  <p className="text-gray-300 leading-relaxed">
+                    {t(`services.hrPayroll.howItChangesWork.point${num}`)}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
