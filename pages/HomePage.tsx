@@ -16,9 +16,9 @@ const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen relative">
       <SEOHead
-        title={t('seo.home.title', 'Active Soft - Oracle ERP Solutions & Custom Software Development Egypt')}
-        description={t('seo.home.description', 'Leading Oracle ERP implementation, custom software development & managed IT services in Egypt.')}
-        keywords={t('seo.home.keywords', 'Oracle ERP Egypt, Custom Software Development Egypt, Managed IT Services Cairo')}
+        title={t('seo.home.title', 'ERP Software & Business Management System | ActiveSoft')}
+        description={t('seo.home.description', 'ActiveSoft provides ERP software, accounting systems, inventory management, HR, POS, and business automation solutions for companies in Egypt.')}
+        keywords={t('seo.home.keywords', 'ERP System Egypt, ERP Software Egypt, Best ERP System, Accounting Software Egypt, Inventory Management System, POS System Egypt, HR & Payroll System, Manufacturing ERP, CRM Software Egypt, Business Management Software, Concrete Management System, Ready Mix ERP, Factory Management System, Construction ERP, Retail ERP System, Distribution ERP, Medical ERP System, School Management System, How to manage inventory, Best accounting software for factories, ERP for multi branch companies, Reduce warehouse mistakes, Automate payroll system, Inventory tracking software')}
       />
       {/* Technical Background Elements */}
       <div className="absolute inset-0">

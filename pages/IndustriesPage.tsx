@@ -1,29 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from '../hooks/useTranslation';
+import SEOHead from '../components/SEOHead';
 
 const IndustriesPage: React.FC = () => {
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const title = t('seo.industries.title', 'Industry Solutions | Active Soft');
-    const description = t('seo.industries.description', 'Discover our industry-specific solutions for manufacturing, healthcare, and financial services.');
-    const keywords = t('seo.industries.keywords', 'Manufacturing ERP, Healthcare IT, Financial Services Software, Industry Solutions, Active Soft');
-
-    if (title) document.title = title;
-
-    const setMetaTag = (name: string, content: string) => {
-      let element = document.querySelector(`meta[name="${name}"]`);
-      if (!element) {
-        element = document.createElement('meta');
-        element.setAttribute('name', name);
-        document.head.appendChild(element);
-      }
-      element.setAttribute('content', content);
-    };
-
-    if (description) setMetaTag('description', description);
-    if (keywords) setMetaTag('keywords', keywords);
-  }, [t]);
 
   const industriesData = [
     { key: 'agriExport', image: "https://images.unsplash.com/photo-1595665593673-bf1ad72905c0?q=80&w=1500&auto=format&fit=crop" },
@@ -39,6 +19,11 @@ const IndustriesPage: React.FC = () => {
 
   return (
     <div className="min-h-screen relative">
+      <SEOHead
+        title={t('seo.industries.title', 'Industry-Specific ERP Solutions | ActiveSoft')}
+        description={t('seo.industries.description', 'Customized ERP and software solutions for diverse sectors including manufacturing, construction, retail, healthcare, and education in Egypt.')}
+        keywords={t('seo.industries.keywords', 'Manufacturing ERP, Ready Mix ERP, Construction ERP, Retail ERP, Distribution ERP, Medical ERP, School Management System, ActiveSoft Industries, Industry Solutions Egypt')}
+      />
       {/* Technical Background Elements */}
       <div className="absolute inset-0">
         {/* Circuit Board Pattern */}

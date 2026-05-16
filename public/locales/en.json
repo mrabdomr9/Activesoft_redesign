@@ -1280,5 +1280,27 @@
     "ctaTitle": "Interested in an export station management system?",
     "ctaDescription": "Contact us today to learn more about how our system can help you manage your export operations efficiently and accurately.",
     "contactUs": "Contact Us"
+  },
+  "seo": {
+    "home": {
+      "title": "ERP Software & Business Management System | ActiveSoft",
+      "description": "ActiveSoft provides ERP software, accounting systems, inventory management, HR, POS, and business automation solutions for companies in Egypt.",
+      "keywords": "ERP System Egypt, ERP Software Egypt, Best ERP System, Accounting Software Egypt, Inventory Management System, POS System Egypt, HR & Payroll System, Manufacturing ERP, CRM Software Egypt, Business Management Software, Concrete Management System, Ready Mix ERP, Factory Management System, Construction ERP, Retail ERP System, Distribution ERP, Medical ERP System, School Management System, How to manage inventory, Best accounting software for factories, ERP for multi branch companies, Reduce warehouse mistakes, Automate payroll system, Inventory tracking software"
+    },
+    "concrete": {
+      "title": "Ready-Mix Concrete Plant Management System | ActiveSoft",
+      "description": "Advanced ERP system for ready-mix concrete plants, managing BOM, production, inventory, and cost centers with high precision.",
+      "keywords": "Concrete Management System, Ready Mix ERP, Concrete Factory Software, ActiveSoft Concrete System, Ready Mix Concrete Plant Management Egypt"
+    },
+    "export": {
+      "title": "Export Station Management System | ActiveSoft",
+      "description": "Advanced solution for managing export operations, documentation, customs clearance, and shipping for agricultural crops and other goods.",
+      "keywords": "Export Management System, Agri Export ERP, Export Station Software, ActiveSoft Export System, Agricultural Export Egypt, Export Operations Cairo"
+    },
+    "industries": {
+      "title": "Industry-Specific ERP Solutions | ActiveSoft",
+      "description": "Customized ERP and software solutions for diverse sectors including manufacturing, construction, retail, healthcare, and education in Egypt.",
+      "keywords": "Manufacturing ERP, Ready Mix ERP, Construction ERP, Retail ERP, Distribution ERP, Medical ERP, School Management System, ActiveSoft Industries, Industry Solutions Egypt"
+    }
   }
 }

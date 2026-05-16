@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
+import SEOHead from '../components/SEOHead';
 
 const ExportManagementPage: React.FC = () => {
   const { t } = useTranslation();
@@ -38,6 +39,11 @@ const ExportManagementPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <SEOHead
+        title={t('seo.export.title', 'Export Station Management System | ActiveSoft')}
+        description={t('seo.export.description', 'Advanced solution for managing export operations, documentation, customs clearance, and shipping for agricultural crops and other goods.')}
+        keywords={t('seo.export.keywords', 'Export Management System, Agri Export ERP, Export Station Software, ActiveSoft Export System, Agricultural Export Egypt, Export Operations Cairo')}
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-24 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">

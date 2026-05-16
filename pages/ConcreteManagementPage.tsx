@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
+import SEOHead from '../components/SEOHead';
 
 const ConcreteManagementPage: React.FC = () => {
   const { t } = useTranslation();
@@ -40,6 +41,11 @@ const ConcreteManagementPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <SEOHead
+        title={t('seo.concrete.title', 'Ready-Mix Concrete Plant Management System | ActiveSoft')}
+        description={t('seo.concrete.description', 'Advanced ERP system for ready-mix concrete plants, managing BOM, production, inventory, and cost centers with high precision.')}
+        keywords={t('seo.concrete.keywords', 'Concrete Management System, Ready Mix ERP, Concrete Factory Software, ActiveSoft Concrete System, Ready Mix Concrete Plant Management Egypt')}
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-24 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
