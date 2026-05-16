@@ -19,6 +19,13 @@ import SiteMapPage from './pages/SiteMapPage';
 import DigitalTransformationPage from './pages/DigitalTransformationPage';
 import ConcreteManagementPage from './pages/ConcreteManagementPage';
 import ExportManagementPage from './pages/ExportManagementPage';
+import ERPPage from './pages/ERPPage';
+import AccountingPage from './pages/AccountingPage';
+import InventoryPage from './pages/InventoryPage';
+import HRPayrollPage from './pages/HRPayrollPage';
+import ManufacturingPage from './pages/ManufacturingPage';
+import POSPage from './pages/POSPage';
+import SmartScalePage from './pages/SmartScalePage';
 import { LanguageContext } from './context/LanguageContext';
 
 const ScrollToTop = () => {
@@ -79,8 +86,15 @@ const AppContent = () => {
             <Route path="/erp-features" element={<PortfolioPage />} />
             <Route path="/sitemap" element={<SiteMapPage />} />
             <Route path="/digital-transformation" element={<DigitalTransformationPage />} />
-            <Route path="/concrete-management" element={<ConcreteManagementPage />} />
+            <Route path="/concrete-management-system" element={<ConcreteManagementPage />} />
             <Route path="/export-management" element={<ExportManagementPage />} />
+            <Route path="/erp-system" element={<ERPPage />} />
+            <Route path="/accounting-software" element={<AccountingPage />} />
+            <Route path="/inventory-management" element={<InventoryPage />} />
+            <Route path="/hr-payroll" element={<HRPayrollPage />} />
+            <Route path="/manufacturing-erp" element={<ManufacturingPage />} />
+            <Route path="/pos-system" element={<POSPage />} />
+            <Route path="/smart-weighing-system" element={<SmartScalePage />} />
           </Routes>
         </main>
         <ScrollToTopButton />

@@ -7,6 +7,7 @@ interface Service {
   description: string;
   features?: string[];
   icon?: React.ReactNode;
+  link?: string;
   pricing?: {
     currency: string;
     startingAt: number;
@@ -26,48 +27,23 @@ const ServicesPage: React.FC = () => {
   const allServices = t('prices.services', []);
 
   // Find the sales management service by ID
-  const salesService = allServices.find((service: any) =>
-    service && service.id === "c1d2e3f4-5678-90ab-cdef-1234567890ab"
-  ) || {};
-
   // Find smart scale system service by ID
   const smartScaleService = allServices.find((service: any) =>
     service && service.id === "e8f9a2b1-c3d4-5678-9abc-def012345678"
   ) || {};
 
-  // Ensure we have fallback data
-  const safeSalesService: Service = {
-    id: "sales",
-    title: salesService.title || 'Sales Representatives and Sales Managers Management',
-    description: salesService.description || 'Comprehensive solution for managing sales representatives and sales managers with detailed performance tracking and commission management.',
-    features: salesService.features || [
-      "Periodic reports on representative and branch performance",
-      "Monitoring sales representatives' performance and linking their sales to customers",
-      "Special permissions for sales managers to monitor the market and make faster decisions",
-      "Tracking cash collections and checks for each representative",
-      "Ability to link representative commissions to actual collections or sales volume",
-      "Setting sales targets (Goals) and comparing actual results"
-    ],
-    pricing: {
-      currency: (salesService.pricing && salesService.pricing.currency) || 'EGP',
-      startingAt: (salesService.pricing && salesService.pricing.startingAt) || 30000,
-      billingPeriod: (salesService.pricing && salesService.pricing.billingPeriod) || 'project'
-    },
-    category: 'sales'
-  };
-
   // Ensure we have fallback data for smart scale system
   const safeSmartScaleService: Service = {
     id: "smartScale",
-    title: t('services.smartScaleTitle', 'Smart Scale System'),
-    description: t('services.smartScaleDesc', 'Intelligent weighing system that automates weight recording and integrates directly with your inventory and financial systems.'),
+    title: t('services.smartScale.title', 'Smart Scale System'),
+    description: t('services.smartScale.desc', 'Intelligent weighing system that automates weight recording and integrates directly with your inventory and financial systems.'),
     features: [
-      t('services.smartScaleFeatures.feature1', 'Automatic recording of actual weight for products, pallets, or containers without human intervention'),
-      t('services.smartScaleFeatures.feature2', 'Prevention of manipulation or manual input errors'),
-      t('services.smartScaleFeatures.feature3', 'Comparison of actual weight with standard weight to detect deviations or losses'),
-      t('services.smartScaleFeatures.feature4', 'Direct generation of invoices and costs based on real weight'),
-      t('services.smartScaleFeatures.feature5', 'Instant updating of inventory and financial accounts with each weighing operation'),
-      t('services.smartScaleFeatures.feature6', 'Direct integration between electronic scales and packaging stations within system')
+      t('services.smartScale.components.item1'),
+      t('services.smartScale.components.item2'),
+      t('services.smartScale.components.item3'),
+      t('services.smartScale.components.item4'),
+      t('services.smartScale.components.item5'),
+      t('services.smartScale.components.item6')
     ],
     pricing: {
       currency: 'EGP',
@@ -77,12 +53,27 @@ const ServicesPage: React.FC = () => {
     category: 'inventory'
   };
 
+  // Ensure we have fallback data for sales management system
+  const safeSalesService: Service = {
+    id: "sales",
+    title: t('services.erp.salesCustomers.title', 'Sales & Representatives Management'),
+    description: t('services.erp.salesCustomers.points.0'),
+    features: [
+      t('services.erp.salesCustomers.points.6', 'Sales Representatives & Managers system'),
+      t('services.erp.salesCustomers.points.7', 'Assigning customers to specific representatives'),
+      t('services.erp.salesCustomers.points.8', 'Tracking representative performance and collections'),
+      t('services.erp.salesCustomers.points.9', 'Automated commission calculation')
+    ],
+    category: 'erp'
+  };
+
   // Define all services with icons and categories
   const services: Service[] = [
     {
       id: "erp",
       title: t('services.erp.title', 'Active Soft ERP Solutions'),
       description: t('services.erp.concept.points.0', 'Integrated accounting and administrative system for managing all commercial and industrial activities'),
+      link: "/erp-system",
       icon: (
         <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
@@ -91,9 +82,10 @@ const ServicesPage: React.FC = () => {
       category: 'erp'
     },
     {
-      id: "costing",
-      title: t('services.costingModule.title', 'Costing Module'),
-      description: t('services.costingModule.subtitle', 'Comprehensive production cost management system with actual costing methodology'),
+      id: "manufacturing",
+      title: t('services.manufacturingModule.title'),
+      description: t('services.manufacturingModule.subtitle'),
+      link: "/manufacturing-erp",
       icon: (
         <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -105,6 +97,7 @@ const ServicesPage: React.FC = () => {
       id: "inventory",
       title: t('services.inventoryModule.title', 'Inventory Management'),
       description: t('services.inventoryModule.subtitle', 'Comprehensive inventory management system with advanced tracking and valuation capabilities'),
+      link: "/inventory-management",
       icon: (
         <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
@@ -114,8 +107,9 @@ const ServicesPage: React.FC = () => {
     },
     {
       id: "export",
-      title: t('exportModule.title', 'Export Management System'),
-      description: t('exportModule.subtitle', 'Comprehensive export management system with detailed shipment tracking and financial analysis'),
+      title: t('services.exportModule.title', 'Export Management System'),
+      description: t('services.exportModule.subtitle', 'Comprehensive export management system with detailed shipment tracking and financial analysis'),
+      link: "/export-management",
       icon: (
         <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4 4 0 003 15z" />
@@ -124,15 +118,8 @@ const ServicesPage: React.FC = () => {
       category: 'logistics'
     },
     {
-      ...safeSalesService,
-      icon: (
-        <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      )
-    },
-    {
       ...safeSmartScaleService,
+      link: "/smart-weighing-system",
       icon: (
         <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -143,17 +130,13 @@ const ServicesPage: React.FC = () => {
       id: "hrPayroll",
       title: t('services.hrPayroll.title', 'HR and Payroll Management System'),
       description: t('services.hrPayroll.desc', 'Complete and integrated system with financial accounts for managing employee affairs and payroll calculations.'),
+      link: "/hr-payroll",
       icon: (
         <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       ),
-      category: 'hr',
-      pricing: {
-        currency: 'EGP',
-        startingAt: 35000,
-        billingPeriod: 'project'
-      }
+      category: 'hr'
     }
   ];
 
@@ -164,7 +147,6 @@ const ServicesPage: React.FC = () => {
     { id: 'production', label: t('services.categories.production', 'Production') },
     { id: 'inventory', label: t('services.categories.inventory', 'Inventory') },
     { id: 'logistics', label: t('services.categories.logistics', 'Logistics') },
-    { id: 'sales', label: t('services.categories.sales', 'Sales Management') },
     { id: 'hr', label: t('services.categories.hr', 'HR & Payroll') }
   ];
 
@@ -308,15 +290,27 @@ const ServicesPage: React.FC = () => {
 
                     <div className="p-6">
                       <p className="text-gray-300 mb-6 line-clamp-3">{service.description}</p>
-                      <button
-                        onClick={() => scrollToSection(service.id)}
-                        className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-primary/50"
-                      >
-                        {t('home.learnMore', 'Learn More')}
-                        <svg className="ml-2 rtl:ml-0 rtl:mr-2 rtl:rotate-180 -mr-1 h-4 w-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                        </svg>
-                      </button>
+                      {service.link ? (
+                        <a
+                          href={service.link}
+                          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-primary/50"
+                        >
+                          {t('home.learnMore', 'Learn More')}
+                          <svg className="ml-2 rtl:ml-0 rtl:mr-2 rtl:rotate-180 -mr-1 h-4 w-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                          </svg>
+                        </a>
+                      ) : (
+                        <button
+                          onClick={() => scrollToSection(service.id)}
+                          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-primary/50"
+                        >
+                          {t('home.learnMore', 'Learn More')}
+                          <svg className="ml-2 rtl:ml-0 rtl:mr-2 rtl:rotate-180 -mr-1 h-4 w-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                          </svg>
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -380,13 +374,13 @@ const ServicesPage: React.FC = () => {
                   'reports',
                   'additionalFeatures'
                 ].map((category) => (
-                  <div key={category} className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-primary/50 transition-all duration-300 group">
+                    <div key={category} className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-primary/50 transition-all duration-300 group">
                     <h3 className="text-lg font-bold text-white mb-4 flex items-center group-hover:text-primary transition-colors">
                       <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
                       {t(`services.erp.${category}.title`)}
                     </h3>
                     <ul className="space-y-2">
-                      {(t(`services.erp.${category}.points`, { returnObjects: true }) as string[] || []).map((point: string, idx: number) => (
+                      {(t(`services.erp.${category}.points`, []) as string[] || []).map((point: string, idx: number) => (
                         <li key={idx} className="flex items-start text-sm text-gray-400">
                           <svg className="h-4 w-4 text-primary/60 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -420,7 +414,7 @@ const ServicesPage: React.FC = () => {
                       <p className="text-gray-300 mb-3">{t('services.costingModule.methodologyDesc', 'The system is based on Actual Costing during the production month.')}</p>
                       <h4 className="text-lg font-bold text-white mb-2">{t('services.costingModule.methodologyIncludes', 'Cost includes:')}</h4>
                       <ul className="list-disc list-inside text-gray-300 space-y-1">
-                        {t('services.costingModule.methodologyItems', []).map((item: string, index: number) => (
+                        {(t('services.costingModule.methodologyItems', []) as string[] || []).map((item: string, index: number) => (
                           <li key={index}>{item}</li>
                         ))}
                       </ul>
@@ -433,7 +427,7 @@ const ServicesPage: React.FC = () => {
                       <p className="text-gray-300 mb-2">{t('services.costingModule.bomDesc3', 'Variable materials are manually issued based on workshop instructions.')}</p>
                       <p className="text-gray-300 mb-2">{t('services.costingModule.bomDesc4', 'When entering actual inventory at the end of the month:')}</p>
                       <ul className="list-disc list-inside text-gray-300 space-y-1 ml-4">
-                        {t('services.costingModule.bomItems', []).map((item: string, index: number) => (
+                        {(t('services.costingModule.bomItems', []) as string[] || []).map((item: string, index: number) => (
                           <li key={index}>{item}</li>
                         ))}
                       </ul>
@@ -468,7 +462,7 @@ const ServicesPage: React.FC = () => {
                       <h3 className="text-xl font-bold text-white mb-3">{t('services.inventoryModule.structureTitle', 'Inventory Structure and Item Coding')}</h3>
                       <p className="text-gray-300 mb-3">{t('services.inventoryModule.structureDesc', 'Inventory classification into:')}</p>
                       <ul className="list-disc list-inside text-gray-300 space-y-1">
-                        {t('services.inventoryModule.structureItems', []).map((item: string, index: number) => (
+                        {(t('services.inventoryModule.structureItems', []) as string[] || []).map((item: string, index: number) => (
                           <li key={index}>{item}</li>
                         ))}
                       </ul>
@@ -479,7 +473,7 @@ const ServicesPage: React.FC = () => {
                     <div>
                       <h3 className="text-xl font-bold text-white mb-3">{t('services.inventoryModule.lotsFunctionsTitle', 'Lot Functions')}</h3>
                       <ul className="list-disc list-inside text-gray-300 space-y-1">
-                        {t('services.inventoryModule.lotsFunctionsItems', []).map((item: string, index: number) => (
+                        {(t('services.inventoryModule.lotsFunctionsItems', []) as string[] || []).map((item: string, index: number) => (
                           <li key={index}>{item}</li>
                         ))}
                       </ul>
@@ -489,7 +483,7 @@ const ServicesPage: React.FC = () => {
                       <h3 className="text-xl font-bold text-white mb-3">{t('services.inventoryModule.itemAttributesTitle', 'Item Attributes')}</h3>
                       <p className="text-gray-300 mb-3">{t('services.inventoryModule.itemAttributesDesc', 'Complete technical specifications including:')}</p>
                       <ul className="list-disc list-inside text-gray-300 space-y-1">
-                        {t('services.inventoryModule.itemAttributesItems', []).map((item: string, index: number) => (
+                        {(t('services.inventoryModule.itemAttributesItems', []) as string[] || []).map((item: string, index: number) => (
                           <li key={index}>{item}</li>
                         ))}
                       </ul>
@@ -511,8 +505,8 @@ const ServicesPage: React.FC = () => {
                   </div>
                 </div>
                 <div className="md:w-2/3 md:pl-8">
-                  <h2 className="text-3xl font-bold text-white font-display mb-4">{t('exportModule.title', 'Export Management System')}</h2>
-                  <p className="text-gray-300 mb-6">{t('exportModule.subtitle', 'Comprehensive export management system with detailed shipment tracking and financial analysis')}</p>
+                  <h2 className="text-3xl font-bold text-white font-display mb-4">{t('services.exportModule.title', 'Export Management System')}</h2>
+                  <p className="text-gray-300 mb-6">{t('services.exportModule.subtitle', 'Comprehensive export management system with detailed shipment tracking and financial analysis')}</p>
                   <div className="mt-4">
                     <a href="/export-management" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 transition-all duration-300 shadow-lg shadow-primary/20">
                       {t('services.learnMore', 'Learn More')}
@@ -524,29 +518,29 @@ const ServicesPage: React.FC = () => {
 
                   <div className="space-y-6">
                     <div>
-                      <h3 className="text-xl font-bold text-white mb-3">{t('exportModule.shipmentTrackingTitle', 'Shipment Data Tracking')}</h3>
-                      <p className="text-gray-300 mb-3">{t('exportModule.shipmentTrackingDesc', 'The system displays detailed information for each shipment, including:')}</p>
+                      <h3 className="text-xl font-bold text-white mb-3">{t('services.exportModule.shipmentTrackingTitle', 'Shipment Data Tracking')}</h3>
+                      <p className="text-gray-300 mb-3">{t('services.exportModule.shipmentTrackingDesc', 'The system displays detailed information for each shipment, including:')}</p>
                       <ul className="list-disc list-inside text-gray-300 space-y-1">
-                        {t('exportModule.shipmentTrackingItems', []).map((item: string, index: number) => (
+                        {(t('services.exportModule.shipmentTrackingItems', []) as string[] || []).map((item: string, index: number) => (
                           <li key={index}>{item}</li>
                         ))}
                       </ul>
                     </div>
 
                     <div>
-                      <h3 className="text-xl font-bold text-white mb-3">{t('exportModule.financialValuesTitle', 'Shipment Financial Values')}</h3>
+                      <h3 className="text-xl font-bold text-white mb-3">{t('services.exportModule.financialValuesTitle', 'Shipment Financial Values')}</h3>
                       <ul className="list-disc list-inside text-gray-300 space-y-1">
-                        {t('exportModule.financialValuesItems', []).map((item: string, index: number) => (
+                        {(t('services.exportModule.financialValuesItems', []) as string[] || []).map((item: string, index: number) => (
                           <li key={index}>{item}</li>
                         ))}
                       </ul>
                     </div>
 
                     <div>
-                      <h3 className="text-xl font-bold text-white mb-3">{t('exportModule.costBreakdownTitle', 'Shipment Cost Breakdown')}</h3>
-                      <p className="text-gray-300 mb-3">{t('exportModule.costBreakdownDesc', 'The system clearly displays the cost breakdown into:')}</p>
+                      <h3 className="text-xl font-bold text-white mb-3">{t('services.exportModule.costBreakdownTitle', 'Shipment Cost Breakdown')}</h3>
+                      <p className="text-gray-300 mb-3">{t('services.exportModule.costBreakdownDesc', 'The system clearly displays the cost breakdown into:')}</p>
                       <ul className="list-disc list-inside text-gray-300 space-y-1">
-                        {t('exportModule.costBreakdownItems', []).map((item: string, index: number) => (
+                        {(t('services.exportModule.costBreakdownItems', []) as string[] || []).map((item: string, index: number) => (
                           <li key={index}>{item}</li>
                         ))}
                       </ul>
