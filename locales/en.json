@@ -1,9 +1,59 @@
 {
   "seo": {
     "home": {
-      "title": "Active Soft - Oracle ERP Solutions & Custom Software Development Egypt",
-      "description": "Leading Oracle ERP implementation, custom software development & managed IT services in Egypt. 15+ years of experience delivering enterprise solutions for manufacturing, healthcare & financial sectors.",
-      "keywords": "Oracle ERP Egypt, Custom Software Development Egypt, Managed IT Services Cairo, Enterprise Solutions Egypt, Business Software Egypt, ERP Implementation Egypt"
+      "title": "ERP Software & Business Management System | ActiveSoft",
+      "description": "ActiveSoft provides ERP software, accounting systems, inventory management, HR, POS, and business automation solutions for companies in Egypt.",
+      "keywords": "ERP System Egypt, ERP Software Egypt, Best ERP System, Accounting Software Egypt, Inventory Management System, POS System Egypt, HR & Payroll System, Manufacturing ERP, CRM Software Egypt, Business Management Software, Concrete Management System, Ready Mix ERP, Factory Management System, Construction ERP, Retail ERP System, Distribution ERP, Medical ERP System, School Management System, How to manage inventory, Best accounting software for factories, ERP for multi branch companies, Reduce warehouse mistakes, Automate payroll system, Inventory tracking software"
+    },
+    "concrete": {
+      "title": "Ready-Mix Concrete Plant Management System | ActiveSoft",
+      "description": "Advanced ERP system for ready-mix concrete plants, managing BOM, production, inventory, and cost centers with high precision.",
+      "keywords": "Concrete Management System, Ready Mix ERP, Concrete Factory Software, ActiveSoft Concrete System, Ready Mix Concrete Plant Management Egypt"
+    },
+    "export": {
+      "title": "Export Station Management System | ActiveSoft",
+      "description": "Advanced solution for managing export operations, documentation, customs clearance, and shipping for agricultural crops and other goods.",
+      "keywords": "Export Management System, Agri Export ERP, Export Station Software, ActiveSoft Export System, Agricultural Export Egypt, Export Operations Cairo"
+    },
+    "industries": {
+      "title": "Industry-Specific ERP Solutions | ActiveSoft",
+      "description": "Customized ERP and software solutions for diverse sectors including manufacturing, construction, retail, healthcare, and education in Egypt.",
+      "keywords": "Manufacturing ERP, Ready Mix ERP, Construction ERP, Retail ERP, Distribution ERP, Medical ERP, School Management System, ActiveSoft Industries, Industry Solutions Egypt"
+    },
+    "pos": {
+      "title": "POS System Egypt | ActiveSoft",
+      "description": "Best POS system for retail and multi-branch companies in Egypt. Fast, reliable, and fully integrated with inventory and accounting.",
+      "keywords": "POS System Egypt, Point of Sale Software, Retail Management System, ActiveSoft POS"
+    },
+    "smartScale": {
+      "title": "Smart Weighing System | ActiveSoft",
+      "description": "Integrated electronic weighing system that connects industrial scales directly to ERP to prevent manipulation and errors.",
+      "keywords": "Smart Weighing System, Smart Scale System, Industrial Electronic Scales, Weighing Automation"
+    },
+    "manufacturing": {
+      "title": "Manufacturing ERP System Egypt | ActiveSoft",
+      "description": "Complete manufacturing and production management with actual costing, BOM, and quality control.",
+      "keywords": "Manufacturing ERP Egypt, Production Management Software, Factory Management System, ActiveSoft Manufacturing"
+    },
+    "accounting": {
+      "title": "Accounting Software Egypt | ActiveSoft",
+      "description": "Professional accounting software for managing journal entries, cost centers, and financial statements with ease.",
+      "keywords": "Accounting Software Egypt, Best Accounting System, Financial Management Software, ActiveSoft Accounting"
+    },
+    "inventory": {
+      "title": "Inventory Management System Egypt | ActiveSoft",
+      "description": "Advanced inventory tracking, valuation, and reporting. Integrated with accounting and production modules.",
+      "keywords": "Inventory System Egypt, Warehouse Management, Stock Tracking Software, ActiveSoft Inventory"
+    },
+    "erp": {
+      "title": "ERP Software & Business Management System | ActiveSoft",
+      "description": "Comprehensive ERP solution for businesses in Egypt. Integrate sales, inventory, and accounting into one powerful system.",
+      "keywords": "ERP System Egypt, ERP Software Egypt, Business Management Software, ActiveSoft ERP"
+    },
+    "hr": {
+      "title": "HR and Payroll System Egypt | ActiveSoft",
+      "description": "Complete HR management, payroll calculation, attendance, and social insurance compliance.",
+      "keywords": "HR System Egypt, Payroll Software Cairo, Employee Management System, ActiveSoft HR"
     },
     "services": {
       "title": "Enterprise Software Services - Oracle ERP & Custom Development | Active Soft",
@@ -14,11 +64,6 @@
       "title": "Transparent Pricing - Oracle ERP & Software Development Services | Active Soft",
       "description": "Clear, competitive pricing for Oracle ERP implementation, custom software development and business intelligence solutions. Custom quotes for enterprise projects in Egypt and the Middle East.",
       "keywords": "Software Development Pricing Egypt, Oracle ERP Cost Egypt, Custom Application Pricing, IT Services Pricing Cairo, Enterprise Software Quotes"
-    },
-    "industries": {
-      "title": "Industry-Specific ERP Solutions - Manufacturing, Healthcare & Finance | Active Soft",
-      "description": "Tailored Oracle ERP solutions for manufacturing, healthcare and financial services industries in Egypt. Industry-specific modules for enhanced operational efficiency and compliance.",
-      "keywords": "Manufacturing ERP Egypt, Healthcare IT Solutions, Financial Services Software Egypt, Industry ERP Systems, Sector-Specific ERP Egypt"
     },
     "caseStudies": {
       "title": "Success Stories - Oracle ERP & Custom Software Projects | Active Soft",
@@ -62,6 +107,7 @@
     "services": "Our Services",
     "industries": "Industries",
     "pricing": "Pricing",
+    "digitalTransformation": "Digital Transformation",
     "ourWork": "Our Work",
     "caseStudies": "Case Studies",
     "portfolio": "Portfolio",
@@ -70,7 +116,17 @@
     "about": "About Us",
     "brochures": "Brochures",
     "contact": "Contact Us",
-    "concreteManagement": "Ready-Mix Concrete Plant Management"
+    "concreteManagement": "Ready-Mix Concrete",
+    "exportManagement": "Export Management",
+    "erp": "ERP System",
+    "accounting": "Accounting Software",
+    "inventory": "Inventory Management",
+    "hr": "HR & Payroll",
+    "manufacturing": "Manufacturing ERP",
+    "pos": "POS System",
+    "smartScale": "Smart Weighing System",
+    "concrete": "Ready-Mix Concrete Management",
+    "prices": "Pricing Plans"
   },
   "footer": {
     "aboutText": "Active Soft is a leading provider of technology solutions, specializing in Oracle ERP systems and custom software development to empower businesses.",
@@ -88,7 +144,10 @@
       "title": "Empowering Your Business with Innovative Technology",
       "subtitle": "We deliver cutting-edge ERP solutions, managed IT services, and custom software to help you achieve your goals.",
       "ctaPrimary": "Explore Our Services",
-      "ctaSecondary": "Get in Touch"
+      "ctaSecondary": "Get in Touch",
+      "badge": "The Future of Enterprise Software",
+      "titleStart": "Empower Your Enterprise with Intelligent",
+      "titleHighlight": "Oracle ERP Solutions"
     },
     "services": {
       "title": "Our Core Solutions",
@@ -150,7 +209,10 @@
         }
       ]
     },
-    "learnMore": "Learn More"
+    "learnMore": "Learn More",
+    "viewClients": "Meet Our Clients",
+    "viewPortfolio": "View Our Portfolio",
+    "meetOurTeam": "Contact Our Experts"
   },
   "workStages": {
     "title": "Work Stages",
@@ -165,6 +227,935 @@
   "services": {
     "title": "Our Comprehensive Services",
     "subtitle": "Tailored technology solutions to drive your business forward.",
+    "erp": {
+      "title": "Active Soft ERP Solutions",
+      "concept": {
+        "title": "General Concept",
+        "points": [
+          "Integrated accounting and administrative system for managing all commercial and industrial activities",
+          "Flexible and applicable to any type of company (commercial – service – industrial)"
+        ]
+      },
+      "mainFeatures": {
+        "title": "Core Features",
+        "points": [
+          "Management of more than one branch or company within the same system",
+          "Advanced user permissions system",
+          "Full integration between all departments (Sales – Inventory – Accounting)",
+          "Smart alerts for inventory, payments, and receivables",
+          "Real-time reports helping in decision making"
+        ]
+      },
+      "generalAccounts": {
+        "title": "General Accounting",
+        "points": [
+          "Flexible chart of accounts",
+          "Automatic journal entries from all operations",
+          "Posting and renumbering entries",
+          "Full support for cost centers",
+          "Preparation of financial statements (Balance Sheet – Income Statement – Cash Flow)"
+        ]
+      },
+      "salesCustomers": {
+        "title": "Sales and Customers",
+        "points": [
+          "Customer data management",
+          "Sales orders and invoices (Cash / Credit)",
+          "Offers and discounts management",
+          "Tracking collections and customer balances",
+          "Detailed sales reports",
+          "Periodic reports on representative and branch performance",
+          "Sales Representatives & Managers system",
+          "Assigning customers to specific representatives",
+          "Tracking representative performance and collections",
+          "Automated commission calculation"
+        ]
+      },
+      "purchasesSuppliers": {
+        "title": "Purchases and Suppliers",
+        "points": [
+          "Supplier management",
+          "Purchase orders and purchase invoices",
+          "Tracking payments",
+          "Analytical reports for purchases"
+        ]
+      },
+      "inventoryWarehouses": {
+        "title": "Inventory and Warehouses",
+        "points": [
+          "Multiple warehouse management",
+          "Tracking item movement (Inward / Outward / Transfer)",
+          "Inventory count and damage management",
+          "Support for barcode and different units of measurement",
+          "Flexible pricing (Average – FIFO – etc.)"
+        ]
+      },
+      "treasuriesBanks": {
+        "title": "Treasuries and Banks",
+        "points": [
+          "Treasury and bank account management",
+          "Recording receipt and payment vouchers",
+          "Check management (Incoming / Outgoing)",
+          "Bank reconciliations"
+        ]
+      },
+      "costManagement": {
+        "title": "Cost Management",
+        "points": [
+          "Defining cost centers",
+          "Allocation of direct and indirect costs",
+          "Profitability analysis for each department or project"
+        ]
+      },
+      "fixedAssets": {
+        "title": "Fixed Assets",
+        "points": [
+          "Asset registration",
+          "Depreciation calculation",
+          "Tracking asset movement"
+        ]
+      },
+      "hrOptional": {
+        "title": "Human Resources (Optional)",
+        "points": [
+          "Employee data management",
+          "Calculation of salaries and advances",
+          "Vacations and attendance"
+        ]
+      },
+      "reports": {
+        "title": "Reports",
+        "points": [
+          "Comprehensive financial reports",
+          "Sales and purchase reports",
+          "Inventory reports",
+          "Analytical reports for decision making"
+        ]
+      },
+      "additionalFeatures": {
+        "title": "Additional Features",
+        "points": [
+          "Supports taxes (VAT / Compound)",
+          "Customizable according to the nature of the activity",
+          "Works on more than one branch and activity",
+          "Easy and fast to use interface"
+        ]
+      }
+    },
+    "costingModule": {
+      "title": "Costing Module",
+      "subtitle": "Comprehensive production cost management system with actual costing methodology",
+      "methodologyTitle": "Production Cost Calculation Methodology",
+      "methodologyDesc": "The system is based on Actual Costing during the production month.",
+      "methodologyIncludes": "Cost includes:",
+      "methodologyItems": [
+        "Raw materials cost",
+        "Direct industrial expenses",
+        "Indirect industrial expenses (General service centers + Production services)"
+      ],
+      "bomTitle": "Raw Materials and BOM (Bill of Materials)",
+      "bomDesc1": "Material ratios for each product are determined through BOM.",
+      "bomDesc2": "The system automatically issues raw material documents according to BOM ratios.",
+      "bomDesc3": "Variable materials are manually issued based on laboratory instructions.",
+      "bomDesc4": "When entering actual inventory at the end of the month:",
+      "bomItems": [
+        "The system modifies automatic issue documents to accommodate inventory differences (increase/decrease).",
+        "Inventory differences are distributed to production orders."
+      ],
+      "qualityTitle": "Inspection and Quality Cost",
+      "qualityDesc1": "A portion of production is issued for inspection and loaded to Quality Inspection cost.",
+      "qualityDesc2": "Quantity can be returned for inspection or to the warehouse, resulting in automatic reduction of quality expense.",
+      "directExpensesTitle": "Direct Industrial Expenses",
+      "directExpensesDesc": "Recorded in one of two ways:",
+      "directExpensesItems": [
+        "Daily entries loaded to production lines.",
+        "Or raw material issuance from warehouses to production lines."
+      ],
+      "indirectExpensesTitle": "Indirect Industrial Expenses",
+      "indirectExpensesDesc1": "Recorded on General or Production service centers.",
+      "indirectExpensesDesc2": "Monthly distribution ratios are recorded showing the benefit of each production line from each service center.",
+      "indirectExpensesDesc3": "The system issues entries to load expenses from service centers to production lines.",
+      "indirectExpensesDesc4": "If part of the expenses remains unloaded, it appears in the Income Statement.",
+      "costDistributionTitle": "Cost Distribution to Production Orders",
+      "costDistributionDesc1": "Each production order is loaded with its share of expenses based on:",
+      "costDistributionItems": [
+        "Operating time (Original method),",
+        "Or production quantity as an alternative when time is not recorded."
+      ],
+      "costDistributionDesc2": "To improve accuracy:",
+      "costDistributionDesc3": "Production quantity is weighted by product selling price to achieve fair distribution of industrial expenses.",
+      "valuationTitle": "Production Valuation",
+      "valuationDesc1": "Product valuation is done at actual cost monthly.",
+      "valuationDesc2": "Valuation is fixed as an inventory addition document affecting Cost of Goods Sold (COGS).",
+      "multiPeriodTitle": "Production Orders Spanning Multiple Financial Periods",
+      "multiPeriodDesc1": "When a production order spans multiple periods:",
+      "multiPeriodItems": [
+        "Cost is accumulated throughout the entire order duration.",
+        "If previous period costs are different, the system requests reopening periods to modify valuation."
+      ],
+      "stagesTitle": "Production Stages System",
+      "stagesDesc1": "The system supports products requiring multiple production stages.",
+      "stagesDesc2": "Each stage cost is calculated separately.",
+      "stagesDesc3": "A stage's production is revalued as raw material for the next stage.",
+      "stagesDesc4": "The sequence continues until the final stage.",
+      "lotsTitle": "Lots Tracking System",
+      "lotsDesc1": "Definition of different lots for incoming raw materials.",
+      "lotsDesc2": "Raw material issuance to work orders is done according to lots.",
+      "lotsDesc3": "Helps track poor raw materials and load responsibility on the supplier.",
+      "lotsDesc4": "Example: Cement from 3 suppliers → 3 lots for the same item.",
+      "shiftsTitle": "Shifts System",
+      "shiftsDesc1": "Production recording according to shifts.",
+      "shiftsDesc2": "Helps identify human errors when quality issues arise.",
+      "shiftsDesc3": "Multiple shift systems can be used (e.g., Ramadan shifts).",
+      "productionDataTitle": "Special Production and Shipment Data",
+      "productionDataDesc": "In the production document, the following are recorded:",
+      "productionDataItems": [
+        "Truck mixer - Pump - Loader - Driver",
+        "Station and silo",
+        "Departure and return time",
+        "Mixer counter before and after operation to calculate distance traveled"
+      ],
+      "productionEvaluationTitle": "Production Document Evaluation",
+      "productionEvaluationDesc1": "Production document is evaluated at actual cost automatically.",
+      "productionEvaluationDesc2": "Raw materials under processing are reduced by automatic entries.",
+      "productionEvaluationDesc3": "Update is done directly when any cost element changes.",
+      "reportsTitle": "Cost Reports",
+      "reportsDesc": "Key Reports:",
+      "reportsItems": [
+        "Production cost report for any time period showing: Production orders (start - end date), Production quantities, Total cost, Average unit cost, Totals by effort/content/stage/period.",
+        "Detailed production order cost list showing: Production quantity and cost by quality grades, Unit cost price, Raw material cost analysis, Industrial expenses, Expense analysis at any account level, Quantities used, their value, and average consumption per production unit."
+      ],
+      "bomExampleTitle": "BOM Example - Product: 1m³ Concrete Strength 350 Content 450",
+      "bomExampleItems": [
+        "Sand 1 (0.425 m³ / 580 kg)",
+        "Sand 1.5 (0.344 m³ / 470 kg)",
+        "Sand (0.431 m³ / 690 kg)",
+        "Cement (0.450 ton / 450 kg)"
+      ],
+      "salesTrackingTitle": "Sales Orders Tracking",
+      "salesTrackingDesc1": "Sales orders are recorded before production orders.",
+      "salesTrackingDesc2": "Complete order tracking:",
+      "salesTrackingItems": [
+        "Produced quantity",
+        "Delivered quantity by invoices"
+      ],
+      "salesTrackingDesc3": "Display showing each production movement and each sales transaction made on the sales order."
+    },
+    "manufacturingModule": {
+      "title": "Costing & Manufacturing System",
+      "subtitle": "Absolute Control and Utmost Accuracy in Actual Production Management",
+      "desc": "ActiveSoft ERP system relies on a work-order approach supported by stages, lots, and shifts to manage industrial operations, ensuring the calculation of true production costs based on Actual Costing methodology without any arbitrary estimates.",
+      "section1Title": "1. Pillars of Monthly Actual Cost Formation",
+      "section1Desc": "The system calculates the actual cost of products at the end of the production month with 100% accuracy by integrating the following elements:",
+      "section1Items": [
+        {
+          "title": "Material Costs",
+          "desc": "Accurate and direct calculation of all raw materials consumed."
+        },
+        {
+          "title": "Direct Industrial Expenses",
+          "desc": "Charged immediately to production lines, either through direct journal entries or as materials issued from warehouses to the lines."
+        },
+        {
+          "title": "Indirect Industrial Expenses",
+          "desc": "Recorded on cost centers for public or productive services. Distributed (fully or partially) to production lines based on monthly distribution ratios determining each line's benefit from each service center, automatically integrated into final production costs."
+        }
+      ],
+      "section2Title": "2. AI in Material Issuance and Inventory Processing (BOM)",
+      "section2Items": [
+        {
+          "title": "Automated BOM Issuance",
+          "desc": "The Bill of Materials is pre-defined to determine raw material ratios per product unit, automatically issuing materials based on it."
+        },
+        {
+          "title": "Laboratory (Manual) Issuance",
+          "desc": "Allows manual issuance of variable materials based on lab instructions and quality controls."
+        },
+        {
+          "title": "Absorbing Physical Inventory Differences",
+          "desc": "At month-end, upon entering actual inventory balances, the system automatically adjusts automated issuance documents to absorb inventory differences (surplus or shortage) and distributes them fairly across all relevant production orders to load true costs."
+        }
+      ],
+      "section3Title": "3. Tracking Inspection, Quality, and WIP Valuation",
+      "section3Items": [
+        {
+          "title": "Quality Cost Management",
+          "desc": "When part of production is sent for inspection, its cost is charged to inspection and quality expenses. If returned, the system automatically reduces the quality expense."
+        },
+        {
+          "title": "Automated Reduction Entries",
+          "desc": "Upon issuing the production document and evaluating it at actual cost, the system automatically generates an accounting entry reducing the WIP account without human intervention."
+        },
+        {
+          "title": "Multi-period Production Orders",
+          "desc": "Supports orders spanning multiple financial periods. If produced previously at a different cost, the system intelligently requests reopening those periods to update them."
+        }
+      ],
+      "section4Title": "4. Fair Distribution of Expenses (Weighted Time Quantity)",
+      "section4Desc": "The default is distributing industrial expenses based on production order runtime. However, since most factories don't log runtimes accurately, ActiveSoft provides innovative alternatives:",
+      "section4Items": [
+        "Adopting production quantity as an alternative to operating hours.",
+        "To ensure fairness, production quantity is weighted by the product's selling price, ensuring a balanced and logical distribution of industrial expenses."
+      ],
+      "section5Title": "5. 3D Tracking System: Stages, Lots, and Shifts",
+      "section5Items": [
+        {
+          "title": "First: Multi-Stage Costing",
+          "desc": "Supports sequential processing for products passing through multiple stages. The system calculates the first stage cost, then re-evaluates it as input material for the second stage automatically."
+        },
+        {
+          "title": "Second: Lot Tracking & Suppliers",
+          "desc": "Link incoming materials to a specific 'Lot' and issue them by the same lot to work orders. If defects appear in the final product, you can accurately track the lot used to identify the responsible supplier."
+        },
+        {
+          "title": "Third: Shift Management",
+          "desc": "Link production to specific shifts. In case of a manufacturing defect caused by a human factor, you can identify the responsible shift immediately. Provides full flexibility to create custom shift systems."
+        }
+      ],
+      "section6Title": "6. Exclusive Competitive Advantage: Ready-Mix Concrete Logistics",
+      "section6Desc": "The production document in ActiveSoft isn't just for financial calculations; it turns into an integrated logistical tool that accurately records:",
+      "section6Items": [
+        {
+          "title": "Identifying Participating Assets",
+          "desc": "Mixer, pump, loader, plant, and driver."
+        },
+        {
+          "title": "Silo Tracking",
+          "desc": "Identify the exact silo from which cement was issued."
+        },
+        {
+          "title": "Efficiency & Distance Calculation",
+          "desc": "Record departure/return times, and mixer odometer before and after trips to accurately calculate delivery distance and include it in cost analytics."
+        }
+      ]
+    },
+    "inventoryModule": {
+      "title": "Inventory Management",
+      "subtitle": "Comprehensive inventory management system with advanced tracking and valuation capabilities",
+      "structureTitle": "Inventory Structure and Item Coding",
+      "structureDesc": "Inventory classification into:",
+      "structureItems": [
+        "Main commodity groups",
+        "Subgroups",
+        "Multiple items within each group"
+      ],
+      "structureAdditional": "Additional flexible classification based on business activity that does not affect coding",
+      "structureLots": "Dividing a single item into multiple lots",
+      "lotsFunctionsTitle": "Lot Functions",
+      "lotsFunctionsItems": [
+        "Track raw material source and identify supplier in case of defects",
+        "Expiry tracking",
+        "Manage orders that depend on a specific supplier or batch"
+      ],
+      "itemAttributesTitle": "Item Attributes",
+      "itemAttributesDesc": "Complete technical specifications including:",
+      "itemAttributesItems": [
+        "Grade - Color - Size - Dimensions",
+        "Type - Design - Model",
+        "Quantity per package - Item image"
+      ],
+      "itemAttributesReports": "Ability to display inventory reports based on any of these attributes",
+      "warehousesTitle": "Warehouse Management",
+      "warehousesDesc": "Warehouse classification by type (raw materials - finished products - work in progress - spare parts)",
+      "warehousesLocations": "Internal division into storage locations within each warehouse",
+      "reorderTitle": "Reorder Level System",
+      "reorderDesc1": "Apply reorder level for materials",
+      "reorderDesc2": "System automatically identifies items that need to be reordered",
+      "inventorySystemTitle": "Inventory System",
+      "inventorySystemDesc": "Flexible inventory system:",
+      "inventorySystemItems": [
+        "Accurately identify shortages and surpluses",
+        "Inventory differences are processed accounting-wise in documents and warehouses"
+      ],
+      "qualityTestsTitle": "Quality Tests",
+      "qualityTestsDesc1": "Quality testing available for finished products or purchases",
+      "qualityTestsDesc2": "Support for testing at any stage of production",
+      "inventoryDocsTitle": "Inventory Movement Documents (20+ document types)",
+      "inventoryDocsDesc": "Includes:",
+      "inventoryDocsItems": [
+        "Purchase receipts - Production receipts - Additions",
+        "Sales issues - Production issues - Cost center issues",
+        "Purchase returns - Sales returns",
+        "Contract transactions",
+        "Export shipments",
+        "Goods exchange between branches",
+        "Any documents specific to business activity"
+      ],
+      "inventoryDocsAccountingTitle": "All documents automatically generate accounting entries including:",
+      "inventoryDocsAccountingItems": [
+        "Inventory control account",
+        "Suppliers",
+        "Customers",
+        "Taxes",
+        "Cost of goods sold",
+        "Sales revenue",
+        "Work in progress (WIP)",
+        "Inventory adjustment accounts"
+      ],
+      "valuationTitle": "Inventory Valuation",
+      "valuationDesc1": "Valuation using monthly moving average",
+      "valuationDesc2": "Valuation of new purchases directly affects inventory cost",
+      "reportsTitle": "Inventory Reports and Inquiries",
+      "reportsDesc": "Summary and detailed reports including:",
+      "reportsItems": [
+        "Inventory balances",
+        "Item cards (quantities - values - average cost)",
+        "Issue and receipt movements",
+        "Purchases and sales",
+        "Issues to cost centers",
+        "Production order movements",
+        "Production cost (raw materials + absorbed expenses)"
+      ],
+      "productionIssueTitle": "Production Materials Issue Documents",
+      "productionIssueDesc1": "Automatic issuance of raw materials according to product BOM",
+      "productionIssueDesc2": "During actual inventory:",
+      "productionIssueItems": [
+        "Differences are automatically accommodated in all issue documents",
+        "Difference distribution on production orders with precise ratio"
+      ],
+      "basicAccountsTitle": "Basic Accounts Required to Define a Product Group",
+      "basicAccountsDesc": "The following accounts must be defined before using the group:",
+      "basicAccountsItems": [
+        {
+          "account": "Inventory Account",
+          "details": [
+            "Debit side for additions and credit side for issues"
+          ]
+        },
+        {
+          "account": "Adjustment Account",
+          "details": [
+            "Debit for inventory shortages and credit for surpluses"
+          ]
+        },
+        {
+          "account": "Expense Account",
+          "details": [
+            "For issuing items to cost centers"
+          ]
+        },
+        {
+          "account": "WIP Account - Work in Progress",
+          "details": [
+            "For issuing raw materials to production orders"
+          ]
+        },
+        {
+          "account": "Sales Revenue Account"
+        },
+        {
+          "account": "Cost of Goods Sold Account"
+        }
+      ],
+      "basicAccountsNote": "Without these accounts, inventory documents cannot be recorded",
+      "reportExamplesTitle": "Examples of Reports Supported by the System",
+      "reportExamplesInventory": "Inventory Reports:",
+      "reportExamplesInventoryItems": [
+        "Inventory movement (quantities and values)",
+        "Item movement (item card)",
+        "Balances - Receipts - Issues - Purchases - Sales"
+      ],
+      "reportExamplesProduction": "Production Reports:",
+      "reportExamplesProductionItems": [
+        "Production cost report during a period",
+        "Cost of raw materials for orders + absorbed expenses",
+        "Production order movement (quantity - raw material cost - stage cost - unit cost)",
+        "Average unit cost for each order"
+      ],
+      "reportExamplesCostCenters": "Cost Center Issue Reports:",
+      "reportExamplesCostCentersItems": [
+        "Analysis of what was issued from raw materials to each cost center"
+      ]
+    },
+    "pos": {
+      "title": "Point of Sale (POS) System",
+      "desc": "Fast and reliable retail solution integrated with your central ERP for seamless multi-branch management.",
+      "modernizeTitle": "Modernize Your Checkout",
+      "modernizeDesc": "Our POS system is built for speed and accuracy. Whether you have a single store or a nationwide chain, our solution scales with your growth.",
+      "speedLabel": "Checkout Speed",
+      "syncLabel": "Data Sync",
+      "features": {
+        "fastCheckout": "Fast Checkout",
+        "fastCheckoutDesc": "Optimized interface for quick sales processing in busy environments.",
+        "multiBranchSync": "Multi-Branch Sync",
+        "multiBranchSyncDesc": "Real-time synchronization between branches and the central warehouse.",
+        "paymentMethods": "Payment Methods",
+        "paymentMethodsDesc": "Full support for cash, credit, and digital payment systems.",
+        "hardwareSupport": "Hardware Support",
+        "hardwareSupportDesc": "Seamless integration with barcode scanners, receipt printers, and cash drawers.",
+        "userPermissions": "User Permissions",
+        "userPermissionsDesc": "Secure access levels for cashiers, supervisors, and branch managers.",
+        "salesAnalytics": "Sales Analytics",
+        "salesAnalyticsDesc": "Instant reporting on daily sales, profit margins, and inventory movement."
+      }
+    },
+    "itSupportTitle": "Managed IT Support",
+    "itSupportDesc": "Proactive 24/7 monitoring, helpdesk support, and IT infrastructure management to ensure your systems are always secure and efficient.",
+    "customAppsTitle": "Custom App Development",
+    "customAppsDesc": "We design, develop, and deploy bespoke desktop and web applications that solve unique business challenges and integrate seamlessly with your existing systems.",
+    "securityTitle": "Enterprise Security",
+    "securityDesc": "Implementing bank-level security protocols to protect your data, applications, and network from evolving cyber threats.",
+    "hrPayroll": {
+      "title": "HR and Payroll Management System",
+      "desc": "An integrated and comprehensive system with financial accounts for managing employee affairs and payroll calculations.",
+      "featuresTitle": "Key Features:",
+      "features": {
+        "feature1": "Payroll management, deduction processing, and calculation of bonuses and incentives.",
+        "feature2": "Based on variable settings for insurance, vacations, and taxes, adjustable when laws change.",
+        "feature3": "Complies with all payroll calculation rules and penalty regulations.",
+        "feature4": "Recording detailed employee data, updating files, grades, and job titles. The system stores employee photos and all employment documents, with reports on missing documents and tracking document expiration dates to notify employees for renewal.",
+        "feature5": "Records who entered and modified data with a period transfer system to prevent tampering",
+        "feature6": "Ability to reverse period transfers to modify data according to permissions"
+      },
+      "howItChangesWork": {
+        "title": "How will the system change the work mechanism within my facility?",
+        "point1": "First, the system relies on integrated computing solutions that create harmonious performance between all departments and individuals within your facility.",
+        "point2": "Second, it enables you to manage and execute all administrative processes and procedures you desire in a few steps, without the need to edit or review numerous documents as happens in traditional management methods.",
+        "point3": "Third, it allows you to record all data related to employees and their movements through a single database; thus you won't worry about data loss or overlap for any technical or human reason.",
+        "point4": "Fourth, it saves the time you spend conducting your operations; as it performs many tasks simultaneously; it doesn't only care about administrative operations related to your facility's employees, but also organizes and manages financial operations related to employee salaries and all their financial entitlements or deductions. Thus, your facility's employees working in the human resources department can focus on achieving the facility's goals."
+      }
+    },
+    "smartScale": {
+      "title": "Smart Weighing System",
+      "desc": "An advanced electronic/mechanical system that links sensory equipment (such as Load Cells) with integrated software, allowing the weighing process to be performed automatically, and data is recorded directly on the accounting system or ERP without significant human intervention.",
+      "componentsTitle": "Main System Components",
+      "components": {
+        "item1": "High-precision Load Cells that weigh quantities in various types of vessels, vehicles, or boxes.",
+        "item2": "Controller / Indicator that receives weight signals from the cells and converts them into data.",
+        "item3": "Internet or internal network connection to send data to a central platform or accounting software.",
+        "item4": "ERP software or accounting system that receives data directly to update inventory, invoices, and performance analysis.",
+        "item5": "Dashboard screen or mobile app to display weights and real-time reports.",
+        "item6": "Calibration mechanisms to ensure weight accuracy, especially with changes in temperature, humidity, or operating conditions."
+      },
+      "benefitsTitle": "Benefits of Using Smart Scales in Packing / Export Stations",
+      "benefits": {
+        "benefit1": {
+          "title": "Increased Accuracy and Reduced Errors",
+          "desc": "Weight is recorded automatically, meaning no manual entry errors or incorrect recording, thus the calculation of cost and return is more accurate."
+        },
+        "benefit2": {
+          "title": "Reducing Waste and Loss",
+          "desc": "When you can determine the product weight before and after packing, you discover waste and take measures to improve it and save resources."
+        },
+        "benefit3": {
+          "title": "Speeding Up Operations",
+          "desc": "Weight is taken directly, inventory is updated, invoices are issued, and you won't have to stop work for manual recording."
+        },
+        "benefit4": {
+          "title": "Transparency and Credibility Before Customers and Customs",
+          "desc": "Documented weight data helps maintain a consistent record, whether for the buyer, export, or auditing."
+        },
+        "benefit5": {
+          "title": "Improved Decision Making",
+          "desc": "Real-time weight reports and aggregated data help managers see packing performance, monitor performance, and plan for business expansion or improvement."
+        },
+        "benefit6": {
+          "title": "Lower Cost in the Long Run",
+          "desc": "Although the initial investment may be high, the savings in labor, losses, time, and waste make the return on it large over time."
+        }
+      }
+    },
+    "exportModule": {
+      "title": "Export Stations Management System",
+      "subtitle": "An integrated solution for managing export operations efficiently and accurately",
+      "desc": "An advanced system specifically designed to manage all aspects of export operations, from document preparation to customs clearance and shipping management.",
+      "featuresTitle": "System Features",
+      "features": [
+        "Comprehensive management of export operations from start to finish",
+        "Integrated system for managing documents required for export",
+        "Tracking customs clearance operations and automated alerts",
+        "Effective system for shipping and international transport management",
+        "Tracking the quality of products prepared for export",
+        "Detailed reports for export operations and financial analytics"
+      ],
+      "mainFeaturesTitle": "Key Features",
+      "mainFeaturesDesc": "Our system provides an integrated set of tools to manage export operations with high efficiency and absolute accuracy.",
+      "mainFeatures": [
+        {
+          "title": "Document Management",
+          "desc": "Manage and track all documents required for export including commercial invoices, certificates of origin, and inspection certificates."
+        },
+        {
+          "title": "Customs Clearance",
+          "desc": "An integrated system to manage customs clearance procedures with shipment status tracking and alerts for required documents."
+        },
+        {
+          "title": "Shipping Management",
+          "desc": "Track international shipments and manage shipping lines and schedules with integration with global shipping companies."
+        },
+        {
+          "title": "Quality Control",
+          "desc": "An advanced system for monitoring the quality of products prepared for export with the ability to issue quality and inspection certificates."
+        },
+        {
+          "title": "Financial Management",
+          "desc": "Manage all financial aspects of export operations including product pricing, foreign currencies, and collections."
+        },
+        {
+          "title": "Reports and Analytics",
+          "desc": "Detailed reports on export operations with performance analytics and KPIs to make informed decisions."
+        }
+      ],
+      "componentsTitle": "System Components",
+      "components": [
+        {
+          "title": "Customer Management",
+          "desc": "Manage international customer database with transaction history and preferences tracking"
+        },
+        {
+          "title": "Order Management",
+          "desc": "Process export orders from receipt to final delivery to the customer"
+        },
+        {
+          "title": "Warehouse Management",
+          "desc": "Track inventory allocated for export with location and packaging management"
+        },
+        {
+          "title": "Document Management",
+          "desc": "Create and manage all documents required for the export process"
+        },
+        {
+          "title": "Customs Clearance",
+          "desc": "Manage customs clearance procedures with tracking and alerts"
+        },
+        {
+          "title": "Shipping Management",
+          "desc": "Track shipments and manage shipping lines and schedules"
+        },
+        {
+          "title": "Invoicing and Collection",
+          "desc": "Manage international invoices and track collection processes"
+        },
+        {
+          "title": "Reports and Analysis",
+          "desc": "Detailed reports on export operations and financial analytics"
+        },
+        {
+          "title": "Currency Management",
+          "desc": "Multi-currency support with automatic exchange rate updates"
+        }
+      ],
+      "shipmentTrackingTitle": "Shipment Data Tracking",
+      "shipmentTrackingDesc": "The system displays detailed information for each shipment, including:",
+      "shipmentTrackingItems": [
+        "Shipment date and memo numbers",
+        "Container No.",
+        "Lot No. associated with raw materials or products",
+        "Customer name and export destination"
+      ],
+      "financialValuesTitle": "Shipment Financial Values",
+      "financialValuesItems": [
+        "Shipment value in the client's foreign currency",
+        "Equivalent value in Egyptian pounds according to the exchange rate recorded in the system"
+      ],
+      "costBreakdownTitle": "Shipment Cost Breakdown",
+      "costBreakdownDesc": "The system clearly displays the cost breakdown into:",
+      "costBreakdownItems": [
+        "Raw material costs (raw materials - packaging materials - auxiliary materials)",
+        "Station operating costs",
+        "Shipping and customs clearance costs",
+        "Other expenses (if any)"
+      ]
+    },
+    "concreteManagement": {
+      "title": "Concrete Management System",
+      "subtitle": "Complete Solution for Ready-Mix Concrete Plants",
+      "description": "An integrated system to manage all operations of ready-mix concrete plants with high accuracy and complete flexibility.",
+      "featuresTitle": "Key Features",
+      "features": [
+        "Multi-plant operations with ability to transfer vehicles (cost centers) between branches",
+        "Complete tracking of production process from raw materials entry to concrete preparation",
+        "Automatic inventory alerts to prevent production interruption",
+        "Quality control linking final product to raw materials with ability to modify components during production",
+        "Direct sales capability with one-step manufacturing and daily invoice issuance",
+        "Comprehensive reports for production operations matching with laboratory reports"
+      ],
+      "cardsTitle": "System Modules",
+      "cards": [
+        {
+          "title": "Customers and Sales",
+          "description": "Complete management of customer accounts, sales orders, and invoices with detailed reporting",
+          "icon": "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+        },
+        {
+          "title": "Fixed Assets",
+          "description": "Tracking and management of all fixed assets with depreciation calculations",
+          "icon": "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+        },
+        {
+          "title": "Inventory and Warehouses",
+          "description": "Comprehensive inventory management with real-time tracking across multiple warehouses",
+          "icon": "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+        },
+        {
+          "title": "Receipt Papers",
+          "description": "Automatic entry creation from receipt papers between customer and establishment with all accounting movements",
+          "icon": "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+        },
+        {
+          "title": "Payment Papers",
+          "description": "Complete management of payment operations including payment and return with automatic accounting entries",
+          "icon": "M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+        },
+        {
+          "title": "Customer Accounts",
+          "description": "Entry of receipts (cash or check) with detailed reports to track customer accounts",
+          "icon": "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        },
+        {
+          "title": "Supplier Accounts",
+          "description": "Monitoring of supplier accounts and extraction of account statements",
+          "icon": "M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M17 21h4M13 15a4 4 0 100-8 4 4 0 000 8zM21 15h-4"
+        },
+        {
+          "title": "General Accounts",
+          "description": "Chart of accounts with unlimited levels and daily entries automatically created from different system modules",
+          "icon": "M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+        },
+        {
+          "title": "Treasuries and Banks",
+          "description": "Definition of multiple treasuries and documentation of receipt and payment operations",
+          "icon": "M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
+        }
+      ],
+      "financialMovementsTitle": "Financial Movements",
+      "financialMovementsDescription": "Provides you with many vouchers such as receipt vouchers and their details, voucher number, receipt number, entry number and its analytical, as well as payment vouchers and linking them to accounts and due date. The program also allows you to code the movements of collections from customers and payments to suppliers and code the representative responsible for that, whether this movement is cash, check, transfer, network, or direct collector and all required data in the type of movement and automatic collection of due checks.",
+      "transferTitle": "Transfer, Settlements, and Permissions",
+      "transferDescription": "Ease of transfer and settlements, the program enables you to transfer from warehouse to warehouse as well as transfer request, settlement of disbursement and addition and losses, visa settlement, settlement of sales checks, disbursement and addition permissions and their returns.",
+      "productionTitle": "Production Registration",
+      "productionDescription": "Define concrete equations according to different efforts, and upon creating an order, the program automatically performs the production process.",
+      "hrTitle": "Employee Affairs and Salaries",
+      "hrDescription": "Through it, a database for employees is created, different jobs are defined, and employee documents are attached.",
+      "suppliersTitle": "Suppliers and Purchases",
+      "suppliersDescription": "Purchase orders and supply orders are created, purchase invoices are made, and a database for suppliers is created with all their data.",
+      "accountingTitle": "Accounting Procedures",
+      "accountingDescription": "Enables you to post to accounts and sub-centers a group of entries under certain conditions and the ability to renumber daily entries.",
+      "itemsTitle": "Items",
+      "itemsDescription": "The program allows you to manage warehouses, stores, and items through comprehensive data for items: name, code, alternative codes for the item, alternative items, carton barcode, measurement units for items, coding items in groups, and whether the item is normal or a mixture. If it's a mixture, what are the raw materials involved in its composition, and when assembling the mixture, the program automatically deducts from the raw materials according to their percentage in the mixture composition. Ability to add a service to the item and a price for each service (delivery service for example), add images to items and coding in more than one store with different prices, types of item services and the commission on them, item grouping.",
+      "keyFeaturesTitle": "Key Program Features",
+      "keyFeaturesDescription": "Integrated system to manage all operations of ready-mix concrete plants with high accuracy and complete flexibility",
+      "multiPlantTitle": "Multi-Plant Operations",
+      "multiPlantDescription": "Multi-plant management with ability to transfer vehicles (cost centers) between branches",
+      "productionTrackingTitle": "Production Process Tracking",
+      "productionTrackingDescription": "Complete tracking of production process from raw materials entry to concrete preparation",
+      "inventoryAlertsTitle": "Automatic Inventory Alerts",
+      "inventoryAlertsDescription": "Automatic alerts for raw material inventory quantities to prevent production interruption",
+      "qualityControlTitle": "Quality Control",
+      "qualityControlDescription": "Linking final product to raw materials with ability to modify components during production",
+      "directSalesTitle": "Direct Sales",
+      "directSalesDescription": "Direct sales capability with one-step manufacturing and daily invoice issuance",
+      "detailedReportingTitle": "Detailed Reports",
+      "detailedReportingDescription": "Comprehensive reports for production operations matching with laboratory reports",
+      "financialManagementTitle": "Financial and Accounting Management",
+      "financialManagementDescription": "Integrated accounting system covering all financial aspects of managing ready-mix concrete plants",
+      "costCentersTitle": "Cost Centers Cost Calculation",
+      "costCentersDescription": "Calculation of cost and revenue for vehicles, mixers, and pumps (cost centers) to determine detailed profit and loss",
+      "detailedFinancialReportsTitle": "Detailed Financial Reports",
+      "detailedFinancialReportsDescription": "Ability to extract income statement and balance sheet for each separate branch and consolidated company extracts",
+      "compoundTaxInvoicesTitle": "Compound Tax Invoices",
+      "compoundTaxInvoicesDescription": "Ability to create invoices with compound tax at invoice level and item level",
+      "costManagementTitle": "Cost Management",
+      "costManagementDescription": "Creation of unlimited direct and indirect costs, linking them to products, with fair distribution of indirect costs",
+      "financialMovementsTitle2": "Financial Movements",
+      "financialMovementsDescription2": "Receipt and payment vouchers linked to accounts and due dates, coding collections from customers and payments to suppliers movements",
+      "transfersAndSettlementsTitle": "Transfers and Settlements",
+      "transfersAndSettlementsDescription": "Easy transfer and settlements from warehouse to warehouse, disbursement and addition settlements, visa settlements, and sales check settlements",
+      "ctaTitle": "Interested in a ready-mix concrete plant management program?",
+      "ctaDescription": "Contact us today to learn more about how our program can help you manage your plant efficiently and accurately.",
+      "contactUs": "Contact Us"
+    },
+    "exportManagement": {
+      "title": "Export Station Management System",
+      "subtitle": "An integrated solution for managing export operations with efficiency and accuracy",
+      "description": "An advanced system specifically designed to manage all aspects of export operations, from document preparation to customs clearance and shipping management.",
+      "featuresTitle": "System Features",
+      "features": [
+        "Comprehensive management of export operations from start to finish",
+        "Integrated system for managing required export documents",
+        "Tracking customs clearance procedures with automatic alerts",
+        "Efficient system for shipping and international transport management",
+        "Monitoring quality of products prepared for export",
+        "Detailed reports for export operations and financial analysis"
+      ],
+      "keyFeaturesTitle": "Key Features",
+      "keyFeaturesDescription": "Our system provides a comprehensive set of tools for managing export operations with high efficiency and utmost accuracy.",
+      "exportDocumentationTitle": "Document Management",
+      "exportDocumentationDescription": "Managing and tracking all documents required for export including commercial invoices, certificates of origin, and inspection certificates.",
+      "customsClearanceTitle": "Customs Clearance",
+      "customsClearanceDescription": "Integrated system for managing customs clearance procedures with shipment status tracking and alerts for required documents.",
+      "shippingManagementTitle": "Shipping Management",
+      "shippingManagementDescription": "Tracking international shipments and managing shipping lines and schedules with integration with global shipping companies.",
+      "qualityControlTitle": "Quality Control",
+      "qualityControlDescription": "Advanced system for monitoring the quality of products prepared for export with the ability to issue quality and inspection certificates.",
+      "financialManagementTitle": "Financial Management",
+      "financialManagementDescription": "Managing all financial aspects of export operations including product pricing, foreign currencies, and collections.",
+      "reportingTitle": "Reports and Analytics",
+      "reportingDescription": "Detailed reports on export operations with performance analysis and key performance indicators for informed decision-making.",
+      "cardsTitle": "System Components",
+      "cards": [
+        {
+          "title": "Customer Management",
+          "description": "Managing international customer database with tracking of interaction history and preferences",
+          "icon": "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+        },
+        {
+          "title": "Order Management",
+          "description": "Processing export orders from receipt to final delivery to the customer",
+          "icon": "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+        },
+        {
+          "title": "Warehouse Management",
+          "description": "Tracking inventory designated for export with location and packaging management",
+          "icon": "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+        },
+        {
+          "title": "Document Management",
+          "description": "Creating and managing all documents required for the export process",
+          "icon": "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+        },
+        {
+          "title": "Customs Clearance",
+          "description": "Managing customs clearance procedures with tracking and alerts",
+          "icon": "M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+        },
+        {
+          "title": "Shipping Management",
+          "description": "Tracking shipments and managing shipping lines and schedules",
+          "icon": "M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+        },
+        {
+          "title": "Invoicing and Collections",
+          "description": "Managing international invoices and tracking collection processes",
+          "icon": "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        },
+        {
+          "title": "Reporting and Analytics",
+          "description": "Detailed reports on export operations and financial analysis",
+          "icon": "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+        },
+        {
+          "title": "Currency Management",
+          "description": "Multi-currency support with automatic exchange rate updates",
+          "icon": "M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
+        }
+      ],
+      "ctaTitle": "Interested in an export station management system?",
+      "ctaDescription": "Contact us today to learn more about how our system can help you manage your export operations efficiently and accurately.",
+      "contactUs": "Contact Us"
+    },
+    "accountingModule": {
+      "title": "Financial & Accounting System",
+      "subtitle": "Accurate and comprehensive financial management with full control over accounts and assets",
+      "desc": "The ActiveSoft ERP accounting system provides a wide range of advanced tools to manage general accounts, treasury, banks, checks, and fixed assets, with detailed financial reports to support decision making.",
+      "generalAccounts": {
+        "title": "First: General Accounts",
+        "features": [
+          {
+            "title": "Chart of Accounts",
+            "desc": "Consists of four levels, allowing accurate identification of the balance sheet item for each account."
+          },
+          {
+            "title": "Multi-Currency",
+            "desc": "Ability to set the exchange rate for any period based on transaction date, with the option to adjust the rate to the actual rate for each transaction individually."
+          },
+          {
+            "title": "Journal Entries",
+            "desc": "Record unlimited journal entries with independent notes for each item. Supports different currencies and splitting entries."
+          },
+          {
+            "title": "Consolidated Accounts",
+            "desc": "Merge any number of chart of accounts items to track a combined matter in a unified statement."
+          },
+          {
+            "title": "Withholding & Addition Taxes",
+            "desc": "Automatically direct the tax entry when added to purchase, sales, or return transactions."
+          },
+          {
+            "title": "Auto-Closing",
+            "desc": "Enable automatic closing entry for expenses and revenues."
+          },
+          {
+            "title": "Financial Years",
+            "desc": "Work across multiple years without programming intervention, with automatic balance carry-forward."
+          },
+          {
+            "title": "Sales Plan",
+            "desc": "Link the sales plan with collections for marketing reps to extract achievement rates and measure efficiency."
+          },
+          {
+            "title": "Account Suspension & Restriction",
+            "desc": "Suspend work on any account or restrict its use in journal entries to limit impact to actual movements only."
+          },
+          {
+            "title": "Unified Customer/Supplier Codes",
+            "desc": "Allow defining a customer with the same code as their supplier account, and vice versa."
+          },
+          {
+            "title": "Data Confidentiality",
+            "desc": "Allocate specific accounts to appear in reports only for specific employees to ensure data confidentiality."
+          }
+        ],
+        "reportsTitle": "Key Account Reports",
+        "reports": [
+          "Balance Sheet and Income Statement for any period",
+          "Multiple trial balance and account statement reports",
+          "Supplier or Customer balances according to aging",
+          "Expense comparisons between financial periods",
+          "Sales plan and collection tracking reports"
+        ]
+      },
+      "treasury": {
+        "title": "Second: Treasury",
+        "features": [
+          "Add an infinite number of treasuries.",
+          "Link each treasury to an employee and a chart of accounts item (creditor for disbursement, debtor for collection).",
+          "Record collection and disbursement documents with independent notes for each item."
+        ]
+      },
+      "banksAndChecks": {
+        "title": "Third: Banks & Checks",
+        "features": [
+          {
+            "title": "Bank Definition",
+            "desc": "Define an unlimited number of banks to open accounts in."
+          },
+          {
+            "title": "Accounting Link",
+            "desc": "Define a movement account, a notes receivable account, and a notes payable account for each bank account."
+          },
+          {
+            "title": "Checkbooks",
+            "desc": "Record checkbook data for each account by specifying the start and end of the serial number."
+          }
+        ],
+        "movementsTitle": "Supported Check & Bank Movements",
+        "movements": [
+          "Issued checks: Issuance, payment, return, and cancellation.",
+          "Received checks: Receipt, deposit, collection, return, and return to debtor.",
+          "Other bank movements: Incoming/outgoing transfers, debit/credit advices."
+        ],
+        "reportsTitle": "Available Check Reports",
+        "reports": [
+          "Notes receivable check reports (under collection, collected, returned).",
+          "Notes payable check reports (unpaid, returned)."
+        ]
+      },
+      "fixedAssets": {
+        "title": "Fourth: Fixed Assets",
+        "features": [
+          "Record asset data within specific groups with an annual depreciation rate.",
+          "List assets by their account code within each group.",
+          "Automatically issue a depreciation entry monthly with a single click.",
+          "Specify asset, expense, and accumulated depreciation accounts in the chart.",
+          "Record cost centers, start of operation date, and scrap value."
+        ],
+        "reportsTitle": "Asset Reports",
+        "reports": [
+          "Depreciation entry report by asset groups or cost centers.",
+          "Asset value report up to a specific date."
+        ]
+      }
+    },
     "smartScaleTitle": "Smart Scale System",
     "smartScaleDesc": "Intelligent weighing system that automates weight recording and integrates directly with your inventory and financial systems.",
     "smartScaleFeatures": {
@@ -175,19 +1166,7 @@
       "feature5": "Instant updating of inventory and financial accounts with each weighing operation",
       "feature6": "Direct integration between electronic scales and packaging stations within system"
     },
-    "hrPayroll": {
-      "title": "HR and Payroll Management System",
-      "desc": "Complete and integrated system with financial accounts for managing employee affairs and payroll calculations.",
-      "features": {
-        "feature1": "Based on variable settings for insurance, vacations, and taxes that can be modified when laws change",
-        "feature2": "Respects all payroll calculation rules and penalty provisions, carrying over excess of five days to subsequent months",
-        "feature3": "Maintains employee photos and all employment documents with reports on missing documents",
-        "feature4": "Tracks document expiration dates to notify employees of renewals",
-        "feature5": "Records who entered and modified data with a period transfer system to prevent tampering",
-        "feature6": "Ability to reverse period transfers to modify data according to permissions"
-      }
-    },
-    "erpTitle": "Oracle ERP Solutions",
+    "erpTitle": "Active Soft ERP Solutions",
     "erpDesc": "Full-cycle Oracle ERP services including implementation, customization, migration, and support to optimize your business processes.",
     "erpFeaturesTitle": "ERP System Features",
     "erpFeaturesDesc": "Our ERP system is designed to provide comprehensive solutions for businesses of all sizes. Here are some of the key features it offers:",
@@ -217,15 +1196,24 @@
       "inventory": "Inventory Management",
       "costing": "Costing System",
       "hr": "HR & Payroll",
-      "planning": "Planning",
+      "planning": "Production Planning",
       "purchasesSales": "Purchases & Sales"
     },
-    "itSupportTitle": "Managed IT Support",
-    "itSupportDesc": "Proactive 24/7 monitoring, helpdesk support, and IT infrastructure management to ensure your systems are always secure and efficient.",
-    "customAppsTitle": "Custom App Development",
-    "customAppsDesc": "We design, develop, and deploy bespoke desktop and web applications that solve unique business challenges and integrate seamlessly with your existing systems.",
-    "securityTitle": "Enterprise Security",
-    "securityDesc": "Implementing bank-level security protocols to protect your data, applications, and network from evolving cyber threats."
+    "relatedTitle": "Explore Other Solutions",
+    "relatedSubtitle": "Discover more specialized modules designed to optimize every aspect of your enterprise.",
+    "viewSolution": "Explore Solution",
+    "ctaTitleGlobal": "Ready to Modernize Your Operations?",
+    "ctaDescGlobal": "Get in touch with our ERP experts today for a customized consultation and live demo tailored to your industry.",
+    "learnMore": "Learn More",
+    "categories": {
+      "all": "All Services",
+      "erp": "ERP Solutions",
+      "production": "Production",
+      "inventory": "Inventory & Warehouses",
+      "logistics": "Logistics & Exports",
+      "sales": "Sales Management",
+      "hr": "HR & Payroll"
+    }
   },
   "prices": {
     "title": "Transparent Pricing for Your Success",
@@ -237,8 +1225,8 @@
     "services": [
       {
         "id": "14b04083-7fc7-4ed8-af24-0da5fa0ded85",
-        "title": "Oracle ERP Implementation",
-        "description": "Complete Oracle ERP Cloud implementation services including system analysis, data migration, custom module development, and user training for seamless digital transformation.",
+        "title": "ERP FOR INDUSTRIES",
+        "description": "Complete ERP implementation services including system analysis, data migration, custom module development, and user training for seamless digital transformation.",
         "features": [
           "Cloud infrastructure setup and optimization",
           "Legacy system data migration with zero data loss",
@@ -254,7 +1242,7 @@
       },
       {
         "id": "183a9264-d7d2-4d9e-a768-5d414736383d",
-        "title": "Enterprise Resource Planning (ERP) Optimization",
+        "title": "Enterprise ACCOUNTING SYSTEM  ",
         "description": "Comprehensive ERP system optimization services to enhance performance, streamline processes, and maximize ROI from existing Oracle ERP investments.",
         "features": [
           "Performance analysis and bottleneck identification",
@@ -265,16 +1253,16 @@
         ],
         "pricing": {
           "currency": "EGP",
-          "startingAt": 150000,
+          "startingAt": 100000,
           "billingPeriod": "project"
         }
       },
       {
         "id": "59ab53cd-0dc2-434a-a17c-1305a8ecf5f1",
-        "title": "Agricultural Stations and Export Operations Management",
+        "title": "Export Management System",
         "description": "Accounting software that handles all calculations for suppliers, customers, warehouses, treasury, and banks. It aggregates supplier data, accounts, invoices, tracks inventory and items, manages export operations to different countries, and handles operational items with expense allocation to each operation.",
         "features": [
-          "Integrated management of supplier and customer accounts",
+          "Integrated management of supplier and customer accounts with treasury and banks",
           "Inventory tracking and continuous item counting",
           "Export operations management to different countries",
           "Processing of operational items and expense allocation",
@@ -356,7 +1344,25 @@
         }
       },
       {
-        "id": "e8f9a2b1-c3d4-5678-9abc-def012345678",
+        "id": "hr-payroll-system",
+        "title": "HR and Payroll Management System",
+        "description": "Complete and integrated system with financial accounts for managing employee affairs and payroll calculations.",
+        "features": [
+          "Based on variable settings for insurance, vacations, and taxes that can be modified when laws change",
+          "Respects all payroll calculation rules and penalty provisions, carrying over excess of five days to subsequent months",
+          "Maintains employee photos and all employment documents with reports on missing documents",
+          "Tracks document expiration dates to notify employees of renewals",
+          "Records who entered and modified data with a period transfer system to prevent tampering",
+          "Ability to reverse period transfers to modify data according to permissions"
+        ],
+        "pricing": {
+          "currency": "EGP",
+          "startingAt": 40000,
+          "billingPeriod": "project"
+        }
+      },
+      {
+        "id": "smart-scale-system",
         "title": "Smart Scale System",
         "description": "Intelligent weighing system that automates weight recording and integrates directly with your inventory and financial systems.",
         "features": [
@@ -380,6 +1386,51 @@
     "subtitle": "We understand the unique challenges of your sector and deliver targeted solutions.",
     "challengesLabel": "Challenges",
     "solutionLabel": "Our Solution",
+    "agriExport": {
+      "name": "Agricultural Crops Packing & Export Stations",
+      "challenges": "Tracking seasonal yields, managing multiple supplier accounts, and export regulation compliance.",
+      "solution": "Specialized modules for agricultural management, automated supplier payments, and integrated export documentation tracking."
+    },
+    "concreteCement": {
+      "name": "Concrete & Cement Brick Factories",
+      "challenges": "Precise material mixing (BOM), high-volume production tracking, and heavy machinery maintenance.",
+      "solution": "Accurate BOM management for concrete grades, real-time production monitoring, and automated maintenance scheduling."
+    },
+    "metalForming": {
+      "name": "Metal Forming Factories",
+      "challenges": "Material waste management, complex fabrication stages, and job order tracking.",
+      "solution": "Advanced production stage tracking, waste reduction analytics, and comprehensive job-order costing."
+    },
+    "plasticPipes": {
+      "name": "Plastic Products & PVC Pipes Factories",
+      "challenges": "Batch consistency, raw material price volatility, and recycling process integration.",
+      "solution": "Automated batch quality control, real-time raw material costing, and integrated scrap management."
+    },
+    "fertilizersPesticides": {
+      "name": "Fertilizers & Pesticides Factories",
+      "challenges": "Strict chemical composition standards, safety regulation compliance, and specialized storage needs.",
+      "solution": "Chemical formula management, automated safety documentation, and specialized inventory conditions tracking."
+    },
+    "appliancesAssembly": {
+      "name": "Electrical Appliances & Stoves Assembly Factories",
+      "challenges": "Complex assembly lines, large component inventory, and warranty management.",
+      "solution": "Assembly line optimization, just-in-time inventory control, and integrated warranty/service tracking."
+    },
+    "foodProduction": {
+      "name": "Food Production (e.g., Biscuits)",
+      "challenges": "Recipe consistency, expiration date tracking (Lots), and strict hygiene standards.",
+      "solution": "Automated recipe scaling, Lot/Expiry tracking, and hygiene compliance auditing tools."
+    },
+    "internationalSchools": {
+      "name": "International Schools",
+      "challenges": "Student registration, fee management, and teacher/staff scheduling.",
+      "solution": "Comprehensive student information systems, automated billing, and advanced academic scheduling."
+    },
+    "commercialAgencies": {
+      "name": "Commercial Companies & Agencies",
+      "challenges": "Sales agent performance, commission tracking, and client relationship management.",
+      "solution": "Advanced sales module with agent tracking, automated commission calculations, and robust CRM features."
+    },
     "manufacturing": {
       "name": "Manufacturing",
       "challenges": "Complex supply chains, production scheduling, quality control, and inventory management.",
@@ -401,15 +1452,20 @@
     "subtitle": "See how we've helped businesses like yours achieve their goals.",
     "filters": {
       "all": "All Industries",
+      "agriExport": "Agri Stations & Export",
+      "concreteCement": "Concrete & Cement",
+      "metalForming": "Metal Forming",
+      "plasticPipes": "Plastic & PVC Pipes",
+      "foodProduction": "Food Industries",
       "manufacturing": "Manufacturing",
       "healthcare": "Agricultural Stations & Export Operations",
       "financial": "Financial Services"
     },
     "studies": [
       {
-        "industryKey": "manufacturing",
-        "industry": "Manufacturing",
-        "title": "Streamlining Production for a Major Manufacturer",
+        "industryKey": "concreteCement",
+        "industry": "Concrete & Cement",
+        "title": "Streamlining Production for a Major Concrete Plant",
         "challenge": "Our client faced significant production delays and inventory inaccuracies due to a disconnected legacy system.",
         "solution": "We implemented a tailored Oracle ERP solution that integrated their entire production workflow from raw materials to finished goods.",
         "result": "Achieved a 30% reduction in production time and a 99.8% inventory accuracy rate within the first year.",
@@ -427,8 +1483,40 @@
     ]
   },
   "portfolio": {
-    "title": "ERP System Features",
-    "subtitle": "Explore the comprehensive features of our Oracle ERP system designed to streamline your business operations",
+    "title": "Our Application Portfolio",
+    "subtitle": "A glimpse into the custom solutions we've crafted for our clients.",
+    "items": [
+      {
+        "title": "Custom CRM for Sales Teams",
+        "description": "A powerful desktop CRM application designed for high-performance sales tracking and client management.",
+        "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      },
+      {
+        "title": "Inventory Management System",
+        "description": "An intuitive inventory system for a retail chain, providing real-time stock levels and automated reordering.",
+        "image": "https://picsum.photos/seed/inventory/800/600"
+      },
+      {
+        "title": "Agricultural Stations & Export Operations System",
+        "description": "A comprehensive system for managing agricultural stations and export operations, integrating supplier data, inventory tracking, cost allocation, and detailed shipment documentation.",
+        "image": "https://images.unsplash.com/photo-1651525669944-00de65d3b8a5?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "title": "Financial Services Platform",
+        "description": "A secure financial services platform with real-time transaction processing, risk management, and regulatory compliance features.",
+        "image": "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      },
+      {
+        "title": "E-Commerce Solution",
+        "description": "A complete e-commerce platform with inventory management, payment processing, and customer analytics.",
+        "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      },
+      {
+        "title": "Manufacturing ERP System",
+        "description": "An end-to-end manufacturing ERP solution with production planning, quality control, and supply chain management.",
+        "image": "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      }
+    ],
     "features": {
       "general": {
         "title": "General Features",
@@ -520,8 +1608,8 @@
     }
   },
   "clients": {
-    "title": "Our Valued Clients",
-    "subtitle": "We are proud to have partnered with a diverse range of leading companies and organizations.",
+    "title": "Your Love Soared Like Stars in the Sky of Our Hearts",
+    "subtitle": "Company Clients",
     "clientList": [
       {
         "name": "Delta Company for Meat Production (Almasia - Global)",
@@ -615,7 +1703,10 @@
         "name": " Tiba Plast",
         "logo": "https://i.ibb.co/jvmPqcVp/Tiba-Plast.jpg"
       }
-    ]
+    ],
+    "sliderTitle": "Trusted by Leading Enterprises",
+    "sliderSubtitle": "We are proud to serve major commercial, industrial, and logistics companies in Egypt and the region.",
+    "viewAll": "View All Clients"
   },
   "about": {
     "title": "Our Story",
@@ -632,7 +1723,7 @@
       },
       {
         "name": "Abdu-Allah Yousrie",
-        "role": "Oracle Certified Professional",
+        "role": "Senior Software Architect",
         "certification": "Oracle Certified Professional",
         "image": "https://images.unsplash.com/photo-1676195470090-7c90bf539b3b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
         "linkedin": "#"
@@ -722,7 +1813,11 @@
           "a": "While our Oracle ERP solutions are versatile, we have deep expertise in Manufacturing, Agricultural Export, Ready-Mix Concrete, and Financial Services, with tailored modules for each sector."
         }
       ]
-    }
+    },
+    "successMessage": "Your message has been sent successfully! We will contact you soon.",
+    "errorMessage": "An error occurred while sending your message. Please try again.",
+    "submittingButton": "Sending...",
+    "button": "Contact Sales"
   },
   "exportModule": {
     "title": "Export Management System",
@@ -1018,5 +2113,18 @@
     "ctaTitle": "Interested in a ready-mix concrete plant management program?",
     "ctaDescription": "Contact us today to learn more about how our program can help you manage your plant efficiently and accurately.",
     "contactUs": "Contact Us"
+  },
+  "name": "Full Name",
+  "email": "Email Address",
+  "subject": "Subject",
+  "message": "Your Message",
+  "contactRequests": {
+    "title": "Contact Requests & Leads Dashboard",
+    "loading": "Loading contact requests...",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "date": "Submission Date"
   }
 }

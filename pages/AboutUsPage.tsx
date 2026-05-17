@@ -83,7 +83,7 @@ const AboutUsPage: React.FC = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {teamMembers.map((member, index) => (
-                <div key={member.name} className="text-center glass-panel p-6 rounded-xl animate-on-scroll flex flex-col transition-all duration-300 hover:-translate-y-2 hover:border-primary" style={{ transitionDelay: `${100 * (index + 2)}ms` }}>
+                <div key={index} className="text-center glass-panel p-6 rounded-xl animate-on-scroll flex flex-col transition-all duration-300 hover:-translate-y-2 hover:border-primary" style={{ transitionDelay: `${100 * (index + 2)}ms` }}>
                   <div className="flex-grow">
                     <img src={member.image} alt={member.name} className="w-32 h-32 rounded-full mx-auto mb-4 object-cover ring-4 ring-primary" />
                     <h3 className="text-xl font-bold text-white font-display">{member.name}</h3>

@@ -1,0 +1,293 @@
+=== REACT TRANSLATION AUDIT ===
+
+1. MISSING KEYS IN ARABIC LOCALES (65 keys found):
+- File: pages\ConcreteManagementPage.tsx
+  Key: "services.concreteManagement.${feat.key}Title"
+  Default value: ""
+
+- File: pages\ConcreteManagementPage.tsx
+  Key: "services.concreteManagement.${feat.key}Description"
+  Default value: ""
+
+- File: pages\ContactPage.tsx
+  Key: "contact.successMessage"
+  Default value: "Thank you for your message! We will get back to you shortly."
+
+- File: pages\ContactPage.tsx
+  Key: "contact.errorMessage"
+  Default value: "Something went wrong. Please try again."
+
+- File: pages\ContactPage.tsx
+  Key: "contact.submittingButton"
+  Default value: "Sending..."
+
+- File: pages\ContactRequests.tsx
+  Key: "contactRequests.title"
+  Default value: "Contact Requests"
+
+- File: pages\ContactRequests.tsx
+  Key: "contactRequests.loading"
+  Default value: "Loading..."
+
+- File: pages\ContactRequests.tsx
+  Key: "contactRequests.name"
+  Default value: "Name"
+
+- File: pages\ContactRequests.tsx
+  Key: "contactRequests.email"
+  Default value: "Email"
+
+- File: pages\ContactRequests.tsx
+  Key: "contactRequests.subject"
+  Default value: "Subject"
+
+- File: pages\ContactRequests.tsx
+  Key: "contactRequests.message"
+  Default value: "Message"
+
+- File: pages\ContactRequests.tsx
+  Key: "contactRequests.date"
+  Default value: "Date"
+
+- File: pages\ERPPage.tsx
+  Key: "services.erp.${category}.title"
+  Default value: ""
+
+- File: pages\ERPPage.tsx
+  Key: "services.erp.${category}.points"
+  Default value: ""
+
+- File: pages\ERPPage.tsx
+  Key: "contact.button"
+  Default value: "Get Started"
+
+- File: pages\IndustriesPage.tsx
+  Key: "industries.${industry.key}.name"
+  Default value: ""
+
+- File: pages\IndustriesPage.tsx
+  Key: "industries.${industry.key}.name"
+  Default value: ""
+
+- File: pages\IndustriesPage.tsx
+  Key: "industries.${industry.key}.challenges"
+  Default value: ""
+
+- File: pages\IndustriesPage.tsx
+  Key: "industries.${industry.key}.solution"
+  Default value: ""
+
+- File: pages\ServicesPage.tsx
+  Key: "services.erp.salesCustomers.points.6"
+  Default value: "Sales Representatives & Managers system"
+
+- File: pages\ServicesPage.tsx
+  Key: "services.erp.salesCustomers.points.7"
+  Default value: "Assigning customers to specific representatives"
+
+- File: pages\ServicesPage.tsx
+  Key: "services.erp.salesCustomers.points.8"
+  Default value: "Tracking representative performance and collections"
+
+- File: pages\ServicesPage.tsx
+  Key: "services.erp.salesCustomers.points.9"
+  Default value: "Automated commission calculation"
+
+- File: pages\ServicesPage.tsx
+  Key: "services.categories.all"
+  Default value: "All Services"
+
+- File: pages\ServicesPage.tsx
+  Key: "services.categories.erp"
+  Default value: "ERP Solutions"
+
+- File: pages\ServicesPage.tsx
+  Key: "services.categories.production"
+  Default value: "Production"
+
+- File: pages\ServicesPage.tsx
+  Key: "services.categories.inventory"
+  Default value: "Inventory"
+
+- File: pages\ServicesPage.tsx
+  Key: "services.categories.logistics"
+  Default value: "Logistics"
+
+- File: pages\ServicesPage.tsx
+  Key: "services.categories.hr"
+  Default value: "HR & Payroll"
+
+- File: pages\ServicesPage.tsx
+  Key: "services.erp.${category}.title"
+  Default value: ""
+
+- File: pages\ServicesPage.tsx
+  Key: "services.erp.${category}.points"
+  Default value: ""
+
+- File: pages\ServicesPage.tsx
+  Key: "services.learnMore"
+  Default value: "Learn More"
+
+- File: pages\ServicesPage.tsx
+  Key: "services.exportModule.shipmentTrackingTitle"
+  Default value: "Shipment Data Tracking"
+
+- File: pages\ServicesPage.tsx
+  Key: "services.exportModule.shipmentTrackingDesc"
+  Default value: "The system displays detailed information for each shipment, including:"
+
+- File: pages\ServicesPage.tsx
+  Key: "services.exportModule.shipmentTrackingItems"
+  Default value: ""
+
+- File: pages\ServicesPage.tsx
+  Key: "services.exportModule.financialValuesTitle"
+  Default value: "Shipment Financial Values"
+
+- File: pages\ServicesPage.tsx
+  Key: "services.exportModule.financialValuesItems"
+  Default value: ""
+
+- File: pages\ServicesPage.tsx
+  Key: "services.exportModule.costBreakdownTitle"
+  Default value: "Shipment Cost Breakdown"
+
+- File: pages\ServicesPage.tsx
+  Key: "services.exportModule.costBreakdownDesc"
+  Default value: "The system clearly displays the cost breakdown into:"
+
+- File: pages\ServicesPage.tsx
+  Key: "services.exportModule.costBreakdownItems"
+  Default value: ""
+
+- File: pages\ServicesPage.tsx
+  Key: "services.smartScale.components.item${num}"
+  Default value: ""
+
+- File: pages\ServicesPage.tsx
+  Key: "services.smartScale.benefits.benefit${num}.title"
+  Default value: ""
+
+- File: pages\ServicesPage.tsx
+  Key: "services.smartScale.benefits.benefit${num}.desc"
+  Default value: ""
+
+- File: pages\ServicesPage.tsx
+  Key: "services.hrPayroll.features.feature${num}"
+  Default value: ""
+
+- File: pages\ServicesPage.tsx
+  Key: "services.hrPayroll.howItChangesWork.point${num}"
+  Default value: ""
+
+- File: components\ClientLogoSlider.tsx
+  Key: "clients.sliderTitle"
+  Default value: "Trusted by Industry Leaders"
+
+- File: components\ClientLogoSlider.tsx
+  Key: "clients.sliderSubtitle"
+  Default value: "Partnering with leading companies to deliver exceptional results"
+
+- File: components\ClientLogoSlider.tsx
+  Key: "clients.viewAll"
+  Default value: "View All Our Clients"
+
+- File: components\home\HeroSection.tsx
+  Key: "home.hero.badge"
+  Default value: "Next Gen ERP Solutions"
+
+- File: components\home\HeroSection.tsx
+  Key: "home.hero.titleStart"
+  Default value: "Empowering Your Business with"
+
+- File: components\home\HeroSection.tsx
+  Key: "home.hero.titleHighlight"
+  Default value: "Innovative Technology"
+
+- File: components\home\ImpactSection.tsx
+  Key: "home.viewClients"
+  Default value: "View Our Clients"
+
+- File: components\home\IndustriesSection.tsx
+  Key: "industries.${industry.key}.name"
+  Default value: ""
+
+- File: components\home\IndustriesSection.tsx
+  Key: "industries.${industry.key}.name"
+  Default value: ""
+
+- File: components\home\IndustriesSection.tsx
+  Key: "industries.${industry.key}.solution"
+  Default value: ""
+
+- File: components\home\ServicesSection.tsx
+  Key: "home.viewPortfolio"
+  Default value: "View Our Work"
+
+- File: components\home\WorkStagesSection.tsx
+  Key: "home.meetOurTeam"
+  Default value: "Meet Our Team"
+
+- File: components\home\WorkStagesSection.tsx
+  Key: "workStages.stages.${index}"
+  Default value: "Work stage ${index + 1}"
+
+- File: components\ServiceDetailLayout.tsx
+  Key: "nav.concrete"
+  Default value: "Concrete Management"
+
+- File: components\ServiceDetailLayout.tsx
+  Key: "services.relatedTitle"
+  Default value: "Explore Other Solutions"
+
+- File: components\ServiceDetailLayout.tsx
+  Key: "services.relatedSubtitle"
+  Default value: "Our integrated ecosystem works better together. Discover how our other solutions can transform your business."
+
+- File: components\ServiceDetailLayout.tsx
+  Key: "services.viewSolution"
+  Default value: "View Solution"
+
+- File: components\ServiceDetailLayout.tsx
+  Key: "services.ctaTitleGlobal"
+  Default value: "Ready to Scale Your Business?"
+
+- File: components\ServiceDetailLayout.tsx
+  Key: "services.ctaDescGlobal"
+  Default value: "Join hundreds of companies that trust ActiveSoft for their digital transformation journey."
+
+- File: components\ServiceDetailLayout.tsx
+  Key: "nav.prices"
+  Default value: "View Pricing"
+
+
+2. POTENTIAL HARDCODED ENGLISH TEXT IN JSX:
+- File: pages\CaseStudiesPage.tsx
+  * "The Challenge:"
+  * "The Solution:"
+  * "The Result:"
+
+- File: pages\ManufacturingPage.tsx
+  * "Exclusive Feature"
+
+- File: pages\ServicesPage.tsx
+  * "Key Features"
+
+- File: components\Footer.tsx
+  * "Active"
+  * "Soft"
+
+- File: components\Header.tsx
+  * "Active"
+  * "Soft"
+  * "link.subLinks ? ("
+  * "Open main menu"
+  * "link.subLinks ? ("
+
+- File: components\home\HeroSection.tsx
+  * "Years Experience"
+  * "Projects Done"
+  * "Client Satisfaction"
+  * "Support"
+
