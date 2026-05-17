@@ -1474,34 +1474,34 @@
     },
     "items": [
       {
-        "title": "Custom CRM for Sales Teams",
-        "description": "A powerful desktop CRM application designed for high-performance sales tracking and client management.",
-        "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        "title": "Ready-Mix Concrete Management System (Al-Orouba Concrete)",
+        "description": "A fully integrated ERP solution for ready-mix concrete batching plants. It automates concrete mixers and pumps dispatching, tracks real-time raw material consumption (cement, aggregates, water), and bridges directly with scales and production machinery to ensure standard compliance and operation efficiency.",
+        "image": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop"
       },
       {
-        "title": "Inventory Management System",
-        "description": "An intuitive inventory system for a retail chain, providing real-time stock levels and automated reordering.",
-        "image": "https://picsum.photos/seed/inventory/800/600"
+        "title": "Industrial Costing & Production for Meat Processing (Delta Meat Group)",
+        "description": "A specialized ERP and cost accounting system for industrial slaughterhouses and food processing. It tracks operations from live animals receiving, through slaughtering, cutting, and grading, to the final packaged products, automatically distributing service costs and computing precise waste and yield metrics.",
+        "image": "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop"
       },
       {
-        "title": "Agricultural Stations & Export Operations System",
-        "description": "A comprehensive system for managing agricultural stations and export operations, integrating supplier data, inventory tracking, cost allocation, and detailed shipment documentation.",
-        "image": "https://images.unsplash.com/photo-1651525669944-00de65d3b8a5?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "title": "Textile & Carpet Manufacturing ERP System (Al-Orawaa Carpet Group)",
+        "description": "A state-of-the-art ERP system for carpet and textile production lines. It tracks multi-stage manufacturing including dyeing, weaving, and finishing, manages complex yarn inventory across weights and colors, and aligns machines capacity with production planning to ensure on-time delivery of major contracts.",
+        "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop"
       },
       {
-        "title": "Financial Services Platform",
-        "description": "A secure financial services platform with real-time transaction processing, risk management, and regulatory compliance features.",
-        "image": "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        "title": "Agricultural Packing House & Export Management System (VEGEX & Partners)",
+        "description": "An end-to-end intelligent system designed for fresh produce grading and packing stations. It integrates farm suppliers with receiving, sorting, and packing processes, manages container tracking, customs clearing costs, export documentation, and foreign currency invoicing for global clients.",
+        "image": "https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?q=80&w=800&auto=format&fit=crop"
       },
       {
-        "title": "E-Commerce Solution",
-        "description": "A complete e-commerce platform with inventory management, payment processing, and customer analytics.",
-        "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        "title": "Multi-Warehouse & Chemical Formulation Management (Bodi Masr Paints BMC)",
+        "description": "An enterprise solution built for chemical production and logistics in paint manufacturing. It manages strict chemical formulations (Bill of Materials), tracks sensitive raw materials across multiple warehouses, schedules wholesale orders, and monitors customer credit limits and outstanding balances.",
+        "image": "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=800&auto=format&fit=crop"
       },
       {
-        "title": "Manufacturing ERP System",
-        "description": "An end-to-end manufacturing ERP solution with production planning, quality control, and supply chain management.",
-        "image": "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        "title": "Educational Financials & HR Payroll ERP (New Generation Schools NGI)",
+        "description": "A complete financial and administrative system customized for schools. It processes student tuition billing, administrative expenses, and scholarships, while executing precise monthly HR payroll for teachers and staff with active integration with attendance machines, taxes, and social insurance.",
+        "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop"
       }
     ]
   },
