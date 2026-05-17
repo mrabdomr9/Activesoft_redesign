@@ -28,15 +28,28 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
     body {
       background: radial-gradient(circle at top, #080816 0%, #03030a 70%, #010103 100%);
-      position: relative;
-      overflow-x: hidden;
-      overflow-y: auto;
       color: #e5e7eb;
     }
 
-    body::before {
+    #root {
+      position: relative;
+      z-index: 3;
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    #root::before {
       content: "";
       position: absolute;
       top: 15%;
@@ -44,11 +57,11 @@
       width: 450px;
       height: 450px;
       background: radial-gradient(circle, rgba(6, 182, 212, 0.05) 0%, transparent 70%);
-      z-index: 1;
+      z-index: -1;
       pointer-events: none;
     }
 
-    body::after {
+    #root::after {
       content: "";
       position: absolute;
       bottom: 20%;
@@ -56,13 +69,8 @@
       width: 500px;
       height: 500px;
       background: radial-gradient(circle, rgba(139, 92, 246, 0.04) 0%, transparent 70%);
-      z-index: 2;
+      z-index: -1;
       pointer-events: none;
-    }
-
-    #root {
-      position: relative;
-      z-index: 3;
     }
 
     .animate-on-scroll {
