@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 import { supabase } from '../supabaseClient';
-import { 
-  Sparkles, 
-  HelpCircle, 
-  Send, 
-  CheckCircle2, 
-  AlertCircle, 
-  Phone, 
-  Mail, 
-  MapPin, 
-  ChevronDown 
+import {
+  Sparkles,
+  HelpCircle,
+  Send,
+  CheckCircle2,
+  AlertCircle,
+  Phone,
+  Mail,
+  MapPin,
+  ChevronDown
 } from 'lucide-react';
 
 const ContactPage: React.FC = () => {
@@ -82,7 +82,7 @@ const ContactPage: React.FC = () => {
   };
 
   const faqData = t('contact.faq', { title: '', subtitle: '', questions: [] });
-  
+
   // Custom glowing futuristic input styling classes
   const inputClasses = "w-full px-4 py-3.5 bg-slate-950/60 border border-white/10 rounded-xl focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all duration-300 text-white placeholder-gray-400 text-sm";
 
@@ -102,18 +102,18 @@ const ContactPage: React.FC = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
         <div className="max-w-6xl mx-auto">
-          
+
           {/* Header */}
           <div className="text-center mb-16 animate-on-scroll">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
               <Sparkles className="w-4 h-4 animate-spin-slow" />
               <span>{language === 'ar' ? 'تواصل معنا على مدار الساعة' : 'Always Ready to Consult'}</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl font-bold font-display mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient-x">
               {t('contact.title', 'Contact Our Team')}
             </h1>
-            
+
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               {t('contact.subtitle', 'Let us discuss how our tailored ERP systems and technical capabilities can support your enterprise.')}
             </p>
@@ -134,8 +134,8 @@ const ContactPage: React.FC = () => {
 
               <div className="space-y-4 animate-on-scroll" style={{ transitionDelay: '100ms' }}>
                 {faqData.questions.map((item: { q: string, a: string }, index: number) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className="glass-panel rounded-2xl overflow-hidden border border-white/5 transition-all duration-300 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
                   >
                     <button
@@ -144,10 +144,9 @@ const ContactPage: React.FC = () => {
                       aria-expanded={openFaqIndex === index}
                     >
                       <span className="font-bold text-white text-sm md:text-base">{item.q}</span>
-                      <ChevronDown 
-                        className={`h-5 w-5 text-gray-400 transition-transform duration-300 flex-shrink-0 ${
-                          openFaqIndex === index ? 'rotate-180 text-primary' : ''
-                        }`} 
+                      <ChevronDown
+                        className={`h-5 w-5 text-gray-400 transition-transform duration-300 flex-shrink-0 ${openFaqIndex === index ? 'rotate-180 text-primary' : ''
+                          }`}
                       />
                     </button>
                     <div
@@ -166,10 +165,10 @@ const ContactPage: React.FC = () => {
 
           {/* Form and Contact details Row */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20 items-stretch">
-            
+
             {/* Info Cards Column */}
             <div className="space-y-6 flex flex-col justify-between h-full animate-on-scroll">
-              
+
               {/* Phone Card */}
               <div className="glass-panel p-6 rounded-2xl border border-white/5 flex items-center gap-4">
                 <div className="p-3.5 rounded-xl bg-primary/10 text-primary border border-primary/20 flex-shrink-0">
@@ -180,7 +179,11 @@ const ContactPage: React.FC = () => {
                     {language === 'ar' ? 'اتصل بنا مباشرة:' : 'Call Us:'}
                   </h4>
                   <p className="text-white font-bold font-mono text-sm leading-none" dir="ltr">
-                    +20 102 334 5678
+                    +20 122 507 7433
+                  </p>
+                  <br></br>
+                  <p className="text-white font-bold font-mono text-sm leading-none" dir="ltr">
+                    +20 100 646 7081
                   </p>
                 </div>
               </div>
@@ -210,9 +213,9 @@ const ContactPage: React.FC = () => {
                     {language === 'ar' ? 'المقر الرئيسي:' : 'Our Location:'}
                   </h4>
                   <p className="text-white text-xs leading-relaxed">
-                    {language === 'ar' 
-                      ? 'المنطقة الحرة الاستثمارية، مدينة نصر، القاهرة، مصر' 
-                      : 'Free Zone, Nasr City, Cairo, Egypt'}
+                    {language === 'ar'
+                      ? 'مول الجامعة , مدينة السادات , المنوفية , مصر'
+                      : 'Elgamaa mall , Sadat City , Monoufia , Egypt'}
                   </p>
                 </div>
               </div>
@@ -222,7 +225,7 @@ const ContactPage: React.FC = () => {
             {/* Glowing Message Form */}
             <div className="lg:col-span-2 glass-panel p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden animate-on-scroll" style={{ transitionDelay: '100ms' }}>
               <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
-                
+
                 {/* Success Banner */}
                 {submitStatus === 'success' && (
                   <div className="flex items-center gap-2 bg-green-500/10 border border-green-500/30 text-green-400 p-4 rounded-xl text-sm font-semibold animate-pulse">
@@ -252,7 +255,7 @@ const ContactPage: React.FC = () => {
                       className={inputClasses}
                     />
                   </div>
-                  
+
                   <div>
                     <label htmlFor="email" className="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-2">{t('contact.emailLabel', 'Email address')}</label>
                     <input

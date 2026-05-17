@@ -16,10 +16,11 @@ const LanguageSwitcher: React.FC = () => {
   return (
     <button
       onClick={toggleLanguage}
-      className="flex items-center gap-1.5 px-4 py-2 text-xs font-bold bg-primary/10 border border-primary/30 text-primary rounded-xl hover:bg-primary/20 hover:border-primary/50 transition-all duration-300 shadow-lg shadow-primary/5"
+      className="flex items-center gap-1.5 px-2.5 sm:px-4 py-2 text-xs font-bold bg-primary/10 border border-primary/30 text-primary rounded-xl hover:bg-primary/20 hover:border-primary/50 transition-all duration-300 shadow-lg shadow-primary/5"
     >
       <Languages className="w-3.5 h-3.5" />
-      <span>{language === 'en' ? 'العربية' : 'English'}</span>
+      <span className="hidden sm:inline">{language === 'en' ? 'العربية' : 'English'}</span>
+      <span className="inline sm:hidden text-[10px] font-bold uppercase tracking-wider font-mono">{language === 'en' ? 'AR' : 'EN'}</span>
     </button>
   );
 };
@@ -205,9 +206,9 @@ const Header: React.FC = () => {
           
           {/* Logo with technical spark icon */}
           <div className="flex-shrink-0">
-            <NavLink to="/" className="flex items-center gap-2 text-2xl font-bold text-white font-display tracking-tight group">
-              <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                <Cpu className="w-4.5 h-4.5 text-primary animate-pulse" />
+            <NavLink to="/" className="flex items-center gap-1.5 sm:gap-2 text-lg sm:text-2xl font-bold text-white font-display tracking-tight group">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                <Cpu className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-primary animate-pulse" />
               </div>
               <span>
                 Active<span className="text-primary font-display font-medium">Soft</span>
