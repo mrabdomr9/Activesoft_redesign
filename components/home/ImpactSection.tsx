@@ -1,50 +1,87 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '../../hooks/useTranslation';
+import { LanguageContext } from '../../context/LanguageContext';
+import { Hourglass, LayoutGrid, Smile, ArrowRight } from 'lucide-react';
 
 const ImpactSection: React.FC = () => {
     const { t } = useTranslation();
+    const { language } = useContext(LanguageContext);
 
     return (
-        <section className="py-20 bg-gradient-to-br from-slate-900/50 to-slate-800/50 rounded-2xl">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl font-bold text-white font-display animate-on-scroll">{t('home.impact.title', 'Our Impact in Numbers')}</h2>
-                    <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>{t('home.impact.subtitle', 'We are proud of our achievements and the value we deliver to our clients.')}</p>
+        <section className="py-20 bg-transparent relative overflow-hidden">
+            
+            {/* Ambient Background glows */}
+            <div className="absolute top-1/2 left-1/3 w-[300px] h-[300px] bg-primary/10 rounded-full blur-[80px] pointer-events-none"></div>
+
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                
+                {/* Header */}
+                <div className="text-center mb-16 animate-on-scroll">
+                    <h2 className="text-3xl md:text-5xl font-bold text-white font-display">
+                        {t('home.impact.title', 'Our Impact in Numbers')}
+                    </h2>
+                    <p className="mt-4 text-sm md:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                        {t('home.impact.subtitle', 'We are proud of our achievements and the value we deliver to our clients.')}</p>
                 </div>
+
+                {/* Impact Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div className="glass-panel p-8 rounded-xl text-center animate-on-scroll hover:border-primary/50 transition-all duration-300 hover:-translate-y-2" style={{ transitionDelay: '200ms' }}>
-                        <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-primary/10 text-primary mb-6">
-                            <svg className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+                    
+                    {/* Stat 1 */}
+                    <div className="glass-panel p-8 rounded-3xl text-center border border-white/5 hover:border-primary/40 transition-all duration-500 hover:scale-[1.02] flex flex-col items-center justify-between group">
+                        <div>
+                            <div className="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-primary/10 text-primary border border-primary/20 mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <Hourglass className="w-8 h-8" />
+                            </div>
+                            <p className="text-4xl md:text-5xl font-bold text-white font-display mb-2 font-mono">
+                                {t('home.impact.experienceVal', '15+')}
+                            </p>
+                            <p className="text-sm text-gray-400">
+                                {t('home.impact.experience', 'Years of Experience')}
+                            </p>
                         </div>
-                        <p className="text-5xl font-bold text-primary font-display mb-2">{t('home.impact.experienceVal', '15+')}</p>
-                        <p className="text-lg text-gray-200">{t('home.impact.experience', 'Years of Experience')}</p>
                     </div>
-                    <div className="glass-panel p-8 rounded-xl text-center animate-on-scroll hover:border-secondary/50 transition-all duration-300 hover:-translate-y-2" style={{ transitionDelay: '300ms' }}>
-                        <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-secondary/10 text-secondary mb-6">
-                            <svg className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                            </svg>
+
+                    {/* Stat 2 */}
+                    <div className="glass-panel p-8 rounded-3xl text-center border border-white/5 hover:border-secondary/40 transition-all duration-500 hover:scale-[1.02] flex flex-col items-center justify-between group">
+                        <div>
+                            <div className="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-secondary/10 text-secondary border border-secondary/20 mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <LayoutGrid className="w-8 h-8" />
+                            </div>
+                            <p className="text-4xl md:text-5xl font-bold text-white font-display mb-2 font-mono">
+                                {t('home.impact.applicationsVal', '500+')}
+                            </p>
+                            <p className="text-sm text-gray-400">
+                                {t('home.impact.applications', 'Applications Delivered')}
+                            </p>
                         </div>
-                        <p className="text-5xl font-bold text-secondary font-display mb-2">{t('home.impact.applicationsVal', '500+')}</p>
-                        <p className="text-lg text-gray-200">{t('home.impact.applications', 'Applications Delivered')}</p>
                     </div>
-                    <div className="glass-panel p-8 rounded-xl text-center animate-on-scroll hover:border-primary/50 transition-all duration-300 hover:-translate-y-2" style={{ transitionDelay: '400ms' }}>
-                        <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-primary/10 text-primary mb-6">
-                            <svg className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
-                            </svg>
+
+                    {/* Stat 3 */}
+                    <div className="glass-panel p-8 rounded-3xl text-center border border-white/5 hover:border-primary/40 transition-all duration-500 hover:scale-[1.02] flex flex-col items-center justify-between group">
+                        <div>
+                            <div className="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-primary/10 text-primary border border-primary/20 mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <Smile className="w-8 h-8" />
+                            </div>
+                            <p className="text-4xl md:text-5xl font-bold text-white font-display mb-2 font-mono">
+                                {t('home.impact.satisfactionVal', '98%')}
+                            </p>
+                            <p className="text-sm text-gray-400 mb-4">
+                                {t('home.impact.satisfaction', 'Client Satisfaction')}
+                            </p>
                         </div>
-                        <p className="text-5xl font-bold text-primary font-display mb-2">{t('home.impact.satisfactionVal', '98%')}</p>
-                        <p className="text-lg text-gray-200">{t('home.impact.satisfaction', 'Client Satisfaction')}</p>
-                        <div className="mt-4">
-                            <Link to="/clients" className="text-sm text-primary hover:text-secondary transition-colors">
-                                {t('home.viewClients', 'View Our Clients')}
+                        <div className="w-full pt-4 border-t border-white/5">
+                            <Link 
+                                to="/clients" 
+                                className="group inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-white transition-colors"
+                            >
+                                <span>{t('home.viewClients', 'View Our Clients')}</span>
+                                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5" />
                             </Link>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -52,3 +89,4 @@ const ImpactSection: React.FC = () => {
 };
 
 export default ImpactSection;
+export { ImpactSection };

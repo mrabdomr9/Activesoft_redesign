@@ -1,11 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useTranslation } from '../../hooks/useTranslation';
+import { LanguageContext } from '../../context/LanguageContext';
+import { ChevronLeft, ChevronRight, Quote, Sparkles } from 'lucide-react';
 
 const TestimonialsSection: React.FC = () => {
-    const { t, language } = useTranslation();
+    const { t } = useTranslation();
+    const { language } = useContext(LanguageContext);
     const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
-    const testimonials = t('home.testimonials', { title: 'What Our Clients Say', subtitle: 'Real feedback from businesses we\'ve empowered.', quotes: [] });
+    const testimonials = t('home.testimonials', { 
+        title: 'What Our Clients Say', 
+        subtitle: 'Real feedback from businesses we\'ve empowered.', 
+        quotes: [] 
+    });
 
     // Reset current testimonial index when testimonials or language change
     useEffect(() => {
@@ -45,85 +52,102 @@ const TestimonialsSection: React.FC = () => {
     };
 
     return (
-        <section className="py-20 bg-gradient-to-br from-slate-900/50 to-slate-800/50 rounded-2xl">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl font-bold text-white font-display animate-on-scroll">
+        <section className="py-20 bg-transparent relative overflow-hidden">
+            {/* Ambient background glows */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-secondary/5 rounded-full blur-[90px] pointer-events-none"></div>
+
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                
+                {/* Header */}
+                <div className="text-center mb-16 animate-on-scroll">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-xs font-semibold mb-6">
+                        <Sparkles className="w-3.5 h-3.5 animate-spin-slow" />
+                        <span>{language === 'ar' ? 'شركاء النجاح الحقيقيون' : 'Verified Partner Testimonials'}</span>
+                    </div>
+
+                    <h2 className="text-3xl md:text-5xl font-bold text-white font-display">
                         {testimonials?.title || t('home.testimonials.title', 'What Our Clients Say')}
                     </h2>
-                    <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>
+                    <p className="mt-4 text-sm md:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed">
                         {testimonials?.subtitle || t('home.testimonials.subtitle', 'Real feedback from businesses we\'ve empowered.')}
                     </p>
                 </div>
 
                 {testimonials && testimonials.quotes && testimonials.quotes.length > 0 && (
                     <div className="max-w-4xl mx-auto">
-                        <div className="glass-panel rounded-xl p-8 relative">
-                            {/* Navigation Arrows */}
-                            {testimonials.quotes.length > 1 && (
-                                <>
-                                    <button
-                                        onClick={prevTestimonial}
-                                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-primary/20 hover:bg-primary/40 text-white rounded-full p-2 transition-colors z-10"
-                                        aria-label="Previous testimonial"
-                                    >
-                                        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                                        </svg>
-                                    </button>
-                                    <button
-                                        onClick={nextTestimonial}
-                                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-primary/20 hover:bg-primary/40 text-white rounded-full p-2 transition-colors z-10"
-                                        aria-label="Next testimonial"
-                                    >
-                                        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                        </svg>
-                                    </button>
-                                </>
-                            )}
+                        <div className="glass-panel rounded-[2.5rem] p-8 md:p-12 relative border border-white/5 hover:border-primary/20 transition-all duration-500">
+                            
+                            {/* Giant Background Quote Icon */}
+                            <Quote className="absolute top-8 right-8 w-24 h-24 text-primary/5 pointer-events-none" />
 
                             {/* Testimonial Content */}
                             {testimonials.quotes[currentTestimonial] && (
-                                <div className="text-center animate-fade-in">
+                                <div className="text-center animate-fade-in relative z-10">
                                     <div className="flex justify-center mb-6">
                                         <img
                                             src={testimonials.quotes[currentTestimonial].logo}
-                                            alt={`${testimonials.quotes[currentTestimonial].name} - ${testimonials.quotes[currentTestimonial].company} - ${t('home.testimonials.title')}`}
-                                            className="h-16 w-16 rounded-full object-cover border-2 border-primary/50"
+                                            alt={`${testimonials.quotes[currentTestimonial].name} - ${testimonials.quotes[currentTestimonial].company}`}
+                                            className="h-20 w-20 rounded-full object-cover border border-primary/30 p-1.5 bg-[#070714]"
                                             onError={(e) => {
                                                 const target = e.target as HTMLImageElement;
                                                 target.style.display = 'none';
                                             }}
+                                            loading="lazy"
                                         />
                                     </div>
-                                    <blockquote className="text-xl text-gray-300 italic mb-6 relative px-8">
-                                        <span className="text-4xl text-primary/30 absolute top-[-10px] left-0">"</span>
-                                        {testimonials.quotes[currentTestimonial].quote}
-                                        <span className="text-4xl text-primary/30 absolute bottom-[-20px] right-0">"</span>
+
+                                    <blockquote className="text-base md:text-xl text-gray-200 italic mb-6 leading-relaxed px-4 md:px-12">
+                                        "{testimonials.quotes[currentTestimonial].quote}"
                                     </blockquote>
-                                    <div className="font-semibold text-white text-lg">
+
+                                    <div className="font-bold text-white text-lg font-display">
                                         {testimonials.quotes[currentTestimonial].name}
                                     </div>
-                                    <div className="text-cyan-400 text-sm">
+                                    <div className="text-xs font-semibold uppercase tracking-wider text-primary mt-1">
                                         {testimonials.quotes[currentTestimonial].company}
                                     </div>
                                 </div>
                             )}
 
-                            {/* Dots Indicator */}
+                            {/* Slide Actions */}
                             {testimonials.quotes.length > 1 && (
-                                <div className="flex justify-center mt-8 space-x-2">
-                                    {testimonials.quotes.map((_, index) => (
-                                        <button
-                                            key={index}
-                                            onClick={() => setCurrentTestimonial(index)}
-                                            className={`h-2 w-2 rounded-full transition-all duration-300 ${index === currentTestimonial ? 'bg-cyan-400 w-6' : 'bg-gray-600 hover:bg-gray-500'}`}
-                                            aria-label={`Go to testimonial ${index + 1}`}
-                                        />
-                                    ))}
+                                <div className="flex justify-between items-center mt-10 pt-6 border-t border-white/5">
+                                    {/* Left Chevron */}
+                                    <button
+                                        onClick={prevTestimonial}
+                                        className="p-3 rounded-xl bg-slate-900 border border-white/5 hover:border-primary/30 text-gray-400 hover:text-white transition-all duration-300"
+                                        aria-label="Previous testimonial"
+                                    >
+                                        <ChevronLeft className="w-4 h-4 rtl:rotate-180" />
+                                    </button>
+
+                                    {/* Dots Indicator */}
+                                    <div className="flex gap-2">
+                                        {testimonials.quotes.map((_, index) => (
+                                            <button
+                                                key={index}
+                                                onClick={() => setCurrentTestimonial(index)}
+                                                className={`h-2 rounded-full transition-all duration-300 ${
+                                                    index === currentTestimonial 
+                                                        ? 'bg-primary w-6' 
+                                                        : 'bg-gray-700 hover:bg-gray-600 w-2'
+                                                }`}
+                                                aria-label={`Go to testimonial ${index + 1}`}
+                                            />
+                                        ))}
+                                    </div>
+
+                                    {/* Right Chevron */}
+                                    <button
+                                        onClick={nextTestimonial}
+                                        className="p-3 rounded-xl bg-slate-900 border border-white/5 hover:border-primary/30 text-gray-400 hover:text-white transition-all duration-300"
+                                        aria-label="Next testimonial"
+                                    >
+                                        <ChevronRight className="w-4 h-4 rtl:rotate-180" />
+                                    </button>
                                 </div>
                             )}
+
                         </div>
                     </div>
                 )}
@@ -133,3 +157,4 @@ const TestimonialsSection: React.FC = () => {
 };
 
 export default TestimonialsSection;
+export { TestimonialsSection };

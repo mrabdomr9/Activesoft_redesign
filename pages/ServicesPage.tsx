@@ -1,12 +1,27 @@
-import React, { useEffect, useState, useMemo, useRef } from 'react';
+import React, { useEffect, useState, useMemo, useRef, useContext } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
+import { LanguageContext } from '../context/LanguageContext';
+import { 
+  Building2, 
+  Cpu, 
+  Package, 
+  Globe, 
+  Users, 
+  Scale, 
+  Wallet,
+  ArrowRight,
+  Sparkles,
+  CheckCircle2,
+  ChevronRight,
+  TrendingUp
+} from 'lucide-react';
 
 interface Service {
   id: string;
   title: string;
   description: string;
   features?: string[];
-  icon?: React.ReactNode;
+  icon?: React.ComponentType<any>;
   link?: string;
   pricing?: {
     currency: string;
@@ -18,6 +33,7 @@ interface Service {
 
 const ServicesPage: React.FC = () => {
   const { t } = useTranslation();
+  const { language } = useContext(LanguageContext);
   const [activeSection, setActiveSection] = useState('erp');
   const [filterCategory, setFilterCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -26,13 +42,7 @@ const ServicesPage: React.FC = () => {
   // Get all services from translations
   const allServices = t('prices.services', []);
 
-  // Find the sales management service by ID
-  // Find smart scale system service by ID
-  const smartScaleService = allServices.find((service: any) =>
-    service && service.id === "e8f9a2b1-c3d4-5678-9abc-def012345678"
-  ) || {};
-
-  // Ensure we have fallback data for smart scale system
+  // Fallback data for smart scale system
   const safeSmartScaleService: Service = {
     id: "smartScale",
     title: t('services.smartScale.title', 'Smart Scale System'),
@@ -53,7 +63,7 @@ const ServicesPage: React.FC = () => {
     category: 'inventory'
   };
 
-  // Ensure we have fallback data for sales management system
+  // Fallback data for sales management system
   const safeSalesService: Service = {
     id: "sales",
     title: t('services.erp.salesCustomers.title', 'Sales & Representatives Management'),
@@ -67,18 +77,14 @@ const ServicesPage: React.FC = () => {
     category: 'erp'
   };
 
-  // Define all services with icons and categories
+  // Define all services with Lucide icons
   const services: Service[] = [
     {
       id: "erp",
       title: t('services.erp.title', 'Active Soft ERP Solutions'),
       description: t('services.erp.concept.points.0', 'Integrated accounting and administrative system for managing all commercial and industrial activities'),
       link: "/erp-system",
-      icon: (
-        <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-        </svg>
-      ),
+      icon: Building2,
       category: 'erp'
     },
     {
@@ -86,11 +92,7 @@ const ServicesPage: React.FC = () => {
       title: t('services.manufacturingModule.title'),
       description: t('services.manufacturingModule.subtitle'),
       link: "/manufacturing-erp",
-      icon: (
-        <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-        </svg>
-      ),
+      icon: Cpu,
       category: 'production'
     },
     {
@@ -98,11 +100,7 @@ const ServicesPage: React.FC = () => {
       title: t('services.inventoryModule.title', 'Inventory Management'),
       description: t('services.inventoryModule.subtitle', 'Comprehensive inventory management system with advanced tracking and valuation capabilities'),
       link: "/inventory-management",
-      icon: (
-        <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-        </svg>
-      ),
+      icon: Package,
       category: 'inventory'
     },
     {
@@ -110,32 +108,27 @@ const ServicesPage: React.FC = () => {
       title: t('services.exportModule.title', 'Export Management System'),
       description: t('services.exportModule.subtitle', 'Comprehensive export management system with detailed shipment tracking and financial analysis'),
       link: "/export-management",
-      icon: (
-        <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4 4 0 003 15z" />
-        </svg>
-      ),
+      icon: Globe,
       category: 'logistics'
     },
     {
+      id: "sales",
+      ...safeSalesService,
+      icon: Users,
+      category: 'erp'
+    },
+    {
       ...safeSmartScaleService,
+      id: "smartScale",
       link: "/smart-weighing-system",
-      icon: (
-        <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-        </svg>
-      )
+      icon: Scale
     },
     {
       id: "hrPayroll",
       title: t('services.hrPayroll.title', 'HR and Payroll Management System'),
       description: t('services.hrPayroll.desc', 'Complete and integrated system with financial accounts for managing employee affairs and payroll calculations.'),
       link: "/hr-payroll",
-      icon: (
-        <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      ),
+      icon: Wallet,
       category: 'hr'
     }
   ];
@@ -160,7 +153,7 @@ const ServicesPage: React.FC = () => {
 
       return matchesCategory && matchesSearch;
     });
-  }, [filterCategory, searchQuery, services]);
+  }, [filterCategory, searchQuery]);
 
   useEffect(() => {
     const title = t('seo.services.title', 'Our Services | Active Soft');
@@ -185,8 +178,7 @@ const ServicesPage: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Update active section based on scroll position
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 200;
 
       for (const service of services) {
         const element = sectionRefs.current[service.id];
@@ -211,369 +203,183 @@ const ServicesPage: React.FC = () => {
     setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const offset = element.offsetTop - 120;
+      window.scrollTo({ top: offset, behavior: 'smooth' });
     }
   };
 
   return (
-    <div className="min-h-screen relative">
-      {/* Technical Background Elements */}
-      <div className="absolute inset-0">
-        {/* Circuit Board Pattern */}
+    <div className="min-h-screen relative overflow-hidden bg-[#070714] text-white">
+      {/* Dynamic Futuristic Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '2.5s' }}></div>
+
+        {/* Technical Grid lines */}
         <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M0 50h20m20 0h10m20 0h30M50 0v20m0 20v10m0 20v30' stroke='%2306B6D4' stroke-width='1'/%3E%3Ccircle cx='20' cy='50' r='2' fill='%2306B6D4'/%3E%3Ccircle cx='50' cy='20' r='2' fill='%2306B6D4'/%3E%3Ccircle cx='50' cy='80' r='2' fill='%2306B6D4'/%3E%3C/svg%3E")`,
-          backgroundSize: '150px 150px'
-        }}></div>
-
-        {/* HUD Elements */}
-        <div className="absolute inset-0 opacity-3" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20h40M20 40h30M20 60h20M140 20h40M150 40h30M160 60h20' stroke='%2306B6D4' stroke-width='0.5'/%3E%3C/svg%3E")`,
-          backgroundSize: '200px 200px'
-        }}></div>
-
-        {/* Data Flow Lines */}
-        <div className="absolute inset-0 opacity-2" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 150 Q75 100 150 150 T300 150' stroke='%2306B6D4' stroke-width='0.5' fill='none' stroke-dasharray='5,5'/%3E%3C/svg%3E")`,
-          backgroundSize: '300px 300px'
-        }}></div>
-
-        {/* Technical Schematics */}
-        <div className="absolute inset-0 opacity-1" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50 L100 100 M150 50 L200 100 M250 50 L300 100 M50 150 L100 200 M150 150 L200 200 M250 150 L300 200' stroke='%2306B6D4' stroke-width='0.3'/%3E%3C/svg%3E")`,
-          backgroundSize: '400px 400px'
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h120v120H0z' fill='none'/%3E%3Cpath d='M0 60h24m24 0h12m24 0h36M60 0v24m0 24v12m0 24v36' stroke='%2306B6D4' stroke-width='1'/%3E%3Ccircle cx='24' cy='60' r='2' fill='%2306B6D4'/%3E%3Ccircle cx='60' cy='24' r='2' fill='%2306B6D4'/%3E%3Ccircle cx='60' cy='96' r='2' fill='%2306B6D4'/%3E%3C/svg%3E")`,
+          backgroundSize: '120px 120px'
         }}></div>
       </div>
 
-      {/* Content */}
-      <div>
-        <section className="pt-20 pb-8">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold font-display animate-on-scroll bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient-x">
+      <div className="relative z-10">
+        
+        {/* Header Hero */}
+        <section className="pt-20 pb-8 text-center animate-on-scroll">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
+              <Sparkles className="w-4 h-4 animate-spin-slow" />
+              <span>{language === 'ar' ? 'أنظمة برمجية متكاملة لنمو أعمالك' : 'Enterprise Modules for Maximum Efficiency'}</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold font-display bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient-x mb-6">
               {t('services.title', 'Our Comprehensive Services')}
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto animate-on-scroll leading-relaxed" style={{ transitionDelay: '100ms' }}>
-              {t('services.subtitle', 'Tailored technology solutions to drive your business forward.')}
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              {t('services.subtitle', 'Tailored technology solutions designed specifically to streamline enterprise workflows and boost productivity.')}
             </p>
           </div>
         </section>
 
-        {/* Services Grid */}
-        <div className="py-12">
+        {/* Dynamic Navigation sticky Menu */}
+        <div className="sticky top-20 z-40 bg-slate-950/85 backdrop-blur-md border-y border-white/10 shadow-xl shadow-slate-950/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-              {services.map((service, index) => (
-                <div
-                  key={service.id}
-                  className="group relative glass-panel rounded-xl overflow-hidden transition-all duration-500 hover:scale-[1.02] animate-on-scroll"
-                  style={{
-                    transitionDelay: `${index * 50}ms`,
-                    animationDelay: `${index * 100}ms`
-                  }}
-                >
-                  {/* Gradient border effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
-                  <div className="absolute inset-[1px] bg-slate-900 rounded-xl" />
-
-                  {/* Content */}
-                  <div className="relative z-10">
-                    <div className="bg-gradient-to-br from-primary to-secondary p-6 relative overflow-hidden">
-                      {/* Animated background effect */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                      <div className="flex items-center relative z-10">
-                        <div className="bg-white/20 p-3 rounded-full mr-4 rtl:mr-0 rtl:ml-4 group-hover:bg-white/30 transition-colors duration-300 group-hover:scale-110 transform">
-                          {service.icon}
-                        </div>
-                        <h3 className="text-xl font-bold text-white">{service.title}</h3>
-                      </div>
-                    </div>
-
-                    <div className="p-6">
-                      <p className="text-gray-300 mb-6 line-clamp-3">{service.description}</p>
-                      {service.link ? (
-                        <a
-                          href={service.link}
-                          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-primary/50"
-                        >
-                          {t('home.learnMore', 'Learn More')}
-                          <svg className="ml-2 rtl:ml-0 rtl:mr-2 rtl:rotate-180 -mr-1 h-4 w-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                          </svg>
-                        </a>
-                      ) : (
-                        <button
-                          onClick={() => scrollToSection(service.id)}
-                          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-primary/50"
-                        >
-                          {t('home.learnMore', 'Learn More')}
-                          <svg className="ml-2 rtl:ml-0 rtl:mr-2 rtl:rotate-180 -mr-1 h-4 w-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                          </svg>
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Navigation Menu */}
-        <div className="sticky top-20 z-40 bg-gradient-to-r from-gray-900/95 via-slate-900/95 to-gray-900/95 backdrop-blur-md border-b border-primary/30 shadow-lg shadow-primary/10">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex overflow-x-auto py-4 space-x-4 rtl:space-x-reverse scrollbar-hide">
+            <div className="flex overflow-x-auto py-4 space-x-4 rtl:space-x-reverse scrollbar-hide items-center justify-start lg:justify-center">
               {services.map(service => (
                 <button
                   key={service.id}
                   onClick={() => scrollToSection(service.id)}
-                  className={`relative whitespace-nowrap px-5 py-2.5 rounded-lg transition-all duration-300 transform hover:scale-105 ${activeSection === service.id
-                    ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/40'
-                    : 'text-gray-300 hover:text-white hover:bg-gray-800/70'
-                    }`}
+                  className={`relative whitespace-nowrap px-5 py-2.5 rounded-xl font-bold transition-all duration-300 ${
+                    activeSection === service.id
+                      ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/20 scale-105'
+                      : 'text-gray-400 hover:text-white hover:bg-white/5'
+                  }`}
                 >
-                  {activeSection === service.id && (
-                    <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary/20 to-secondary/20 blur-sm" />
-                  )}
                   <span className="relative z-10">{service.title}</span>
                 </button>
               ))}
             </div>
           </div>
-        </div >
+        </div>
 
-        <div className="py-20">
+        {/* Detailed Sections List */}
+        <div className="py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            {/* ERP Solutions Section */}
-            <div id="erp" ref={el => sectionRefs.current['erp'] = el} className="glass-panel p-8 rounded-xl mb-12 animate-on-scroll">
-              <div className="mb-12">
-                <div className="flex flex-col md:flex-row items-center md:items-start mb-6">
-                  <div className="bg-primary/10 p-4 rounded-full mb-4 md:mb-0 md:mr-6">
-                    <svg className="h-12 w-12 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                    </svg>
+            <div className="max-w-6xl mx-auto space-y-20">
+
+              {/* ERP Solutions Section */}
+              <div 
+                id="erp" 
+                ref={el => sectionRefs.current['erp'] = el} 
+                className="glass-panel p-8 md:p-12 rounded-[2.5rem] border border-white/10 animate-on-scroll"
+              >
+                <div className="flex flex-col lg:flex-row gap-8 items-start mb-12">
+                  <div className="p-5 rounded-3xl bg-primary/10 text-primary border border-primary/20 flex-shrink-0">
+                    <Building2 className="w-12 h-12" />
                   </div>
-                  <div className="text-center md:text-left">
-                    <h2 className="text-3xl font-bold text-white font-display mb-2">{t('services.erp.title', 'Active Soft ERP Solutions')}</h2>
-                    <p className="text-gray-300 max-w-3xl">{t('services.erp.concept.points.0')}</p>
+                  <div>
+                    <h2 className="text-3xl md:text-4xl font-bold text-white font-display mb-4">
+                      {t('services.erp.title', 'Active Soft ERP Solutions')}
+                    </h2>
+                    <p className="text-gray-300 leading-relaxed text-base">
+                      {t('services.erp.concept.points.0', 'Integrated accounting and administrative system for managing all commercial and industrial activities')}
+                    </p>
                   </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {[
+                    'mainFeatures',
+                    'generalAccounts',
+                    'salesCustomers',
+                    'purchasesSuppliers',
+                    'inventoryWarehouses',
+                    'treasuriesBanks',
+                    'costManagement',
+                    'fixedAssets',
+                    'hrOptional',
+                    'reports',
+                    'additionalFeatures'
+                  ].map((category) => (
+                    <div 
+                      key={category} 
+                      className="glass-panel p-6 rounded-2xl border border-white/5 hover:border-primary/40 transition-all duration-300 flex flex-col justify-between group"
+                    >
+                      <div>
+                        <h3 className="text-lg font-bold text-white mb-4 flex items-center group-hover:text-primary transition-colors font-display">
+                          <span className="w-2 h-2 bg-primary rounded-full mr-3 rtl:mr-0 rtl:ml-3"></span>
+                          {t(`services.erp.${category}.title`)}
+                        </h3>
+                        
+                        <ul className="space-y-3">
+                          {(t(`services.erp.${category}.points`, []) as string[] || []).map((point: string, idx: number) => (
+                            <li key={idx} className="flex items-start text-xs text-gray-400 leading-relaxed">
+                              <ChevronRight className="h-3.5 w-3.5 text-primary flex-shrink-0 mt-0.5" />
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[
-                  'mainFeatures',
-                  'generalAccounts',
-                  'salesCustomers',
-                  'purchasesSuppliers',
-                  'inventoryWarehouses',
-                  'treasuriesBanks',
-                  'costManagement',
-                  'fixedAssets',
-                  'hrOptional',
-                  'reports',
-                  'additionalFeatures'
-                ].map((category) => (
-                    <div key={category} className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-primary/50 transition-all duration-300 group">
-                    <h3 className="text-lg font-bold text-white mb-4 flex items-center group-hover:text-primary transition-colors">
-                      <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                      {t(`services.erp.${category}.title`)}
-                    </h3>
-                    <ul className="space-y-2">
-                      {(t(`services.erp.${category}.points`, []) as string[] || []).map((point: string, idx: number) => (
-                        <li key={idx} className="flex items-start text-sm text-gray-400">
-                          <svg className="h-4 w-4 text-primary/60 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Costing Module Section */}
-            <div id="costing" ref={el => sectionRefs.current['costing'] = el} className="glass-panel p-8 rounded-xl mb-12 animate-on-scroll">
-              <div className="flex flex-col md:flex-row items-center">
-                <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
-                  <div className="bg-primary/10 p-6 rounded-full">
-                    <svg className="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="md:w-2/3 md:pl-8">
-                  <h2 className="text-3xl font-bold text-white font-display mb-4">{t('services.costingModule.title', 'Costing Module')}</h2>
-                  <p className="text-gray-300 mb-6">{t('services.costingModule.subtitle', 'Comprehensive production cost management system with actual costing methodology')}</p>
-
-                  <div className="space-y-6">
+              {/* Manufacturing Costing Module Section */}
+              <div 
+                id="manufacturing" 
+                ref={el => sectionRefs.current['manufacturing'] = el} 
+                className="glass-panel p-8 md:p-12 rounded-[2.5rem] border border-white/10 animate-on-scroll"
+              >
+                <div className="flex flex-col lg:flex-row gap-12">
+                  <div className="lg:w-1/3 flex flex-col justify-between">
                     <div>
-                      <h3 className="text-xl font-bold text-white mb-3">{t('services.costingModule.methodologyTitle', 'Production Cost Calculation Methodology')}</h3>
-                      <p className="text-gray-300 mb-3">{t('services.costingModule.methodologyDesc', 'The system is based on Actual Costing during the production month.')}</p>
-                      <h4 className="text-lg font-bold text-white mb-2">{t('services.costingModule.methodologyIncludes', 'Cost includes:')}</h4>
-                      <ul className="list-disc list-inside text-gray-300 space-y-1">
-                        {(t('services.costingModule.methodologyItems', []) as string[] || []).map((item: string, index: number) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
+                      <div className="p-5 rounded-3xl bg-secondary/15 text-secondary border border-secondary/20 inline-block mb-6">
+                        <Cpu className="w-12 h-12" />
+                      </div>
+                      <h2 className="text-3xl font-bold text-white font-display mb-4">
+                        {t('services.manufacturingModule.title', 'Costing & Manufacturing Module')}
+                      </h2>
+                      <p className="text-gray-300 leading-relaxed text-sm mb-8">
+                        {t('services.manufacturingModule.subtitle', 'Comprehensive production cost management system with actual costing methodology')}
+                      </p>
                     </div>
 
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-3">{t('services.costingModule.bomTitle', 'Raw Materials and BOM (Bill of Materials)')}</h3>
-                      <p className="text-gray-300 mb-2">{t('services.costingModule.bomDesc1', 'Material ratios for each product are determined through BOM.')}</p>
-                      <p className="text-gray-300 mb-2">{t('services.costingModule.bomDesc2', 'The system automatically issues raw material documents according to BOM ratios.')}</p>
-                      <p className="text-gray-300 mb-2">{t('services.costingModule.bomDesc3', 'Variable materials are manually issued based on workshop instructions.')}</p>
-                      <p className="text-gray-300 mb-2">{t('services.costingModule.bomDesc4', 'When entering actual inventory at the end of the month:')}</p>
-                      <ul className="list-disc list-inside text-gray-300 space-y-1 ml-4">
-                        {(t('services.costingModule.bomItems', []) as string[] || []).map((item: string, index: number) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-3">{t('services.costingModule.qualityTitle', 'Inspection and Quality Cost')}</h3>
-                      <p className="text-gray-300 mb-2">{t('services.costingModule.qualityDesc1', 'A portion of production is issued for inspection and loaded to Quality Inspection cost.')}</p>
-                      <p className="text-gray-300">{t('services.costingModule.qualityDesc2', 'Quantity can be returned for inspection or to the warehouse, resulting in automatic reduction of quality expense.')}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Inventory Management Section */}
-            <div id="inventory" ref={el => sectionRefs.current['inventory'] = el} className="glass-panel p-8 rounded-xl mb-12 animate-on-scroll">
-              <div className="flex flex-col md:flex-row items-center">
-                <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
-                  <div className="bg-primary/10 p-6 rounded-full">
-                    <svg className="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="md:w-2/3 md:pl-8">
-                  <h2 className="text-3xl font-bold text-white font-display mb-4">{t('services.inventoryModule.title', 'Inventory Management')}</h2>
-                  <p className="text-gray-300 mb-6">{t('services.inventoryModule.subtitle', 'Comprehensive inventory management system with advanced tracking and valuation capabilities')}</p>
-
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-3">{t('services.inventoryModule.structureTitle', 'Inventory Structure and Item Coding')}</h3>
-                      <p className="text-gray-300 mb-3">{t('services.inventoryModule.structureDesc', 'Inventory classification into:')}</p>
-                      <ul className="list-disc list-inside text-gray-300 space-y-1">
-                        {(t('services.inventoryModule.structureItems', []) as string[] || []).map((item: string, index: number) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
-                      <p className="text-gray-300 mt-3">{t('services.inventoryModule.structureAdditional', 'Additional flexible classification based on business activity that does not affect coding')}</p>
-                      <p className="text-gray-300">{t('services.inventoryModule.structureLots', 'Dividing a single item into multiple lots')}</p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-3">{t('services.inventoryModule.lotsFunctionsTitle', 'Lot Functions')}</h3>
-                      <ul className="list-disc list-inside text-gray-300 space-y-1">
-                        {(t('services.inventoryModule.lotsFunctionsItems', []) as string[] || []).map((item: string, index: number) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-3">{t('services.inventoryModule.itemAttributesTitle', 'Item Attributes')}</h3>
-                      <p className="text-gray-300 mb-3">{t('services.inventoryModule.itemAttributesDesc', 'Complete technical specifications including:')}</p>
-                      <ul className="list-disc list-inside text-gray-300 space-y-1">
-                        {(t('services.inventoryModule.itemAttributesItems', []) as string[] || []).map((item: string, index: number) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
-                      <p className="text-gray-300 mt-3">{t('services.inventoryModule.itemAttributesReports', 'Ability to display inventory reports based on any of these attributes')}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Export Management System Section */}
-            <div id="export" ref={el => sectionRefs.current['export'] = el} className="glass-panel p-8 rounded-xl mb-12 animate-on-scroll">
-              <div className="flex flex-col md:flex-row items-center">
-                <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
-                  <div className="bg-primary/10 p-6 rounded-full">
-                    <svg className="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4 4 0 003 15z" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="md:w-2/3 md:pl-8">
-                  <h2 className="text-3xl font-bold text-white font-display mb-4">{t('services.exportModule.title', 'Export Management System')}</h2>
-                  <p className="text-gray-300 mb-6">{t('services.exportModule.subtitle', 'Comprehensive export management system with detailed shipment tracking and financial analysis')}</p>
-                  <div className="mt-4">
-                    <a href="/export-management" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 transition-all duration-300 shadow-lg shadow-primary/20">
-                      {t('services.learnMore', 'Learn More')}
-                      <svg className="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                      </svg>
+                    <a 
+                      href="/manufacturing-erp"
+                      className="group flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 shadow-xl shadow-primary/20"
+                    >
+                      <span>{t('services.learnMore', 'Explore Module')}</span>
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
                     </a>
                   </div>
 
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-3">{t('services.exportModule.shipmentTrackingTitle', 'Shipment Data Tracking')}</h3>
-                      <p className="text-gray-300 mb-3">{t('services.exportModule.shipmentTrackingDesc', 'The system displays detailed information for each shipment, including:')}</p>
-                      <ul className="list-disc list-inside text-gray-300 space-y-1">
-                        {(t('services.exportModule.shipmentTrackingItems', []) as string[] || []).map((item: string, index: number) => (
-                          <li key={index}>{item}</li>
+                  <div className="lg:w-2/3 space-y-8 lg:pl-8 lg:border-l lg:border-white/5 rtl:lg:pl-0 rtl:lg:pr-8 rtl:lg:border-l-0 rtl:lg:border-r">
+                    <div className="glass-panel p-6 rounded-2xl border border-white/5">
+                      <h3 className="text-xl font-bold text-white mb-3 font-display">{t('services.costingModule.methodologyTitle', 'Production Cost Calculation Methodology')}</h3>
+                      <p className="text-sm text-gray-300 leading-relaxed mb-4">{t('services.costingModule.methodologyDesc', 'The system is based on Actual Costing during the production month.')}</p>
+                      
+                      <h4 className="text-xs font-bold text-secondary uppercase tracking-wider mb-2">{t('services.costingModule.methodologyIncludes', 'Cost Includes:')}</h4>
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {(t('services.costingModule.methodologyItems', []) as string[] || []).map((item: string, index: number) => (
+                          <li key={index} className="flex items-center gap-2 text-xs text-gray-400">
+                            <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                            <span>{item}</span>
+                          </li>
                         ))}
                       </ul>
                     </div>
 
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-3">{t('services.exportModule.financialValuesTitle', 'Shipment Financial Values')}</h3>
-                      <ul className="list-disc list-inside text-gray-300 space-y-1">
-                        {(t('services.exportModule.financialValuesItems', []) as string[] || []).map((item: string, index: number) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-3">{t('services.exportModule.costBreakdownTitle', 'Shipment Cost Breakdown')}</h3>
-                      <p className="text-gray-300 mb-3">{t('services.exportModule.costBreakdownDesc', 'The system clearly displays the cost breakdown into:')}</p>
-                      <ul className="list-disc list-inside text-gray-300 space-y-1">
-                        {(t('services.exportModule.costBreakdownItems', []) as string[] || []).map((item: string, index: number) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Sales Representatives and Sales Managers Management Section */}
-            <div id="sales" ref={el => sectionRefs.current['sales'] = el} className="glass-panel p-8 rounded-xl mb-12 animate-on-scroll">
-              <div className="flex flex-col md:flex-row items-center">
-                <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
-                  <div className="bg-primary/10 p-6 rounded-full">
-                    <svg className="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="md:w-2/3 md:pl-8">
-                  <h2 className="text-3xl font-bold text-white font-display mb-4">{safeSalesService.title}</h2>
-                  <p className="text-gray-300 mb-6">{safeSalesService.description}</p>
-
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-3">Key Features</h3>
+                    <div className="glass-panel p-6 rounded-2xl border border-white/5">
+                      <h3 className="text-xl font-bold text-white mb-3 font-display">{t('services.costingModule.bomTitle', 'Raw Materials and BOM (Bill of Materials)')}</h3>
+                      <p className="text-sm text-gray-300 leading-relaxed mb-3">{t('services.costingModule.bomDesc1', 'Material ratios for each product are determined through BOM.')}</p>
+                      <p className="text-sm text-gray-300 leading-relaxed mb-3">{t('services.costingModule.bomDesc2', 'The system automatically issues raw material documents according to BOM ratios.')}</p>
+                      
+                      <h4 className="text-xs font-bold text-secondary uppercase tracking-wider mb-2">{t('services.costingModule.bomItemsTitle', 'Actual Inventory Closeout Actions:')}</h4>
                       <ul className="space-y-2">
-                        {safeSalesService.features.map((feature: string, index: number) => (
-                          <li key={index} className="flex items-start">
-                            <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span className="text-gray-300">{feature}</span>
+                        {(t('services.costingModule.bomItems', []) as string[] || []).map((item: string, index: number) => (
+                          <li key={index} className="flex items-start gap-2 text-xs text-gray-400">
+                            <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                            <span>{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -581,112 +387,283 @@ const ServicesPage: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Smart Scale System Section */}
-            <div id="smartScale" ref={el => sectionRefs.current['smartScale'] = el} className="glass-panel p-8 rounded-xl mb-12 animate-on-scroll">
-              <div className="flex flex-col md:flex-row items-center mb-8">
-                <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
-                  <div className="bg-primary/10 p-6 rounded-full">
-                    <svg className="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="md:w-2/3 md:pl-8">
-                  <h2 className="text-3xl font-bold text-white font-display mb-4">{t('services.smartScale.title', 'Smart Weighing System')}</h2>
-                  <p className="text-gray-300 mb-6 leading-relaxed">{t('services.smartScale.desc', 'Intelligent weighing system that automates weight recording and integrates directly with your inventory and financial systems.')}</p>
-
-                  <div className="space-y-6">
+              {/* Inventory Management Section */}
+              <div 
+                id="inventory" 
+                ref={el => sectionRefs.current['inventory'] = el} 
+                className="glass-panel p-8 md:p-12 rounded-[2.5rem] border border-white/10 animate-on-scroll"
+              >
+                <div className="flex flex-col lg:flex-row gap-12">
+                  <div className="lg:w-1/3 flex flex-col justify-between">
                     <div>
-                      <h3 className="text-xl font-bold text-white mb-4">{t('services.smartScale.componentsTitle', 'Main System Components')}</h3>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {[1, 2, 3, 4, 5, 6].map((num) => (
-                          <div key={num} className="flex items-start bg-white/5 p-3 rounded-lg border border-white/5">
-                            <svg className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span className="text-sm text-gray-300">{t(`services.smartScale.components.item${num}`)}</span>
-                          </div>
-                        ))}
+                      <div className="p-5 rounded-3xl bg-primary/10 text-primary border border-primary/20 inline-block mb-6">
+                        <Package className="w-12 h-12" />
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-12 pt-8 border-t border-white/10">
-                <h3 className="text-2xl font-bold text-white mb-8 text-center">{t('services.smartScale.benefitsTitle', 'Benefits of Using Smart Scales')}</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {[1, 2, 3, 4, 5, 6].map((num) => (
-                    <div key={num} className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-primary/50 transition-all duration-300 group">
-                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                        <span className="text-primary font-bold text-lg">{num}</span>
-                      </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                        {t(`services.smartScale.benefits.benefit${num}.title`)}
-                      </h4>
-                      <p className="text-sm text-gray-400 leading-relaxed">
-                        {t(`services.smartScale.benefits.benefit${num}.desc`)}
+                      <h2 className="text-3xl font-bold text-white font-display mb-4">
+                        {t('services.inventoryModule.title', 'Inventory & Warehouses')}
+                      </h2>
+                      <p className="text-gray-300 leading-relaxed text-sm mb-8">
+                        {t('services.inventoryModule.subtitle', 'Comprehensive inventory management system with advanced tracking and valuation capabilities')}
                       </p>
                     </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        {/* HR and Payroll Management Section */}
-        <div id="hrPayroll" ref={el => sectionRefs.current['hrPayroll'] = el} className="glass-panel p-8 rounded-xl mb-12 animate-on-scroll">
-          <div className="flex flex-col md:flex-row items-center mb-8">
-            <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
-              <div className="bg-primary/10 p-6 rounded-full">
-                <svg className="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-            </div>
-            <div className="md:w-2/3 md:pl-8">
-              <h2 className="text-3xl font-bold text-white font-display mb-4">{t('services.hrPayroll.title', 'HR and Payroll Management System')}</h2>
-              <p className="text-gray-300 mb-6">{t('services.hrPayroll.desc', 'Complete and integrated system with financial accounts for managing employee affairs and payroll calculations.')}</p>
-
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-3">{t('services.hrPayroll.featuresTitle', 'Key Features')}</h3>
-                  <ul className="space-y-3">
-                    {[1, 2, 3, 4, 5, 6].map((num) => (
-                      <li key={num} className="flex items-start">
-                        <svg className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span className="text-gray-300">{t(`services.hrPayroll.features.feature${num}`)}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-12 pt-8 border-t border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-6 text-center">{t('services.hrPayroll.howItChangesWork.title')}</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[1, 2, 3, 4].map((num) => (
-                <div key={num} className="bg-white/5 p-6 rounded-lg border border-white/5 hover:border-primary/30 transition-colors">
-                  <div className="flex items-center mb-4">
-                    <span className="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold mr-3">{num}</span>
+                    <a 
+                      href="/inventory-management"
+                      className="group flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 shadow-xl shadow-primary/20"
+                    >
+                      <span>{t('services.learnMore', 'Explore Module')}</span>
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
+                    </a>
                   </div>
-                  <p className="text-gray-300 leading-relaxed">
-                    {t(`services.hrPayroll.howItChangesWork.point${num}`)}
-                  </p>
+
+                  <div className="lg:w-2/3 space-y-8 lg:pl-8 lg:border-l lg:border-white/5 rtl:lg:pl-0 rtl:lg:pr-8 rtl:lg:border-l-0 rtl:lg:border-r">
+                    <div className="glass-panel p-6 rounded-2xl border border-white/5">
+                      <h3 className="text-xl font-bold text-white mb-3 font-display">{t('services.inventoryModule.structureTitle', 'Inventory Structure & Coding')}</h3>
+                      <p className="text-sm text-gray-300 leading-relaxed mb-4">{t('services.inventoryModule.structureDesc', 'Divided cleanly into:')}</p>
+                      
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+                        {(t('services.inventoryModule.structureItems', []) as string[] || []).map((item: string, index: number) => (
+                          <li key={index} className="flex items-center gap-2 text-xs text-gray-400">
+                            <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="glass-panel p-6 rounded-2xl border border-white/5">
+                      <h3 className="text-xl font-bold text-white mb-3 font-display">{t('services.inventoryModule.lotsFunctionsTitle', 'Lot Functions')}</h3>
+                      <ul className="space-y-2">
+                        {(t('services.inventoryModule.lotsFunctionsItems', []) as string[] || []).map((item: string, index: number) => (
+                          <li key={index} className="flex items-start gap-2 text-xs text-gray-400">
+                            <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-              ))}
+              </div>
+
+              {/* Export Management System Section */}
+              <div 
+                id="export" 
+                ref={el => sectionRefs.current['export'] = el} 
+                className="glass-panel p-8 md:p-12 rounded-[2.5rem] border border-white/10 animate-on-scroll"
+              >
+                <div className="flex flex-col lg:flex-row gap-12">
+                  <div className="lg:w-1/3 flex flex-col justify-between">
+                    <div>
+                      <div className="p-5 rounded-3xl bg-secondary/15 text-secondary border border-secondary/20 inline-block mb-6">
+                        <Globe className="w-12 h-12" />
+                      </div>
+                      <h2 className="text-3xl font-bold text-white font-display mb-4">
+                        {t('services.exportModule.title', 'Export Management')}
+                      </h2>
+                      <p className="text-gray-300 leading-relaxed text-sm mb-8">
+                        {t('services.exportModule.subtitle', 'Comprehensive export management system with detailed shipment tracking and financial analysis')}
+                      </p>
+                    </div>
+
+                    <a 
+                      href="/export-management"
+                      className="group flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 shadow-xl shadow-primary/20"
+                    >
+                      <span>{t('services.learnMore', 'Explore Module')}</span>
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
+                    </a>
+                  </div>
+
+                  <div className="lg:w-2/3 space-y-8 lg:pl-8 lg:border-l lg:border-white/5 rtl:lg:pl-0 rtl:lg:pr-8 rtl:lg:border-l-0 rtl:lg:border-r">
+                    <div className="glass-panel p-6 rounded-2xl border border-white/5">
+                      <h3 className="text-xl font-bold text-white mb-3 font-display">{t('services.exportModule.shipmentTrackingTitle', 'Shipment Data Tracking')}</h3>
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {(t('services.exportModule.shipmentTrackingItems', []) as string[] || []).map((item: string, index: number) => (
+                          <li key={index} className="flex items-center gap-2 text-xs text-gray-400">
+                            <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="glass-panel p-6 rounded-2xl border border-white/5">
+                      <h3 className="text-xl font-bold text-white mb-3 font-display">{t('services.exportModule.financialValuesTitle', 'Shipment Financial Values')}</h3>
+                      <ul className="space-y-2">
+                        {(t('services.exportModule.financialValuesItems', []) as string[] || []).map((item: string, index: number) => (
+                          <li key={index} className="flex items-start gap-2 text-xs text-gray-400">
+                            <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Sales Representatives Management Section */}
+              <div 
+                id="sales" 
+                ref={el => sectionRefs.current['sales'] = el} 
+                className="glass-panel p-8 md:p-12 rounded-[2.5rem] border border-white/10 animate-on-scroll"
+              >
+                <div className="flex flex-col lg:flex-row gap-8 items-start mb-8">
+                  <div className="p-5 rounded-3xl bg-primary/10 text-primary border border-primary/20 flex-shrink-0">
+                    <Users className="w-12 h-12" />
+                  </div>
+                  <div>
+                    <h2 className="text-3xl font-bold text-white font-display mb-4">
+                      {safeSalesService.title}
+                    </h2>
+                    <p className="text-gray-300 leading-relaxed text-base">
+                      {safeSalesService.description}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="glass-panel p-6 rounded-2xl border border-white/5">
+                  <h3 className="text-lg font-bold text-white mb-4 font-display">{language === 'ar' ? 'أبرز مميزات نظام مناديب المبيعات:' : 'Key Features:'}</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {safeSalesService.features.map((feature: string, index: number) => (
+                      <div key={index} className="flex items-start bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mr-3 rtl:mr-0 rtl:ml-3" />
+                        <span className="text-sm text-gray-300 leading-relaxed">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Smart Scale Weighing System Section */}
+              <div 
+                id="smartScale" 
+                ref={el => sectionRefs.current['smartScale'] = el} 
+                className="glass-panel p-8 md:p-12 rounded-[2.5rem] border border-white/10 animate-on-scroll"
+              >
+                <div className="flex flex-col lg:flex-row gap-12 mb-12">
+                  <div className="lg:w-1/3 flex flex-col justify-between">
+                    <div>
+                      <div className="p-5 rounded-3xl bg-secondary/15 text-secondary border border-secondary/20 inline-block mb-6">
+                        <Scale className="w-12 h-12" />
+                      </div>
+                      <h2 className="text-3xl font-bold text-white font-display mb-4">
+                        {t('services.smartScale.title', 'Smart Weighing System')}
+                      </h2>
+                      <p className="text-gray-300 leading-relaxed text-sm mb-8">
+                        {t('services.smartScale.desc', 'Intelligent weighing system that automates weight recording and integrates directly with your inventory and financial systems.')}
+                      </p>
+                    </div>
+
+                    <a 
+                      href="/smart-weighing-system"
+                      className="group flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 shadow-xl shadow-primary/20"
+                    >
+                      <span>{t('services.learnMore', 'Explore Module')}</span>
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
+                    </a>
+                  </div>
+
+                  <div className="lg:w-2/3 space-y-6 lg:pl-8 lg:border-l lg:border-white/5 rtl:lg:pl-0 rtl:lg:pr-8 rtl:lg:border-l-0 rtl:lg:border-r">
+                    <h3 className="text-xl font-bold text-white mb-4 font-display">{t('services.smartScale.componentsTitle', 'Main System Components')}</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {[1, 2, 3, 4, 5, 6].map((num) => (
+                        <div key={num} className="flex items-start bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                          <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mr-3 rtl:mr-0 rtl:ml-3" />
+                          <span className="text-xs text-gray-300 leading-relaxed">{t(`services.smartScale.components.item${num}`)}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-8 border-t border-white/5">
+                  <h3 className="text-2xl font-bold text-white mb-8 text-center font-display">{t('services.smartScale.benefitsTitle', 'Benefits of Using Smart Scales')}</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {[1, 2, 3, 4, 5, 6].map((num) => (
+                      <div key={num} className="glass-panel p-6 rounded-2xl border border-white/5 hover:border-primary/40 transition-all duration-300 group">
+                        <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors text-primary font-bold">
+                          0{num}
+                        </div>
+                        <h4 className="text-base font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                          {t(`services.smartScale.benefits.benefit${num}.title`)}
+                        </h4>
+                        <p className="text-xs text-gray-400 leading-relaxed">
+                          {t(`services.smartScale.benefits.benefit${num}.desc`)}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* HR and Payroll Management Section */}
+              <div 
+                id="hrPayroll" 
+                ref={el => sectionRefs.current['hrPayroll'] = el} 
+                className="glass-panel p-8 md:p-12 rounded-[2.5rem] border border-white/10 animate-on-scroll"
+              >
+                <div className="flex flex-col lg:flex-row gap-12 mb-12">
+                  <div className="lg:w-1/3 flex flex-col justify-between">
+                    <div>
+                      <div className="p-5 rounded-3xl bg-primary/10 text-primary border border-primary/20 inline-block mb-6">
+                        <Wallet className="w-12 h-12" />
+                      </div>
+                      <h2 className="text-3xl font-bold text-white font-display mb-4">
+                        {t('services.hrPayroll.title', 'HR and Payroll Management System')}
+                      </h2>
+                      <p className="text-gray-300 leading-relaxed text-sm mb-8">
+                        {t('services.hrPayroll.desc', 'Complete and integrated system with financial accounts for managing employee affairs and payroll calculations.')}
+                      </p>
+                    </div>
+
+                    <a 
+                      href="/hr-payroll"
+                      className="group flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 shadow-xl shadow-primary/20"
+                    >
+                      <span>{t('services.learnMore', 'Explore Module')}</span>
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
+                    </a>
+                  </div>
+
+                  <div className="lg:w-2/3 space-y-6 lg:pl-8 lg:border-l lg:border-white/5 rtl:lg:pl-0 rtl:lg:pr-8 rtl:lg:border-l-0 rtl:lg:border-r">
+                    <h3 className="text-xl font-bold text-white mb-4 font-display">{t('services.hrPayroll.featuresTitle', 'Key Features')}</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {[1, 2, 3, 4, 5, 6].map((num) => (
+                        <div key={num} className="flex items-start bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                          <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mr-3 rtl:mr-0 rtl:ml-3" />
+                          <span className="text-xs text-gray-300 leading-relaxed">{t(`services.hrPayroll.features.feature${num}`)}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-8 border-t border-white/5">
+                  <h3 className="text-xl font-bold text-white mb-6 text-center font-display">{t('services.hrPayroll.howItChangesWork.title')}</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {[1, 2, 3, 4].map((num) => (
+                      <div key={num} className="glass-panel p-6 rounded-2xl border border-white/5 hover:border-primary/30 transition-all duration-300 flex flex-col justify-between">
+                        <div className="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold text-sm mb-4">
+                          {num}
+                        </div>
+                        <p className="text-xs text-gray-300 leading-relaxed">
+                          {t(`services.hrPayroll.howItChangesWork.point${num}`)}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
-      </div >
-    </div >
+
+      </div>
+    </div>
   );
 };
 

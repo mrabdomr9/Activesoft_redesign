@@ -1,6 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
+import { LanguageContext } from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
+import { 
+  Sparkles, 
+  CheckCircle2, 
+  ArrowRight,
+  ShieldCheck,
+  Zap
+} from 'lucide-react';
 
 interface Pricing {
   currency: string;
@@ -17,7 +25,8 @@ interface Service {
 }
 
 const PricesPage: React.FC = () => {
-  const { t, language } = useTranslation();
+  const { t } = useTranslation();
+  const { language } = useContext(LanguageContext);
 
   useEffect(() => {
     const title = t('seo.prices.title', 'Pricing & Plans | Active Soft');
@@ -43,7 +52,7 @@ const PricesPage: React.FC = () => {
   const services: Service[] = t('prices.services', []);
 
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('en-EG', {
+    return new Intl.NumberFormat(language === 'ar' ? 'ar-EG' : 'en-EG', {
       style: 'currency',
       currency: 'EGP',
       minimumFractionDigits: 0,
@@ -52,89 +61,142 @@ const PricesPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen relative">
-      {/* Technical Background Elements */}
-      <div className="absolute inset-0">
-        {/* Circuit Board Pattern */}
+    <div className="min-h-screen relative overflow-hidden bg-[#070714] text-white">
+      {/* Background Graphic Grid */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] animate-pulse"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-[450px] h-[450px] bg-secondary/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }}></div>
+
+        {/* HUD schematics */}
         <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M0 50h20m20 0h10m20 0h30M50 0v20m0 20v10m0 20v30' stroke='%2306B6D4' stroke-width='1'/%3E%3Ccircle cx='20' cy='50' r='2' fill='%2306B6D4'/%3E%3Ccircle cx='50' cy='20' r='2' fill='%2306B6D4'/%3E%3Ccircle cx='50' cy='80' r='2' fill='%2306B6D4'/%3E%3C/svg%3E")`,
-          backgroundSize: '150px 150px'
-        }}></div>
-
-        {/* HUD Elements */}
-        <div className="absolute inset-0 opacity-3" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20h40M20 40h30M20 60h20M140 20h40M150 40h30M160 60h20' stroke='%2306B6D4' stroke-width='0.5'/%3E%3C/svg%3E")`,
-          backgroundSize: '200px 200px'
-        }}></div>
-
-        {/* Data Flow Lines */}
-        <div className="absolute inset-0 opacity-2" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 150 Q75 100 150 150 T300 150' stroke='%2306B6D4' stroke-width='0.5' fill='none' stroke-dasharray='5,5'/%3E%3C/svg%3E")`,
-          backgroundSize: '300px 300px'
-        }}></div>
-
-        {/* Technical Schematics */}
-        <div className="absolute inset-0 opacity-1" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50 L100 100 M150 50 L200 100 M250 50 L300 100 M50 150 L100 200 M150 150 L200 200 M250 150 L300 200' stroke='%2306B6D4' stroke-width='0.3'/%3E%3C/svg%3E")`,
-          backgroundSize: '400px 400px'
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h120v120H0z' fill='none'/%3E%3Cpath d='M0 60h24m24 0h12m24 0h36M60 0v24m0 24v12m0 24v36' stroke='%2306B6D4' stroke-width='1'/%3E%3Ccircle cx='24' cy='60' r='2' fill='%2306B6D4'/%3E%3Ccircle cx='60' cy='24' r='2' fill='%2306B6D4'/%3E%3Ccircle cx='60' cy='96' r='2' fill='%2306B6D4'/%3E%3C/svg%3E")`,
+          backgroundSize: '120px 120px'
         }}></div>
       </div>
 
-      {/* Content */}
-      <div>
-        <div className="py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h1 className="text-4xl font-bold font-display animate-on-scroll bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">{t('prices.title')}</h1>
-              <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>
-                {t('prices.subtitle')}
-              </p>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          
+          {/* Header */}
+          <div className="text-center mb-16 animate-on-scroll">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
+              <Sparkles className="w-4 h-4 animate-spin-slow" />
+              <span>{language === 'ar' ? 'حلول استثمارية واضحة وعوائد مضمونة' : 'Transparent Enterprise Investment'}</span>
             </div>
+            
+            <h1 className="text-4xl md:text-6xl font-bold font-display mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient-x">
+              {t('prices.title', 'Pricing & Modules Plans')}
+            </h1>
+            
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              {t('prices.subtitle', 'Explore scalable license tiers and setup budgets for our ERP integration, custom developments, and weighing modules.')}
+            </p>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-              {services.map((service, index) => (
-                <div
-                  key={service.id}
-                  className="glass-panel p-8 rounded-xl flex flex-col transition-all duration-300 hover:border-primary hover:-translate-y-2 animate-on-scroll"
-                  style={{ transitionDelay: `${(index % 3) * 100 + 200}ms` }}
-                >
-                  <h3 className="text-2xl font-bold text-white font-display">{service.title}</h3>
-                  <p className="text-gray-400 mt-2 flex-grow">{service.description}</p>
-
-                  <div className="my-6">
-                    <p className="text-sm text-gray-300">{t('prices.startsAt')}</p>
-                    <p className="text-4xl font-bold text-white font-display">
-                      {formatCurrency(service.pricing.startingAt)}
-                      <span className="text-base font-normal text-gray-400"> {t('prices.perProject')}</span>
-                    </p>
+          {/* Pricing Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch mb-20">
+            {services.map((service, index) => (
+              <div
+                key={service.id}
+                className="glass-panel p-8 rounded-3xl border border-white/5 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 flex flex-col justify-between items-stretch animate-on-scroll group"
+                style={{ transitionDelay: `${(index % 3) * 100 + 100}ms` }}
+              >
+                <div>
+                  {/* Top status */}
+                  <div className="flex justify-between items-center mb-6">
+                    <h3 className="text-xl md:text-2xl font-bold text-white font-display group-hover:text-primary transition-colors">
+                      {service.title}
+                    </h3>
+                    
+                    {index === 0 && (
+                      <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md bg-secondary/20 text-secondary border border-secondary/30">
+                        {language === 'ar' ? 'الأكثر طلباً' : 'Popular'}
+                      </span>
+                    )}
                   </div>
 
-                  <div className="border-t border-white/10 pt-6">
-                    <h4 className="font-semibold text-gray-200 mb-4">{t('prices.features')}</h4>
+                  <p className="text-xs md:text-sm text-gray-400 leading-relaxed mb-6">
+                    {service.description}
+                  </p>
+
+                  {/* Pricing segment */}
+                  <div className="p-5 rounded-2xl bg-slate-900 border border-white/5 mb-6">
+                    <p className="text-xs text-secondary font-bold uppercase tracking-wider mb-2">
+                      {t('prices.startsAt', 'Investment Starts At:')}
+                    </p>
+                    
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-2xl md:text-3xl font-bold text-white font-mono">
+                        {formatCurrency(service.pricing.startingAt)}
+                      </span>
+                      <span className="text-xs text-gray-400 font-bold">
+                        {t('prices.perProject', ' / Setup')}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Features list */}
+                  <div className="border-t border-white/5 pt-6 mb-8">
+                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4">
+                      {t('prices.features', 'Key Module Features:')}
+                    </h4>
+                    
                     <ul className="space-y-3">
                       {service.features.map((feature, i) => (
-                        <li key={i} className="flex items-start">
-                          <svg className="h-5 w-5 text-primary flex-shrink-0 me-3 rtl:me-0 rtl:ms-3 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                          </svg>
-                          <span className="text-gray-300 text-sm">{feature}</span>
+                        <li key={i} className="flex items-start gap-2.5 text-xs text-gray-300 leading-relaxed">
+                          <CheckCircle2 className="h-4.5 w-4.5 text-primary flex-shrink-0 mt-0.5" />
+                          <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-
-                  <div className="mt-auto pt-8">
-                    <Link
-                      to="/contact"
-                      className="w-full block text-center bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-white py-3 px-6 rounded-md font-bold transition-all duration-300 shadow-lg shadow-primary/20"
-                    >
-                      {t('prices.getQuote')}
-                    </Link>
-                  </div>
                 </div>
-              ))}
+
+                {/* Submit action */}
+                <div className="pt-4">
+                  <Link
+                    to="/contact"
+                    className="group w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-white font-bold py-3.5 rounded-2xl shadow-lg shadow-primary/20 transition-all duration-300 text-sm"
+                  >
+                    <span>{t('prices.getQuote', 'Request Quote')}</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
+                  </Link>
+                </div>
+
+              </div>
+            ))}
+          </div>
+
+          {/* Secure and Risk Free Callout */}
+          <div className="glass-panel p-8 md:p-12 rounded-[2.5rem] border border-primary/20 relative overflow-hidden animate-on-scroll">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl z-0 animate-pulse"></div>
+            <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 justify-between">
+              <div className="flex gap-4 items-start">
+                <div className="p-3 rounded-2xl bg-secondary/15 text-secondary border border-secondary/20 flex-shrink-0 mt-1">
+                  <ShieldCheck className="w-6 h-6 animate-pulse" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-1 font-display">
+                    {language === 'ar' ? 'ضمان الأمان الفني الكامل' : 'Full Deployment & Security Guarantee'}
+                  </h3>
+                  <p className="text-xs text-gray-400 leading-relaxed max-w-2xl">
+                    {language === 'ar' 
+                      ? 'جميع الحلول المطبقة تشمل خطة صيانة سنوية متميزة، مع تدريب مجاني لكافة محاسبي ومشغلي النظام لضمان النجاح التام.' 
+                      : 'All setup tiers include detailed system maintenance plans and free staff training to guarantee workflow integration.'}
+                  </p>
+                </div>
+              </div>
+
+              <Link 
+                to="/contact" 
+                className="group inline-flex items-center gap-1 text-primary hover:text-white font-bold text-sm transition-colors flex-shrink-0"
+              >
+                <span>{language === 'ar' ? 'تفاصيل باقات الدعم الفني' : 'Explore Support SLA'}</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
+              </Link>
             </div>
           </div>
+
         </div>
       </div>
     </div>

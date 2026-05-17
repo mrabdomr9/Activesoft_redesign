@@ -1,13 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
+import { LanguageContext } from '../context/LanguageContext';
+import { 
+  Sparkles, 
+  ArrowUpRight, 
+  CheckCircle2, 
+  Building2, 
+  Monitor, 
+  ArrowRight 
+} from 'lucide-react';
 
 const PortfolioPage: React.FC = () => {
   const { t } = useTranslation();
+  const { language } = useContext(LanguageContext);
 
   useEffect(() => {
-    const title = t('seo.portfolio.title', 'ERP System Features | Active Soft');
-    const description = t('seo.portfolio.description', 'Explore the comprehensive features of our Oracle ERP system, including general ledger, inventory management, costing, HR & payroll, and more.');
-    const keywords = t('seo.portfolio.keywords', 'ERP Features, Oracle ERP, General Ledger, Inventory Management, Costing System, HR Payroll');
+    const title = t('seo.portfolio.title', 'Application Portfolio & Success Implementations | Active Soft');
+    const description = t('seo.portfolio.description', 'Explore the comprehensive portfolio of Oracle ERP integrations and custom business applications developed by Active Soft for leading enterprises.');
+    const keywords = t('seo.portfolio.keywords', 'ERP Portfolio, Active Soft Success, Custom Software Showcase, Client Implementations Egypt, Ready-Mix Concrete ERP, Food Costing Systems');
 
     if (title) document.title = title;
 
@@ -25,121 +35,177 @@ const PortfolioPage: React.FC = () => {
     if (keywords) setMetaTag('keywords', keywords);
   }, [t]);
 
-  // Get portfolio items from translations
-  const portfolioItems = t('portfolio.items', [
+  // Premium fallback values matching our realistic client portfolio items
+  const defaultItems = [
     {
-      title: "Custom CRM for Sales Teams",
-      description: "A powerful desktop CRM application designed for high-performance sales tracking and client management.",
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      title: language === 'ar' 
+        ? "نظام إدارة محطات الخرسانة الجاهزة (العروبة للخرسانة الجاهزة)" 
+        : "Ready-Mix Concrete Management System (Al-Orouba Concrete)",
+      description: language === 'ar'
+        ? "حل تقني متكامل لإدارة وتشغيل محطات الخرسانة الجاهزة، يشمل التخطيط المؤتمت لحركة الخلاطات ومضخات الصب، وتتبع استهلاك المواد الخام اللحظي (الأسمنت، البحس، المياه)، والربط المباشر مع موازين البسكول والإنتاج لضمان الجودة والكفاءة التشغيلية."
+        : "A fully integrated ERP solution for ready-mix concrete batching plants. It automates concrete mixers and pumps dispatching, tracks real-time raw material consumption (cement, aggregates, water), and bridges directly with scales and production machinery to ensure standard compliance and operation efficiency.",
+      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop"
     },
     {
-      title: "Inventory Management System",
-      description: "An intuitive inventory system for a retail chain, providing real-time stock levels and automated reordering.",
-      image: "https://picsum.photos/seed/inventory/800/600"
+      title: language === 'ar'
+        ? "نظام التكاليف والإنتاج للمجازر والمسالخ الصناعية (شركة دلتا لإنتاج اللحوم)"
+        : "Industrial Costing & Production for Meat Processing (Delta Meat Group)",
+      description: language === 'ar'
+        ? "نظام متخصص في حساب التكاليف الصناعية والإنتاج لقطاع اللحوم والصناعات الغذائية، يتتبع عمليات التشغيل بدءاً من حيازة الماشية الحية، مروراً بعمليات الذبح، والتقطيع والفرز، وحتى المنتج النهائي، مع حساب دقيق لنسب الهالك وتوزيع تكاليف مراكز الخدمة والإنتاج والربط بالتبريد."
+        : "A specialized ERP and cost accounting system for industrial slaughterhouses and food processing. It tracks operations from live animals receiving, through slaughtering, cutting, and grading, to the final packaged products, automatically distributing service costs and computing precise waste and yield metrics.",
+      image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop"
     },
     {
-      title: "Healthcare Management System",
-      description: "A comprehensive healthcare management solution integrating patient records, billing, and regulatory compliance in a unified platform.",
-      image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      title: language === 'ar'
+        ? "نظام تخطيط موارد المؤسسات لقطاع الغزل والنسيج (مجموعة الأمراء للسجاد)"
+        : "Textile & Carpet Manufacturing ERP System (Al-Omaraa Carpet Group)",
+      description: language === 'ar'
+        ? "نظام ERP متطور لخطوط إنتاج السجاد والغزل والنسيج، يتتبع مراحل التصنيع المتعددة كالصباغة، النسيج، والتشطيب، مع إدارة دقيقة لمخزون خيوط الغزل بمختلف الأوزان والألوان، وربط الماكينات بجدول تخطيط الإنتاج لضمان تسليم الطلبيات الكبرى في مواعيدها."
+        : "A state-of-the-art ERP system for carpet and textile production lines. It tracks multi-stage manufacturing including dyeing, weaving, and finishing, manages complex yarn inventory across weights and colors, and aligns machines capacity with production planning to ensure on-time delivery of major contracts.",
+      image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop"
     },
     {
-      title: "Financial Services Platform",
-      description: "A secure financial services platform with real-time transaction processing, risk management, and regulatory compliance features.",
-      image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      title: language === 'ar'
+        ? "نظام إدارة محطات التعبئة وتصدير الحاصلات الزراعية (شركة VEGEX وشريكاتها)"
+        : "Agricultural Packing House & Export Management System (VEGEX & Partners)",
+      description: language === 'ar'
+        ? "نظام ذكي وشامل لإدارة محطات الفرز وتعبئة الخضار والفواكه، يربط الموردين والمزارع الخارجية بعمليات الاستلام، الفرز، والتعبئة، ويتتبع مسارات الحاويات والشحنات الخارجية، والفواتير بعملات أجنبية متعددة وتكاليف التصدير والتخليص الجمركي."
+        : "An end-to-end intelligent system designed for fresh produce grading and packing stations. It integrates farm suppliers with receiving, sorting, and packing processes, manages container tracking, customs clearing costs, export documentation, and foreign currency invoicing for global clients.",
+      image: "https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?q=80&w=800&auto=format&fit=crop"
     },
     {
-      title: "E-Commerce Solution",
-      description: "A complete e-commerce platform with inventory management, payment processing, and customer analytics.",
-      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      title: language === 'ar'
+        ? "نظام إدارة المخازن المتعددة وتركيبات المواد الكيماوية (بودي مصر للدهانات BMC)"
+        : "Multi-Warehouse & Chemical Formulation Management (Bodi Masr Paints BMC)",
+      description: language === 'ar'
+        ? "نظام ريادي لإدارة الخدمات اللوجستية والإنتاج الكيماوي لدهانات السيارات والمباني، يشمل مراقبة حركة المخازن المتعددة والمخزون الحساس، وإدارة معادلات التركيبات الكيميائية للمنتجات، وجدولة تسليم طلبيات الموزعين وتتبع الأرصدة والحدود الائتمانية للعملاء."
+        : "An enterprise solution built for chemical production and logistics in paint manufacturing. It manages strict chemical formulations (Bill of Materials), tracks sensitive raw materials across multiple warehouses, schedules wholesale orders, and monitors customer credit limits and outstanding balances.",
+      image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=800&auto=format&fit=crop"
     },
     {
-      title: "Manufacturing ERP System",
-      description: "An end-to-end manufacturing ERP solution with production planning, quality control, and supply chain management.",
-      image: "https://images.unsplash.com/photo-1581091226033-d5d88e9218aa?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      title: language === 'ar'
+        ? "نظام الإدارة المالية والرواتب للقطاع التعليمي (مدارس الجيل الجديد NGI)"
+        : "Educational Financials & HR Payroll ERP (New Generation Schools NGI)",
+      description: language === 'ar'
+        ? "حل مالي متكامل مصمم خصيصاً لإدارة المدارس والمؤسسات التعليمية، يدير شؤون أقساط الطلاب، المصاريف الإدارية والخصومات، مع حساب رواتب المعلمين والموظفين بدقة تامة اعتماداً على أنظمة الحضور والانصراف وقواعد الضرائب والتأمينات الاجتماعية."
+        : "A complete financial and administrative system customized for schools. It processes student tuition billing, administrative expenses, and scholarships, while executing precise monthly HR payroll for teachers and staff with active integration with attendance machines, taxes, and social insurance.",
+      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop"
     }
-  ]);
+  ];
+
+  // Fetch portfolio items from translation database, fallback to realistic list above
+  const portfolioItems = t('portfolio.items', defaultItems);
 
   return (
-    <div className="min-h-screen relative">
-      {/* Technical Background Elements */}
-      <div className="absolute inset-0">
-        {/* Circuit Board Pattern */}
+    <div className="min-h-screen relative overflow-hidden bg-[#070714] text-white">
+      {/* Dynamic Technological Schematics Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Glow Spheres */}
+        <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] animate-pulse"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-[450px] h-[450px] bg-secondary/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }}></div>
+
+        {/* HUD schematics */}
         <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M0 50h20m20 0h10m20 0h30M50 0v20m0 20v10m0 20v30' stroke='%2306B6D4' stroke-width='1'/%3E%3Ccircle cx='20' cy='50' r='2' fill='%2306B6D4'/%3E%3Ccircle cx='50' cy='20' r='2' fill='%2306B6D4'/%3E%3Ccircle cx='50' cy='80' r='2' fill='%2306B6D4'/%3E%3C/svg%3E")`,
-          backgroundSize: '150px 150px'
-        }}></div>
-
-        {/* HUD Elements */}
-        <div className="absolute inset-0 opacity-3" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20h40M20 40h30M20 60h20M140 20h40M150 40h30M160 60h20' stroke='%2306B6D4' stroke-width='0.5'/%3E%3C/svg%3E")`,
-          backgroundSize: '200px 200px'
-        }}></div>
-
-        {/* Data Flow Lines */}
-        <div className="absolute inset-0 opacity-2" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 150 Q75 100 150 150 T300 150' stroke='%2306B6D4' stroke-width='0.5' fill='none' stroke-dasharray='5,5'/%3E%3C/svg%3E")`,
-          backgroundSize: '300px 300px'
-        }}></div>
-
-        {/* Technical Schematics */}
-        <div className="absolute inset-0 opacity-1" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50 L100 100 M150 50 L200 100 M250 50 L300 100 M50 150 L100 200 M150 150 L200 200 M250 150 L300 200' stroke='%2306B6D4' stroke-width='0.3'/%3E%3C/svg%3E")`,
-          backgroundSize: '400px 400px'
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h120v120H0z' fill='none'/%3E%3Cpath d='M0 60h24m24 0h12m24 0h36M60 0v24m0 24v12m0 24v36' stroke='%2306B6D4' stroke-width='1'/%3E%3Ccircle cx='24' cy='60' r='2' fill='%2306B6D4'/%3E%3Ccircle cx='60' cy='24' r='2' fill='%2306B6D4'/%3E%3Ccircle cx='60' cy='96' r='2' fill='%2306B6D4'/%3E%3C/svg%3E")`,
+          backgroundSize: '120px 120px'
         }}></div>
       </div>
 
-      {/* Content */}
-      <div>
-        <div className="py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h1 className="text-4xl font-bold font-display animate-on-scroll bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
-                {t('portfolio.title', 'Our Application Portfolio')}
-              </h1>
-              <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto animate-on-scroll" style={{ transitionDelay: '100ms' }}>
-                {t('portfolio.subtitle', 'A glimpse into the custom solutions we\'ve crafted for our clients.')}
-              </p>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          
+          {/* Header */}
+          <div className="text-center mb-16 animate-on-scroll">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
+              <Sparkles className="w-4 h-4 animate-spin-slow" />
+              <span>{language === 'ar' ? 'سجل مشاريعنا وتطبيقاتنا الحية' : 'Live Applications Showcase'}</span>
             </div>
+            
+            <h1 className="text-4xl md:text-6xl font-bold font-display mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient-x">
+              {t('portfolio.title', 'Our Application Portfolio')}
+            </h1>
+            
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              {t('portfolio.subtitle', 'A detailed showcase of custom ERP integrations, costing frameworks, and production tools implemented for leading enterprises.')}
+            </p>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {portfolioItems.map((item: any, index: number) => (
-                <div
-                  key={index}
-                  className="glass-panel rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105 animate-on-scroll"
-                  style={{ transitionDelay: `${(index + 1) * 100}ms` }}
-                >
-                  <div className="h-64 overflow-hidden">
+          {/* Premium Portfolio Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+            {portfolioItems.map((item: any, index: number) => (
+              <div
+                key={index}
+                className="group glass-panel rounded-3xl overflow-hidden border border-white/10 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 flex flex-col justify-between animate-on-scroll"
+                style={{ transitionDelay: `${(index + 1) * 100}ms` }}
+              >
+                <div>
+                  {/* Image with zoom effect and elegant tech overlay */}
+                  <div className="h-64 overflow-hidden relative">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-750 group-hover:scale-105"
+                      loading="lazy"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                    
+                    {/* Tech details symbol */}
+                    <div className="absolute bottom-4 right-4 p-2 rounded-xl bg-slate-950/70 border border-white/10 text-white backdrop-blur-sm">
+                      <Monitor className="w-4 h-4" />
+                    </div>
                   </div>
-                  <div className="p-6">
-                    <h2 className="text-2xl font-bold text-white mb-3">{item.title}</h2>
-                    <p className="text-gray-300 mb-4">{item.description}</p>
+                  
+                  {/* Details */}
+                  <div className="p-8">
+                    <h3 className="text-2xl font-bold text-white mb-4 font-display group-hover:text-primary transition-colors flex items-center gap-2">
+                      <span>{item.title}</span>
+                    </h3>
+                    <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                      {item.description}
+                    </p>
                   </div>
                 </div>
-              ))}
-            </div>
 
-            <div className="mt-16 text-center">
-              <div className="glass-panel p-8 rounded-xl inline-block max-w-3xl">
-                <h3 className="text-2xl font-bold text-white mb-4">
+                {/* Sub-footer inside card */}
+                <div className="px-8 pb-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-gray-400">
+                  <span className="flex items-center gap-1.5">
+                    <CheckCircle2 className="w-4 h-4 text-secondary" />
+                    <span>{language === 'ar' ? 'تم النشر والتشغيل' : 'Fully Deployed & Live'}</span>
+                  </span>
+                  
+                  <div className="flex items-center gap-1 text-primary group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform duration-300 font-bold">
+                    <span>{language === 'ar' ? 'تفاصيل التكنولوجيا' : 'Tech Spec'}</span>
+                    <ArrowUpRight className="w-4 h-4" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Majestic Glowing Call to Action */}
+          <div className="glass-panel p-8 md:p-12 rounded-[2.5rem] border border-primary/20 relative overflow-hidden animate-on-scroll">
+            <div className="absolute top-0 right-0 w-40 h-40 bg-primary/10 rounded-full blur-2xl z-0 animate-pulse"></div>
+            <div className="relative z-10 grid md:grid-cols-3 gap-8 items-center">
+              <div className="md:col-span-2">
+                <h2 className="text-2xl md:text-3xl font-bold text-white font-display mb-4">
                   {t('portfolio.cta.title', 'Ready to Transform Your Business?')}
-                </h3>
-                <p className="text-gray-300 mb-6">
-                  {t('portfolio.cta.description', 'Discover how our solutions can streamline your operations and boost productivity.')}
+                </h2>
+                <p className="text-gray-300 leading-relaxed text-sm md:text-base">
+                  {t('portfolio.cta.description', 'Discover how our custom-tailored integrations and Oracle ERP applications can streamline your day-to-day operations and maximize workflow efficiency.')}
                 </p>
+              </div>
+              <div className="flex justify-center md:justify-end">
                 <a
                   href="/contact"
-                  className="px-6 py-3 bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-white font-bold rounded-md shadow-lg shadow-primary/20 transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-2 w-full md:w-auto text-center bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 shadow-xl shadow-primary/25"
                 >
-                  {t('portfolio.cta.button', 'Request a Demo')}
+                  <span>{t('portfolio.cta.button', 'Request a Demo')}</span>
+                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
                 </a>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>

@@ -29,33 +29,35 @@
     }
 
     body {
-      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      background: radial-gradient(circle at top, #080816 0%, #03030a 70%, #010103 100%);
       position: relative;
-      overflow: auto;
+      overflow-x: hidden;
+      overflow-y: auto;
+      color: #e5e7eb;
     }
 
     body::before {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(6, 182, 212, 0.1);
+      top: 15%;
+      left: 10%;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.05) 0%, transparent 70%);
       z-index: 1;
+      pointer-events: none;
     }
 
     body::after {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background:
-        radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.05) 0%, transparent 20%),
-        radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 20%);
+      bottom: 20%;
+      right: 5%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.04) 0%, transparent 70%);
       z-index: 2;
+      pointer-events: none;
     }
 
     #root {
