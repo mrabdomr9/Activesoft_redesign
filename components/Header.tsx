@@ -73,33 +73,32 @@ const DesktopDropdown: React.FC<{
 // Mobile dropdown menu component
 const MobileDropdown: React.FC<{
   link: { text: string; subLinks: { to: string; text: string }[] };
-  linkClasses: string;
-  activeLinkClasses: string;
-  isSubLinkActive: (subLinks?: { to: string }[]) => boolean;
   closeMenus: () => void;
   openDropdown: string | null;
   toggleMobileDropdown: (text: string) => void;
-}> = ({ link, linkClasses, activeLinkClasses, isSubLinkActive, closeMenus, openDropdown, toggleMobileDropdown }) => {
+}> = ({ link, closeMenus, openDropdown, toggleMobileDropdown }) => {
+  const isDropdownActive = link.subLinks.some(sub => window.location.pathname === sub.to);
+
   return (
-    <div className="w-full text-center">
+    <div className="w-full text-start">
       <button
         onClick={() => toggleMobileDropdown(link.text)}
-        className={`w-full ${linkClasses} justify-between ${isSubLinkActive(link.subLinks) ? activeLinkClasses : ''}`}
+        className={`w-full px-4 py-3 text-sm text-gray-300 hover:text-white transition-all duration-300 rounded-xl flex items-center justify-between hover:bg-white/5 text-start ${isDropdownActive ? 'text-white font-bold bg-primary/10 border border-primary/20 shadow-lg shadow-primary/5' : ''}`}
         aria-expanded={openDropdown === link.text}
         aria-haspopup="true"
       >
-        <span>{link.text}</span>
-        <ChevronDown className={`w-4 h-4 transition-transform duration-300 text-primary ${openDropdown === link.text ? 'rotate-180' : ''}`} />
+        <span className="text-start">{link.text}</span>
+        <ChevronDown className={`w-4 h-4 transition-transform duration-300 text-primary flex-shrink-0 ${openDropdown === link.text ? 'rotate-180' : ''}`} />
       </button>
       
       {openDropdown === link.text && (
-        <div className="py-2 space-y-1 bg-slate-900/50 rounded-2xl border border-white/5 mt-1 z-50">
+        <div className="py-1.5 px-1 space-y-1 bg-slate-900/60 rounded-xl border border-white/5 mt-1 mx-2">
           {link.subLinks.map(subLink => (
             <NavLink
               key={subLink.to}
               to={subLink.to}
               onClick={closeMenus}
-              className={({ isActive }) => `block w-full text-center px-4 py-2.5 text-xs text-gray-300 hover:bg-primary/10 hover:text-white transition-all duration-200 rounded-xl ${isActive ? 'bg-primary/20 font-bold text-primary' : ''}`}
+              className={({ isActive }) => `block w-full px-4 py-2.5 text-xs text-gray-400 hover:text-white transition-all duration-200 rounded-lg text-start ${isActive ? 'bg-primary/20 font-bold text-primary border-s-2 border-primary' : 'hover:bg-white/5'}`}
             >
               {subLink.text}
             </NavLink>
@@ -274,9 +273,6 @@ const Header: React.FC = () => {
                 <MobileDropdown
                   key={link.text}
                   link={link}
-                  linkClasses={linkClasses}
-                  activeLinkClasses={activeLinkClasses}
-                  isSubLinkActive={isSubLinkActive}
                   closeMenus={closeMenus}
                   openDropdown={openDropdown}
                   toggleMobileDropdown={toggleMobileDropdown}
@@ -286,7 +282,7 @@ const Header: React.FC = () => {
                   key={link.to}
                   to={link.to!}
                   onClick={closeMenus}
-                  className={({ isActive }) => `block w-full text-center ${linkClasses} ${isActive ? activeLinkClasses : ''}`}
+                  className={({ isActive }) => `w-full px-4 py-3 text-sm text-gray-300 hover:text-white transition-all duration-300 rounded-xl flex items-center justify-start hover:bg-white/5 text-start ${isActive ? 'text-white font-bold bg-primary/15 border border-primary/20 shadow-lg shadow-primary/5' : ''}`}
                 >
                   {link.text}
                 </NavLink>
